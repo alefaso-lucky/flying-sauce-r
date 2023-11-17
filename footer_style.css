@@ -5,36 +5,42 @@
 body {
     margin: 0;
 }
+
 #footer_container {
     color: rgb(255, 194, 108);
     padding: 10px 30px;
     background-color: rgb(24, 65, 73);
-    /*background-color: #246573;*/
     width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#newsletter_text {
-    float: left;
+#upper_footer_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1300px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#newsletter_form {
-    float: right;
-    position: relative;
-    top: 50px;
-    right: 100px;
+#upper_footer_container > * {
+    
 }
 
 #lower_footer_container {
-    clear: both;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 1300px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 #lower_footer_container > * {
-    width: 33%;
-}
-
-#social_footer {
-    width: 33%;
-    background-color: black;
+    flex: 1;
+    border-top: thick solid rgb(255, 194, 108);
 }
