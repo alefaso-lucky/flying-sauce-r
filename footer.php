@@ -12,13 +12,17 @@
     </div>
     <div id="lower_footer_container">
         <div id="trademark_footer">
-            <p>FLYING SAUCE&reg;</p>
-            <p>2023-2024</p>
+            <p>
+                FLYING SAUCE&reg;<br/>
+                <span>2023-2024</span>
+            </p>
         </div>
         <div id="policies_footer">
-            <p>LINK UTILI</p>
-            <p>Privacy Policy</p>
-            <p>Cookie Policy</p>
+            <p>
+                LINK UTILI<br/>
+                <span><a href="#">Privacy Policy</a></span><br/>
+                <span><a href="#">Cookie Policy</a></span>
+            </p>
         </div>
         <div id="social_footer">
             <p>SEGUICI SU</p>
