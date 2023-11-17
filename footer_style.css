@@ -1,0 +1,32 @@
+* {
+    box-sizing:border-box
+}
+
+body {
+    margin: 0;
+}
+#footer_container {
+    color: rgb(255, 194, 108);
+    padding: 10px 30px;
+    background-color: rgb(24, 65, 73);
+    /*background-color: #246573;*/
+    float: left;
+    width: 100%;
+}
+
+#newsletter_text {
+    float: left;
+}
+
+#newsletter_form {
+    float: right;
+}
+
+#lower_footer_container {
+    clear: both;
+}
+
+#lower_footer_container > * {
+    float: left;
+    width: 33%;
+}
