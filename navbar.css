@@ -18,6 +18,9 @@ header{
   align-items: center;
   padding: 10px 2%;
   background-color: #184149;
+  position: fixed;    /*la navbar ti segue quando scrolli*/
+  width: 100%;
+  top:0;
 }
 
 .menu{
