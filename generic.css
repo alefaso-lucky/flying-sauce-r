@@ -1,0 +1,49 @@
+/*per tutti i submit e reset field*/
+.submit-field, .reset-field{              
+  border: thin solid #FFC26C;
+  background-color: #46666D;
+  border-radius: 10px;   /*per i bordi arrotondati*/
+  padding: 10px;    /*per aumentare quello che circonda il bottone*/
+  color: #FFC26C;
+  margin: 10px 0px;
+  font-size: 15px;
+
+  cursor: pointer;    /*facciamo uscire la manina*/
+  transition: all .6s ease; 
+}
+
+.submit-field:hover, .reset-field:hover{
+  border: thin solid  #184149;
+  background-color: #FFF0DA;
+  color:  #5D7A7F;
+}
+
+/*TUTTI GLI INPUT TYPE DEVONO APPARTENERE A QUESTA CLASSE*/
+.insert{
+    background-color: #5D7A7F;
+    border: thin solid #184149;
+    font-size: 25px;
+    margin: 5px 0px;
+  }
+
+  .insert:focus{      /*per il riempimento degli input*/
+    outline: thin solid #FFC26C;
+    border-radius: 3px;
+    text-align: left;
+    color: #FFF0DA;
+  }
+
+/*per cambiare il colore all'interno del PLACEHOLDER*/
+::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
+    color: #E7E6E6;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #E7E6E6;
+   opacity: 1;
+}
+  
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #E7E6E6;
+    opacity: 1;
+} 
