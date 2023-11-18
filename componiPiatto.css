@@ -1,0 +1,40 @@
+body{
+    background-color:#FFF0DA;
+    font-family: "Goudy Old Style", sans-serif;
+}
+
+form{
+    padding: 10px;
+    padding-left: 10%;
+    background-color: #F4DAB4;
+}
+
+.selettori{
+    padding: 9px;
+    border: thin solid #C6AF9C;
+    max-width: 40%;
+}
+
+#foto{
+    float: right;
+}
+
+#carrello{
+    border: thin solid #FFC26C;
+    background-color: #46666D;
+    border-radius: 10px;   /*per i bordi arrotondati*/
+    padding: 15px;    /*per aumentare quello che circonda il bottone*/
+    margin-left: 60px;
+    color: #FFC26C;
+}
+
+#menu{
+    border: thin solid #FFC26C;
+    background-color: #46666D;
+    border-radius: 10px;   /*per i bordi arrotondati*/
+    padding: 15px;    /*per aumentare quello che circonda il bottone*/
+    margin-left: 60px;
+    color: #FFC26C;
+    font-family: sans-serif;
+    text-decoration: none;
+}
