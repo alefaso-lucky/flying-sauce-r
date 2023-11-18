@@ -8,7 +8,7 @@
   font-family: 'Montserrat', sans-serif;    /*è un Google Font quindi nell'html ci sta un link rel*/
   font-weight: 300px;
   font-size: 18px;
-  color: #E4A33F;
+  color: rgb(255, 194, 108);
   text-decoration: none;        /*perchè stiamo lavorando anche su a*/
 }
 
@@ -17,7 +17,7 @@ header{
   justify-content: space-between;     /*i 3 blocchi di elementi (ul, img e div) si distribuiranno alle 3 estremità*/
   align-items: center;
   padding: 10px 2%;
-  background-color: #184149;
+  background-color: rgb(24, 65, 73);
   position: fixed;    /*la navbar ti segue quando scrolli*/
   width: 100%;
   top:0;
@@ -30,14 +30,14 @@ header{
 .menu li{
   display: inline-block;
   padding: 0 40px;      /*vogliamo solo distanziare maggiormente gli elementi tra loro*/
-  border-right: thin solid #E4A33F;
+  border-right: thin solid rgb(255, 194, 108);
 }
 
-.menu li a{
+a{
   transition: all .3s ease;     /*una transizione quando ti sposti con il cursore sull'icona*/
 }
 
-.menu a:hover{
+a:hover{
   color: #FFF0DA;     /*la scritta cambierà colore assumendo quello dello sfondo*/
 }
 
