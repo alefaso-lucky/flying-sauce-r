@@ -1,53 +1,55 @@
 body {
-    margin: 0;
+    margin: 0; /*per evitare che il sito abbia i bordi bianchi intorno*/
 }
 
 #footer_container {
-    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box; /*per poter decidere tutti gli aspetti del box, applicato anche a tutti i figli*/
     color: rgb(255, 194, 108);
-    padding: 10px 30px;
+    padding: 10px 30px; /*definito il padding del contenitore di tutto il footer*/
     background-color: rgb(24, 65, 73);
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: nowrap; /*non c'è necessità di wrap visto che upper e lower footer container stanno uno sopra l'altro*/
+    flex-direction: column; /*in questo modo upper footer container e lower footer container vanno uno sopra all'altro*/
+    justify-content: center; /*upper e lower footer sono al centro della pagina invece che schiacciati a sinistra*/
+    align-items: center; /*upper e lower footer sono verticalmente allineati con il centro del footer esterno e non in altro o in basso*/
 }
 
 #footer_container * {
-    box-sizing: border-box;
+    box-sizing: border-box; /*per poter decidere tutti gli aspetti del box*/
 }
 
 #upper_footer_container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    display: flex; /*upper e lower footer container non sono solo flex-element ma anche a loro volta flex-container*/
+    flex-wrap: wrap; /*voglio che gli elementi di upper footer si wrappino in caso di necessità*/
+    width: 100%; /*prende tutto lo spazio disponibile ma entro i limiti imposti da max-width per scelta estetica*/
     max-width: 1300px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /*invece di mettere gli elementi al centro li metto uno a destra e l'altro a sinistra*/
+    align-items: center; /*l'allineamento verticale center anche se non è importante per la resa finale*/
 }
 
 #newsletter_text > p {
-    color: rgb(242, 243, 244);
+    color: rgb(242, 243, 244); /*i testi secondari di un piacevole colore off-whitey*/
 }
 
 #lower_footer_container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    display: flex; /*upper e lower footer container non sono solo flex-element ma anche a loro volta flex-container*/
+    flex-wrap: wrap; /*voglio che gli elementi di lower footer si wrappino in caso di necessità*/
+    width: 100%; /*prende tutto lo spazio disponibile ma entro i limiti imposti da max-width per scelta estetica*/
     max-width: 1300px;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between; /*invece di mettere gli elementi al centro li metto uno a destra e l'altro a sinistra*/
+    align-items: flex-start; /*l'allineamento verticale da flex start fa in modo che la linea sopra gli elementi combaci per tutti*/
 }
 
 #lower_footer_container > * {
-    flex: 1;
-    border-top: thick solid rgb(255, 194, 108);
+    flex: 1; /*i tre elementi di lower footer si dividono equamente lo spazio*/
+    border-top: thick solid rgb(255, 194, 108); /*la linea gialla sopra la sezione lower footer*/
 }
 
 #lower_footer_container span > a {
-    color: rgb(242, 243, 244);
-    text-decoration: none;
-    font-size: smaller;
+    color: rgb(242, 243, 244); /*i testi secondari li ho messi di un piacevole colore off-whitey*/
+    text-decoration: none; /*tolgo gl effetti del fatto che sono dei link, la sottolineatura in pratica*/
+    font-size: smaller; /*i testi secondari più piccoli dei principali*/
 }
