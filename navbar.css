@@ -1,0 +1,43 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+.menu, a{
+  font-family: 'Montserrat', sans-serif;    /*è un Google Font quindi nell'html ci sta un link rel*/
+  font-weight: 300px;
+  font-size: 18px;
+  color: #E4A33F;
+  text-decoration: none;        /*perchè stiamo lavorando anche su a*/
+}
+
+header{
+  display: flex;    /*per allineare gli elementi*/
+  justify-content: space-between;     /*i 3 blocchi di elementi (ul, img e div) si distribuiranno alle 3 estremità*/
+  align-items: center;
+  padding: 10px 2%;
+  background-color: #184149;
+}
+
+.menu{
+  list-style: null;      /*per togliere i pallini dalla lista*/
+}
+
+.menu li{
+  display: inline-block;
+  padding: 0 40px;      /*vogliamo solo distanziare maggiormente gli elementi tra loro*/
+  border-right: thin solid #E4A33F;
+}
+
+.menu li a{
+  transition: all .3s ease;     /*una transizione quando ti sposti con il cursore sull'icona*/
+}
+
+.menu a:hover{
+  color: #FFF0DA;     /*la scritta cambierà colore assumendo quello dello sfondo*/
+}
+
+.link a{
+  padding: 0 20px;      /*per distanziare i due link alle scorciatoie*/
+}
