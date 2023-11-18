@@ -3,8 +3,9 @@ body {
 }
 
 #footer_container {
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
-    bottom: 0;
+    bottom: 0; /*non è noto se il posizionamento in questo modo sarà funzionale all'integrazione con il resto della pagina*/
     box-sizing: border-box; /*per poter decidere tutti gli aspetti del box, applicato anche a tutti i figli*/
     color: rgb(255, 194, 108);
     padding: 10px 30px; /*definito il padding del contenitore di tutto il footer*/
@@ -30,7 +31,13 @@ body {
     align-items: center; /*l'allineamento verticale center anche se non è importante per la resa finale*/
 }
 
+#newsletter_text > h1 {
+    margin-bottom: 0; /*avvicino la scritta Iscriviti alla nostra newsletter e la descrizione sotto*/
+}
+
 #newsletter_text > p {
+    margin-top: 5;
+    margin-bottom: 40px; /*allontano l'upper e il lower footer*/
     color: rgb(242, 243, 244); /*i testi secondari di un piacevole colore off-whitey*/
 }
 
@@ -48,8 +55,31 @@ body {
     border-top: thick solid rgb(255, 194, 108); /*la linea gialla sopra la sezione lower footer*/
 }
 
+#lower_footer_container span {
+    color: rgb(242, 243, 244); /*i testi secondari li ho messi di un piacevole colore off-whitey*/
+}
+
 #lower_footer_container span > a {
     color: rgb(242, 243, 244); /*i testi secondari li ho messi di un piacevole colore off-whitey*/
     text-decoration: none; /*tolgo gl effetti del fatto che sono dei link, la sottolineatura in pratica*/
     font-size: smaller; /*i testi secondari più piccoli dei principali*/
+}
+
+#submit_newsletter_footer {
+    background-color: rgb(70, 102, 109); /*definisco il colore del bottone di submit e il colore della scritta*/
+    color: rgb(255, 194, 108);
+    padding: 10px 30px; /*le dimensioni*/
+    border-color: rgb(127, 127, 127); /*colore del bordo*/
+    border-radius: 7px; /*diventa arrotondato*/
+    -webkit-border-radius: 7px;
+    border-style: solid; /*bordo a linea continua*/
+    margin-left: 15px;
+}
+
+#newsletter_field {
+    border: none; /*elimino il bordo*/
+    border-bottom: 2px solid rgb(255, 194, 108); /*metto una linea per indicare dove scrivere*/
+    width: 250px; /*definisco le dimensioni*/
+    height: 30px;
+    background-color: transparent; /*la rendo trasparente*/
 }

@@ -5,7 +5,6 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-        
         <?php
             include "footer.php";
         ?>
