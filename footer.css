@@ -74,6 +74,7 @@ body {
     -webkit-border-radius: 7px;
     border-style: solid; /*bordo a linea continua*/
     margin-left: 15px;
+    margin-top: 10px;
 }
 
 #newsletter_field {
