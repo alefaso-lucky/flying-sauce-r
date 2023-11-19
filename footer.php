@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="./footer.css" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <div id="footer_container">
     <div id="upper_footer_container">
         <div id="newsletter_text">

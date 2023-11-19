@@ -9,7 +9,7 @@
   <body>
     <header>
       <img src="media/logo.png" alt="logo" width="200" class="logo"/>
-      <nav>
+      <nav> <!-- Tag per una zona che porta tramite dei link ad altre parti -->
         <ul class="menu">
           <li><a href="#">Menu</a></li>
           <li><a href="#">Fantasie</a></li>
