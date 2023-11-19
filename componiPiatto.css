@@ -3,10 +3,16 @@ body{
     font-family: "Goudy Old Style", sans-serif;
 }
 
-form{
+#contenitore{
     padding: 10px;
     padding-left: 10%;
     background-color: #F4DAB4;
+    display: flex;
+}
+
+form{
+    max-width: 50%;
+    flex:2;
 }
 
 .selettori{
@@ -16,9 +22,14 @@ form{
 }
 
 #foto{
-    float: right;
+    flex:1;
 }
 
+.toppingFoto > div{
+    width: 40%;
+    position: relative;
+    left: 60%;
+}
 #carrello{
     border: thin solid #FFC26C;
     background-color: #46666D;
