@@ -62,26 +62,29 @@
             </form>
             <div id="foto">
                 <div class="toppingFoto">
-                    <img src="media/topping1" alt="topping guanciale" width="200"/>
-                    <img src="media/topping2" alt="topping avocado" width="200"/>
+                    <img class="f1" src="media/topping1" alt="topping guanciale" width="200"/>
+                    <img class="f2" src="media/topping2" alt="topping avocado" width="200"/>
                     <img src="media/topping3" alt="topping noci" width="200"/>
                 </div>
                 <div class="sugoFoto">
-                    <img src="media/sugo1" alt="sugo pomodoro" width="200"/>
-                    <img src="media/sugo2" alt="sugo panna" width="200"/>
+                    <img class="f1" src="media/sugo1" alt="sugo pomodoro" width="200"/>
+                    <img class="f2" src="media/sugo2" alt="sugo panna" width="200"/>
                     <img src="media/sugo3" alt="sugo pesto" width="200"/>
                 </div>
                 <div class="pastaFoto">
-                    <img src="media/pasta1" alt="pasta ravioli" width="200"/>
-                    <img src="media/pasta2" alt="pasta tagliatelle" width="200"/>
+                    <img class="f1" src="media/pasta1" alt="pasta ravioli" width="200"/>
+                    <img class="f2" src="media/pasta2" alt="pasta tagliatelle" width="200"/>
                     <img src="media/pasta3" alt="pasta orecchiette" width="200"/>
                 </div>
                 <div class="quantitaFoto">
-                    <img src="media/quantita1" alt="quantità piccolo(60g)" width="200"/>
-                    <img src="media/quantita2" alt="quantità medio(90g)" width="200"/>
+                    <img class="f1" src="media/quantita1" alt="quantità piccolo(60g)" width="200"/>
+                    <img class="f2" src="media/quantita2" alt="quantità medio(90g)" width="200" style="top:415px;"/>
                     <img src="media/quantita3" alt="quantità grande(130g)" width="200"/>
                 </div>
             </div>
+        </div>
+        <div>
+            <img id="riquadro" src="media/sfondoComponi.PNG" alt="riquadro decorativo"/> <!-- /*aggiunto*/ -->
         </div>
     </body>
 

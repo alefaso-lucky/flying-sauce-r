@@ -1,9 +1,10 @@
 body{
     background-color:#FFF0DA;
-    font-family: "Goudy Old Style", sans-serif;
+    font-family: "Goudy Old Style", sans-serif;    
 }
 
 #contenitore{
+    margin-top:60px;
     padding: 10px;
     padding-left: 10%;
     background-color: #F4DAB4;
@@ -11,31 +12,46 @@ body{
 }
 
 form{
+    margin-top:60px;
     max-width: 50%;
-    flex:2;
+    flex:1;
 }
 
 .selettori{
     padding: 9px;
-    border: thin solid #C6AF9C;
-    max-width: 40%;
+    border: thin solid #C6AF9C; 
+    width: 400px;
 }
 
 #foto{
     flex:1;
+    z-index: 2; /*aggiunto*/
+}
+/*aggiunto da qua*/
+
+#riquadro{
+    position: absolute;
+    left: 51%;
+    top: 5px;
 }
 
-.toppingFoto > div{
-    width: 40%;
+.f1{
     position: relative;
-    left: 60%;
+    left:150px;
+    
 }
+.f2{
+   position: absolute;
+   left:65%;
+}
+/*a qua*/
+
 #carrello{
     border: thin solid #FFC26C;
     background-color: #46666D;
     border-radius: 10px;   /*per i bordi arrotondati*/
     padding: 15px;    /*per aumentare quello che circonda il bottone*/
-    margin-left: 60px;
+    margin-left: 40px;
     color: #FFC26C;
 }
 
@@ -43,8 +59,9 @@ form{
     border: thin solid #FFC26C;
     background-color: #46666D;
     border-radius: 10px;   /*per i bordi arrotondati*/
-    padding: 15px;    /*per aumentare quello che circonda il bottone*/
-    margin-left: 60px;
+    padding: 13px;    /*per aumentare quello che circonda il bottone*/
+    padding-bottom: 14px;
+    margin-left: 10px;
     color: #FFC26C;
     font-family: sans-serif;
     text-decoration: none;
