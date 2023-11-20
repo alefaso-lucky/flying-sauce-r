@@ -1,13 +1,14 @@
-<link rel="stylesheet" href="./footer_style.css" type="text/css">
+<link rel="stylesheet" href="./footer.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <div id="footer_container">
     <div id="upper_footer_container">
         <div id="newsletter_text">
             <h1>Iscriviti alla nostra newsletter!</h1>
-            <p>Riceverai sconti, regali e inviti ad eventi!</p>
+            <p id="margin_less">Riceverai sconti, regali e inviti ad eventi!</p>
         </div>
         <form action="#UNKNOWN" method="post" id="newsletter_form">
             <label for="newsletter_field">e-mail: <input type="email" id="newsletter_field" name="email_newsletter" required></label>
-            <input type="sumbit" value="REGISTRAMI">
+            <input type="submit" value="REGISTRAMI" id="submit_newsletter_footer">
         </form>
     </div>
     <div id="lower_footer_container">

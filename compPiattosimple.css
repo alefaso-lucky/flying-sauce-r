@@ -1,0 +1,93 @@
+body{
+    background-color:#FFF0DA;
+    font-family: "Goudy Old Style", sans-serif;
+}
+
+#form_grid{
+    max-width: 390px;
+    padding: 10px;
+    background-color: rgb(244, 218, 180);
+    display: grid;
+    grid-template-areas: 
+        'ftext ftext ftext'
+        'ffo fso fto'
+        'stext stext stext'
+        'sfo sso sto'
+        'ttext ttext ttext'
+        'tfo tso tto'
+        'ftext ftext ftext'
+        'fofo foso foto';
+}
+
+#piccolo_opt {
+    grid-area: ffo;
+}
+
+#medio_opt {
+    grid-area: fso;
+}
+
+#grande_opt {
+    grid-area: fto;
+}
+
+#ravioli_opt {
+    grid-area: sfo;
+}
+
+#tagliatelle_opt {
+    grid-area: sso;
+}
+
+#orecchiette_opt {
+    grid-area: sto;
+}
+
+#pomodoto_opt {
+    grid-area: tfo;
+}
+
+#panna_opt {
+    grid-area: tso;
+}
+
+#pesto_opt {
+    grid-area: tto;
+}
+
+#guanciale
+
+#quantita {
+    grid-area: ftext;
+    border: 1px dotted rgb(198, 175, 156);
+    border-bottom: none;
+    padding: 5px;
+}
+
+#pasta {
+    grid-area: stext;
+    border: 1px dotted rgb(198, 175, 156);
+    border-bottom: none;
+    padding: 5px;
+}
+
+#sugo {
+    grid-area: ttext;
+    border: 1px dotted rgb(198, 175, 156);
+    border-bottom: none;
+    padding: 5px;
+}
+
+.options {
+    padding-bottom: 5px;
+    border-bottom: 1px dotted rgb(198, 175, 156);
+    margin-bottom: 10px;
+}
+
+.options_left {
+    border-left: 1px dotted rgb(198, 175, 156);
+}
+
+.options_right {
+    border-right: 1px dotted rgb(198, 175, 156);
+}
