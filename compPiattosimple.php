@@ -7,7 +7,7 @@
     <body>
         <div id="contenitore">
             <form action="#" method="post" id="form_grid">
-                    <span id="quantita">Quantità</span>
+                    <span id="quantita" class="name_of_options">Quantità</span>
                     <label for="piccolo-field" id="piccolo_opt" class="options options_left">
                         <input id="piccolo-field" name="quantita" type="radio"/>Piccolo(60g)
                     </label>
@@ -18,7 +18,7 @@
                         <input id="Grande-field" name="quantita" type="radio"/>Grande(130g)
                     </label>
                     
-                    <span id="pasta">Pasta</span>
+                    <span id="pasta" class="name_of_options">Pasta</span>
                     <label for="ravioli-field" id="ravioli_opt" class="options options_left">
                         <input id="ravioli-field" name="pasta" type="radio"/>Ravioli
                     </label>
@@ -29,7 +29,7 @@
                         <input id="orecchiette-field" name="pasta" type="radio"/>Orecchiette
                     </label>
 
-                    <span id="sugo">Sugo</span>
+                    <span id="sugo" class="name_of_options">Sugo</span>
                     <label for="pomodoro-field" id="pomodoro_opt" class="options options_left">
                         <input id="pomodoro-field" name="sugo" type="radio"/>Sugo
                     </label>
@@ -40,7 +40,7 @@
                         <input id="pesto-field" name="sugo" type="radio"/>Pesto
                     </label>
                     
-                    <span id="topping">Topping</span>
+                    <span id="topping" class="name_of_options">Topping</span>
                     <label for="guanciale-field" id="guanciale_opt" class="options options_left">
                         <input id="guanciale-field" name="topping" type="radio"/>Guanciale
                     </label>

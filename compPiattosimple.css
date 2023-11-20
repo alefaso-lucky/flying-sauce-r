@@ -15,7 +15,7 @@ body{
         'sfo sso sto'
         'ttext ttext ttext'
         'tfo tso tto'
-        'ftext ftext ftext'
+        'fotext fotext fotext'
         'fofo foso foto';
 }
 
@@ -55,27 +55,38 @@ body{
     grid-area: tto;
 }
 
-#guanciale
+#guanciale {
+    grid-area: fofo;
+}
 
-#quantita {
-    grid-area: ftext;
+#avocado {
+    grid-area: foso;
+}
+
+#noci {
+    grid-area: foto;
+}
+
+.name_of_options {
     border: 1px dotted rgb(198, 175, 156);
     border-bottom: none;
     padding: 5px;
+}
+
+#quantita {
+    grid-area: ftext;
 }
 
 #pasta {
     grid-area: stext;
-    border: 1px dotted rgb(198, 175, 156);
-    border-bottom: none;
-    padding: 5px;
 }
 
 #sugo {
     grid-area: ttext;
-    border: 1px dotted rgb(198, 175, 156);
-    border-bottom: none;
-    padding: 5px;
+}
+
+#topping {
+    grid-area: fotext;
 }
 
 .options {
@@ -90,4 +101,9 @@ body{
 
 .options_right {
     border-right: 1px dotted rgb(198, 175, 156);
+}
+
+#form_grid input[type=radio] {
+    background-color: rgb(70, 102, 109);
+    
 }
