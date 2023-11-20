@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -10,13 +11,13 @@ body {
   background-size: cover;
 }
 
-div.cell {
+.cell {
   background-color: RGBA(24, 65, 73, 0.85);
   border-radius: 50px;
-  border: 2px solid #FFC26C;
-  margin: 5% 18%;
+  border: medium solid RGB(255, 194, 108);
+  margin: 15% 15%;
   display: flex;
-  display: block;
+  display: inline-block;
   overflow-x: hidden;
   padding: 20px;
 }
@@ -24,18 +25,14 @@ div.cell {
 .cell p, .cell ul {
   color: white;
   padding: 5px 20px;
-  font-family: 'Montserrat', sans-serif;
-
 }
 
 .cell h1 {
   text-align: center;
   color: #FFC26C;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .cell h2, h3, h4 {
-  color: #E4A33F;
+  color: #FFC26C;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
 }

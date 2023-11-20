@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-			<?php require('navbar.php'); ?>
+			<?php //require('nav.html'); ?> 
 			<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>

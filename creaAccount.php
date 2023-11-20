@@ -7,7 +7,7 @@
 		<h1>CREA UN NUOVO ACCOUNT</h1>
 		<form action="#" method="post" id="main-form">
 				<p>
-					<input id="name-field" name="name" placeholder="Nome"/>					
+					<input id="name-field" name="name" placeholder="Nome"/>
 					<input id="surname-field" name="surname" placeholder="Cognome"/>
 				</p>
                 <p>
@@ -22,7 +22,7 @@
 				<p>
 					Genere:
 					<label for="male-field">
-						<input id="male-field" name="sesso" type="radio" checked/>M 
+						<input id="male-field" name="sesso" type="radio" checked/>M
 					</label>
 					<label for="female-field">
 						<input id="female-field" name="sesso" type="radio"/>F
@@ -33,7 +33,7 @@
 				</p>
                 <p>
                     <label for="data-field">
-						Data di nascita:<input id="data-field" name="data" type="date">					
+						Data di nascita:<input id="data-field" name="data" type="date">
 					</label>
 				</p>
 			</fieldset>
@@ -46,21 +46,21 @@
                     <input id="Region-field" name="region" placeholder="Regione"/>
                 </p>
                 <p>
-                    <input id="City-field" name="city" placeholder="Città"/>						
+                    <input id="City-field" name="city" placeholder="Città"/>
 				</p>
                 <p>
-                    <input id="Steet-field" name="street" placeholder="Via o piazza"/>						
+                    <input id="Steet-field" name="street" placeholder="Via o piazza"/>
 				</p>
                 <p>
-                    <input id="Number-field" name="number" placeholder="Numero civico"/>						
+                    <input id="Number-field" name="number" placeholder="Numero civico"/>
 				</p>
 			</fieldset>
-			
+
 			<p>
-            Cliccando su Iscriviti, accetti le nostre <a href="#">Condizioni</a>. Scopri in che modo 
-            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="./infoPrivacy.php">Informativa 
+            Cliccando su Iscriviti, accetti le nostre <a href="#">Condizioni</a>. Scopri in che modo
+            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="./infoPrivacy.php">Informativa
             sulla privacy</a> e in che modo usiamo cookie e tecnologie simili nella nostra 
-            <a href="#">Normativa sui cookie</a>. Potresti ricevere notifiche tramite SMS da noi, ma 
+            <a href="#">Normativa sui cookie</a>. Potresti ricevere notifiche tramite SMS da noi, ma
             puoi disattivarle in qualsiasi momento.
 			</p>
 			<p>
