@@ -75,6 +75,7 @@ body {
     border-style: solid; /*bordo a linea continua*/
     margin-left: 15px;
     margin-top: 10px;
+    border: thin solid rgb(255, 194, 108);
 }
 
 #newsletter_field {
