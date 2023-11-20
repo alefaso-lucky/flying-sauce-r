@@ -15,14 +15,14 @@ form{
     flex:2;
 }
 
+#foto{
+    flex:1;
+}
+
 .selettori{
     padding: 9px;
     border: thin solid #C6AF9C;
-    max-width: 40%;
-}
-
-#foto{
-    flex:1;
+    max-width: 390px;
 }
 
 .toppingFoto > div{
@@ -48,4 +48,10 @@ form{
     color: #FFC26C;
     font-family: sans-serif;
     text-decoration: none;
+}
+
+#flexbox_selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

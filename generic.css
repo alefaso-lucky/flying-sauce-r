@@ -1,10 +1,11 @@
 /*per tutti i submit e reset field*/
 .submit-field, .reset-field{              
-  border: thin solid #FFC26C;
-  background-color: #46666D;
+  border: thin solid rgb(255, 194, 108);
+  background-color: rgb(70, 102, 109);
   border-radius: 10px;   /*per i bordi arrotondati*/
-  padding: 10px;    /*per aumentare quello che circonda il bottone*/
-  color: #FFC26C;
+  -webkit-border-radius: 10px; /*per i bordi arrotondati su safari*/
+  padding: 10px 30px;    /*per aumentare quello che circonda il bottone*/
+  color: rgb(255, 194, 108);
   margin: 10px 0px;
   font-size: 15px;
 

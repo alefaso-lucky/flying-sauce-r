@@ -70,11 +70,12 @@ body {
     color: rgb(255, 194, 108);
     padding: 10px 30px; /*le dimensioni*/
     border-color: rgb(127, 127, 127); /*colore del bordo*/
-    border-radius: 7px; /*diventa arrotondato*/
-    -webkit-border-radius: 7px;
+    border-radius: 10px; /*diventa arrotondato*/
+    -webkit-border-radius: 10px;
     border-style: solid; /*bordo a linea continua*/
     margin-left: 15px;
     margin-top: 10px;
+    border: thin solid rgb(255, 194, 108);
 }
 
 #newsletter_field {
