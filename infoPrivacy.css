@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("media/sfondo_accedi.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.cell {
+  background-color: RGBA(24, 65, 73, 0.85);
+  border-radius: 50px;
+  border: 2px solid #FFC26C;
+  margin: 5% 18%;
+  display: flex;
+  display: block;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.cell p, .cell ul {
+  color: white;
+  padding: 5px 20px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.cell h1 {
+  text-align: center;
+  color: #FFC26C;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cell h2, h3, h4 {
+  color: #E4A33F;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
