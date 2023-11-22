@@ -4,7 +4,7 @@ body{
 }
 
 #form_grid{
-    max-width: 390px;
+    max-width: 423px;
     padding: 10px;
     background-color: rgb(244, 218, 180);
     display: grid;
@@ -17,6 +17,7 @@ body{
         'tfo tso tto'
         'fotext fotext fotext'
         'fofo foso foto';
+    grid-template-columns: 141px 141px 141px;
 }
 
 #piccolo_opt {
@@ -104,6 +105,33 @@ body{
 }
 
 #form_grid input[type=radio] {
-    background-color: rgb(70, 102, 109);
-    
+    /*accent-color: rgb(70, 102, 109);
+    appearance: button;*/
+    display: none;
+
 }
+
+/*di seguito lo stile necessario ad editare i radio buttons*/
+
+label span {
+    /*position: relative;*/
+}
+
+label span:before { /*inserisco un contenuto vuoto prima delle scritte delle varie opzioni*/
+  content: '';
+}
+
+label span:before { /*do uno stile al contenuto che ho inserito*/
+    border-radius: 6px;
+    border: 1px solid rgb(24, 65, 73);
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  label input:checked+span:before { /*quando l'input è checked do un background color al contenuto che ho inserito*/
+    background-color: rgb(70, 102, 109);
+  }
