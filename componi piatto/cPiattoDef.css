@@ -1,0 +1,179 @@
+body{
+    background-color:#FFF0DA;
+    font-family: "Goudy Old Style", sans-serif;
+}
+
+#composizione{
+    display: flex;
+    align-items: center;    /*funziona il viceversa di content*/
+    align-content: center;  /*funziona insieme al wrap quindi quando si rinpicciolisce*/ 
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    background-color: #F4DAB4;
+    max-height: 550px;  
+}
+
+#form_grid{
+    font-size: 20px;
+    background-color: rgb(244, 218, 180);
+    display: grid;
+    grid-template-areas: 
+        'ftext ftext ftext'
+        'ffo fso fto'
+        'stext stext stext'
+        'sfo sso sto'
+        'ttext ttext ttext'
+        'tfo tso tto'
+        'fotext fotext fotext'
+        'fofo foso foto';
+    grid-template-columns: 141px 141px 141px;
+}
+
+#piccolo_opt {
+    grid-area: ffo;
+}
+
+#medio_opt {
+    grid-area: fso;
+}
+
+#grande_opt {
+    grid-area: fto;
+}
+
+#ravioli_opt {
+    grid-area: sfo;
+}
+
+#tagliatelle_opt {
+    grid-area: sso;
+}
+
+#orecchiette_opt {
+    grid-area: sto;
+}
+
+#pomodoto_opt {
+    grid-area: tfo;
+}
+
+#panna_opt {
+    grid-area: tso;
+}
+
+#pesto_opt {
+    grid-area: tto;
+}
+
+#guanciale {
+    grid-area: fofo;  
+}
+
+#avocado {
+    grid-area: foso;
+}
+
+#noci {
+    grid-area: foto;
+}
+
+.name_of_options {
+    border: 1px dotted rgb(198, 175, 156);
+    border-bottom: none;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#quantita {
+    grid-area: ftext;
+}
+
+#pasta {
+    grid-area: stext;
+}
+
+#sugo {
+    grid-area: ttext;
+}
+
+#topping {
+    grid-area: fotext;
+}
+
+.options {
+    padding-bottom: 5px;
+    border-bottom: 1px dotted rgb(198, 175, 156);
+    margin-bottom: 10px;
+}
+
+.options_left {
+    border-left: 1px dotted rgb(198, 175, 156);
+}
+
+.options_right {
+    border-right: 1px dotted rgb(198, 175, 156);
+}
+
+#form_grid input[type=radio] {
+    /*accent-color: rgb(70, 102, 109);
+    appearance: button;*/
+    display: none;
+
+}
+
+/*di seguito lo stile necessario ad editare i radio buttons*/
+
+label span {
+    /*position: relative;*/
+}
+
+label span:before { /*inserisco un contenuto vuoto prima delle scritte delle varie opzioni*/
+  content: '';
+}
+
+label span:before { /*do uno stile al contenuto che ho inserito*/
+    border-radius: 6px;
+    border: 1px solid rgb(24, 65, 73);
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  label input:checked+span:before { /*quando l'input è checked do un background color al contenuto che ho inserito*/
+    background-color: rgb(70, 102, 109);
+  }
+/*di seguito lo stile dei bottoni*/
+#bottoni{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#carrello{
+    border: thin solid #FFC26C;
+    background-color: #46666D;
+    border-radius: 10px;   /*per i bordi arrotondati*/
+    padding: 15px;    /*per aumentare quello che circonda il bottone*/
+    color: #FFC26C;
+}
+
+#menu{
+    border: thin solid #FFC26C;
+    background-color: #46666D;
+    border-radius: 10px;   /*per i bordi arrotondati*/
+    padding: 15px;    /*per aumentare quello che circonda il bottone*/
+    padding-bottom: 17px;
+    color: #FFC26C;
+    font-family: sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+}
+/*segue il riquadro bianco e verde a destra dello schermo*/
+#riquadro{
+    /*position: absolute;
+    left: 51%;*/
+}
