@@ -1,17 +1,18 @@
 <?php
-    // $host="localhost";
-    // $db='GruppoXX';
-    // $user="www";
-    // $password="password";
-    // $connection_string = "host=$host dbname=$db user=$user password=$password";
-    // $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
-    // if( $db == false )
-    //     echo "Ritornellotto";
-    // else
-    //     echo "tutto ok";
+    $host="localhost";
+    $db='GruppoXX';
+    $user="www";
+    $password="password";
+    $connection_string = "host=$host dbname=$db user=$user password=$password";
+    $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
+    if( $db == false )
+      echo "Ritornellotto";
+    else
+      echo "tutto ok";
 
     $nome = "Spaghetti alla Carbonara Vegetariana";
     $lista_ingredienti = "spaghetti, zucchine scure, tuorli d'uovo, scaglie di pecorino grattugiato, Olio extravergine di oliva, Sale e pepe nero.";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Un'armonia di sapori che celebra la freschezza della natura. Un piatto che sfida
       le convenzioni con eleganza, invitando gli ospiti a sperimentare una nuova dimensione
       di gusto. Un'opera culinaria destinata a catturare l'attenzione e il palato degli
@@ -36,6 +37,7 @@
 
     $nome = "Pesto di Eleganza Tricolore con Caviale  ";
     $lista_ingredienti = "Pesto di Cavolo Nero, maccheroni artigianali, Olio Extravergine d'Oliva, Caviale.";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "  Questo piatto unisce il verde intenso del pesto di cavolo nero all'oro
       dell'olio extravergine d'oliva, arricchito dal lusso delle perle di caviale di zucca.
       Un'ode alla tradizione tricolore italiana, dove ogni ingrediente racconta
@@ -68,6 +70,8 @@
     $nome = "Melodia del Verde";
     $lista_ingredienti = "Broccoli, linguine all'uovo, spicchio d'aglio, mandorle a scaglie,
      Olio extravergine di oliva, Sale e pepe, Pecorino.";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
+
     $breve_descrizione = "Le Linguine in Crema di Broccoli e Mandorle Scintillanti sono un'opera gastronomica
     imponente, pensata per soddisfare i palati più esigenti. La diversità
     di consistenze e la complessità dei sapori si fondono in un'armonia culinaria
