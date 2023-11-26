@@ -94,7 +94,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 50;
-    $foto = "..media/piatti/spaghettiConLeSarde.png";
+    $foto = "../media/piatti/spaghettiConLeSarde.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -123,7 +123,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 55;
-    $foto = "..media/piatti/allaNorma.png";
+    $foto = "../media/piatti/allaNorma.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -175,7 +175,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "rossi";
     $prezzo = 55;
-    $foto = "..media/piatti/lasagna.png";
+    $foto = "../media/piatti/lasagna.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -183,6 +183,7 @@
 
 //di mare   
     $nome = "Orecchiette dell'Adriatico";
+    $nome = pg_escape_string($db, $nome);
     $lista_ingredienti = "Orecchiette artigianali, lavorate con la perizia di maestri pastaieri per garantire una consistenza unica,Salmone affumicato proveniente dalle acque cristalline dell'Adriatico, tagliato a mano con precisione,Formaggio fresco spalmabile di produzione locale, che conferisce una cremosità avvolgente, Zucchine appena raccolte da agricoltori locali, tagliate a julienne per una freschezza ineguagliabile, Aglio fresco, per un tocco aromatico sottile ma distintivo, Mandorle tostate per esaltare la croccantezza e aggiungere una nota di eleganza, Foglie di basilico fresco, selezionate con cura per un profumo erbaceo sottolineato, Parmigiano Reggiano DOP, grattugiato al momento per una ricchezza di sapori ineguagliabile, Olio di oliva extravergine, proveniente dalle colline italiane, per un finale di gusto impeccabile";
     $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Un trionfo della cucina italiana, le nostre Orecchiette con Zucchine e Salmone Affumicato sono una sinfonia di sapori artigianali. Le orecchiette al dente abbracciano il sapore marino del salmone affumicato, mentre le zucchine fresche offrono una croccantezza ineguagliabile. Il formaggio fresco spalmabile crea una crema vellutata, arricchita dalla croccantezza delle mandorle tostate. Il tutto è esaltato dal Parmigiano Reggiano DOP e da un filo di olio extravergine di oliva. Un'esperienza culinaria che celebra l'italianità autentica in ogni boccone.";
@@ -195,7 +196,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "";
     $prezzo = 80;
-    $foto = "..media/piatti/orecchietteAllAdriatico.png";
+    $foto = "../media/piatti/orecchietteAllAdriatico.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -203,6 +204,7 @@
     
 
     $nome = "Calamarata all'Eleganza del Mare";
+    $nome = pg_escape_string($db, $nome);
     $lista_ingredienti = "Calamarata artigianale, una pasta avvolgente creata con maestria, Calamari appena pescati e preparati con precisione, garanzia di freschezza e sapore marino autentico, Pomodorini ciliegino, selezionati con cura per la loro dolcezza e succosità.";
     $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Immergetevi nell'essenza del Mediterraneo con la nostra Calamarata, una sinfonia di sapori marini e pasta artigianale. Le Calamari appena pescati, uniti con maestria alla pasta al dente, creano una danza di freschezza e consistenza. I Pomodorini Ciliegino, il triplo concentrato di pomodoro e un tocco di vino bianco aggiungono complessità, mentre aglio, peperoncino fresco e prezzemolo elevano l'aroma mediterraneo. Presentata con eleganza e arricchita dall'Olio Extravergine d'Oliva, la Calamarata all'Eleganza del Mare è un invito a gustare l'autentico sapore del mare italiano in ogni boccone.";
@@ -220,7 +222,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "mare";
     $prezzo = 75 ;
-    $foto = "..media/piatti/calamarata.png";
+    $foto = "../media/piatti/calamarata.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -241,7 +243,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "mare";
     $prezzo = 80;
-    $foto = "..media/piatti/mafaldeMarine.png";
+    $foto = "../media/piatti/mafaldeMarine.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -260,7 +262,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "ricercati";
     $prezzo = 100;
-    $foto = "..media/piatti/rubinoRosso.png";
+    $foto = "../media/piatti/rubinoRosso.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -282,7 +284,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "ricercati";
     $prezzo = 100;
-    $foto = "..media/piatti/";
+    $foto = "../media/piatti/";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     

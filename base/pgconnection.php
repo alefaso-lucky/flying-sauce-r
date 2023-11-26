@@ -11,9 +11,24 @@
         echo "tutto ok";
     $sql = "SELECT nome, descrizione_breve, foto FROM menu WHERE categoria = 'classici'";
     $ret = pg_query($db, $sql);
+    
+    while( $row = pg_fetch_array($ret) ) {
+        
+        $nome = $row[0];
+        $descrizione_breve = $row[1];
+        $foto = $row[2];
+?>
+        <div>
+            <img src="<?php echo $foto ?>" alt="foto del piatto di pasta">
+        </div>
+<?php        
+    }
+    
+    /*
     $row = pg_fetch_row($ret);
     $nome = $row[0];
     $descrizione_breve = $row[1];
     $foto = $row[2];
     echo $nome;
+    */
 ?>
