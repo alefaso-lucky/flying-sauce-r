@@ -126,6 +126,7 @@
 
     /* VEGANI */
     $nome = "Tagliolini d'Oro Autunnali";
+    $nome = pg_escape_string($db, $nome);
     $lista_ingredienti = "Pasta artigianale, semola rimacinata di grano duro, fecola di patate, crema di zucca, scalogno, latte di soia bio, olio extravergine d'oliva, thè fresco, thimo, sale, pepe
     funghi porcini freschi, aglio, olio extravergine d'oliva, sale e pepe, briciole di pane grattugiate";
     $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
