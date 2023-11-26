@@ -66,12 +66,50 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 45;
-    $foto = "../media/piatti/carbonara.png";
+    $foto = "../media/piatti/cacioEPepe.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
     $result = pg_query($db, $query);
 
+
+    $nome = "Tagliatelle di Seta alla Lupara";
+    $lista_ingredienti = "pasta fresca, soppressata irpina, panna Bio, pomodoro, parmiggiano D.O.P., peperoncino fresco";
+    $breve_descrizione = "La cremosità raggiunge l'apice grazie alla fusione di panna e due noci
+    di burro, che avvolgono le tagliatelle come un abbraccio avvolgente. 
+    Un tocco audace di peperoncino fresco aggiunge una nota vivace, mentre 
+    il parmigiano grattugiato completa l'esperienza con la sua elegante complessità.";
+    $breve_descrizione = pg_escape_string($db, $breve_descrizione);
+    $lunga_descrizione = "**Presentazione Raffinata:**
+    Le tagliatelle di seta si intrecciano con grazia su un piatto di porcellana bianca, pronte a ospitare il maestoso connubio di sapori. La soppressata, disposta con cura, danza tra le ondulazioni della pasta, mentre la panna e il burro abbracciano ogni nastro con una carezza di cremosità.
+    **Un Viaggio nel Gusto:**    
+    Il primo morso rivela l'armonia della soppressata, seguita dalla cremosità avvolgente della panna e del burro. La passata di pomodoro, intensa e avvolgente, si fonde con la piccantezza del peperoncino fresco, creando un crescendo di sapori che culminano nel retrogusto ricco e persistente del parmigiano grattugiato.
+    **Una Creazione Senza Paragoni:**
+    Le Tagliatelle di Seta alla Lupara incarnano l'eccellenza culinaria, un'esperienza gastronomica pensata per i palati più raffinati. Un capolavoro di equilibrio tra cremosità e piccantezza, destinato a rimanere impresso nei ricordi dei buongustai più esigenti.
+    ";
+    $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
+    $cate = "rossi";
+    $prezzo = 60;
+    $foto = "../media/piatti/lupara.png";
+
+    $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
+    
+    $result = pg_query($db, $query);
+
+
+    $nome = "";
+    $lista_ingredienti = "";
+    $breve_descrizione = "";
+    $breve_descrizione = pg_escape_string($db, $breve_descrizione);
+    $lunga_descrizione = "";
+    $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
+    $cate = "";
+    $prezzo = ;
+    $foto = "";
+
+    $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
+    
+    $result = pg_query($db, $query);
 
     if($result)
         echo "ok";
