@@ -72,6 +72,7 @@
 
     $nome = "Spaghettoni con le Sarde";
     $lista_ingredienti = "spaghettoni di grano duro, sarde fresche, cipollotto Bio, finocchietto selvatico raccolto a mano, zafferano di pistilli, Pangrattato di grano duro, crema Pomodoro, Olio Extravergine d'Oliva, Aglio tritato, Origano, Prezzemolo, e Peperoncino secco, per una mollica croccante che completa il piatto";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Una sinfonia di sapori siciliani, con pasta impeccabilmente al 
     dente, sardine fresche, pinoli croccanti, uvetta succulenta e un 
     tocco di finocchietto selvatico, armonizzati in una sublime danza 
@@ -183,6 +184,7 @@
 //di mare   
     $nome = "Orecchiette dell'Adriatico";
     $lista_ingredienti = "Orecchiette artigianali, lavorate con la perizia di maestri pastaieri per garantire una consistenza unica,Salmone affumicato proveniente dalle acque cristalline dell'Adriatico, tagliato a mano con precisione,Formaggio fresco spalmabile di produzione locale, che conferisce una cremosità avvolgente, Zucchine appena raccolte da agricoltori locali, tagliate a julienne per una freschezza ineguagliabile, Aglio fresco, per un tocco aromatico sottile ma distintivo, Mandorle tostate per esaltare la croccantezza e aggiungere una nota di eleganza, Foglie di basilico fresco, selezionate con cura per un profumo erbaceo sottolineato, Parmigiano Reggiano DOP, grattugiato al momento per una ricchezza di sapori ineguagliabile, Olio di oliva extravergine, proveniente dalle colline italiane, per un finale di gusto impeccabile";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Un trionfo della cucina italiana, le nostre Orecchiette con Zucchine e Salmone Affumicato sono una sinfonia di sapori artigianali. Le orecchiette al dente abbracciano il sapore marino del salmone affumicato, mentre le zucchine fresche offrono una croccantezza ineguagliabile. Il formaggio fresco spalmabile crea una crema vellutata, arricchita dalla croccantezza delle mandorle tostate. Il tutto è esaltato dal Parmigiano Reggiano DOP e da un filo di olio extravergine di oliva. Un'esperienza culinaria che celebra l'italianità autentica in ogni boccone.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
     $lunga_descrizione = "**Orecchiette dell'Adriatico con Zucchine di Stagione e Salmone Affumicato**
@@ -202,6 +204,7 @@
 
     $nome = "Calamarata all'Eleganza del Mare";
     $lista_ingredienti = "Calamarata artigianale, una pasta avvolgente creata con maestria, Calamari appena pescati e preparati con precisione, garanzia di freschezza e sapore marino autentico, Pomodorini ciliegino, selezionati con cura per la loro dolcezza e succosità.";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Immergetevi nell'essenza del Mediterraneo con la nostra Calamarata, una sinfonia di sapori marini e pasta artigianale. Le Calamari appena pescati, uniti con maestria alla pasta al dente, creano una danza di freschezza e consistenza. I Pomodorini Ciliegino, il triplo concentrato di pomodoro e un tocco di vino bianco aggiungono complessità, mentre aglio, peperoncino fresco e prezzemolo elevano l'aroma mediterraneo. Presentata con eleganza e arricchita dall'Olio Extravergine d'Oliva, la Calamarata all'Eleganza del Mare è un invito a gustare l'autentico sapore del mare italiano in ogni boccone.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
     $lunga_descrizione = "**Esecuzione Raffinata:**
@@ -230,11 +233,11 @@
     $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
     $breve_descrizione = "Mafalde all'uovo avvolte in un pesto di cime di rapa, abbracciate dalla cremosità della stracciatella di bufala e accarezzate dalle note intense delle acciughe di prima qualità. Un viaggio gustativo che celebra il mare in ogni morso.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "Un'ode ai sapori del mare si dispiega in questa creazione gastronomica esclusiva: le "Mafalde del Mare." Preparate con maestria, le mafalde, pasta all'uovo di prima qualità, abbracciano un mare di delicatezze che elevano questa pietanza a un'autentica sinfonia culinaria.
+    $lunga_descrizione = "Un'ode ai sapori del mare si dispiega in questa creazione gastronomica esclusiva: le Mafalde marine. Preparate con maestria, le mafalde, pasta all'uovo di prima qualità, abbracciano un mare di delicatezze che elevano questa pietanza a un'autentica sinfonia culinaria.
     **Preparazione Artistica:**
     Le mafalde, avvolte con cura, fungono da tela per il capolavoro culinario che segue. Il pesto di cime di rapa, sapientemente amalgamato con aglio, peperoncino e mandorle, si sposa in un connubio di sapori che cattura l'essenza del Mediterraneo.
     A coronare questa sinfonia marina, la stracciatella di bufala, lussuosa e cremosa, si fonde con il profumo intenso degli acciughe di prima qualità, mentre la scorza di limone grattugiata aggiunge una nota di freschezza raffinata.
-    Servito con maestria su un letto di elegante porcellana, "Mafalde del Mare" è un'esperienza sensoriale che incanta il palato e delizia gli occhi. Un inno al pesce azzurro di prima qualità, questo piatto trasforma ogni boccone in un viaggio culinario attraverso le acque cristalline del gusto.";
+    Servito con maestria su un letto di elegante porcellana, Mafalde marine è un'esperienza sensoriale che incanta il palato e delizia gli occhi. Un inno al pesce azzurro di prima qualità, questo piatto trasforma ogni boccone in un viaggio culinario attraverso le acque cristalline del gusto.";
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "mare";
     $prezzo = 80;
@@ -244,6 +247,46 @@
     
     $result = pg_query($db, $query);
 
+    
+    $nome = "Rosso Rubino e Verde Sinfonia";
+    $lista_ingredienti = "spaghetti di farro filamenti d'arte culinaria, barbabietole come rubini dolci che impreziosiscono il piatto, mandorle tostate croccanti gemme d'energia, parmigiano grattugiato che è il tocco di nobiltà che svela complessità, olio extravergine di oliva liquido d'oro che lega gli elementi, foglie di basilico la sinfonia verde che danza nel pesto, Succo di limone il tocco citrico che esalta ogni sfumatura.";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
+    $breve_descrizione = "Questo capolavoro è un inno all'equilibrio cromatico e gustativo. Un piatto che celebra la freschezza del verde e la profondità del rosso, offrendo un'esperienza culinaria che delizia gli occhi e conquista il palato. Un'opera d'arte gastronomica destinata a brillare sul palcoscenico di un ristorante prestigioso.";
+    $breve_descrizione = pg_escape_string($db, $breve_descrizione);
+    $lunga_descrizione = "**Presentazione Raffinata:**
+    Gli spaghetti di farro, arrotolati con cura, compongono un nido elegante su un piatto di porcellana. Le barbabietole, tagliate con precisione, emergono come gemme rubino su questo dipinto culinario. Il pesto di mandorle, con il suo colorito verde vivace, avvolge gli spaghetti con grazia, creando un contrasto visivo che invita all'assaggio.
+    **Un Viaggio nel Gusto:**
+    Il primo morso svela la consistenza rustica degli spaghetti di farro, intrisi del sapore dolce e vibrante delle barbabietole. Il pesto di mandorle, arricchito dal basilico e dal parmigiano, esplode in una sinfonia di aromi, mentre l'olio extravergine di oliva completa l'esperienza con la sua morbidezza avvolgente. Il succo di limone, con la sua nota fresca, aggiunge una dimensione citrica che eleva il piatto a un'esperienza sensoriale completa.";
+    $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
+    $cate = "ricercati";
+    $prezzo = 100;
+    $foto = "..media/piatti/rubinoRosso.png";
+
+    $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
+    
+    $result = pg_query($db, $query);
+
+
+    $nome = "Lingue di Seta al Pesto di Pistacchio e Balletto di Salmone";
+    $lista_ingredienti = "linguine, sottili fili di perfezione artigianale,  filetto di salmone norvegese fresco, prelibatezza marina senza pelle, pistacchi, gioielli croccanti di Sicilia, pomodori secchi sott’olio, il sole concentrato in ogni boccone, spicchio d’aglio, una carezza aromatica dosata con maestria, basilico, le foglie fresche che compongono l'orchestra di sapori.";
+    $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
+    $breve_descrizione = "Lingue di Seta al Pesto di Pistacchio e Balletto di Salmone è una creazione culinaria che va oltre il piacere del palato, trasformando ogni morso in un'esperienza sensoriale. Un piatto che incanta gli occhi e soddisfa i sensi, predestinato a brillare nel firmamento gastronomico di un ristorante di eccellenza.";
+    $breve_descrizione = pg_escape_string($db, $breve_descrizione);
+    $lunga_descrizione = "**Eleganza Linguistica:**
+    Le linguine, disposte con cura su un letto di porcellana bianca, si presentano come sottili nastri di seta pronti a intraprendere un viaggio culinario unico. Il filetto di salmone, tagliato con precisione, danza tra i fili di pasta, mentre i pistacchi, come gemme verdi, conferiscono un tocco di croccantezza.
+    **Pesto di Pistacchio: Un'Armonia di Sapori:**
+    Il pesto di pistacchio, realizzato con maestria, avvolge delicatamente le linguine, donando loro una veste verde vibrante. I pomodori secchi sott’olio, con la loro intensità concentrata, aggiungono una nota complessa e avvolgente. L'aglio e il basilico completano questa sinfonia di sapori, creando un connubio perfetto tra freschezza e profondità.
+    **Balletto del Salmone:**
+    Il filetto di salmone norvegese, cotto alla perfezione, si presenta a dadini, invitando a un balletto di consistenze e sapori. La delicatezza del pesce si fonde con l'intensità del pesto di pistacchio, creando un'esperienza che si distingue per la sua raffinatezza e armonia.
+    ";
+    $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
+    $cate = "ricercati";
+    $prezzo = 100;
+    $foto = "..media/piatti/";
+
+    $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
+    
+    $result = pg_query($db, $query);
 
     if($result)
         echo "ok";
