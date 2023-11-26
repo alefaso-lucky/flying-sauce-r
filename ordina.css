@@ -1,0 +1,36 @@
+
+/* Container for flexboxes */
+.row {
+    display: flex;
+  }
+  
+  /* Create three unequal columns that sits next to each other */
+  .column {
+    padding: 10px;
+    height:300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Left and right column */
+  .column.sx {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background-color: #FFF0DA;
+  }
+
+  .column.dx{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    background-color: #46666D;
+    flex:1;
+    text-align: right-side;
+    font-size: 15px;
+    padding:10px;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+  }
