@@ -192,13 +192,12 @@
     $result = pg_query($db, $query);
 
     /* BIANCHI */
-    $nome = "Delizia Autunnale";
+    $nome = "Eleganza del Bosco";
     $lista_ingredienti = "Pappardelle fresche, cavolfiori, gorgonzola, aglio, timo, olio, burro, scaglie di formaggio grattugiato, latte, sale e pepe";
     $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
-    $breve_descrizione = "Le pappardelle affascinate dalla crema di gorgonzola con cavolfiori in vestito
-      d'eleganza offrono un'esplosione di gusto che cattura l'essenza della tradizione Lombarda e
-      Piemontese. Un'autentica delizia culinaria che eleva l'esperienza
-      gastronomica a nuove vette.";
+    $breve_descrizione = "Un'armoniosa sinfonia di sapori italiani, è un connubio sublime di pasta all'uovo,
+    funghi porcini succulenti e speck sapido. La cremosa fusione con panna fresca conferisce un
+    tocco di velluto, mentre il prezzemolo fresco e il pepe nero aggiungono eleganza.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
     $lunga_descrizione = "**Pappardelle in Sinfonia di Pasta Fresca:**
     Le pappardelle, arrotolate con cura su un piatto di porcellana bianca, sono una sinfonia di pasta fresca che incanta la vista. La loro larghezza e consistenza al dente sono il preludio a un'esperienza gustativa unica.
@@ -212,7 +211,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "bianchi";
     $prezzo = 55;
-    $foto = "../media/piatti/pappardelleAllaGorgonzola.png";
+    $foto = "../media/piatti/eleganzaDelBosco.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
 
