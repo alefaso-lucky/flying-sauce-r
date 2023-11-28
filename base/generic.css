@@ -23,12 +23,14 @@
 .insert{
     background-color: #5D7A7F;
     border: thin solid #184149;
-    font-size: 25px;
+    font-size: 20px;
     margin: 5px 0px;
+    padding: 5px;
+    text-align: left;
   }
 
   .insert:focus{      /*per il riempimento degli input*/
-    outline: thin solid #FFC26C;
+    outline: thin solid rgb(255, 194, 108);
     border-radius: 3px;
     text-align: left;
     color: #FFF0DA;
@@ -48,3 +50,14 @@
     color: #E7E6E6;
     opacity: 1;
 } 
+
+a{
+  text-decoration: none;
+  color: rgb(255, 194, 108);
+  font-size:18px;
+}
+
+a:hover{
+  color: #E7E6E6;
+  transition: all .6s ease; 
+}

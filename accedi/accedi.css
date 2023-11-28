@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;   
+    text-align: center;   /*sposta centrale il div che contiene tutto e le scritte interne*/
+  }
+
+  html, body{
+    background-image: url(../media/sfondo_accedi.jpg);
+    background-repeat: no-repeat;     /*non vogliamo che l'immagine si ripeta*/
+    background-size: cover;   /*coprire tutta lo sfondo con quell'immagine*/
+    height: 100%;
+    width: 100%;
+  }
+
+  .dati{
+    background-color: RGBA(24,65,73, 0.85);     /*anche A nell'RGB per l'opacità*/
+    border: medium solid  rgb(255, 194, 108);
+    border-radius: 50px;      /*per arrotondare i bordi*/
+    /*mettere sfocatura al riquadro con shadow*/
+    display: inline-block;
+    padding: 100px;
+  }
+
+  .content{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  #accesso{
+    font-family: 'Goudy Old Style', sans-serif; 
+    font-size:45px;
+    font-weight: bold;
+    color:  rgb(255, 194, 108);
+  }
+
+  p{
+    color:#E7E6E6;
+  }
+
+
