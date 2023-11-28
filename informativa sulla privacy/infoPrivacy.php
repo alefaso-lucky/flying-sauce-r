@@ -6,8 +6,8 @@
 	</head>
 
 	<body>
-			<?php //require('nav.html'); ?> 
-			<div class="cell">
+		<?php //require('../base/nav.php'); ?> 
+		<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>
 
@@ -77,7 +77,6 @@
 		             d'uso in qualsiasi momento, con effetto immediato, pubblicando le modifiche sul nostro sito.
 		             Continuando a utilizzare i nostri servizi, l'utente accetta automaticamente le condizioni d'uso aggiornate.
 		        </p>
-			</div>
-
+		</div>
 	</body>
 </html>
