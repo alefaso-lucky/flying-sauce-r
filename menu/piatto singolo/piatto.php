@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>ù
+    <head>
         <title>piatto selezionato</title>
         <meta character="utf-8">
         <link rel="stylesheet" href="menusimple.css">
