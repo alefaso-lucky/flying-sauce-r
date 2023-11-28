@@ -1,10 +1,11 @@
-body {
+footer {
     margin: 0; /*per evitare che il sito abbia i bordi bianchi intorno*/
+    margin-top: auto;
 }
 
 #footer_container {
     font-family: 'Montserrat', sans-serif;
-    position: absolute;
+    /*position: absolute;
     bottom: 0; /*non è noto se il posizionamento in questo modo sarà funzionale all'integrazione con il resto della pagina*/
     box-sizing: border-box; /*per poter decidere tutti gli aspetti del box, applicato anche a tutti i figli*/
     color: rgb(255, 194, 108);
@@ -70,8 +71,8 @@ body {
     color: rgb(255, 194, 108);
     padding: 10px 30px; /*le dimensioni*/
     border-color: rgb(127, 127, 127); /*colore del bordo*/
-    border-radius: 10px; /*diventa arrotondato*/
-    -webkit-border-radius: 10px;
+    border-radius: 7px; /*diventa arrotondato*/
+    -webkit-border-radius: 7px;
     border-style: solid; /*bordo a linea continua*/
     margin-left: 15px;
     margin-top: 10px;

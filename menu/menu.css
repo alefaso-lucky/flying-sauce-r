@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: "Goudy Old Style", sans-serif;
+}
+.row {
+  display: flex;
+}
+
+/* Middle column */
+.content {
+  flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  padding-left: 20px;
+  margin-left: 20%;
+  background-color: #FFF0DA;
+}
+
+/* Left and right column */
+.columnside {
+  flex: 1;
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.sx {
+  background-color: #F4DAB4;
+  border-right: thin solid #E4A33F;     /*per la linea laterale della sidenav*/
+}
+
+.dx {
+  background-color: #46666D;
+  border-right: thin solid #184149;     
+}
+
+.categoria{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*singoli piattti nella colonna centrale*/
+.primi{
+  padding: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.primi >a{
+  text-decoration: none;
+}
+
+.nomepiatto{
+  font-size: x-large;
+}
+
+/*i singoli elementi della colonna di sx*/
+.piatti{      
+  border: 1px solid  #46666D;
+  padding: 10px;
+  border-radius: 70px;   /*per i bordi arrotondati*/
+  text-align: center;
+  background-color: #FFF0DA;
+  margin: 20px;   /*per distaccare gli elementi dell'elenco*/
+  font-size: 22px;
+  color:  #46666D;
+  text-decoration: none;
+  display: block;   /*necessario perchè altrimenti il tag sarebbe inline */
+}
+
+h1 {
+  color: #E4A33F;
+}
+
+/* Change color on hover */
+.piatti:hover {
+  background-color: #46666D;
+  color: #FFF0DA;
+  border-color: #FFF0DA;
+}
+
+/*domanda componi ora nella barra id sx*/
+.domanda{
+  padding-top:  100px;
+  font-size: 20px;
+  color: #46666D;
+}
+
+/*tasto componi ora nella barra id sx e titolo della col di dx*/
+.componi{
+  border: thin solid #FFC26C;
+  background-color: #46666D;
+  border-radius: 10px;   /*per i bordi arrotondati*/
+  padding: 15px;    /*per aumentare quello che circonda il bottone*/
+  margin-left: 60px;
+  color: #FFC26C;
+}
