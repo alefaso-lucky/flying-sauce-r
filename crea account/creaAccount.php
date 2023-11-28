@@ -2,70 +2,66 @@
 <html>
 	<head>
 		<title>crea un nuovo account</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="creaAccount.css">
+		<link rel="stylesheet" href="../base/generic.css">
 	</head>
 	<body>
-		<h1>CREA UN NUOVO ACCOUNT</h1>
 		<form action="#" method="post" id="main-form">
+				<h1>CREA UN NUOVO ACCOUNT</h1>
 				<p>
-					<input id="name-field" name="name" placeholder="Nome"/>
-					<input id="surname-field" name="surname" placeholder="Cognome"/>
+					<input class="name-field insert" name="name" placeholder="Nome" required/>
+					<input class="name-field insert" name="surname" placeholder="Cognome"/>
 				</p>
                 <p>
-                    <input id="e-mail-field" name="e-mail" type="email" placeholder="e-Mail" required/>
+                    <input id="e-mail-field insert" name="e-mail" type="email" placeholder="e-Mail" required/>
                 </p>
 				<p>
-					<input id="Password-field" name="Password" type="password" placeholder="Password"/>
-                    <input id="Password-field" name="Password" type="password" placeholder="Conferma password"/>
+					<input class="password-field insert" name="Password" type="password" placeholder="Password"/>
+                    <input class="password-field insert" name="Password" type="password" placeholder="Conferma password"/>
 				</p>
                 <fieldset>
                 <legend>Dati personali</legend>
-				<p>
-					Genere:
-					<label for="male-field">
-						<input id="male-field" name="sesso" type="radio" checked/>M
-					</label>
-					<label for="female-field">
-						<input id="female-field" name="sesso" type="radio"/>F
-					</label>
-                    <label for="noGender-field">
-						<input id="noGender-field" name="sesso" type="radio"/>Non specificato
-					</label>
-				</p>
-                <p>
-                    <label for="data-field">
-						Data di nascita:<input id="data-field" name="data" type="date">
-					</label>
-				</p>
-			</fieldset>
-			<fieldset>
+					<p>
+						Genere:
+						<label for="male-field">
+							<input id="male-field" name="sesso" type="radio" checked/>Uomo
+						</label>
+						<label for="female-field">
+							<input id="female-field" name="sesso" type="radio"/>Donna
+						</label>
+						<label for="noGender-field">
+							<input id="noGender-field" name="sesso" type="radio"/>Non specificato
+						</label>
+					</p>
+					<p>
+						<label for="data-field">
+							Data di nascita:<input id="data-field" name="data" type="date">
+						</label>
+					</p>
+				</fieldset>
+				<fieldset>
 				<legend>Indirizzo</legend>
-				<p>
-                    <input id="Nation-field" name="nation" placeholder="Nazione"/>
-                </p>
-                <p>
-                    <input id="Region-field" name="region" placeholder="Regione"/>
-                </p>
-                <p>
-                    <input id="City-field" name="city" placeholder="Città"/>
-				</p>
-                <p>
-                    <input id="Steet-field" name="street" placeholder="Via o piazza"/>
-				</p>
-                <p>
-                    <input id="Number-field" name="number" placeholder="Numero civico"/>
-				</p>
-			</fieldset>
-
-			<p>
+					<p>
+						<input class="indirizzo-field insert" name="nation" placeholder="Nazione"/>
+						<input class="indirizzo-field insert" name="region" placeholder="Regione"/>
+						<input class="indirizzo-field insert" name="city" placeholder="Città"/>
+					</p>
+					<p>
+						<input class="indirizzoSpec-field insert" name="street" placeholder="Via o piazza"/>
+						<input class="indirizzoSpec-field insert" name="number" placeholder="Numero civico"/>
+					</p>
+				</fieldset>
+			<p id="informativa">
             Cliccando su Iscriviti, accetti le nostre <a href="#">Condizioni</a>. Scopri in che modo
-            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="./infoPrivacy.php">Informativa
+            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="./informative/infoPrivacy.php">Informativa
             sulla privacy</a> e in che modo usiamo cookie e tecnologie simili nella nostra 
             <a href="#">Normativa sui cookie</a>. Potresti ricevere notifiche tramite SMS da noi, ma
             puoi disattivarle in qualsiasi momento.
 			</p>
-			<p>
-				<input id="submit-field" name="submit" type="submit" value="Iscriviti"/>
-			</p>
+			<div>
+				<input class="submit-field" name="submit" type="submit" value="Iscriviti"/>
+			</div>
 		</form>
 	</body>
 </html>
