@@ -21,26 +21,28 @@ if(isset($_POST['email'])){
         <link rel="stylesheet" href="../base/generic.css">
     </head>
     <body>
-        <div class="dati">
-            <h1 id="accesso">ACCESSO</h1>
+        <div class="content">
+            <div class="dati">
+                <h1 id="accesso">ACCESSO</h1>
 
-            <form action="pagina2.php" method="post">
-                <p>
-					<input class="insert" name="email" type="email" required placeholder="e-Mail" accesskey="m"/>
-		        </p>
-                <p>
-                    <input class="insert" name="password" type="password" placeholder="Password" accesskey="p"/>
-                    <br/>			
-                    <a href="#">Password dimenticata?</a>
-                    <br/>	
-                    <input class="submit-field" name="submit" type="submit" value="ACCEDI" accesskey="s"/>
-                </p>
-            </form>
+                <form action="pagina2.php" method="post">
+                    <p>
+                        <input class="insert" name="email" type="email" required placeholder="e-Mail" accesskey="m"/>
+                    </p>
+                    <p>
+                        <input class="insert" name="password" type="password" placeholder="Password" accesskey="p"/>
+                        <br/>			
+                        <a href="#">Password dimenticata?</a>
+                        <br/>	
+                        <input class="submit-field" name="submit" type="submit" value="ACCEDI" accesskey="s"/>
+                    </p>
+                </form>
 
-            <p>
-            Non sei ancora iscritto? <a href="#">Iscriviti ora</a>
-            </p>  
-            
+                <p>
+                Non sei ancora iscritto? <a href="#">Iscriviti ora</a>
+                </p>  
+                
+            </div>
         </div>
     </body>
 </html>

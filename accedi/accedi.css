@@ -6,10 +6,12 @@
     text-align: center;   /*sposta centrale il div che contiene tutto e le scritte interne*/
   }
 
-  body{
+  html, body{
     background-image: url(../media/sfondo_accedi.jpg);
     background-repeat: no-repeat;     /*non vogliamo che l'immagine si ripeta*/
     background-size: cover;   /*coprire tutta lo sfondo con quell'immagine*/
+    height: 100%;
+    width: 100%;
   }
 
   .dati{
@@ -17,10 +19,16 @@
     border: medium solid  rgb(255, 194, 108);
     border-radius: 50px;      /*per arrotondare i bordi*/
     /*mettere sfocatura al riquadro con shadow*/
-    margin: 15% 15%;
-    display: flex;
     display: inline-block;
     padding: 100px;
+  }
+
+  .content{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
   }
 
   #accesso{
