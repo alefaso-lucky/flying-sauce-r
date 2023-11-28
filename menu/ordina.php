@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php require "../base/navSimple.php"?>
     <div class="row">
         <div class="columnside sx">
             <h1>I nostri piatti</h1>
