@@ -53,11 +53,9 @@
 					</p>
 				</fieldset>
 			<p id="informativa">
-            Cliccando su Iscriviti, accetti le nostre <a href="#">Condizioni</a>. Scopri in che modo
+            Cliccando su Iscriviti, accetti le nostre <a href="./informative/condizioni.php">Condizioni</a>. Scopri in che modo
             raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="./informative/infoPrivacy.php">Informativa
-            sulla privacy</a> e in che modo usiamo cookie e tecnologie simili nella nostra 
-            <a href="#">Normativa sui cookie</a>. Potresti ricevere notifiche tramite SMS da noi, ma
-            puoi disattivarle in qualsiasi momento.
+            sulla privacy</a>. Potresti ricevere notifiche tramite e-Mail da noi.
 			</p>
 			<div>
 				<input class="submit-field" name="submit" type="submit" value="Iscriviti"/>
