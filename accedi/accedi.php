@@ -18,7 +18,7 @@ if(isset($_POST['email'])){
         <title>login</title>
 		<meta charset="utf-8"/>
         <link rel="stylesheet" href="accedi.css"/>
-        <link rel="stylesheet" href="generic.css">
+        <link rel="stylesheet" href="../base/generic.css">
     </head>
     <body>
         <div class="dati">

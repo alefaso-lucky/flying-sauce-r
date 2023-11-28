@@ -7,7 +7,7 @@
   }
 
   body{
-    background-image: url(media/sfondo_accedi.jpg);
+    background-image: url(../media/sfondo_accedi.jpg);
     background-repeat: no-repeat;     /*non vogliamo che l'immagine si ripeta*/
     background-size: cover;   /*coprire tutta lo sfondo con quell'immagine*/
   }
@@ -15,11 +15,12 @@
   .dati{
     background-color: RGBA(24,65,73, 0.85);     /*anche A nell'RGB per l'opacità*/
     border: medium solid  rgb(255, 194, 108);
-    border-radius: 20px;      /*per arrotondare i bordi*/
+    border-radius: 50px;      /*per arrotondare i bordi*/
     /*mettere sfocatura al riquadro con shadow*/
     margin: 15% 15%;
-    /*display: inline-block;*/
-    padding: 150px 190px;
+    display: flex;
+    display: inline-block;
+    padding: 100px;
   }
 
   #accesso{
@@ -29,10 +30,8 @@
     color:  rgb(255, 194, 108);
   }
 
-  a{
-    text-decoration: none;
-    color: #E7E6E6;
-    font-size:18px;
+  p{
+    color:#E7E6E6;
   }
 
 
