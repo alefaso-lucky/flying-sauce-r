@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<?php require('../../base/nav.php'); ?>
+		<?php //require('../../base/nav.php'); ?>
 		<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>
@@ -29,7 +29,7 @@
 		            dalla qualità dei nostri piatti e dalla velocità e sicurezza delle
 		            nostre consegne.
 		        </p>
-	        <h04>Promozione sulla Sicurezza:</h3>
+	        <h3>Promozione sulla Sicurezza:</h3>
 		        <p>
 		            La sicurezza dei nostri clienti è la nostra massima priorità. I droni
 		            utilizzati per le consegne sono soggetti a rigorosi controlli e
