@@ -1,0 +1,19 @@
+body{
+    background-image: url("/media/sfondo_accedi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,h2,h3{
+    font-family: Times New Roman, serif;
+    color: RGB(255, 194, 108);
+    font-weight: 100;
+}
+
+
+ol{
+    list-style-type: upper-roman;
+    color: #FFC26C;
+    margin-left: 35px;
+}
+

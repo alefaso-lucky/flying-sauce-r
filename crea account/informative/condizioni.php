@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="infoPrivacy.css">
+        <link rel="stylesheet" href="condizioni.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	</head>
 
