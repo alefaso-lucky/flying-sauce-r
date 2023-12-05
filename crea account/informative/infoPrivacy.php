@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<?php //require('../base/nav.php'); ?> 
+		<?php //require('../base/nav.php'); ?>
 		<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>

@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("../media/sfondo_accedi.jpg");
+  background-image: url("../../media/sfondo_accedi.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -20,6 +20,7 @@ body {
   display: inline-block;
   overflow-x: hidden;
   padding: 20px;
+  margin: 15% 15%;
 }
 
 .cell p, .cell ul {
@@ -28,11 +29,15 @@ body {
 }
 
 .cell h1 {
-  text-align: center;
+  font-family: Times New Roman, serif;
+  color: RGB(255, 194, 108);
+  font-weight: 100;
   color: #FFC26C;
 }
 
 .cell h2, h3, h4 {
-  color: #FFC26C;
+  font-family: Times New Roman, serif;
+  color: RGB(255, 194, 108);
+  font-weight: 100;
   font-weight: bold;
 }
