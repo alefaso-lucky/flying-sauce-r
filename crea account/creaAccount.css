@@ -5,10 +5,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+html, body{
     background-image: url("../media/sfondo_accedi.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat; /*non vogliamo che l'immagine si ripeta*/
+    background-size: cover; /*coprire tutta lo sfondo con quell'immagine*/
+    height: 100%;
+    width: 100%;
 }
 
 form{

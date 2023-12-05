@@ -1,11 +1,13 @@
-body{
-    background-image: url("/media/sfondo_accedi.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+html, body{
+    background-image: url("../../media/sfondo_accedi.jpg");
+    background-repeat: no-repeat; /*non vogliamo che l'immagine si ripeta*/
+    background-size: cover; /*coprire tutta lo sfondo con quell'immagine*/
+    height: 100%;
+    width: 100%;
 }
 
 h1,h2,h3{
-    font-family: Times New Roman, serif;
+    font-family: 'Times New Roman', 'serif';
     color: RGB(255, 194, 108);
     font-weight: 100;
 }

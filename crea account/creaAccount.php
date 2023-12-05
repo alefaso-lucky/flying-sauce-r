@@ -3,8 +3,8 @@
 	<head>
 		<title>crea un nuovo account</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="creaAccount.css">
 		<link rel="stylesheet" href="../base/generic.css">
+		<link rel="stylesheet" href="creaAccount.css">
 	</head>
 	<body>
 		<form action="#" method="post" id="main-form">
