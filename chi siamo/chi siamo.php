@@ -21,16 +21,16 @@
 
         <!-- le varie slides -->
         <div class="slide1">
-          <img src="../media/chi_siamo1.jpeg" alt="">
+          <img src="../media/chi_siamo1.jpg" alt="">
         </div>
         <div class="slide2">
-          <img src="../media/chi_siamo2.jpeg" alt="">
+          <img src="../media/chi_siamo2.jpg" alt="">
         </div>
         <div class="slide3">
           <img src="../media/chi_siamo3.png" alt="">
         </div>
         <div class="slide4">
-          <img src="../media/chi_siamo4.jpeg" alt="">
+          <img src="../media/chi_siamo4.jpg" alt="">
         </div>
 
         <div class="navigation-auto">

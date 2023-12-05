@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   height: 100vh; /* per metterla a tutta la pagina */
   display: flex;
   justify-content: center;
@@ -10,24 +10,25 @@ body {
 }
 
 .slider {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px 10px;
+    overflow: hidden;
 }
 
 .slides {
-  width: 100%;
-  height: auto;
+  width: 800px;
+  height: 500px;
   display: flex;
   /* flex-direction: column; */
 }
 
 .slides input {
-  /* display: none; */
+  display: none;
 }
 
 .slide  {
-  width: 100%;
+  width: 20%;
   transition: 5s;
 }
 
@@ -63,5 +64,5 @@ body {
 }
 
 #r1:checked {
-  
+
 }
