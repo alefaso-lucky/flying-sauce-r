@@ -1,4 +1,4 @@
-html, body{
+body{
     background-image: url("../../media/sfondo_accedi.jpg");
     background-repeat: no-repeat; /*non vogliamo che l'immagine si ripeta*/
     background-size: cover; /*coprire tutta lo sfondo con quell'immagine*/
