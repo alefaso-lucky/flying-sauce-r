@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<?php //require('../base/nav.php'); ?>
+		<?php require('../../base/nav.php'); ?>
 		<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>
@@ -29,7 +29,7 @@
 		            dalla qualità dei nostri piatti e dalla velocità e sicurezza delle
 		            nostre consegne.
 		        </p>
-	        <h4>Promozione sulla Sicurezza:</h4>
+	        <h04>Promozione sulla Sicurezza:</h3>
 		        <p>
 		            La sicurezza dei nostri clienti è la nostra massima priorità. I droni
 		            utilizzati per le consegne sono soggetti a rigorosi controlli e
@@ -37,20 +37,20 @@
 		            nel rispetto delle normative di sicurezza vigenti, minimizzando il
 		            rischio di incidenti o danni.
 		        </p>
-	        <h4>Finalità dei Servizi di Flying Sauce:</h4>
+	        <h3>Finalità dei Servizi di Flying Sauce:</h3>
 		        <p>
 		            I nostri servizi sono offerti con l'obiettivo di soddisfare le esigenze culinarie dei nostri
 		            clienti in tutto il mondo, fornendo un'esperienza di alta qualità, conveniente e efficiente. Ci
 		            impegniamo a mantenere gli standard più elevati nella preparazione dei piatti e nella gestione
 		            delle consegne.
 		        </p>
-	        <h4>Impegni dell'Utente:</h4>
+	        <h3>Impegni dell'Utente:</h3>
 		        <p>
 		            Gli utenti di Flying Sauce si impegnano a non danneggiare, manipolare o appropriarsi
 		            indebitamente dei droni utilizzati per le consegne. L'utilizzo dei nostri servizi implica
 		            un comportamento rispettoso delle leggi e delle normative locali relative all'uso di droni.
 		        </p>
-	        <h4>Ulteriori Disposizioni:</h4>
+	        <h3>Ulteriori Disposizioni:</h3>
 		        <ul>
 		            <li> Normativa sull'Uso Improprio: Gli utenti sono tenuti a utilizzare i servizi di Flying
 		            Sauce in modo lecito e conforme alle leggi locali e internazionali.</li>
@@ -64,7 +64,7 @@
 		            <li> Termini di Pagamento: I pagamenti devono essere effettuati secondo le modalità
 		            indicate sul nostro sito, conformemente alle normative finanziarie vigenti.</li>
 		        </ul>
-	        <h4>Normativa sulle Schede di Sistema dei Sistemi di Raccomandazione:</h4>
+	        <h3>Normativa sulle Schede di Sistema dei Sistemi di Raccomandazione:</h3>
 		        <p>
 		            Gli utenti accettano di rispettare le condizioni e le politiche associate alle schede di sistema
 		            dei sistemi di raccomandazione, se presenti.
