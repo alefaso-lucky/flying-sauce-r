@@ -8,13 +8,22 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: rgb(244, 218, 180);
+    border-bottom: 3px solid rgb(255, 192, 0);
 }
 
 #rowUno_leftside {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
+    color: rgb(93, 122, 127);
+}
+
+#rowUno_leftside h1 {
+    margin-bottom: 0px;
+}
+
+#rowUno_leftside div {
+    margin-top: 25px;
 }
 
 #rowUno_rightside {

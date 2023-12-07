@@ -3,6 +3,7 @@
     <head>
         <title>piatto selezionato</title>
         <meta character="utf-8">
+        <link rel="stylesheet" href="../../base/generic.css">
         <link rel="stylesheet" href="./piatto.css">
     </head>
     <body>
@@ -29,8 +30,10 @@
             <div id="rowUno_leftside">
                 <h1><?php echo $nome ?></h1>
                 <p><?php echo $lista_ingredienti ?></p>
-                <a href="#">ORDINA ORA</a>
-                <a href="#">TORNA AL MENU</a>    
+                <div>
+                    <a class="submit-field" href="#">ORDINA ORA</a>
+                    <a class="reset-field" href="#">TORNA AL MENU</a>
+                </div>
             </div>
             <img id="rowUno_rightside" src="../<?php echo $foto ?>" alt="piatto di pasta" width="400px">
         </div>
