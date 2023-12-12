@@ -69,7 +69,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 45;
-    $foto = "../media/piatti/cacioEPepe.png";
+    $foto = "media/piatti/cacioEPepe.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -103,7 +103,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 50;
-    $foto = "../media/piatti/spaghettiConLeSarde.png";
+    $foto = "media/piatti/spaghettiConLeSarde.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -136,7 +136,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 55;
-    $foto = "../media/piatti/allaNorma.png";
+    $foto = "media/piatti/allaNorma.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -167,7 +167,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "rossi";
     $prezzo = 60;
-    $foto = "../media/piatti/lupara.png";
+    $foto = "media/piatti/lupara.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -206,7 +206,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "rossi";
     $prezzo = 55;
-    $foto = "../media/piatti/lasagna.png";
+    $foto = "media/piatti/lasagna.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -232,7 +232,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "";
     $prezzo = 80;
-    $foto = "../media/piatti/orecchietteAllAdriatico.png";
+    $foto = "media/piatti/orecchietteAllAdriatico.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -261,7 +261,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "mare";
     $prezzo = 75 ;
-    $foto = "../media/piatti/calamarata.png";
+    $foto = "media/piatti/calamarata.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -290,7 +290,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "mare";
     $prezzo = 80;
-    $foto = "../media/piatti/mafaldeMarine.png";
+    $foto = "media/piatti/mafaldeMarine.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -316,7 +316,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "ricercati";
     $prezzo = 100;
-    $foto = "../media/piatti/rubinoRosso.png";
+    $foto = "media/piatti/rubinoRosso.png";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
@@ -345,7 +345,7 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "ricercati";
     $prezzo = 100;
-    $foto = "../media/piatti/";
+    $foto = "media/piatti/";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
     
