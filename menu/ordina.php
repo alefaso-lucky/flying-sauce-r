@@ -41,10 +41,10 @@
                     $connection_string = "host=$host dbname=$db user=$user password=$password";
                     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
                     
-                    $categories = array("classici", "rossi", "bianchi", "mare", "vegetariani", "vegani");
+                    $categories = array("Classici", "Rossi", "Bianchi", "Mare", "Vegetariani", "Vegani");
                     foreach( $categories as $curr_cat ) {
                         ?>
-                        <h1 class="titolo" id="<?php echo strtolower($curr_cat); ?>"><?php echo strtoupper($curr_cat); ?></h1>
+                        <h1 class="titolo" id="<?php echo strtolower($curr_cat); ?>"><?php echo $curr_cat; ?></h1>
                         <div class="categoria">
 
                         <?php
