@@ -9,6 +9,7 @@
     </head>
     <body>
         <?php require '../../base/navSimple.php'; ?>
+        <!--Connessione al database-->
         <?php
             $host="localhost";
             $db='GruppoXX';
@@ -17,7 +18,8 @@
             $connection_string = "host=$host dbname=$db user=$user password=$password";
             $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
         ?>
-    <!-- portare in qualche modo il piatto selezionato in $curr_nom -->
+        <!-- portare in qualche modo il piatto selezionato in $curr_nom -->
+        <!--fetch dell'elemento desiderato-->
         <?php
             $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = 'Spaghetti alla Carbonara'";
             $ret = pg_query($db, $sql);
@@ -46,6 +48,6 @@
             </div>
             <p><?php echo $descrizione_lunga; ?></p>
         </div>
-        
+        <?php require '../../base/footer.php'; ?>
     </body>
 </html>
