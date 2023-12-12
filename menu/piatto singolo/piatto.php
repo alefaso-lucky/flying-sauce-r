@@ -31,21 +31,19 @@
                 <h1><?php echo $nome ?></h1>
                 <p><?php echo $lista_ingredienti ?></p>
                 <div>
-                    <a class="submit-field" href="#">ORDINA ORA</a>
+                    <!--<a class="submit-field" href="#">ORDINA ORA</a>-->
                     <a class="reset-field" href="#">TORNA AL MENU</a>
                 </div>
             </div>
             <img id="rowUno_rightside" src="../<?php echo $foto ?>" alt="piatto di pasta" width="400px">
         </div>
-        <!-- 
-            <div id="rowDue">
+        <div id="rowDue">
             <div id="sinGlu">
-                <img src="../../media/sinGlu.jpg" alt="gluten free" width="30px">
-                <p>Questo prodotto disponibile anche in versione gluten free</p>
+                <img src="../../media/gluten-free-label.png" alt="gluten free" width="70px" height="70px">
+                <p>Questo prodotto è disponibile anche in versione gluten free</p>
             </div>
-            <?php //echo $descrizione_lunga ?>
-            </div>
-         -->
+            <?php echo $descrizione_lunga; ?>
+        </div>
         
     </body>
 </html>
