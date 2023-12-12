@@ -39,7 +39,8 @@
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "classici";
     $prezzo = 50;
-    $foto = "../media/piatti/carbonara.png";
+    $foto = "media/piatti/carbonara.pn
+    g";
 
     $query = "INSERT INTO menu (nome, lista_ingredienti, descrizione_breve, descrizione_lunga, categoria, prezzo, foto) VALUES ('$nome', '$lista_ingredienti', '$breve_descrizione', '$lunga_descrizione', '$cate', '$prezzo', '$foto')";
 

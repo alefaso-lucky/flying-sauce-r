@@ -3,9 +3,9 @@
     <head>
         <title>piatto selezionato</title>
         <meta character="utf-8">
-        <link rel="stylesheet" href="../../base/generic.css">
-        <link rel="stylesheet" href="./piatto.css">
-        <link rel="stylesheet" href="../../base/navSimple.css">
+        <base href="http://localhost/Flying_Sauce_r/">
+        <link rel="stylesheet" href="base/generic.css">
+        <link rel="stylesheet" href="menu/piatto_singolo/piatto.css">
     </head>
     <body>
         <?php require '../../base/navSimple.php'; ?>
@@ -21,7 +21,7 @@
         <?php
             $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = 'Spaghetti alla Carbonara'";
             $ret = pg_query($db, $sql);
-            $row = pg_fetch_array($ret);    
+            $row = pg_fetch_array($ret);
             $nome = $row[0];
             $lista_ingredienti = $row[1];
             $descrizione_lunga = $row[2];
@@ -37,11 +37,11 @@
                     <a class="reset-field" href="#">TORNA AL MENU</a>
                 </div>
             </div>
-            <img id="rowUno_rightside" src="../<?php echo $foto ?>" alt="piatto di pasta" width="400px">
+            <img id="rowUno_rightside" src="<?php echo $foto ?>" alt="piatto di pasta" width="400px">
         </div>
         <div id="rowDue">
             <div id="sinGlu">
-                <img src="../../media/gluten-free-label.png" alt="gluten free" width="70px" height="70px">
+                <img src="media/gluten-free-label.png" alt="gluten free" width="70px" height="70px">
                 <p>Questo prodotto è<br>disponibile anche in<br>versione gluten free</p>
             </div>
             <p><?php echo $descrizione_lunga; ?></p>

@@ -42,12 +42,12 @@ body {
 
 #sinGlu {        
     display: flex;
-    max-width: 200px;
+    max-width: 230px;
     border: thin solid rgb(255, 194, 108);
     background-color: rgb(70, 102, 109);
     border-radius: 7px;   /*per i bordi arrotondati*/
     -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
-    padding: 10px 12px;    /*per aumentare quello che circonda il bottone*/
+    padding: 10px 15px;    /*per aumentare quello che circonda il bottone*/
     color: rgb(255, 194, 108);
     font-size: 15px;
     align-items: center;
