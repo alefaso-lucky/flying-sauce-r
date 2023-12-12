@@ -38,7 +38,7 @@
     l'autentica eccellenza italiana.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "classici";
+    $cate = "Classici";
     $prezzo = 50;
     $foto = "media/piatti/carbonara.pn
     g";
@@ -67,7 +67,7 @@
     che rende omaggio alla storia culinaria dell'Italia.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "classici";
+    $cate = "Classici";
     $prezzo = 45;
     $foto = "media/piatti/cacioEPepe.png";
 
@@ -101,7 +101,7 @@
     offrendo un'esperienza culinaria raffinata e indimenticabile.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "classici";
+    $cate = "Classici";
     $prezzo = 50;
     $foto = "media/piatti/spaghettiConLeSarde.png";
 
@@ -134,7 +134,7 @@
     ingredienti bio coltivati con passione e rispetto per la natura.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "classici";
+    $cate = "Classici";
     $prezzo = 55;
     $foto = "media/piatti/allaNorma.png";
 
@@ -165,7 +165,7 @@
     nei ricordi dei buongustai più esigenti.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "rossi";
+    $cate = "Rossi";
     $prezzo = 60;
     $foto = "media/piatti/lupara.png";
 
@@ -204,7 +204,7 @@
     mescolarsi, offrendo un'esperienza gastronomica senza pari.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "rossi";
+    $cate = "Rossi";
     $prezzo = 55;
     $foto = "media/piatti/lasagna.png";
 
@@ -230,7 +230,7 @@
     tocco di modernità. Benvenuti a un viaggio sensoriale senza tempo.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "";
+    $cate = "Mare";
     $prezzo = 80;
     $foto = "media/piatti/orecchietteAllAdriatico.png";
 
@@ -259,7 +259,7 @@
     la pasta artigianale abbraccia il pesce appena pescato, creando un'esperienza culinaria che incarna la freschezza del Mediterraneo.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "mare";
+    $cate = "Mare";
     $prezzo = 75 ;
     $foto = "media/piatti/calamarata.png";
 
@@ -288,7 +288,7 @@
     attraverso le acque cristalline del gusto.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "mare";
+    $cate = "Mare";
     $prezzo = 80;
     $foto = "media/piatti/mafaldeMarine.png";
 
@@ -314,7 +314,7 @@
     citrica che eleva il piatto a un'esperienza sensoriale completa.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "ricercati";
+    $cate = "Ricercati";
     $prezzo = 100;
     $foto = "media/piatti/rubinoRosso.png";
 
@@ -343,7 +343,7 @@
     raffinatezza e armonia.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "ricercati";
+    $cate = "Ricercati";
     $prezzo = 100;
     $foto = "media/piatti/";
 

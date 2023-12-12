@@ -20,14 +20,16 @@
       di gusto. Un'opera culinaria destinata a catturare l'attenzione e il palato degli
       intenditori gastronomici.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Eleganza Spaghetto:**
+    $lunga_descrizione = <<<DES
+    Eleganza Spaghetto:
         Gli spaghetti, attentamente posati su un piatto di ceramica bianca, si presentano come fili d'arte pronti a catturare il palato dei buongustai più raffinati. La loro lunghezza si avvolge con grazia, creando una sinfonia visiva che anticipa la ricetta.
 
         **Zucchine in Protagonista:**
         Le zucchine scure, tagliate con precisione, incarnano l'essenza della carbonara vegetale. Il verde intenso si sposa con il giallo dei tuorli, creando un tableau cromatico che esalta la freschezza del piatto. Questi ortaggi, sapientemente preparati, aggiungono una nota croccante e leggera, trasformando la tradizionale carbonara in un'esperienza unica.
 
         **Tuorli d'Uovo: Il Cuore della Carbonara Vegetariana:**
-        I tuorli d'uovo, ricchi e cremosi, sono il cuore pulsante di questa reinterpretazione della carbonara. Si amalgamano con il pecorino grattugiato, creando una vellutata salsa che abbraccia gli spaghetti con delicatezza. L'olio extravergine di oliva, con il suo aroma fruttato, contribuisce a elevare la cremosità del piatto.";
+        I tuorli d'uovo, ricchi e cremosi, sono il cuore pulsante di questa reinterpretazione della carbonara. Si amalgamano con il pecorino grattugiato, creando una vellutata salsa che abbraccia gli spaghetti con delicatezza. L'olio extravergine di oliva, con il suo aroma fruttato, contribuisce a elevare la cremosità del piatto.
+        DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "vegetariani";
     $prezzo = 50;
@@ -45,7 +47,8 @@
       Un'ode alla tradizione tricolore italiana, dove ogni ingrediente racconta
       una storia di eleganza e prelibatezza";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Esecuzione Raffinata:**
+    $lunga_descrizione = <<<DES
+    Esecuzione Raffinata:
     - La Pasta Corta, cucinata al punto giusto, mantiene la sua consistenza artigianale.
     - Il Pesto di Cavolo Nero, preparato con maestria, avvolge la pasta con il suo colore intenso e il suo sapore vibrante.
     - Un filo di Olio Extravergine d'Oliva, come un abbraccio dorato, completa la base del piatto.
@@ -59,7 +62,8 @@
     **Un'Esperienza Tricolore di Gusto:**
     Il Pesto di Eleganza Tricolore con Caviale è un inno alla raffinatezza italiana,
     dove il verde intenso del cavolo nero si fonde con la lucentezza dell'olio e la prelibatezza del caviale.
-    Un piatto che celebra il tricolore, non solo visivamente, ma anche attraverso una sinfonia di sapori in ogni boccone.";
+    Un piatto che celebra il tricolore, non solo visivamente, ma anche attraverso una sinfonia di sapori in ogni boccone.
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "vegetariani";
     $prezzo = 65;
@@ -73,13 +77,13 @@
     $lista_ingredienti = "Broccoli, linguine all'uovo, spicchio d'aglio, mandorle a scaglie,
      Olio extravergine di oliva, Sale e pepe, Pecorino.";
     $lista_ingredienti = pg_escape_string($db, $lista_ingredienti);
-
     $breve_descrizione = "Le Linguine in Crema di Broccoli e Mandorle Scintillanti sono un'opera gastronomica
     imponente, pensata per soddisfare i palati più esigenti. La diversità
     di consistenze e la complessità dei sapori si fondono in un'armonia culinaria
     che eleva questa pietanza a un'esperienza senza pari";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Eleganza Vegetale:**
+    $lunga_descrizione = <<<DES
+    Eleganza Vegetale:**
     I broccoli, collocati con precisione su un piatto di ceramica bianca, si ergono come fiori di verde lussureggiante. Le loro teste, raccolte con attenzione, anticipano una composizione culinaria di eleganza vegetale.
 
     **Linguine Tessute: Un Arazzo di Pasta Fresca:**
@@ -89,7 +93,8 @@
     La crema di broccoli, arricchita dalle mandorle a scaglie, crea un equilibrio di consistenze sorprendente. I broccoli offrono una consistenza morbida e vellutata, mentre le mandorle aggiungono un tocco croccante che scintilla come gemme preziose nel piatto.
 
     **Un Finale di Complessità:**
-    Il pecorino, con la sua complessità di sapori, è il tocco finale che corona la melodia del verde. La sua presenza nobilita il piatto, aggiungendo strati di gusto che persistono delicatamente sul palato, completando questa composizione ";
+    Il pecorino, con la sua complessità di sapori, è il tocco finale che corona la melodia del verde. La sua presenza nobilita il piatto, aggiungendo strati di gusto che persistono delicatamente sul palato, completando questa composizione
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "vegetariani";
     $prezzo = 45;
@@ -107,14 +112,16 @@
       creazione culinaria culminante, destinata a essere il gioiello di ogni tavolo.
       Un piatto che celebra la raffinatezza della dieta vegetariana";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Trofie in Vortice Elegante:**
+    $lunga_descrizione = <<<DES
+    Trofie in Vortice Elegante:**
     Le trofie, disposte con cura su un piatto di ceramica, sono una sinfonia di forme che anticipa l'esperienza gustativa. La loro freschezza e consistenza al dente sono il preludio a un vortice di sapori e sensazioni.
 
     **Pesto di Noci e Spinaci: Un Raccogliersi di Delicatezza
     Il pesto di noci, preparato con maestria, avvolge le trofie come una carezza di autunno. Gli spinaci novelli, puri e teneri, si fondono con la mollica di pane, creando una crema vellutata che avvolge ogni boccone. Il parmigiano reggiano, con la sua complessità, aggiunge un tocco di nobiltà, mentre l'olio extravergine di oliva completa la composizione con la sua morbidezza.
 
     **Balletto di Sapori:**
-    Il Balletto di Spinaci Novelli è la scena culinaria principale. Le foglie verdi, come ballerine leggere, danzano tra le trofie, creando un equilibrio di freschezza e cremosità. Il gusto pronunciato delle noci, unito alla delicatezza degli spinaci, si fonde in un balletto di sapori che lascia un'impronta memorabile";
+    Il Balletto di Spinaci Novelli è la scena culinaria principale. Le foglie verdi, come ballerine leggere, danzano tra le trofie, creando un equilibrio di freschezza e cremosità. Il gusto pronunciato delle noci, unito alla delicatezza degli spinaci, si fonde in un balletto di sapori che lascia un'impronta memorabile
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "vegetariani";
     $prezzo = 52;
@@ -135,7 +142,8 @@
     e croccanti, sono la ciliegina sulla torta, conferendo una
     dimensione croccante e avvolgente.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Esecuzione Raffinata:**
+    $lunga_descrizione = <<<DES
+    Esecuzione Raffinata:**
     - La pasta, risultato di una combinazione equilibrata di farina, fecola di patate e semola , è lavorata con maestria e trasformata in un tripudio dorato di tagliolini.
     - La crema di zucca, preparata con precisione e aromatizzata con thè fresco e thimo, avvolge ogni filo di pasta con una delicatezza unica.
     - I funghi porcini sono cotti con attenzione, unendosi al piatto con un tocco di Marsala e aglio, creando un connubio perfetto di sapori.
@@ -146,7 +154,8 @@
     - I funghi porcini, distribuiti con precisione, aggiungono un tocco di colore e profondità.
     - Le briciole di pane, delicatamente posizionate, completano la presentazione con un elemento croccante e raffinato.
     **Un'Opera Culinaria da Due Stelle Michelin:**
-    Questi Tagliolini d'Oro Autunnali sono una sinfonia di gusti e presentazioni, un'opera culinaria che fonde ingredienti di eccellenza con un'attenzione raffinata all'esecuzione e una presentazione sofisticata. Un'esperienza gastronomica che trasforma il pane in oro e la zucca in pura poesia culinaria risaltando la dieta vegana.";
+    Questi Tagliolini d'Oro Autunnali sono una sinfonia di gusti e presentazioni, un'opera culinaria che fonde ingredienti di eccellenza con un'attenzione raffinata all'esecuzione e una presentazione sofisticata. Un'esperienza gastronomica che trasforma il pane in oro e la zucca in pura poesia culinaria risaltando la dieta vegana."
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "vegani";
     $prezzo = 40;
@@ -169,7 +178,8 @@
     avvolgenti. Un'esperienza gastronomica inclusiva, dove la freschezza
     della zucchina sposa la cremosità del setan, creando una sinfonia di sapori in ogni boccone.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Esecuzione Raffinata:**
+    $lunga_descrizione = <<<DES
+    Esecuzione Raffinata:**
     - Le Farfalle sono cotte al dente, mantenendo la loro texture artigianale.
     - Le zucchine, tagliate con maestria, sono preparate con un tocco di olio extravergine d'oliva per accentuarne la dolcezza.
     - la panna vegana, miscelata con formaggio di setan , creano una crema vellutata che avvolge la pasta con eleganza.
@@ -181,7 +191,7 @@
 
     **Un'Esperienza Inclusiva:**
     La Delizia Verde è un inno all'inclusività, una reinterpretazione della classica carbonara adatta anche per i vegetariani. Un piatto che celebra l'eleganza e la ricchezza dei sapori italiani, offrendo un'esperienza culinaria raffinata e accogliente per tutti.
-    ";
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "vegani";
     $prezzo = 45;
@@ -199,7 +209,8 @@
     funghi porcini succulenti e speck sapido. La cremosa fusione con panna fresca conferisce un
     tocco di velluto, mentre il prezzemolo fresco e il pepe nero aggiungono eleganza.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Pappardelle in Sinfonia di Pasta Fresca:**
+    $lunga_descrizione = <<<DES
+    Pappardelle in Sinfonia di Pasta Fresca:**
     Le pappardelle, arrotolate con cura su un piatto di porcellana bianca, sono una sinfonia di pasta fresca che incanta la vista. La loro larghezza e consistenza al dente sono il preludio a un'esperienza gustativa unica.
 
     **Cavolfiori in Vestito d'Eleganza:**
@@ -207,7 +218,7 @@
 
     **Crema di Gorgonzola: Il Cuore Cremoso dell'Autunno:**
     La crema di gorgonzola, preparata con cura, è il cuore cremoso dell'autunno che avvolge le pappardelle. Arricchita da aglio e timo, offre un equilibrio di sapori intensi e aromatici. Il formaggio grattugiato completa la composizione con la sua complessità, mentre il latte conferisce una cremosità avvolgente.
-    ";
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "bianchi";
     $prezzo = 55;
@@ -225,7 +236,8 @@
     trasporta gli ospiti in un viaggio gastronomico tra le vette, arricchendo
     il palato con la diversità dei sapori alpini.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Eleganza Trofiosa:**
+    $lunga_descrizione = <<<DES
+    Eleganza Trofiosa:**
     Le trofie, disposte con precisione su un piatto di porcellana, si presentano come piccoli tesori di pasta, pronti a intrecciarsi con i sapori della montagna. La loro forma curva cattura la luce, anticipando un'esperienza di gusto avvolgente.
 
     **Speck Affumicato: Un Viaggio nei Boschi:**
@@ -236,7 +248,7 @@
 
     **Ricotta Vaccina: Sinfonia Cremosa:**
     La ricotta vaccina, cremosa e avvolgente, è la protagonista che lega gli elementi. La sua dolcezza delicata svela strati di gusto, mentre il rosmarino aggiunge una freschezza erbacea che eleva il piatto a un'esperienza sensoriale unica.
-    ";
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "bianchi";
     $prezzo = 55;
@@ -255,7 +267,8 @@
       Un'esperienza gustativa unica che unisce la tradizione italiana all'autenticità
       dei prodotti locali, offrendo un viaggio culinario esclusivo e sostenibile.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Eleganza Sensoriale:**
+    $lunga_descrizione = <<<DES
+    Eleganza Sensoriale:**
     Il tartufo nero, con la sua fragranza inconfondibile, si amalgama con le fettuccine avvolgenti, creando un'esperienza gustativa unica. Un tocco di aglio, olio extravergine d'oliva e burro aggiunge complessità, mentre il sale esalta ogni sfumatura di gusto.
 
     **L'Autenticità dei Prodotti a Km 0:**
@@ -266,7 +279,7 @@
 
     **Un'Esperienza Gastronomica Indimenticabile:**
     Deliziate il vostro palato con un piatto che celebra la tradizione italiana, l'autenticità dei prodotti locali e l'eleganza culinaria. Le Fettuccine al Tartufo sono un inno al gusto e alla sostenibilità, un'esperienza gastronomica che incarna il meglio della nostra cucina raffinata.
-    ";
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "bianchi";
     $prezzo = 45;
@@ -285,7 +298,8 @@
       Piemontese. Un'autentica delizia culinaria che eleva l'esperienza
       gastronomica a nuove vette.";
     $breve_descrizione = pg_escape_string($db, $breve_descrizione);
-    $lunga_descrizione = "**Esecuzione Raffinata:**
+    $lunga_descrizione = <<<DES
+    Esecuzione Raffinata:**
     - Le Pappardelle, all'uovo e fatte a mano, sono cotte al punto giusto, preservando la loro texture artigianale.
     - I Funghi Porcini, preparati con cura, si fondono con uno spicchio d'aglio e olio extravergine d'oliva per una base aromatica.
     - Lo Speck, affettato spesso, è cotto con maestria, aggiungendo una nota di sapore affumicato.
@@ -298,7 +312,7 @@
 
     **Un Viaggio Gastronomico Raffinato:**
     Le Pappardelle Eleganza Bosco sono un'ode all'italianità e all'eleganza culinaria. Un piatto che celebra la tradizione delle pappardelle fatte a mano, accogliendo il sapore avvolgente dei funghi porcini e lo speck sapido. Un'esperienza gastronomica dove ogni boccone è un viaggio nei sapori autentici dell'Italia.
-    ";
+    DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
     $cate = "bianchi";
     $prezzo = 55;
