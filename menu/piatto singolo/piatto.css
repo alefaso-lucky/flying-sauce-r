@@ -30,6 +30,16 @@ body {
     
 }
 
+#rowDue {
+    background-color: rgb(255, 240, 218);
+    padding: 20px 80px;
+    color: rgb(66, 74, 89);
+}
+
+#rowDue > p {
+    margin: 10px
+}
+
 #sinGlu {        
     display: flex;
     max-width: 200px;
@@ -39,11 +49,13 @@ body {
     -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
     padding: 10px 12px;    /*per aumentare quello che circonda il bottone*/
     color: rgb(255, 194, 108);
-    margin: 10px 0px;
     font-size: 15px;
     align-items: center;
+    justify-content: space-between;
 }
 
 #sinGlu p {
     margin: 0px;
 }
+
+

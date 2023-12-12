@@ -40,9 +40,9 @@
         <div id="rowDue">
             <div id="sinGlu">
                 <img src="../../media/gluten-free-label.png" alt="gluten free" width="70px" height="70px">
-                <p>Questo prodotto è disponibile anche in versione gluten free</p>
+                <p>Questo prodotto è<br>disponibile anche in<br>versione gluten free</p>
             </div>
-            <?php echo $descrizione_lunga; ?>
+            <p><?php echo $descrizione_lunga; ?></p>
         </div>
         
     </body>
