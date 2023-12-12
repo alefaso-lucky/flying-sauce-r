@@ -1,23 +1,23 @@
-a{
+a {
     text-decoration: none;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
-header{
+header {
     background-color: rgb(24, 65, 73);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
     margin: 0px;
-    padding: 0px;
+    padding: 0px 15px;
     box-sizing: border-box;
     width: 100%;        /*necessario quando mettiamo il fixed*/
     position: sticky;
@@ -25,42 +25,42 @@ header{
     top: 0px;
 }
 
-.nav_list{
+.nav_list {
     display: flex;
     column-gap: 50px;
 }
 
-.nav_link{
+.nav_link {
     color:  rgb(255, 194, 108);
     transition: all 0.5s;
 }
 
-.nav_link:hover{
+.nav_link:hover {
     color:  #FFF0DA;
 }
 
-#hamburger2, #hamburger1{
+#hamburger2, #hamburger1 {
     display: none;
 }
 
-.link a{
+.link a {
     padding-left: 5px;
 }
 
-.immagine2{
+.immagine2 {
     display: none;
 }
 
-#cambio_profilo:hover .immagine2, #cambio_carrello:hover .immagine2{
+#cambio_profilo:hover .immagine2, #cambio_carrello:hover .immagine2 {
     display: inline-block;
 }
 
-#cambio_profilo:hover .immagine1, #cambio_carrello:hover .immagine1{
+#cambio_profilo:hover .immagine1, #cambio_carrello:hover .immagine1 {
     display: none;
 }
 
-@media(max-width: 900px){
-    nav{
+@media(max-width: 900px) {
+    nav {
         position: fixed;
         top: 85px;
         background-color: #5D7A7F;
@@ -71,22 +71,22 @@ header{
         /*transform: translateX(-100%);       possiamo usare per rendere visibile solo quando clicchi sulle 3 linee con js*/
     }
 
-    .nav_list{
+    .nav_list {
         flex-direction: column;
         align-items: center;
         row-gap: 20px;
     }
 
-    .nav_link{
+    .nav_link {
         font-size: 18px;
     }
 
-    #hamburger1,  .cambio_hamb:hover #hamburger2{
+    #hamburger1,  .cambio_hamb:hover #hamburger2 {
         display: inline-block;
         padding-left: 5px;
     }
 
-    .cambio_hamb:hover #hamburger1{
+    .cambio_hamb:hover #hamburger1 {
         display:none;
     }
 

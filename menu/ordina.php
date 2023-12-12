@@ -4,7 +4,8 @@
 <head>
     <title>CSS Template</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="ordina.css">
+    <base href="http://localhost/Flying_Sauce_r/">
+    <link rel="stylesheet" href="menu/ordina.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 
