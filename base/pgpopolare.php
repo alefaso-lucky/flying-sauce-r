@@ -26,12 +26,12 @@
     - Il guanciale è preparato con precisione, aggiungendo un tocco croccante e saporito.<br>
     - I tuorli sono incorporati con cura, creando una crema avvolgente senza eguali.<br>
     - Il pecorino romano, grattugiato al momento, si fonde armoniosamente con la pasta.<br>
-    - Il pepe nero, macinato al momento, è dosato con perizia per esaltare ogni sfumatura di gusto.<br>
+    - Il pepe nero, macinato al momento, è dosato con perizia per esaltare ogni sfumatura di gusto.<br><br>
     Presentazione Sofisticata:<br>
     - Gli spaghetti, decorati con guanciale croccante, sono disposti con eleganza sul piatto.<br>
     - La crema di tuorli avvolge la pasta, creando un contrasto visivo e gustativo.<br>
     - Il pecorino romano, sospeso tra i fili di spaghetti, offre un'opulenza visiva.<br>
-    - Una leggera spolverata di pepe nero completa la presentazione, anticipando la complessità dei sapori.<br>
+    - Una leggera spolverata di pepe nero completa la presentazione, anticipando la complessità dei sapori.<br><br>
     Un'Esperienza Gastronomica di Classe:<br>
     I nostri Spaghetti alla Carbonara incarnano la perfezione della cucina italiana, dagli ingredienti al piatto.<br>
     Un'esperienza culinaria che unisce la tradizione alla raffinatezza, invitandovi a gustare l'autentica eccellenza italiana.<br>

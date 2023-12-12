@@ -5,16 +5,18 @@
         <meta character="utf-8">
         <link rel="stylesheet" href="../../base/generic.css">
         <link rel="stylesheet" href="./piatto.css">
+        <link rel="stylesheet" href="../../base/navSimple.css">
     </head>
     <body>
-    <?php
-        $host="localhost";
-        $db='GruppoXX';
-        $user="www";
-        $password="password";
-        $connection_string = "host=$host dbname=$db user=$user password=$password";
-        $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
-    ?>
+        <?php require '../../base/navSimple.php'; ?>
+        <?php
+            $host="localhost";
+            $db='GruppoXX';
+            $user="www";
+            $password="password";
+            $connection_string = "host=$host dbname=$db user=$user password=$password";
+            $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
+        ?>
     <!-- portare in qualche modo il piatto selezionato in $curr_nom -->
         <?php
             $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = 'Spaghetti alla Carbonara'";
