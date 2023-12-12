@@ -36,7 +36,7 @@
         di oliva, con il suo aroma fruttato, contribuisce a elevare la cremosità del piatto.
         DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "vegetariani";
+    $cate = "Vegetariani";
     $prezzo = 50;
     $foto = "media/piatti/carbonaraVegetariana.png";
 
@@ -69,7 +69,7 @@
     boccone.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "vegetariani";
+    $cate = "Vegetariani";
     $prezzo = 65;
     $foto = "media/piatti/pestoConCaviale.png";
 
@@ -102,7 +102,7 @@
     piatto, aggiungendo strati di gusto che persistono delicatamente sul palato, completando questa composizione
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "vegetariani";
+    $cate = "Vegetariani";
     $prezzo = 45;
     $foto = "media/piatti/melodiaVerde.png";
 
@@ -132,7 +132,7 @@
     in un balletto di sapori che lascia un'impronta memorabile
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "vegetariani";
+    $cate = "Vegetariani";
     $prezzo = 52;
     $foto = "media/piatti/eleganzaTrionfante.png";
 
@@ -172,7 +172,7 @@
     trasforma il pane in oro e la zucca in pura poesia culinaria risaltando la dieta vegana."
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "vegani";
+    $cate = "Vegani";
     $prezzo = 40;
     $foto = "media/piatti/TaglioliniDOro.png";
 
@@ -207,7 +207,7 @@
     piatto che celebra l'eleganza e la ricchezza dei sapori italiani, offrendo un'esperienza culinaria raffinata e accogliente per tutti.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "vegani";
+    $cate = "Vegani";
     $prezzo = 45;
     $foto = "media/piatti/farfalleVerdiEDorate.png";
 
@@ -236,7 +236,7 @@
     mentre il latte conferisce una cremosità avvolgente.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "bianchi";
+    $cate = "Bianchi";
     $prezzo = 55;
     $foto = "media/piatti/eleganzaDelBosco.png";
 
@@ -267,7 +267,7 @@
     gusto, mentre il rosmarino aggiunge una freschezza erbacea che eleva il piatto a un'esperienza sensoriale unica.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "bianchi";
+    $cate = "Bianchi";
     $prezzo = 55;
     $foto = "media/piatti/armoniaMontana.png";
 
@@ -300,7 +300,7 @@
     raffinata.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "bianchi";
+    $cate = "Bianchi";
     $prezzo = 45;
     $foto = "media/piatti/fettuccineAlTartufo.png";
 
@@ -333,7 +333,7 @@
     dove ogni boccone è un viaggio nei sapori autentici dell'Italia.
     DES;
     $lunga_descrizione = pg_escape_string($db, $lunga_descrizione);
-    $cate = "bianchi";
+    $cate = "Bianchi";
     $prezzo = 55;
     $foto = "media/piatti/pappardelleAllaGorgonzola.png";
 
