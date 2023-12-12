@@ -8,6 +8,7 @@ body {
 .row {
   display: flex;
   max-height: 650px;
+  /*margin-top: 89px; serviva se la navbar era fixed, ora è sticky*/
 }
 
 .scrollable_content {
