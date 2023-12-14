@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" href="infoPrivacy.css">
-        <link rel="stylesheet" href="condizioni.css">
+        <base href="http://localhost/Flying_Sauce_r/">
+		<link rel="stylesheet" href="crea%20account/informative/infoPrivacy.css">
+        <link rel="stylesheet" href="crea%20account/informative/condizioni.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	</head>
 
 	<body>
-		<?php //require('nav.html'); ?> 
+		<?php require "../../base/navSimple.php"; ?>
 		<div class="cell">
             <h1>Condizioni</h1>
             <h2>Condizioni di Iscrizione a Flying Sauce</h2>
@@ -48,5 +49,6 @@
                 Grazie per aver scelto Flying Sauce per soddisfare la tua passione per la pasta italiana. Siamo entusiasti di portare un pezzo d'Italia direttamente a casa tua!
             </p>
 	    </div>
+        <?php require "../../base/footer.php"; ?>
 	</body>
 </html>

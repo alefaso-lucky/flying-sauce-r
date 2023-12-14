@@ -8,7 +8,7 @@ body{
 
 h1,h2,h3{
     font-family: 'Times New Roman', 'serif';
-    color: RGB(255, 194, 108);
+    color: rgb(255, 194, 108);
     font-weight: 100;
 }
 

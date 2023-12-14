@@ -4,6 +4,7 @@ footer {
 }
 
 #footer_container {
+    border-top: 2px solid rgb(255, 194, 108);
     font-family: 'Montserrat', sans-serif;
     /*position: absolute;
     bottom: 0; /*non è noto se il posizionamento in questo modo sarà funzionale all'integrazione con il resto della pagina*/
