@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../base/footer.css" type="text/css">
+<link rel="stylesheet" href="base/footer.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <footer>
     <div id="footer_container">
@@ -28,9 +28,9 @@
             </div>
             <div id="social_footer">
                 <p>SEGUICI SU</p>
-                <a href="#"><img src="../media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a>
-                <a href="#"><img src="../media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a>
-                <a href="#"><img src="../media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a>
+                <a href="#"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a>
+                <a href="#"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a>
+                <a href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a>
             </div>
         </div>
     </div>

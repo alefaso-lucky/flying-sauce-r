@@ -4,7 +4,8 @@
 <head>
     <title>CSS Template</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="ordina.css">
+    <base href="http://localhost/Flying_Sauce_r/">
+    <link rel="stylesheet" href="menu/ordina.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 
@@ -14,12 +15,12 @@
         <div class="columnside sx">
             <h1>I nostri piatti</h1>
 
-            <a href="#" class="piatti">CLASSICI</a>
-            <a href="#" class="piatti">ROSSI</a>
-            <a href="#" class="piatti">BIANCHI</a>
-            <a href="#" class="piatti">MARE</a>
-            <a href="#" class="piatti">VEGETARIANI</a>
-            <a href="#" class="piatti">VEGANI</a>
+            <a href="menu/ordina.php/#classici" class="piatti">CLASSICI</a>
+            <a href="menu/ordina.php/#rossi" class="piatti">ROSSI</a>
+            <a href="menu/ordina.php/#bianchi" class="piatti">BIANCHI</a>
+            <a href="menu/ordina.php/#mare" class="piatti">MARE</a>
+            <a href="menu/ordina.php/#vegetariani" class="piatti">VEGETARIANI</a>
+            <a href="menu/ordina.php/#vegani" class="piatti">VEGANI</a>
 
             <p class="domanda">
                 Non hai trovato ciò che fa per te?
@@ -40,10 +41,10 @@
                     $connection_string = "host=$host dbname=$db user=$user password=$password";
                     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
                     
-                    $categories = array("classici", "rossi", "bianchi", "mare", "vegetariani", "vegani");
+                    $categories = array("Classici", "Rossi", "Bianchi", "Mare", "Vegetariani", "Vegani");
                     foreach( $categories as $curr_cat ) {
                         ?>
-                        <h1 class="titolo"><?php echo strtoupper($curr_cat) ?></h1>
+                        <h1 class="titolo" id="<?php echo strtolower($curr_cat); ?>"><?php echo $curr_cat; ?></h1>
                         <div class="categoria">
 
                         <?php

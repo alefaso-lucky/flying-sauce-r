@@ -49,6 +49,7 @@ footer {
     max-width: 1300px;
     justify-content: space-between; /*invece di mettere gli elementi al centro li metto uno a destra e l'altro a sinistra*/
     align-items: flex-start; /*l'allineamento verticale da flex start fa in modo che la linea sopra gli elementi combaci per tutti*/
+    margin-top: 15px; /*quando la finestra viene rimpicciolita è garantita la distanza tra il lower footer e gli elementi dell'upper*/
 }
 
 #lower_footer_container > * {

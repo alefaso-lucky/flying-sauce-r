@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+#rowUno {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(244, 218, 180);
+    border-bottom: 3px solid rgb(255, 192, 0);
+}
+
+#rowUno_leftside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: rgb(93, 122, 127);
+}
+
+#rowUno_leftside h1 {
+    margin-bottom: 0px;
+}
+
+#rowUno_leftside div {
+    margin-top: 25px;
+}
+
+#rowUno_rightside {
+    
+}
+
+#rowDue {
+    background-color: rgb(255, 240, 218);
+    padding: 20px 80px;
+    color: rgb(66, 74, 89);
+}
+
+#rowDue > p {
+    margin: 10px
+}
+
+#sinGlu {        
+    display: flex;
+    max-width: 230px;
+    border: thin solid rgb(255, 194, 108);
+    background-color: rgb(70, 102, 109);
+    border-radius: 7px;   /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 10px 15px;    /*per aumentare quello che circonda il bottone*/
+    color: rgb(255, 194, 108);
+    font-size: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sinGlu p {
+    margin: 0px;
+}
+
+
