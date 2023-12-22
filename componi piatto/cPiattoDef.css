@@ -187,8 +187,6 @@ label input:checked+span:before {
     text-decoration: none;
 }
 
-/*segue il riquadro bianco e verde a destra dello schermo*/
-/*#riquadro{
-    position: absolute;
-    left: 51%;
-}*/
+#riquadro{
+
+}

@@ -3,6 +3,7 @@
     <head>
         <title>Componi il tuo piatto</title>
         <link rel="stylesheet" href="./cPiattoDef.css" type="text/css">
+        <base href="http://localhost/Flying_Sauce_r/">
         <meta charset="utf-8">
     </head>
     <body>
@@ -10,13 +11,13 @@
             <div id="contenitore">
                 <form action="#" method="post" id="form_grid">
                         <span id="quantita" class="name_of_options">Quantità</span>
-                        <label for="piccolo-field" id="piccolo_opt" class="options options_left">
+                        <label for="piccolo-field" id="piccolo_opt" class="options options_left" onclick="printQuantita('quantita1.png')">
                             <input id="piccolo-field" name="quantita" type="radio"/><span>Piccolo(60g)</span>
                         </label>
-                        <label for="medio-field" id="medio_opt" class="options">
+                        <label for="medio-field" id="medio_opt" class="options" onclick="printQuantita('quantita2.png')">
                             <input id="medio-field" name="quantita" type="radio"/><span>Medio(90g)</span>
                         </label>
-                        <label for="Grande-field" id="grande_opt" class="options options_right">
+                        <label for="Grande-field" id="grande_opt" class="options options_right" onclick="printQuantita('quantita3.png')">
                             <input id="Grande-field" name="quantita" type="radio"/><span>Grande(130g)</span>
                         </label>
                         
@@ -58,7 +59,8 @@
                     <a href="#" id="menu" name="menu">VAI AL MENU'</a>
                 </p>
             </div>
-            <img id="riquadro" src="../media/sfondoComponi.PNG" alt="riquadro decorativo"/> <!-- /*aggiunto*/ -->
+            <canvas id="piattoComposto" width="597px" height="618px" style="border:1px solid #d3d3d3;">canvas non disponibile su questo browser</canvas>
+            <script type="text/javascript" src="componi%20piatto/cPiattoDef.js"></script>
         </div>
     </body>
 
