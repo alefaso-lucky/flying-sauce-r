@@ -11,24 +11,24 @@
             <div id="contenitore">
                 <form action="#" method="post" id="form_grid">
                         <span id="quantita" class="name_of_options">Quantità</span>
-                        <label for="piccolo-field" id="piccolo_opt" class="options options_left" onclick="printQuantita('quantita_1.png')">
+                        <label for="piccolo-field" id="piccolo_opt" class="options options_left" onclick="printImage('quantita_1.png', 50, 442)">
                             <input id="piccolo-field" name="quantita" type="radio"/><span>Piccolo(60g)</span>
                         </label>
-                        <label for="medio-field" id="medio_opt" class="options" onclick="printQuantita('quantita_2.png')">
+                        <label for="medio-field" id="medio_opt" class="options" onclick="printImage('quantita_2.png', 50, 442)">
                             <input id="medio-field" name="quantita" type="radio"/><span>Medio(90g)</span>
                         </label>
-                        <label for="Grande-field" id="grande_opt" class="options options_right" onclick="printQuantita('quantita_3.png')">
+                        <label for="Grande-field" id="grande_opt" class="options options_right" onclick="printImage('quantita_3.png', 50, 442)">
                             <input id="Grande-field" name="quantita" type="radio"/><span>Grande(130g)</span>
                         </label>
                         
                         <span id="pasta" class="name_of_options">Pasta</span>
-                        <label for="ravioli-field" id="ravioli_opt" class="options options_left">
+                        <label for="ravioli-field" id="ravioli_opt" class="options options_left" onclick="printImage('pasta_1.png', 50, 307)">
                             <input id="ravioli-field" name="pasta" type="radio"/><span>Ravioli</span>
                         </label>
-                        <label for="tagliatelle-field" id="tagliatelle_opt" class="options">
+                        <label for="tagliatelle-field" id="tagliatelle_opt" class="options" onclick="printImage('pasta_2.png', 50, 307)">
                             <input id="tagliatelle-field" name="pasta" type="radio"/><span>Tagliatelle</span>
                         </label>
-                        <label for="orecchiette-field" id="orecchiette_opt" class="options options_right">
+                        <label for="orecchiette-field" id="orecchiette_opt" class="options options_right" onclick="printImage('pasta_3.png', 50, 307)">
                             <input id="orecchiette-field" name="pasta" type="radio"/><span>Orecchiette</span>
                         </label>
 
@@ -44,13 +44,13 @@
                         </label>
                         
                         <span id="topping" class="name_of_options">Topping</span>
-                        <label for="guanciale-field" id="guanciale_opt" class="options options_left">
+                        <label for="guanciale-field" id="guanciale_opt" class="options options_left" onclick="printImage('topping_1.png', 50, 37)">
                             <input id="guanciale-field" name="topping" type="radio"/><span>Guanciale</span>
                         </label>
-                        <label for="avocado-field" id="avocado_opt" class="options">
+                        <label for="avocado-field" id="avocado_opt" class="options" onclick="printImage('topping_2.png', 50, 37)">
                             <input id="avocado-field" name="topping" type="radio"/><span>Avocado</span>
                         </label>
-                        <label for="noci-field" id="noci_opt" class="options options_right">
+                        <label for="noci-field" id="noci_opt" class="options options_right" onclick="printImage('topping_3.png', 50, 37)">
                             <input id="noci-field" name="topping" type="radio"/><span>Noci</span>
                         </label>
                 </form>

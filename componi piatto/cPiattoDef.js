@@ -5,11 +5,11 @@ myImg.onload = function() {
     c.getContext('2d').drawImage(myImg, 0,0);
 }
 
-function printQuantita(name) {
+function printImage(name, xcoordinate, ycoordinate) {
     var c = document.getElementById("piattoComposto");
     var myImg = new Image(597, 618);
     myImg.src = "media/" + name;
     myImg.onload = function() {
-        c.getContext('2d').drawImage(myImg, 50, 442);
+        c.getContext('2d').drawImage(myImg, xcoordinate, ycoordinate);
     }
 }
