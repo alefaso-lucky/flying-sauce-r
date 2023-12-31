@@ -57,6 +57,11 @@
                             $foto = $row[2];
                         ?>
                             <div class="primi">
+                                <form action="menu/piatto_singolo/piatto.php" method="get">
+                                    <button type="submit">
+                                        <img src="media/info_button" alt="info-dish"/>
+                                    </button>
+                                </form>
                                 <a href="#">
                                     <img src="<?php echo $foto ?>" alt="piatto di pasta" width="230px">
                                     <div class="nomepiatto"><?php echo $nome ?></div>

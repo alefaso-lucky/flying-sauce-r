@@ -35,6 +35,7 @@ if(isset($_POST['email'])){
 
   </head>
   <body>
+    <?php require "../base/navSimple.php"?>
     <section class= "background">
       <div class="content">
         <h2>Cibo veloce, gusto eccezionale: accedi e vola con FlyingSauce!</h2>

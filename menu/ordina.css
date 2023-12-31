@@ -58,6 +58,11 @@ body {
   max-width: 250px;
 }
 
+.primi:hover {
+  background-color: #F4DAB4;
+  transition: all .3s ease; 
+}
+
 .primi > a {
   text-decoration: none;
   color: #46666D;
