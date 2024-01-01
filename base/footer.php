@@ -8,7 +8,7 @@
                 <p id="margin_less">Riceverai sconti, regali e inviti ad eventi!</p>
             </div>
             <form action="#UNKNOWN" method="post" id="newsletter_form">
-                <label for="newsletter_field">e-mail: <input type="email" id="newsletter_field" name="email_newsletter" placeholder="Inserisci qui la tua email" required></label>
+                <label for="newsletter_field">e-mail: <input type="email" id="newsletter_field" name="email_newsletter" placeholder="Inserisci qui la tua e-mail" required></label>
                 <input type="submit" value="REGISTRAMI" id="submit_newsletter_footer">
             </form>
         </div>
