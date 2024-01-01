@@ -25,9 +25,7 @@
             <p class="domanda">
                 Non hai trovato ciò che fa per te?
             </p>
-            <form action="componi">
-                <input type="submit" value="COMPONI ORA" name="componi" class="componi" />
-            </form>
+            <a class="menu_buttons" href="componi%20piatto/cPiattoDef.html">COMPONI ORA IL TUO PIATTO</a>
 
             <!-- era equivalente, anzi anche più flessibile fare <button type="submit"> se magari volevi risaltare solo una parola nel bottone -->
         </div>
@@ -57,9 +55,10 @@
                             $foto = $row[2];
                         ?>
                             <div class="primi">
-                                <form action="menu/piatto_singolo/piatto.php" method="get">
-                                    <button type="submit">
-                                        <img src="media/info_button" alt="info-dish"/>
+                                <form action="menu/piatto_singolo/piatto.php" method="post" id="to_piatto_singolo">
+                                    <button type="submit" id="info_button">
+                                        <input type="hidden" name="name" value="<?=$nome?>">
+                                        <img src="media/info_button" alt="info-dish" width="24px" height="24px"/>
                                     </button>
                                 </form>
                                 <a href="#">
@@ -79,7 +78,7 @@
         </div>
         <div class="columnside dx">
             <form action="componi">
-                <input type="submit" value="VAI AL PAGAMENTO" name="pagamento" class="componi" />
+                <input type="submit" value="VAI AL PAGAMENTO" name="pagamento" class="menu_buttons" />
             </form>
             <ul>
                 <li>Spaghetti alla carbonara x2</li>
@@ -88,7 +87,7 @@
         </div>
     </div>
     <?php
-    require "../base/footer.php";
+        require "../base/footer.php";
     ?>
 </body>
 
