@@ -131,7 +131,7 @@ h1 {
 
   cursor: pointer;
   /*facciamo uscire la manina*/
-  transition: all .6s ease;
+  transition: all .3s ease;
 }
 
 .menu_buttons:hover {
