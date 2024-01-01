@@ -25,7 +25,7 @@
             <p class="domanda">
                 Non hai trovato ciò che fa per te?
             </p>
-            <a class="menu_buttons" href="componi%20piatto/cPiattoDef.html">COMPONI ORA IL TUO PIATTO</a>
+            <a class="menu_buttons" href="componi%20piatto/cPiattoDef.php">COMPONI ORA IL TUO PIATTO</a>
 
             <!-- era equivalente, anzi anche più flessibile fare <button type="submit"> se magari volevi risaltare solo una parola nel bottone -->
         </div>
