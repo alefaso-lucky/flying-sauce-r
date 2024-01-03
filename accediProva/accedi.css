@@ -118,15 +118,18 @@ form h2 {
   z-index: 0; /* Assicura che l'immagine sia dietro i testi */
 }
 
-.leftpanel p {
+.content{
+  position: absolute;
+  z-index: 1;
+  left: 5%;
+  top: 15%;
+  max-width: 30%;
+}
+
+.content p {
   font-size: 24px;
   padding: 10px 0;
-  position: absolute;
-  max-width: 30%;
-  z-index: 1;
   color: #FFF0DA;
-  left: 5%;
-  top: 40%;
 }
 
 .leftpanel img {
@@ -135,15 +138,10 @@ form h2 {
   object-fit: cover; /*l'immagine non subisce alterazioni */
 }
 
-.leftpanel h3{
+.content h3{
   font-size: 50px;
   font-weight: bold;
-  max-width: 30%;
-  position: absolute;
-  z-index: 1;
   color: rgb(255, 194, 108);
-  left: 5%;
-  top: 15%;
 }
 
 @media(max-width: 1400px){
