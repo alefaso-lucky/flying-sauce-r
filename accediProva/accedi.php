@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <?php
-if(isset($_POST['email'])){
-    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-        $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
-        if(checkdnsrr($dominio, "MX"));
-        else{
-            echo "Dominio $dominio non esistente";
-            header("refresh:2;URL=./accedi.php");
-        }
-    }
-}
+if(isset($_POST['email']))
+  $email = $_POST['email'];
+else
+  $email = "";
+
+if(isset($_POST['password']))
+  $password = $_POST['password'];
+else
+  $password = "";
 ?>
 
 <html lang="en" dir="ltr">
@@ -35,51 +34,68 @@ if(isset($_POST['email'])){
 
   </head>
   <body>
-    <section class= "background">
-      <div class="content">
-        <h2>Cibo veloce, gusto eccezionale: accedi e vola con FlyingSauce!</h2>
-        <p>"Entra nel cielo della pasta da asporto di FlyingSauce: accedi subito
-          per gustare la comodità della consegna tramite droni, portando la freschezza
-          dei nostri piatti direttamente sulla tua tavola!"</p>
+  <?php require "./navSimple.php" ; ?>
+  <div class="fullbody">
+    <div class="container">
+      <div class="panel">
+        <div class="leftpanel">
+          <div class="content">
+            <h3>Accedi e vola con FlyingSauce!</h3>
+              <p>Entra nel cielo della pasta da asporto di FlyingSauce
+                per gustare la comodità della consegna tramite droni,
+                portando la freschezza dei nostri piatti direttamente sulla tua tavola!
+              </p>
+          </div>
+        <img src="accedi_img.jpg" alt="accedi_img">
+        </div>
+        <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
+          <h2>Member Login</h2>
+          <div class="input-field">
+            <span class="fas fa-envelope"></span>
+            <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
+          </div>
+          <div class="input-field">
+            <span class="fas fa-lock"></span>
+            <input type="password" id ="psw" name="password" placeholder="Password" value="<?php echo $password; ?>"><br/>
+          </div>
+          <input type="submit" id="login" name="login" value="Login"><br/>
+          <p id="iscriviti">Non sei ancora iscritto? <a href="">Iscriviti ora</a></p>
+          <?php
+            if(isset($_POST['email'])){
+                if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+                    $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
+                    if(checkdnsrr($dominio, "MX"));
+                    else{
+                        $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                        echo "$alert";
+                        header("refresh:2;URL=./accedi.php");
+                    }
+                }
+            }
+
+            if(!empty($_POST) && $_POST["login"]=="Login") {
+              require_once "./logindb.php";
+              $em = pg_escape_literal($_POST["email"]);
+              $psw = pg_escape_literal($_POST["password"]);
+              $sql = "SELECT * FROM utenti WHERE email=".$em."and password=".$psw;
+              $ret = pg_query($db, $sql);
+
+              if($row = pg_fetch_array($ret)) {
+                session_start();
+                $_SESSION["username"] = $row['username'];
+                $_SESSION["loggato"] = True;
+                header("refresh:0.01;URL=./area_riservata.php");
+              }
+              else {
+                $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
+                echo "$alert";
+              }
+
+              pg_close($db);
+            }
+          ?>
+      </form>
       </div>
-      <div class="wrapper-login">
-        <form class="" action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
-            <h2>Member Login</h2>
-            <div class="input-field">
-              <span class="fas fa-envelope"></span>
-              <input type="email" name="email" placeholder="Email" required value="<?php echo isset($_POST['email']) ?  $_POST['email'] : '' ; ?>"><br/>
-            </div>
-            <div class="input-field">
-              <span class="fas fa-lock"></span>
-              <input type="password" id ="psw" name="password" placeholder="Password" onblur="validatePassword()" value="<?php echo isset($_POST['password']) ?  $_POST['password'] : '' ; ?>"><br/>
-            </div>
-            <input type="submit" id="login" name="login" value="Login"><br/>
-            <p class="register-link">Non sei ancora iscritto? <a href="">Iscriviti ora</a></p>
-        </form>
-      </div>
-    </section>
-
-    <?php
-      if(!empty($_POST) && $_POST["login"]=="Login") {
-        require_once "./logindb.php";
-        $em = pg_escape_literal($_POST["email"]);
-        $psw = pg_escape_literal($_POST["password"]);
-        $sql = "SELECT * FROM utenti WHERE email=".$em."and password=".$psw;
-        $ret = pg_query($db, $sql);
-
-        if($row = pg_fetch_array($ret)) {
-          session_start();
-          $_SESSION["username"] = $row['username'];
-          $_SESSION["loggato"] = True;
-          header("refresh:0.01;URL=./area_riservata.php");
-        }
-        else {
-          echo "<strong> L'indirizzo email o la password che hai inserito non sono corretti </strong>";
-        }
-
-        pg_close($db);
-      }
-
-    ?>
-
+    </div>
+  </div>
   </body>

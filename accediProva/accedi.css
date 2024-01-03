@@ -1,101 +1,181 @@
-*{
+* {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  height: 100vh; /*il body così occupa l'intera altezza della finestra */
+  background: #F4DAB4;
+}
+
+.fullbody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  margin-top: 40px;
+  width: 80vw;    /*rispetto alla larghezza della finestra del browser*/
+  height: 80vh;     /*rispetto all'altezza della finestra del browser*/
+  background: #46666D;
+  border-radius: 150px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.panel {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  position: relative;   /*così i div interni possono usufruire del posizionamento relativo*/
+}
+
+form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 30%;   /*rispetto a panel*/
+  padding: 0 10px;
+}
+
+form h2 {
+  color: rgb(255, 194, 108);
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.input-field {
+  width: 90%;
+  height: 50px;
+  background: transparent;
+  margin: 10px 0;
+  border: 2px solid #184149;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.input-field span {
+  flex: 1;
+  text-align: center;
+  color: rgb(255, 194, 108);
+  font-size: 19px;
+}
+
+.input-field input {
+  flex: 5;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #FFF0DA;
+}
+
+#login {
+  border: none;
+  border-radius: 50px;
+  background: rgb(255, 194, 108);
+  color: #FFF0DA;
+  font-weight: 600;
+  width: 130px;
+  height: 50px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#login:hover {
+  background: #184149;
+}
+
+#iscriviti {
+  font-size: 20px;
+  color: #FFF0DA;
+}
+
+#iscriviti a{
+  opacity: 0.5;
+  text-decoration: none;
+  color: rgb(255, 194, 108);
+}
+
+#iscriviti a:hover{
+  opacity:1;
+}
+
+.leftpanel {
+  position: relative;
+  width: 70%; /* Percentuale rispetto a panel */
+  height: 100%; /* Stessa altezza di panel */
+  overflow: hidden;
+  z-index: 0; /* Assicura che l'immagine sia dietro i testi */
+}
+
+.leftpanel p {
+  font-size: 24px;
+  padding: 10px 0;
+  position: absolute;
+  max-width: 30%;
+  z-index: 1;
+  color: #FFF0DA;
+  left: 5%;
+  top: 40%;
+}
+
+.leftpanel img {
+  width: 100%; /*per occupare tutto leftpanel*/
+  height: 100%;
+  object-fit: cover; /*l'immagine non subisce alterazioni */
+}
+
+.leftpanel h3{
+  font-size: 50px;
+  font-weight: bold;
+  max-width: 30%;
+  position: absolute;
+  z-index: 1;
+  color: rgb(255, 194, 108);
+  left: 5%;
+  top: 15%;
+}
+
+@media(max-width: 1400px){
+  .leftpanel p {
+    display: none;
   }
-  
-  .background {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('./accedi_spaghetti.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .content {
-    max-width: 550px;
-    color: #fff;
-    margin-left: 50px;
-  }
-  
-  .content h2{
+
+  .leftpanel h3{
     font-size: 40px;
+    font-weight: bold;
+    max-width: 10%;
+    position: absolute;
+    z-index: 1;
     color: rgb(255, 194, 108);
-    letter-spacing: .03em;
+    left: 5%;
+    top: 25%;
   }
-  
-  .content p{
-    margin: 10px 0 40px;
-    font-size: 19px;
-    color: #FFF0DA;
-    text-align: left;
+}
+
+@media(max-width: 1000px){
+  .leftpanel{
+    display: none;
   }
-  
-  .wrapper-login{
-    width: 440px;
-    margin-right: 50px;
+
+  form{
+    width: 100%;
   }
-  
-  .wrapper-login h2{
-    font-size: 2em;
-    color: rgb(255, 194, 108);
-    text-align: center;
-  }
-  
-  .wrapper-login form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .input-field {
-      width: 100%;
-      height: 50px;
-      background: trasparent;
-      margin: 10px 0;
-      border: 2px solid rgb(70, 102, 109);
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-  }
-  
-  .input-field span {
-      flex: 1;
-      text-align: center;
-      color: #FFC26C;
-      font-size: 18px;
-  }
-  
-  .input-field input {
-      flex: 5;
-      background: none;
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 18px;
-      font-weight: 600;
-      color: #FFF0DA;
-  }
-  
-  #login {
-      width: 150px;
-      height: 50px;
-      border: none;
-      border-radius: 50px;
-      background: #FFC26C;
-      color: #fff;
-      font-weight: 600;
-      margin: 10px 0;
-      cursor: pointer;
-  }
-  
-  #login:hover {
-      background: rgb(198, 175, 156);
-  }
-  
+}
+
+.alert {
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(255, 255, 102);
+}
