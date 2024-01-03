@@ -37,6 +37,7 @@ body {
   border-right: thin solid #E4A33F;
   /*per la linea laterale della sidenav*/
   left: 0px;
+  text-align: center;
 }
 
 .dx {
@@ -58,7 +59,13 @@ body {
   max-width: 250px;
 }
 
-.primi > a {
+.primi:hover {
+  background-color: #F4DAB4;
+  transition: all .3s ease;
+  border-radius: 20px;
+}
+
+.primi>a {
   text-decoration: none;
   color: #46666D;
   font-family: serif;
@@ -96,6 +103,7 @@ h1 {
   background-color: #46666D;
   color: #FFF0DA;
   border-color: #FFF0DA;
+  transition: all .2s ease;
 }
 
 /*domanda componi ora nella barra id sx*/
@@ -105,24 +113,57 @@ h1 {
 }
 
 /*tasto componi ora nella barra id sx e titolo della col di dx*/
-.componi {
-  border: thin solid #FFC26C;
-  background-color: #184149;
-  border-radius: 10px;
+.menu_buttons {
+  display: inline-block;
+  border: thin solid rgb(255, 194, 108);
+  /*background-color: #184149;sono indeciso tra i due background color*/
+  background-color: rgb(70, 102, 109);
+  border-radius: 7px;
   /*per i bordi arrotondati*/
-  padding: 15px;
+  -webkit-border-radius: 7px;
+  /*per i bordi arrotondati su safari*/
+  padding: 10px 30px;
   /*per aumentare quello che circonda il bottone*/
-  margin-left: 60px;
-  color: #FFC26C;
+  color: rgb(255, 194, 108);
+  margin-bottom: 10px;
+  font-size: 15px;
+  width: 130px;
+
+  cursor: pointer;
+  /*facciamo uscire la manina*/
+  transition: all .3s ease;
+}
+
+.menu_buttons:hover {
+  border: thin solid #184149;
+  background-color: #FFF0DA;
+  color: #5D7A7F;
 }
 
 /*dettagli stilistici*/
-.titolo{
+.titolo {
   font-family: "Sofia", Lucida Handwriting, Garamond;
   font-size: 40px;
   font-weight: 100;
 }
 
-li{
-  color:#FFC26C;
+li {
+  color: #FFC26C;
+}
+
+#info_button {
+  cursor: pointer;    /*facciamo uscire la manina*/
+  border: none;       /*eliminare bordo e sfondo del bottone di default*/
+  background: none;
+  height: 25px;
+  border-radius: 10px;
+}
+
+#info_button:hover {
+  background: fixed;
+  background-color: #FFF0DA;
+}
+
+#to_piatto_singolo {
+  text-align: end; /*tasto info a destra del riquadro*/
 }

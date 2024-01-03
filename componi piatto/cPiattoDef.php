@@ -7,6 +7,7 @@
         <meta charset="utf-8">
     </head>
     <body>
+        <?php require '../base/navSimple.php'; ?>
         <div id="composizione">
             <div id="contenitore">
                 <form action="#" method="post" id="form_grid">
@@ -55,13 +56,14 @@
                         </label>
                 </form>
                 <p id="bottoni">
-                    <input id="carrello" name="submit" type="submit" value="AGGIUNGI AL CARRELLO"/>
-                    <a href="#" id="menu" name="menu">VAI AL MENU'</a>
+                    <a href="menu/ordina.php/" id="menu" class="choice_buttons">VAI AL MENU</a>
+                    <input id="carrello" class="choice_buttons" name="submit" type="submit" value="AGGIUNGI AL CARRELLO"/>
                 </p>
             </div>
             <canvas id="piattoComposto" width="597px" height="618px" style="border:1px solid #d3d3d3;">canvas non disponibile su questo browser</canvas>
             <script type="text/javascript" src="componi%20piatto/cPiattoDef.js"></script>
         </div>
+        <?php require "../base/footer.php"; ?>
     </body>
 
 </html>

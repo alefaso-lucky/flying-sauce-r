@@ -26,9 +26,7 @@ body {
     margin-top: 25px;
 }
 
-#rowUno_rightside {
-    
-}
+#rowUno_rightside {}
 
 #rowDue {
     background-color: rgb(255, 240, 218);
@@ -36,18 +34,21 @@ body {
     color: rgb(66, 74, 89);
 }
 
-#rowDue > p {
+#rowDue>p {
     margin: 10px
 }
 
-#sinGlu {        
+#sinGlu {
     display: flex;
     max-width: 230px;
     border: thin solid rgb(255, 194, 108);
     background-color: rgb(70, 102, 109);
-    border-radius: 7px;   /*per i bordi arrotondati*/
-    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
-    padding: 10px 15px;    /*per aumentare quello che circonda il bottone*/
+    border-radius: 7px;
+    /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px;
+    /*per i bordi arrotondati su safari*/
+    padding: 10px 15px;
+    /*per aumentare quello che circonda il bottone*/
     color: rgb(255, 194, 108);
     font-size: 15px;
     align-items: center;
@@ -58,4 +59,31 @@ body {
     margin: 0px;
 }
 
+#ingredienti {
+    max-width: 700px;
+}
 
+/*per tutti i submit e reset field*/
+.menu_button{
+    border: thin solid rgb(255, 194, 108);
+    background-color: rgb(70, 102, 109);
+    border-radius: 7px;
+    /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px;
+    /*per i bordi arrotondati su safari*/
+    padding: 10px 30px;
+    /*per aumentare quello che circonda il bottone*/
+    color: rgb(255, 194, 108);
+    margin: 10px 0px;
+    font-size: 15px;
+
+    cursor: pointer;
+    /*facciamo uscire la manina*/
+    transition: all .6s ease;
+}
+
+.menu_button:hover {
+    border: thin solid #184149;
+    background-color: #FFF0DA;
+    color: #5D7A7F;
+}

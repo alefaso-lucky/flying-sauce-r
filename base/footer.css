@@ -79,6 +79,16 @@ footer {
     margin-left: 15px;
     margin-top: 10px;
     border: thin solid rgb(255, 194, 108);
+
+    cursor: pointer;
+    /*facciamo uscire la manina*/
+    transition: all .2s ease;
+}
+
+#submit_newsletter_footer:hover {
+    border: thin solid #184149;
+    background-color: #FFF0DA;
+    color: #5D7A7F;
 }
 
 #newsletter_field {
@@ -87,4 +97,10 @@ footer {
     width: 250px; /*definisco le dimensioni*/
     height: 30px;
     background-color: transparent; /*la rendo trasparente*/
+    color: rgb(242, 243, 244);
+}
+
+::placeholder {
+    color: gray;
+    opacity: 1; /*Firefox imposta una opacity più bassa al placeholder, per risolvere la impostiamo ad 1 manualmente*/
 }

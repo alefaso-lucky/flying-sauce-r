@@ -12,8 +12,8 @@ body {
     /*funziona insieme al wrap quindi quando si rinpicciolisce*/
     justify-content: space-evenly;
     flex-wrap: wrap-reverse;
-    margin-top: 90px;
-    margin-bottom: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 0px;
     margin-left: 0px;
     background-color: #F4DAB4;
@@ -160,33 +160,38 @@ label input:checked+span:before {
 /*di seguito lo stile dei bottoni*/
 #bottoni {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 #carrello {
-    border: thin solid #FFC26C;
-    background-color: #46666D;
-    border-radius: 10px;
-    /*per i bordi arrotondati*/
-    padding: 15px;
-    /*per aumentare quello che circonda il bottone*/
-    color: #FFC26C;
+    background-color: #184149;
 }
 
-#menu {
-    border: thin solid #FFC26C;
-    background-color: #46666D;
-    border-radius: 10px;
+.choice_buttons {
+    box-sizing: border-box;
+    display: inline-block;
+    border: thin solid rgb(255, 194, 108);
+    /*background-color: #184149;sono indeciso tra i due background color*/
+    background-color: rgb(70, 102, 109);
+    border-radius: 7px;
     /*per i bordi arrotondati*/
-    padding: 15px;
+    -webkit-border-radius: 7px;
+    /*per i bordi arrotondati su safari*/
+    padding: 15px 30px;
     /*per aumentare quello che circonda il bottone*/
-    padding-bottom: 17px;
-    color: #FFC26C;
+    color: rgb(255, 194, 108);
     font-family: sans-serif;
     font-size: 13px;
     text-decoration: none;
+
+    cursor: pointer;
+    /*facciamo uscire la manina*/
+    transition: all .6s ease;
 }
 
-#riquadro{
-
+.choice_buttons:hover,
+#carrello:hover {
+    border: thin solid #184149;
+    background-color: #FFF0DA;
+    color: #5D7A7F;
 }

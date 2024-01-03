@@ -4,7 +4,6 @@
         <title>piatto selezionato</title>
         <meta character="utf-8">
         <base href="http://localhost/Flying_Sauce_r/">
-        <link rel="stylesheet" href="base/generic.css">
         <link rel="stylesheet" href="menu/piatto_singolo/piatto.css">
     </head>
     <body>
@@ -21,7 +20,8 @@
         <!-- portare in qualche modo il piatto selezionato in $curr_nom -->
         <!--fetch dell'elemento desiderato-->
         <?php
-            $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = 'Spaghetti alla Carbonara'";
+            $nome = $_POST['name'];
+            $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'";
             $ret = pg_query($db, $sql);
             $row = pg_fetch_array($ret);
             $nome = $row[0];
@@ -33,10 +33,10 @@
         <div id="rowUno">
             <div id="rowUno_leftside">
                 <h1><?php echo $nome ?></h1>
-                <p><?php echo $lista_ingredienti ?></p>
+                <p id="ingredienti"><?php echo $lista_ingredienti ?></p>
                 <div>
                     <!--<a class="submit-field" href="#">ORDINA ORA</a>-->
-                    <a class="reset-field" href="#">TORNA AL MENU</a>
+                    <a class="menu_button" href="menu/ordina.php/">TORNA AL MENU</a>
                 </div>
             </div>
             <img id="rowUno_rightside" src="<?php echo $foto ?>" alt="piatto di pasta" width="400px">
