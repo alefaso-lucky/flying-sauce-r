@@ -2,18 +2,20 @@
 <html>
     <head>
         <title>Componi il tuo piatto</title>
-        <link rel="stylesheet" href="./cPiattoDef.css" type="text/css">
-        <base href="http://localhost/Flying_Sauce_r/">
+        <link rel="stylesheet" href="./cPiattoDef.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
+        <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
         <meta charset="utf-8">
     </head>
     <body>
-        <?php require '../base/navSimple.php'; ?>
-        <div id="composizione">
-            <div id="contenitore">
-                <form action="#" method="post" id="form_grid">
-                        <span id="quantita" class="name_of_options">Quantità</span>
-                        <label for="piccolo-field" id="piccolo_opt" class="options options_left" onclick="printImage('quantita_1.png', 50, 442)">
-                            <input id="piccolo-field" name="quantita" type="radio"/><span>Piccolo(60g)</span>
+        <?php require '../base/navSimple.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
+        <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->
+            <div> <!--contenitore del form di composizione del piatto-->
+                <form action="#" method="post" id="form_grid"> <!--form per la composizione del piatto-->
+
+                <!--la seguente porzione di codice è composta da 4 parti che permettono di scegliere i 4 attributi del piatto-->
+                        <span id="quantita" class="name_of_options">Quantità</span> <!--nome della caratteristica da scegliere-->
+                        <label for="piccolo-field" id="piccolo_opt" class="options options_left" onclick="printImage('quantita_1.png', 50, 442)"> <!--label che se cliccata lancia un metodo JS che "dipinge" sul canvas la scelta effettuata-->
+                            <input id="piccolo-field" name="quantita" type="radio"/><span>Piccolo(60g)</span> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                         </label>
                         <label for="medio-field" id="medio_opt" class="options" onclick="printImage('quantita_2.png', 50, 442)">
                             <input id="medio-field" name="quantita" type="radio"/><span>Medio(90g)</span>
@@ -55,15 +57,15 @@
                             <input id="noci-field" name="topping" type="radio"/><span>Noci</span>
                         </label>
                 </form>
-                <p id="bottoni">
+                <p id="bottoni"> <!--bottoni per tornare al menu e aggiungere al carrello il piatto composto-->
                     <a href="menu/ordina.php/" id="menu" class="choice_buttons">VAI AL MENU</a>
-                    <input id="carrello" class="choice_buttons" name="submit" type="submit" value="AGGIUNGI AL CARRELLO"/>
+                    <input id="carrello" class="choice_buttons" name="submit" type="submit" value="AGGIUNGI AL CARRELLO"/> <!--WORK IN PROGRESS-->
                 </p>
             </div>
-            <canvas id="piattoComposto" width="597px" height="618px" style="border:1px solid #d3d3d3;">canvas non disponibile su questo browser</canvas>
-            <script type="text/javascript" src="componi%20piatto/cPiattoDef.js"></script>
+            <canvas id="piattoComposto" width="597px" height="618px" style="border:1px solid #d3d3d3;">canvas non disponibile su questo browser</canvas> <!--Canvas sul quale mostrare le scelte effettuate-->
+            <script type="text/javascript" src="componi%20piatto/cPiattoDef.js"></script> <!--script che alimenta il canvas-->
         </div>
-        <?php require "../base/footer.php"; ?>
+        <?php require "../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
     </body>
 
 </html>

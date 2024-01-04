@@ -1,33 +1,26 @@
 body {
-    background-color: #FFF0DA;
-    font-family: "Goudy Old Style", sans-serif;
-    margin: 0px;
+    background-color: #FFF0DA; /*imposta il colore di sfondo del body*/
+    font-family: "Goudy Old Style", sans-serif; /*imposta il font per gli elementi della pagina*/
+    margin: 0px; /*imposta il margine del body a 0 in modo da far riempire al corpo della pagina tutto lo schermo*/
 }
 
 #composizione {
-    display: flex;
-    align-items: center;
-    /*funziona il viceversa di content*/
-    align-content: center;
-    /*funziona insieme al wrap quindi quando si rinpicciolisce*/
-    justify-content: space-evenly;
-    flex-wrap: wrap-reverse;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 0px;
-    margin-left: 0px;
-    background-color: #F4DAB4;
-    /*max-height: 550px;*/
+    display: flex; /*il form con la scelta e il canvas sono così flex element e si wrappano quando la finestra è troppo piccola*/
+    align-items: center; /*il form e il canvas sono allineati al centro*/
+    align-content: center; /*quando avviene il wrap gli elementi devono comunque essere allineati al centro*/
+    justify-content: space-evenly; /*su schermi abbastanza ampi gli elementi sono spaziati in maniera uniforme*/
+    flex-wrap: wrap-reverse; /*quando avviene il wrap in alto va il Canvas e in basso il form di selezione*/
+    margin: 20px 0px; /*ampiezza dei margini*/
+    background-color: #F4DAB4; /*colore di sfondi*/
 }
 
 #form_grid {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    min-width: 450px;
-    font-size: 20px;
-    background-color: rgb(244, 218, 180);
-    display: grid;
-    grid-template-areas:
+    margin: 10px 0px; /*margine del form*/
+    min-width: 450px; /*minima larghezza del form*/
+    font-size: 20px; /*viene definita la dimensione del testo all'interno del form*/
+    background-color: rgb(244, 218, 180); /*sfondo del form*/
+    display: grid; /*per allineare i radio button questi sono in una griglia*/
+    grid-template-areas: /*viene definito il layout della griglia*/
         'ftext ftext ftext'
         'ffo fso fto'
         'stext stext stext'
@@ -36,135 +29,124 @@ body {
         'tfo tso tto'
         'fotext fotext fotext'
         'fofo foso foto';
-    /*grid-template-columns: 150px 150px 150px;*/
 }
 
 #piccolo_opt {
-    grid-area: ffo;
+    grid-area: ffo; /*First line, First column, Option*/
 }
 
 #medio_opt {
-    grid-area: fso;
+    grid-area: fso; /*First line, Second column, Option*/
 }
 
 #grande_opt {
-    grid-area: fto;
+    grid-area: fto; /*First line, Third column, Option*/
 }
 
 #ravioli_opt {
-    grid-area: sfo;
+    grid-area: sfo; /*Second line, First column, Option*/
 }
 
 #tagliatelle_opt {
-    grid-area: sso;
+    grid-area: sso; /*Second line, Second column, Option*/
 }
 
 #orecchiette_opt {
-    grid-area: sto;
+    grid-area: sto; /*Second line, Third column, Option*/
 }
 
 #pomodoto_opt {
-    grid-area: tfo;
+    grid-area: tfo; /*Third line, First column, Option*/
 }
 
 #panna_opt {
-    grid-area: tso;
+    grid-area: tso; /*Third line, Second column, Option*/
 }
 
 #pesto_opt {
-    grid-area: tto;
+    grid-area: tto; /*Third line, Third column, Option*/
 }
 
 #guanciale {
-    grid-area: fofo;
+    grid-area: fofo; /*Fourth line, Fourth column, Option*/
 }
 
 #avocado {
-    grid-area: foso;
+    grid-area: foso; /*Fourth line, Second column, Option*/
 }
 
 #noci {
-    grid-area: foto;
+    grid-area: foto; /*Fourth line, Third column, Option*/
 }
 
 .name_of_options {
-    border: 1px dotted rgb(198, 175, 156);
-    border-bottom: none;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: bold;
+    border: 1px dotted rgb(198, 175, 156); /*viene impostato un bordo in modo da ottenere i riquadri tratteggiati che contornano le varie scelte del form"*/
+    border-bottom: none; 
+    padding: 20px; /*padding per dare più volume all'area coperta dal nome dell'opzione*/
+    font-size: 20px; /*dimensione del font*/
+    font-weight: bold; /*nomi delle opzioni in grassetto*/
 }
 
 #quantita {
-    grid-area: ftext;
+    grid-area: ftext; /*First line of Text*/
 }
 
 #pasta {
-    grid-area: stext;
+    grid-area: stext; /*Secondi line of Text*/
 }
 
 #sugo {
-    grid-area: ttext;
+    grid-area: ttext; /*Third line of Text*/
 }
 
 #topping {
-    grid-area: fotext;
+    grid-area: fotext; /*Fourth line of Text*/
 }
 
 .options {
     padding-bottom: 5px;
-    border-bottom: 1px dotted rgb(198, 175, 156);
-    margin-bottom: 10px;
+    border-bottom: 1px dotted rgb(198, 175, 156); /*viene impostato un bordo in modo da ottenere i riquadri tratteggiati che contornano le varie scelte del form"*/
+    margin-bottom: 10px; /**/
 }
 
 .options_left {
-    border-left: 1px dotted rgb(198, 175, 156);
+    border-left: 1px dotted rgb(198, 175, 156); /*viene impostato un bordo in modo da ottenere i riquadri tratteggiati che contornano le varie scelte del form"*/
 }
 
 .options_right {
-    border-right: 1px dotted rgb(198, 175, 156);
-}
-
-#form_grid input[type=radio] {
-    /*accent-color: rgb(70, 102, 109);
-    appearance: button;*/
-    display: none;
-
+    border-right: 1px dotted rgb(198, 175, 156); /*viene impostato un bordo in modo da ottenere i riquadri tratteggiati che contornano le varie scelte del form"*/
 }
 
 /*di seguito lo stile necessario ad editare i radio buttons*/
-
-/*label span {
-    position: relative;
-}*/
+#form_grid input[type=radio] {
+    display: none; /*nasconde i "cerchietti" dei radio button che sono poi "ricreati in CSS con uno stile più calzante al resto della pagina"*/
+}
 
 label span:before {
-    /*inserisco un contenuto vuoto prima delle scritte delle varie opzioni*/
-    content: '';
-    /*do uno stile al contenuto che ho inserito*/
-    border-radius: 6px;
-    border: 1px solid rgb(24, 65, 73);
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: inline-block;
-    vertical-align: top;
+    content: ''; /*inserisce un contenuto vuoto prima delle scritte dei vari radio buttons, questo contenuto vuoto sostituisce il "cerchietto" precedentemente rimosso*/
+    /*i seguenti righi danno uno stile al contenuto inserito*/
+    border-radius: 6px; /*arrotonda il contenuto*/
+    border: 1px solid rgb(24, 65, 73); /*il contenuto ha un bordo ma non un background, in questo modo replica l'idea del radio button non selezionato*/
+    width: 15px; /*definisce la larghezza del contenuto*/
+    height: 15px; /*definisce la larghezza del contenuto*/
+    margin: 0px 5px; /*definisce margine nullo verticalmente ma presente in orizzontale in modo da distanziare il contenuto dal testo a esso legato*/
+    display: inline-block; /*per permettere alle modifiche relative a larghezza e altezza di avere effetto*/
 }
 
 label input:checked+span:before {
-    /*quando l'input è checked do un background color al contenuto che ho inserito*/
+    /*quando l'input è checked da un background color al contenuto inserito*/
     background-color: rgb(70, 102, 109);
 }
 
 /*di seguito lo stile dei bottoni*/
 #bottoni {
+    /*i bottoni sono in un contenitore flex che li distanzia*/
     display: flex;
     justify-content: space-between;
 }
 
 #carrello {
-    background-color: #184149;
+    background-color: #184149; /*colore di sfondo del bottone per aggiungere al carrello*/
 }
 
 .choice_buttons {
@@ -184,13 +166,12 @@ label input:checked+span:before {
     font-size: 13px;
     text-decoration: none;
 
-    cursor: pointer;
-    /*facciamo uscire la manina*/
-    transition: all .6s ease;
+    cursor: pointer; /*fa uscire la "manina"*/
+    transition: all .6s ease; /*rende l'animazione di hover più smooth*/
 }
 
 .choice_buttons:hover,
-#carrello:hover {
+#carrello:hover { /*al passaggio del mouse lo stile dei bottoni cambia in modo da renderli visivamente responsivi*/
     border: thin solid #184149;
     background-color: #FFF0DA;
     color: #5D7A7F;
