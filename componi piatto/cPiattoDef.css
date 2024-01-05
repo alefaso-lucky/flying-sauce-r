@@ -104,9 +104,9 @@ body {
 }
 
 .options {
-    padding-bottom: 5px;
+    padding-bottom: 5px; /*da più volume alle opzioni*/
     border-bottom: 1px dotted rgb(198, 175, 156); /*viene impostato un bordo in modo da ottenere i riquadri tratteggiati che contornano le varie scelte del form"*/
-    margin-bottom: 10px; /**/
+    margin-bottom: 10px; /*distanzia le opzioni dalle successive righe del form*/
 }
 
 .options_left {
@@ -145,29 +145,26 @@ label input:checked+span:before {
     justify-content: space-between;
 }
 
-#carrello {
-    background-color: #184149; /*colore di sfondo del bottone per aggiungere al carrello*/
-}
-
 .choice_buttons {
     box-sizing: border-box;
     display: inline-block;
-    border: thin solid rgb(255, 194, 108);
+    border: thin solid rgb(255, 194, 108); /*bordo dorato*/
     /*background-color: #184149;sono indeciso tra i due background color*/
-    background-color: rgb(70, 102, 109);
-    border-radius: 7px;
-    /*per i bordi arrotondati*/
-    -webkit-border-radius: 7px;
-    /*per i bordi arrotondati su safari*/
-    padding: 15px 30px;
-    /*per aumentare quello che circonda il bottone*/
+    background-color: rgb(70, 102, 109); /*colore di sfondo*/
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 15px 30px; /*per dare volume al bottone*/
     color: rgb(255, 194, 108);
     font-family: sans-serif;
     font-size: 13px;
-    text-decoration: none;
+    text-decoration: none; /*rimuove lo stile automatico delle anchor*/
 
     cursor: pointer; /*fa uscire la "manina"*/
     transition: all .6s ease; /*rende l'animazione di hover più smooth*/
+}
+
+#carrello {
+    background-color: #184149; /*colore di sfondo del bottone per aggiungere al carrello*/
 }
 
 .choice_buttons:hover,
