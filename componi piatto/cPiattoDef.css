@@ -146,17 +146,17 @@ label input:checked+span:before {
 }
 
 .choice_buttons {
-    box-sizing: border-box;
-    display: inline-block;
+    box-sizing: border-box; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
+    display: inline-block; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
     border: thin solid rgb(255, 194, 108); /*bordo dorato*/
     /*background-color: #184149;sono indeciso tra i due background color*/
     background-color: rgb(70, 102, 109); /*colore di sfondo*/
     border-radius: 7px; /*per i bordi arrotondati*/
     -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
     padding: 15px 30px; /*per dare volume al bottone*/
-    color: rgb(255, 194, 108);
-    font-family: sans-serif;
-    font-size: 13px;
+    color: rgb(255, 194, 108); /*colore del testo uguale a quello del bordo*/
+    font-family: sans-serif; /*scelta del font*/
+    font-size: 13px; /*scelta della dimensione del testo*/
     text-decoration: none; /*rimuove lo stile automatico delle anchor*/
 
     cursor: pointer; /*fa uscire la "manina"*/
@@ -168,7 +168,9 @@ label input:checked+span:before {
 }
 
 .choice_buttons:hover,
-#carrello:hover { /*al passaggio del mouse lo stile dei bottoni cambia in modo da renderli visivamente responsivi*/
+#carrello:hover {
+    /*al passaggio del mouse il colore del bordo, dello sfondo e del testo dei bottoni cambia 
+    in modo da renderli visivamente responsivi*/
     border: thin solid #184149;
     background-color: #FFF0DA;
     color: #5D7A7F;
