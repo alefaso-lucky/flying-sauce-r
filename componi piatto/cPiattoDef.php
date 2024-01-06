@@ -13,6 +13,7 @@
                 <form action="#" method="post" id="form_grid"> <!--form per la composizione del piatto-->
 
                 <!--la seguente porzione di codice è composta da 4 parti che permettono di scegliere i 4 attributi del piatto-->
+                        <!--prima scelta-->
                         <span id="quantita" class="name_of_options">Quantità</span> <!--nome della caratteristica da scegliere-->
                         <label for="piccolo-field" id="piccolo_opt" class="options options_left" onclick="printImage('quantita_1.png', 50, 442)"> <!--label che se cliccata lancia un metodo JS che "dipinge" sul canvas la scelta effettuata-->
                             <input id="piccolo-field" name="quantita" type="radio"/><span>Piccolo(60g)</span> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
@@ -23,7 +24,7 @@
                         <label for="Grande-field" id="grande_opt" class="options options_right" onclick="printImage('quantita_3.png', 50, 442)">
                             <input id="Grande-field" name="quantita" type="radio"/><span>Grande(130g)</span>
                         </label>
-                        
+                        <!--seconda scelta-->
                         <span id="pasta" class="name_of_options">Pasta</span>
                         <label for="ravioli-field" id="ravioli_opt" class="options options_left" onclick="printImage('pasta_1.png', 50, 307)">
                             <input id="ravioli-field" name="pasta" type="radio"/><span>Ravioli</span>
@@ -34,7 +35,7 @@
                         <label for="orecchiette-field" id="orecchiette_opt" class="options options_right" onclick="printImage('pasta_3.png', 50, 307)">
                             <input id="orecchiette-field" name="pasta" type="radio"/><span>Orecchiette</span>
                         </label>
-
+                        <!--terza scelta-->
                         <span id="sugo" class="name_of_options">Sugo</span>
                         <label for="pomodoro-field" id="pomodoro_opt" class="options options_left" onclick="printImage('sugo_1.png', 50, 172)">
                             <input id="pomodoro-field" name="sugo" type="radio"/><span>Pomodoro</span>
@@ -45,7 +46,7 @@
                         <label for="pesto-field" id="pesto_opt" class="options options_right" onclick="printImage('sugo_3.png', 50, 172)">
                             <input id="pesto-field" name="sugo" type="radio"/><span>Pesto</span>
                         </label>
-                        
+                        <!--quarta scelta-->
                         <span id="topping" class="name_of_options">Topping</span>
                         <label for="guanciale-field" id="guanciale_opt" class="options options_left" onclick="printImage('topping_1.png', 50, 37)">
                             <input id="guanciale-field" name="topping" type="radio"/><span>Guanciale</span>
