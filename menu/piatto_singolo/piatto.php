@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Piatto Selezionato</title>
-        <meta character="utf-8">
-        <base href="http://localhost/Flying_Sauce_r/">
-        <link rel="stylesheet" href="menu/piatto_singolo/piatto.css">
+        <title>Piatto Selezionato</title> <!--titolo della scheda-->
+        <meta character="utf-8"> <!--character encoding-->
+        <base href="http://localhost/Flying_Sauce_r/"> <!--base per gli href del documento-->
+        <link rel="stylesheet" href="menu/piatto_singolo/piatto.css"> <!--collegamento al foglio di stile-->
     </head>
     <body>
         <?php require '../../base/navSimple.php'; ?> <!--Inserimento della navbar-->
