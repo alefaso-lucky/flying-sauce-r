@@ -1,89 +1,78 @@
 body {
-    margin: 0;
+    margin: 0; /*margine 0 al body per riempire tutta la pagina*/
 }
 
 #rowUno {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgb(244, 218, 180);
-    border-bottom: 3px solid rgb(255, 192, 0);
+    display: flex; /*la prima riga è un flex container*/
+    flex-wrap: wrap; /*in mancanza di spazio i contenuti vengono wrappati*/
+    justify-content: space-around; /*in una situazione standard i contenuti della riga 1 sono distanziati*/
+    align-items: center; /*i contenuti sono allineati verticalmente al centro*/
+    background-color: rgb(244, 218, 180); /*colore di sfondo della prima riga*/
+    border-bottom: 3px solid rgb(255, 192, 0); /*bordo dorato che divide la prima riga dalla seconda*/
 }
 
 #rowUno_leftside {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: rgb(93, 122, 127);
+    display: flex; /*la parte sinistra della prima riga è a sua volta un flex container*/
+    flex-direction: column; /*i contenuti sono incolonnati*/
+    align-items: flex-start; /*i contenuti sono allineati verticalmente a partire dal margine superiore del container*/
+    color: rgb(93, 122, 127); /*colore del testo*/
 }
 
 #rowUno_leftside h1 {
-    margin-bottom: 0px;
-}
-
-#rowUno_leftside div {
-    margin-top: 25px;
-}
-
-#rowUno_rightside {}
-
-#rowDue {
-    background-color: rgb(255, 240, 218);
-    padding: 20px 80px;
-    color: rgb(66, 74, 89);
-}
-
-#rowDue>p {
-    margin: 10px
-}
-
-#sinGlu {
-    display: flex;
-    max-width: 230px;
-    border: thin solid rgb(255, 194, 108);
-    background-color: rgb(70, 102, 109);
-    border-radius: 7px;
-    /*per i bordi arrotondati*/
-    -webkit-border-radius: 7px;
-    /*per i bordi arrotondati su safari*/
-    padding: 10px 15px;
-    /*per aumentare quello che circonda il bottone*/
-    color: rgb(255, 194, 108);
-    font-size: 15px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#sinGlu p {
-    margin: 0px;
+    margin-bottom: 0px; /*margine inferiore del "nome del piatto" a 0px in modo da mantenere vicini il nome del piatto e la lista ingredienti*/
 }
 
 #ingredienti {
-    max-width: 700px;
+    max-width: 700px; /*massima larghezza della lista ingredienti in modo da ottenere l'effetto desiderato*/
 }
 
-/*per tutti i submit e reset field*/
-.menu_button{
+#rowUno_leftside div {
+    margin-top: 25px; /*margine superiore del div che contiene il tasto per tornare al menu a 25px in modo da allontanarlo dalla lista ingredienti*/
+}
+
+#rowDue {
+    background-color: rgb(255, 240, 218); /*colore di sfondo della seconda riga della pagina*/
+    padding: 20px 80px; /*padding per dare volume alla seconda riga*/
+    color: rgb(66, 74, 89); /*colore del testo*/
+}
+
+#rowDue>p {
+    margin: 10px; /*margine di 10px al paragrafo che contiene la descrizione del piatto in modo da "isolarlo" anche se di poco visivamente*/
+}
+
+#sinGlu {
+    display: flex; /*il bollino senza glutine è un flex container*/
+    max-width: 230px; /*massima larghezza del bollino*/
+    border: thin solid rgb(255, 194, 108); /*bordo dorato*/
+    background-color: rgb(70, 102, 109); /*colore di sfondo*/
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 10px 15px; /*per dare volume al bottone*/
+    color: rgb(255, 194, 108); /*colore del testo*/
+    font-size: 15px; /*dimensione del testo*/
+    align-items: center; /*allineamento verticale degli items al centro*/
+    justify-content: space-between; /*gli elementi sono distanziati*/
+}
+
+#sinGlu p {
+    margin: 0px; /*margine del paragrafo di testo interno al bollino a 0px*/
+}
+
+.menu_button { /*tasto per tornare al menu*/
     border: thin solid rgb(255, 194, 108);
     background-color: rgb(70, 102, 109);
-    border-radius: 7px;
-    /*per i bordi arrotondati*/
-    -webkit-border-radius: 7px;
-    /*per i bordi arrotondati su safari*/
-    padding: 10px 30px;
-    /*per aumentare quello che circonda il bottone*/
-    color: rgb(255, 194, 108);
-    margin: 10px 0px;
-    font-size: 15px;
-
-    cursor: pointer;
-    /*facciamo uscire la manina*/
-    transition: all .6s ease;
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 10px 30px; /*per dare più volume al bottone*/
+    color: rgb(255, 194, 108); /*colore del testo*/
+    margin: 10px 0px;  /*allontana il bottone dalle componenti in alto e in basso ma non lateralmente*/
+    font-size: 15px; /*dimensione del testo*/
+    cursor: pointer; /*per far uscire la manina*/
+    transition: all .3s ease; /*per rendere l'animazione meno brusca*/
 }
 
-.menu_button:hover {
-    border: thin solid #184149;
-    background-color: #FFF0DA;
-    color: #5D7A7F;
+.menu_button:hover { /*stile del tasto per tornare al menu al passaggio del mouse*/
+    border: thin solid #184149; /*caratteristiche del bordo*/
+    background-color: #FFF0DA; /*colore di sfondo*/
+    color: #5D7A7F; /*colore del testo*/
 }
