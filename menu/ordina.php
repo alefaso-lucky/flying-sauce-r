@@ -59,11 +59,11 @@
                                                     <img src="media/info_button" alt="info-dish" width="24px" height="24px"/> <!--immagine "info" per eseguire la submit-->
                                                 </button>
                                             </form>
-                                            <a href="#"> <!--anchor perché cliccando si deve aggiungere al carrello (WORK IN PROGRESS, ancora non implementato)-->
+                                            <div class="adder" name="<?=$nome?>"> <!--anchor perché cliccando si deve aggiungere al carrello (WORK IN PROGRESS, ancora non implementato)-->
                                                 <img src="<?php echo $foto ?>" alt="piatto di pasta" width="230px"> <!--immagine del piatto-->
                                                 <div class="nomepiatto"><?php echo $nome ?></div> <!--nome del piatto-->
                                                 <?php echo $descrizione_breve ?> <!--descrizione breve del piatto-->
-                                            </a>
+                                            </div>
                                         </div>
                                 <?php        
                                     } /* chiusura del while */
@@ -71,6 +71,7 @@
                             </div>
                     <?php
                         } /* chiusura del foreach */
+                        pg_close($db); /* chiusura della connessione al database */
                     ?>
                 </div>
             </div>
@@ -84,6 +85,7 @@
                 </ul>
             </div>
         </div>
+        <script type="text/javascript" src="menu/ordina.js"></script>
         <?php require "../base/footer.php"; ?> <!--inserimento footer-->
     </body>
 
