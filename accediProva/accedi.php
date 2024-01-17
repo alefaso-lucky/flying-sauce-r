@@ -29,7 +29,6 @@ else
 
   </head>
   <body>
-  <?php require "./navSimple.php" ; ?>
   <div class="fullbody">
     <div class="container">
       <div class="panel">
