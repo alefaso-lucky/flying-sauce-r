@@ -4,11 +4,6 @@ if(isset($_POST['email']))
   $email = $_POST['email'];
 else
   $email = "";
-
-if(isset($_POST['password']))
-  $password = $_POST['password'];
-else
-  $password = "";
 ?>
 
 <html lang="en" dir="ltr">
@@ -19,7 +14,6 @@ else
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./accedi.css">
-    <base href="http://localhost/progetto/FlyingSauce-r-/">
     <script language="javascript" type="text/javascript">
       function validatePassword() {
         password = document.getElementById("psw").value;
@@ -35,7 +29,7 @@ else
 
   </head>
   <body>
-  <?php require "../base/navSimple.php" ; ?>
+  <?php require "./navSimple.php" ; ?>
   <div class="fullbody">
     <div class="container">
       <div class="panel">
@@ -47,7 +41,7 @@ else
                 portando la freschezza dei nostri piatti direttamente sulla tua tavola!
               </p>
           </div>
-        <img src="media/accedi_img.jpg" alt="accedi_img"/>
+        <img src="accedi_img.jpg" alt="accedi_img">
         </div>
         <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
           <h2>Member Login</h2>
@@ -57,42 +51,57 @@ else
           </div>
           <div class="input-field">
             <span class="fas fa-lock"></span>
-            <input type="password" id ="psw" name="password" placeholder="Password" value="<?php echo $password; ?>"><br/>
+            <input type="password" id ="psw" name="password" placeholder="Password"><br/>
           </div>
           <input type="submit" id="login" name="login" value="Login"><br/>
-          <p id="iscriviti">Non sei ancora iscritto? <a href="">Iscriviti ora</a></p>
+          <p id="iscriviti">Non sei ancora iscritto? <a href="./registrati.php">Iscriviti ora</a></p>
           <?php
-            if(isset($_POST['email'])){
-                if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-                    $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
-                    if(checkdnsrr($dominio, "MX"));
-                    else{
-                        $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
-                        echo "$alert";
-                        header("refresh:2;URL=./accedi.php");
-                    }
-                }
+            if(!empty($_POST) && $_POST["login"]=="Login") {
+              $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
+              if(checkdnsrr($dominio, "MX")){
+                $password = $_POST['password'];
+                $hash = get_pwd($email);
+          			if(!$hash){
+          				$alert = "<span class='alert'>"."<strong><br/>L'utente associato all'email $email non esiste.</strong>"."</span>";
+                  echo "$alert";
+          			}
+          			else{
+          				if(password_verify($password, $hash)){
+          					session_start();
+                    $_SESSION["loggato"] = True;
+                    $_SESSION["email"] = $email;
+                    header("refresh:0.01;URL=./area_riservata.php");
+          				}
+          				else{
+                    $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
+                    echo "$alert";
+          				}
+          			}
+              }
+              else{
+                  $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                  echo "$alert";
+              }
             }
 
-            if(!empty($_POST) && $_POST["login"]=="Login") {
-              require_once "./logindb.php";
-              $em = pg_escape_literal($_POST["email"]);
-              $psw = pg_escape_literal($_POST["password"]);
-              $sql = "SELECT * FROM utenti WHERE email=".$em."and password=".$psw;
-              $ret = pg_query($db, $sql);
-
-              if($row = pg_fetch_array($ret)) {
-                session_start();
-                $_SESSION["username"] = $row['username'];
-                $_SESSION["loggato"] = True;
-                header("refresh:0.01;URL=./area_riservata.php");
-              }
-              else {
-                $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
-                echo "$alert";
-              }
-
-              pg_close($db);
+            function get_pwd($email){
+            		require ".\logindb.php";
+            		//CONNESSIONE AL DB
+             		$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+             		$sql = "SELECT password FROM utenti WHERE email=$1;";
+             		$prep = pg_prepare($db, "sqlPassword", $sql);
+             		$ret = pg_execute($db, "sqlPassword", array($email));
+             		if(!$ret) {
+             			echo "ERRORE QUERY: " . pg_last_error($db);
+             			return false;
+             		}else{
+             			if ($row = pg_fetch_assoc($ret)){
+             				$pass = $row['password'];
+             				return $pass;
+             			}else{
+             				return false;
+             			}
+                }
             }
           ?>
       </form>
