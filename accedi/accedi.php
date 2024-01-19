@@ -11,14 +11,12 @@ else
     <meta charset="utf-8">
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./accedi.css">
     <script language="javascript" type="text/javascript">
       function validatePassword() {
         password = document.getElementById("psw").value;
         // Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale tra . , ; ! ?
-        const passwordRegex = /^^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+{};:,<.>]){8,}.*$/;
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()\-_=\+{};:,<\.>]).{8,}$/;
         if(passwordRegex.test(password) == false){
           alert("La password deve contenere almeno 8 caratteri, una lettera maiuscola, un numero e un carattere speciale.");
           return false;
@@ -29,6 +27,7 @@ else
 
   </head>
   <body>
+  <?php require "./navSimple.php" ; ?>
   <div class="fullbody">
     <div class="container">
       <div class="panel">
@@ -45,11 +44,11 @@ else
         <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
           <h2>Member Login</h2>
           <div class="input-field">
-            <span class="fas fa-envelope"></span>
+            <span><img src="./email_icon.png" width="20px" height="20px"></span>
             <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
           </div>
           <div class="input-field">
-            <span class="fas fa-lock"></span>
+            <span><img src="./pass_icon.png" width="20px" height="20px"></span>
             <input type="password" id ="psw" name="password" placeholder="Password"><br/>
           </div>
           <input type="submit" id="login" name="login" value="Login"><br/>
