@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  height: 100vh; /*il body così occupa l'intera altezza della finestra */
+  background: #F4DAB4;
+}
+
+.fullbody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 40px;
+  width: 80vw;    /*rispetto alla larghezza della finestra del browser*/
+  height: 80vh;     /*rispetto all'altezza della finestra del browser*/
+  background: #46666D;
+  border-radius: 150px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.panel {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+form {
+  height: 100%;
+  width: 70%;   /*rispetto a panel*/
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  color: rgb(255, 194, 108);
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+fieldset{
+  border-color: rgb(255, 194, 108);
+  border-radius: 40px;
+  width: 100%;
+}
+
+.input-container{
+  display: grid;
+  grid-template-columns: auto auto; /* Due colonne con dimensione automatica*/
+  gap: 10px;    /*spazio tra le due colonne*/
+}
+
+#gender-radio{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;    /*per distanziare i radio per la sezione genere*/
+}
+
+.input-field{
+  width: 100%; /* Occupa l'intera larghezza della colonna */
+  height: 50px;
+  background: transparent;
+  margin: 5px 0;
+  border: 2px solid #184149;
+  border-radius: 50px;
+  font-size: 15px;
+  color: #FFF0DA;
+  padding: 15px;
+}
+
+.input-field:focus {
+  outline: 2px solid rgb(255, 194, 108); /*al focus, il cambio il colore del bordo(outline) di input*/
+}
+
+input[type='radio'] {
+    display: none; /*nasconde i "cerchietti" dei radio button che sono poi "ricreati in CSS con uno stile più calzante al resto della pagina"*/
+}
+
+label span::before {
+    content: ''; /*inserisce un contenuto vuoto prima delle scritte dei vari radio buttons, questo contenuto vuoto sostituisce il "cerchietto" precedentemente rimosso*/
+    /*i seguenti righi danno uno stile al contenuto inserito*/
+    border-radius: 6px; /*arrotonda il contenuto*/
+    border: 1px solid rgb(24, 65, 73); /*il contenuto ha un bordo ma non un background, in questo modo replica l'idea del radio button non selezionato*/
+    width: 15px; /*definisce la larghezza del contenuto*/
+    height: 15px; /*definisce la larghezza del contenuto*/
+    margin: 0px 5px; /*definisce margine nullo verticalmente ma presente in orizzontale in modo da distanziare il contenuto dal testo a esso legato*/
+    display: inline-block; /*per permettere alle modifiche relative a larghezza e altezza di avere effetto*/
+}
+
+label input:checked+span::before {
+    /*quando l'input è checked da un background color al contenuto inserito*/
+    background-color: #184149;
+}
+
+
+#submit {
+  border: none;
+  border-radius: 50px;
+  background: rgb(255, 194, 108);
+  color: #FFF0DA;
+  font-weight: 600;
+  width: 130px;
+  height: 50px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background: #184149;
+}
+
+#info, legend, label{
+  font-size: 16px;
+  color: #FFF0DA;
+}
+
+#info a{
+  opacity: 0.7;
+  text-decoration: none;
+  color: rgb(255, 194, 108);
+}
+
+#info a:hover{
+  opacity:1;
+}
+
+.leftpanel {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Assicura che l'immagine sia dietro i testi */
+}
+
+.leftpanel p {
+  font-size: 24px;
+  padding: 10px 0;
+  color: #FFF0DA;
+}
+
+.content {
+  left: 5%;
+  top: 50%;
+  translate: 0 -50% 0;  /*l'elemento viene spostato del 50% vers l'alto in modo da centrarlo verticalmente rispetto a leftpanel*/
+  max-width: 40%;
+  position: absolute;
+  z-index: 1;
+}
+
+.leftpanel img {
+  width: 100%; /*per occupare tutto leftpanel*/
+  height: 100%;
+  object-fit: cover; /*l'immagine non subisce alterazioni */
+}
+
+.leftpanel h3{
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(255, 194, 108);
+}
+
+.alert {
+  width: 90%;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(255, 255, 102);
+}
+
+
+@media(max-width: 1400px){
+  .leftpanel p {
+    display: none;
+  }
+
+  .leftpanel h3{
+    max-width: 20%;
+  }
+
+}
+
+@media(max-width: 1000px){
+  .leftpanel{
+    display: none;
+  }
+
+  form{
+    width: 100%;
+  }
+}

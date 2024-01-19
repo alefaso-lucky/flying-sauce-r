@@ -1,76 +1,100 @@
-<!DOCTYPE html>			<!--vedere il comportamento quando si verificano situazioni di errore-->
+<!DOCTYPE html>
+<?php 
+	if(isset($_POST['nome']))
+			$nome = $_POST['nome'];
+	else
+			$nome = "";
+	if(isset($_POST['cognome']))
+			$cognome = $_POST['cognome'];
+	else
+			$cognome = "";
+	if(isset($_POST['email']))
+			$email = $_POST['email'];
+	else
+			$email = "";
+	if(isset($_POST['pass']))
+			$pass = $_POST['pass'];
+	else
+			$pass = "";
+	if(isset($_POST['repassword']))
+			$repassword = $_POST['repassword'];
+	else
+			$repassword = "";
+	if(isset($_POST['genere']))
+			$genere = $_POST['genere'];
+	else
+			$genere = "";
+	if(isset($_POST['numero']))
+			$numero = $_POST['numero'];
+	else
+			$numero = "";
+	if(isset($_POST['nazione']))
+			$nazione = $_POST['nazione'];
+	else
+			$nazione = "";
+	if(isset($_POST['regione']))
+			$regione = $_POST['regione'];
+	else
+			$regione = "";
+	if(isset($_POST['citta']))
+			$citta = $_POST['citta'];
+	else
+			$citta = "";
+	if(isset($_POST['via']))
+			$via = $_POST['via'];
+	else
+			$via = "";
+	if(isset($_POST['civico']))
+			$civico = $_POST['civico'];
+	else
+			$civico = "";
+	if(!empty($_POST) && $_POST["submit"]=="Iscriviti"){
+		if(email_exist($email)){
+			$alert = "<p class='alert'>"."<strong><br/>Email $email già esistente. Riprova</strong>"."</p>";
+		}
+		else{
+			//ORA posso inserire il nuovo utente nel db
+			if(insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $regione, $citta, $via, $civico, $numero)){
+					$alert = "<p class='alert'>"."<strong><br/>Utente registrato con successo.</strong>"."</p>";
+					session_start();
+					$_SESSION["loggato"] = True;
+					$_SESSION["email"] = $email;
+					header("refresh:0.3;URL=./area_riservata.php");
+			}
+			else{
+				$alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
+			}
+		}
+	}
+?>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Registrati</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="./registrati.css">
-	<script language="javascript" type="text/javascript">
-		function validatePassword() {
-			password = document.getElementById("pass").value;
-			// Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale tra . , ; ! ?
-			const passwordRegex = /^^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+{};:,<.>]){8,}.*$/;
-			if(passwordRegex.test(password) == false){
-				alert("La password deve contenere almeno 8 caratteri, una lettera maiuscola, un numero e un carattere speciale.");
-				return false;
+	<script type="text/javascript">
+			function validaModulo(form){
+				//non effettuo controlli se i campi sono pieni poichè ho esplicitato con html la parola required
+				if (form.pass.value != form.repassword.value) {					//controllo se password e conferma coincidono
+					alert("Le due password non corrispondono");
+					form.pass.focus();
+					form.pass.select();
+					return false;
+				}else{			//se coincidono procedo a controllare se la password rispetta i canoni
+					password = form.pass.value;
+	        // Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale
+	        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()\-_=\+{};:,<\.>]).{8,}$/;
+	        if(passwordRegex.test(password) == false){
+	          alert("La password deve contenere almeno 8 caratteri, una lettera maiuscola, un numero e un carattere speciale.");
+	          return false;
+	        }
+	        return true;
+				}
 			}
-			return true;
-		}
 	</script>
 </head>
 <body>
-	<?php require "./navSimple.php" ; ?>
-	<?php
-		if(isset($_POST['nome']))
-				$nome = $_POST['nome'];
-		else
-				$nome = "";
-		if(isset($_POST['cognome']))
-				$cognome = $_POST['cognome'];
-		else
-				$cognome = "";
-		if(isset($_POST['email']))
-				$email = $_POST['email'];
-		else
-				$email = "";
-		if(isset($_POST['pass']))
-				$pass = $_POST['pass'];
-		else
-				$pass = "";
-		if(isset($_POST['repassword']))
-				$repassword = $_POST['repassword'];
-		else
-				$repassword = "";
-		if(isset($_POST['genere']))
-				$genere = $_POST['genere'];
-		else
-				$genere = "";
-		if(isset($_POST['numero']))
-			  $numero = $_POST['numero'];
-		else
-			  $numero = "";
-		if(isset($_POST['nazione']))
-				$nazione = $_POST['nazione'];
-	  else
-				$nazione = "";
-		if(isset($_POST['regione']))
-				$regione = $_POST['regione'];
-		else
-	      $regione = "";
-	  if(isset($_POST['citta']))
-	      $citta = $_POST['citta'];
-	  else
-	      $citta = "";
-		if(isset($_POST['via']))
-		    $via = $_POST['via'];
-	  else
-		    $via = "";
-		if(isset($_POST['civico']))
-		    $civico = $_POST['civico'];
-	  else
-		    $civico = "";
-?>
-
 <div class="fullbody">
 	<div class="container">
 		<div class="panel">
@@ -83,34 +107,39 @@
 				</div>
 			<img src="reg_img.jpg" alt="registrati_img">
 			</div>
-			<form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="post" onSubmit="return validateForm();">
+			<form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="post" onSubmit="return validaModulo(this)">
 			<h2>Sign-up</h2>
 				<fieldset>
 					<legend>Dati Personali</legend>
-						<input class="input-field" name="nome" placeholder="Nome" value="<?php echo $nome ?>" required/>
-						<input class="input-field" name="cognome" placeholder="Cognome" value="<?php echo $cognome ?>" required/>
-						<input class="input-field" name="numero" placeholder="Numero telefonico" type="tel" value="<?php echo $numero ?>"/>
-						<input class="input-field" name="email" type="email" placeholder="E-mail" value="<?php echo $email ?>" required/>
-						<input class="input-field" name="pass" type="password" placeholder="Password" required/>
-						<input class="input-field" name="repassword" type="password" placeholder="Conferma password" required/>
-					<legend>Genere:</legend>
+					<div class="input-container">
+						<input class="input-field" name="nome" placeholder="Nome*" value="<?php echo $nome ?>" required/>
+						<input class="input-field" name="cognome" placeholder="Cognome*" value="<?php echo $cognome ?>" required/>
+						<input class="input-field" name="numero" placeholder="Numero telefonico" type="tel" pattern="[0-9]{10}" value="<?php echo $numero ?>"/>
+						<input class="input-field" name="email" type="email" placeholder="E-mail*" value="<?php echo $email ?>" required/>
+						<input class="input-field" name="pass" type="password" placeholder="Password*" required/>
+						<input class="input-field" name="repassword" type="password" placeholder="Conferma password*" required/>
+					</div>
+					<div id="gender-radio">
+						<legend>Genere:</legend>
 						<label for="male-field">
-							<input id="male-field" name="genere" type="radio" value="M" <?php if($genere == 'M') echo 'checked';?>/>Uomo
+							<input name="genere" type="radio" id="male-field" value="M" <?php if($genere == 'M') echo 'checked';?>/><span>Uomo</span>
 						</label>
 						<label for="female-field">
-							<input id="female-field" name="genere" type="radio" value="F" <?php if($genere == 'F') echo 'checked';?>/>Donna
+							<input name="genere" type="radio" id="female-field" value="F" <?php if($genere == 'F') echo 'checked';?>/><span>Donna</span>
 						</label>
 						<label for="noGender-field">
-							<input id="noGender-field" name="genere" type="radio" value="" <?php if($genere == '') echo 'checked';?>/>Non specificato
+							<input name="genere" type="radio" id="noGender-field" value="" <?php if($genere == '') echo 'checked';?>/><span>Non specificato</span>
 						</label>
+					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Indirizzo</legend>
-						<input  class="input-field" name="nazione" placeholder="Nazione" value="<?php echo $nazione ?>" required/>
-						<input class="input-field" name="regione" placeholder="Regione" value="<?php echo $regione ?>" required/>
-						<input class="input-field" name="citta" placeholder="Città" value="<?php echo $citta ?>" required/>
-						<input class="input-field" name="via" placeholder="Via o piazza" value="<?php echo $via ?>" required/>
-						<input type="number" min="1" class="input-field" name="civico" placeholder="Numero civico" value="<?php echo $civico ?>" required/>
+					<div class="input-container">
+						<input class="input-field" name="nazione" placeholder="Nazione*" value="<?php echo $nazione ?>" required/>
+						<input class="input-field" name="citta" placeholder="Città*" value="<?php echo $citta ?>" required/>
+						<input class="input-field" name="via" placeholder="Via o piazza*" value="<?php echo $via ?>" required/>
+						<input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/>
+					</div>
 				</fieldset>
 				<input id="submit" name="submit" type="submit" value="Iscriviti"/>
 				<p id="info" style="text-align: center;">
@@ -119,6 +148,10 @@
 					sulla privacy</a>.
 					<br/>Fai già parte della nostra famiglia? <a href="./accedi.php">Accedi ora</a>
 				</p>
+					<?php
+						if(isset($alert))
+							echo $alert;
+					?>
 			</form>
 		</div>
 	</div>
@@ -127,48 +160,6 @@
 </html>
 
 <?php
-function validateForm() {
-	if (!empty($pass && validatePassword())) {
-		if($pass != $repassword){
-			echo "<p> Hai sbagliato a digitare la password. Riprova</p>";
-			$pass = "";
-		}
-		else{
-			// CONTROLLO CHE I CAMPI NON SIANO VUOTI
-			if(!empty($nome) && !empty($cognome) && !empty($nazione) && !empty($regione) && !empty($citta) && !empty($via) && !empty($civico)) {
-				// Controllo se l'email è valida
-				if(!validateEmail($email)) {
-					return;
-				}
-				//CONTROLLO SE L'UTENTE GIA' ESISTE
-				if(email_exist($email)){
-					echo "<p> Email $email già esistente. Riprova</p>";
-				}
-				else{
-					//ORA posso inserire il nuovo utente nel db
-					if(insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $regione, $citta, $via, $civico, $numero)){
-						echo "<p> Utente registrato con successo.</p>";
-						header("refresh:0.01;URL=./area_riservata.php");
-					}
-					else{
-						echo "<p> Errore durante la registrazione. Riprova</p>";
-					}
-				}
-			}
-		}
-	}
-}
-
-function validateEmail($email) {
-	$dominio = mb_substr($email, mb_strpos($email, "@")+1);
-	if(checkdnsrr($dominio, "MX"))
-			return true;
-	else {
-			return false;
-			echo "L'e-mail inserita non è valida";
-	}
-}
-
 function email_exist($email){
 	require "./logindb.php";
 	//CONNESSIONE AL DB
@@ -208,4 +199,4 @@ function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $regio
 		return true;
 	}
 }
- ?>
+?>
