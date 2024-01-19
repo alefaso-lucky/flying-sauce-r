@@ -79,7 +79,7 @@
                 <form action="componi">
                     <input type="submit" value="VAI AL PAGAMENTO" name="pagamento" class="menu_buttons" />
                 </form>
-                <ul>
+                <ul id="cart-list">
                     <li>Spaghetti alla carbonara x2</li>
                     <li>pasta alla norma x3</li>
                 </ul>

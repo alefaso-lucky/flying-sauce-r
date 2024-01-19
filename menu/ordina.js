@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
             };
             var stringa = "name_piatto=" + name;
             xmlhttp.send(stringa);
+            updateList();
         });
     });
 });
+
+function updateList() {
+    const cartList = document.getElementById('cart-list');
+    
+}
