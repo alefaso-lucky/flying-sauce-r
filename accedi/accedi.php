@@ -15,7 +15,7 @@ else
     <script language="javascript" type="text/javascript">
       function validatePassword() {
         password = document.getElementById("psw").value;
-        // Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale tra . , ; ! ?
+        // Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()\-_=\+{};:,<\.>]).{8,}$/;
         if(passwordRegex.test(password) == false){
           alert("La password deve contenere almeno 8 caratteri, una lettera maiuscola, un numero e un carattere speciale.");
@@ -27,8 +27,7 @@ else
 
   </head>
   <body>
-  <?php require "./navSimple.php" ; ?>
-  <div class="fullbody">
+  <div class="fullbody">    <!--fullbody nasce per non far contrasto con il successivo inserimento nella navbar e del footer-->
     <div class="container">
       <div class="panel">
         <div class="leftpanel">
