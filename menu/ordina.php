@@ -86,8 +86,10 @@
                         sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
                         $ret = pg_query($db, $sql); /* viene eseguita la query */
                         $list = "";
+                        if(pg_num_rows($ret) == 0)
+                            $list = "<li>Carrello vuoto</li>";
                         while( $row = pg_fetch_array($ret) ) {
-                            $list .= "<li>" . $row[1] . "x " . $row[0] . "</li><br>";
+                            $list .= "<li>" . $row[1] . "x " . $row[0] . "</li>";
                         }
                         echo $list;
                         pg_close($db); /* chiusura della connessione al database */

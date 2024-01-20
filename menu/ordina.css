@@ -57,6 +57,7 @@ body {
   padding: 10px;
   text-align: center;
   max-width: 250px;
+  cursor: pointer;
 }
 
 .primi:hover {
@@ -149,6 +150,7 @@ h1 {
 
 li {
   color: #FFC26C;
+  padding: 3px;
 }
 
 #info_button {

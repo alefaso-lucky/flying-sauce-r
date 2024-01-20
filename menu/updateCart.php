@@ -33,7 +33,7 @@
     $list_fetch = "SELECT piatto, quantita FROM carrello WHERE email = 'test'";
     $ret_list_fetch = pg_query($db, $list_fetch);
     while($row = pg_fetch_array($ret_list_fetch)) {
-        $list .= "<li>" . $row[1] . "x " . $row[0] . "</li><br>";
+        $list .= "<li>" . $row[1] . "x " . $row[0] . "</li>";
     }
     pg_close($db);
     echo $list;
