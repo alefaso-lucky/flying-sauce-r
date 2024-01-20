@@ -80,8 +80,7 @@
                     <input type="submit" value="VAI AL PAGAMENTO" name="pagamento" class="menu_buttons" />
                 </form>
                 <ul id="cart-list">
-                    <li>Spaghetti alla carbonara x2</li>
-                    <li>pasta alla norma x3</li>
+                    <!--AJAX inserisce i List Items sulla base del contenuto del carrello dell'utente-->
                 </ul>
             </div>
         </div>

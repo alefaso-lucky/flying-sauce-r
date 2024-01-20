@@ -24,10 +24,17 @@
             $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', 'test', 1)";
             $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
             if($ret_insert) {
-                echo "successo";
+                //echo "successo";
             }
         }
     }
     
+    $list = "";
+    $list_fetch = "SELECT piatto, quantita FROM carrello WHERE email = 'test'";
+    $ret_list_fetch = pg_query($db, $list_fetch);
+    while($row = pg_fetch_array($ret_list_fetch)) {
+        $list .= "<li>" . $row[1] . "x " . $row[0] . "</li><br>";
+    }
     pg_close($db);
+    echo $list;
 ?>
