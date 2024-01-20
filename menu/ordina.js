@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', 'menu/updateCart.php', true);
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessatio in caso si usi POST
-            xmlhttp.onload = function () {
+            xmlhttp.onload = function () { //onload quindi quando readyState è 4
                 if (xmlhttp.status === 200)
                     cartList.innerHTML = xmlhttp.responseText;
             };
