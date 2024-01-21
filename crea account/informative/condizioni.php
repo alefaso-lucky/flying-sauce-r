@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-        <base href="http://localhost/Flying_Sauce_r/">
+        <base href="http://localhost/Flying_Sauce_r/"> <!--commento-->
 		<link rel="stylesheet" href="crea%20account/informative/infoPrivacy.css">
         <link rel="stylesheet" href="crea%20account/informative/condizioni.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
