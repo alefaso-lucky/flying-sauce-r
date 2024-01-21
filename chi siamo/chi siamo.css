@@ -82,59 +82,54 @@ body {
 /* Per il grid container delle immagini */
 
 div.grid-img-container {
-  margin: 10px 50px;
-  min-width: 500px;
-  display: grid;
-  grid-template-areas:
+  margin: 10px 50px; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
+  min-width: 500px; /* larghezza minima */
+  display: grid; /* utilizzo un display grid per posizionare le immaigni */
+  grid-template-areas: /* specifico come le immagini sono disposte nella griglia */
     'img1 img2 img3'
     'img4 img4 img3';
-  gap: 8px;
+  gap: 8px; /* distanza tra le immagini */
 }
 
-div.grid-item {
+div.grid-item { /* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */
   display: flex;
-  transition: .5s ease;
-  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  transition: .5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
+  box-shadow: 2px 2px 3px rgba(0,0,0,.4); /* applica una ombra opaca di 2px a detra e in basso che si "blurra" per 3px */
 }
 
-div.grid-item img{
-  transition: transform .4s ease-in-out;
+div.grid-item img{ /* stile applicato alle immagini contenute nmel grid-item */
   width: 100%;
   height: auto;
 }
 
-.overlay {
+.overlay { /* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
   position: absolute; /* prende la dimensione rlativamente al contenitore, in questo caso grid-item */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
-  transition: .5s ease;
+  opacity: 0; /* di base è invisibile */
 }
 
 div.grid-item:hover .overlay {
-  opacity: 1;
+  opacity: 1; /* quando si passa col cursore sull'immagine il testo diventa visibile */
 }
 
-.testoImg {
+.testoImg { /* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
   font-family: "Goudy Old Style", sans-serif;
   color: black;
   font-size: 14pt;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* queste istruzioni servono per centrare il paragrafo nell'immagine */
 }
 
-div.grid-item:hover, div.grid-item:focus {
-  box-shadow: 6px 6px 6px rgba(0,0,0,.3);
-  transform: scale(1.2);
+div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */
+  box-shadow: 6px 6px 6px rgba(0,0,0,.3); /* viene applica un'ombra all'immagine più spessa */
+  transform: scale(1.2); /* l'immagine viene ingrandita */
 }
 
+/* le successive istruzioni servono per assegnare gli id alle aree del grid template ai grid items */
 #grid-item1 {
   grid-area: img1;
 }
