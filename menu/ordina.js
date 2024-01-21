@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const adderElements = document.querySelectorAll('.adder');
+    const cartList = document.getElementById('cart-list');
 
-    adderElements.forEach(function (clickPiatto){
+    adderElements.forEach(function (clickPiatto) {
         clickPiatto.addEventListener('click', function () {
 
             const name = clickPiatto.getAttribute("name");
@@ -9,20 +10,23 @@ document.addEventListener('DOMContentLoaded', function () {
             //richiesta AJAX per aggiungere elemento al database
             const xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', 'menu/updateCart.php', true);
-            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xmlhttp.onload = function () {
-                if (xmlhttp.status === 200) {
-                    console.log('Element added to the database!');
-                }
+            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessatio in caso si usi POST
+            xmlhttp.onload = function () { //onload quindi quando readyState è 4
+                if (xmlhttp.status === 200)
+                    cartList.innerHTML = xmlhttp.responseText;
             };
             var stringa = "name_piatto=" + name;
             xmlhttp.send(stringa);
-            updateList();
+            //updateList(xmlhttp);
         });
     });
 });
-
-function updateList() {
+/*
+function updateList(xmlhttp) {
     const cartList = document.getElementById('cart-list');
-    
-}
+    xmlhttp.onreadystatechange = checkForDone;
+    function checkForDone() {
+        if(xmlhttp.readyState == 4)
+            cartList.innerHTML = xmlhttp.responseText;
+    }
+}*/

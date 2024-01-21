@@ -71,7 +71,6 @@
                             </div>
                     <?php
                         } /* chiusura del foreach */
-                        pg_close($db); /* chiusura della connessione al database */
                     ?>
                 </div>
             </div>
@@ -80,8 +79,21 @@
                     <input type="submit" value="VAI AL PAGAMENTO" name="pagamento" class="menu_buttons" />
                 </form>
                 <ul id="cart-list">
-                    <li>Spaghetti alla carbonara x2</li>
-                    <li>pasta alla norma x3</li>
+                    <!--AJAX inserisce i List Items sulla base del contenuto del carrello dell'utente ma comunque al primo
+                    caricamento bisogna mostrare i valori-->
+                    <?php
+                        $sql = "SELECT piatto, quantita FROM carrello WHERE email = 'test'"; /* interrogazione SQL
+                        sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
+                        $ret = pg_query($db, $sql); /* viene eseguita la query */
+                        $list = "";
+                        if(pg_num_rows($ret) == 0)
+                            $list = "<li>Carrello vuoto</li>";
+                        while( $row = pg_fetch_array($ret) ) {
+                            $list .= "<li>" . $row[1] . "x " . $row[0] . "</li>";
+                        }
+                        echo $list;
+                        pg_close($db); /* chiusura della connessione al database */
+                    ?>
                 </ul>
             </div>
         </div>
