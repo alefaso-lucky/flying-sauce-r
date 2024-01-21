@@ -28,7 +28,7 @@ body{
   margin: 3% 0;
 }
 
-form {
+.container form {
   display: flex;
   flex-direction: column;     /*gli elementi del form disposti per colonne*/
   align-items: center;    /*allineo al centro in senso verticale per gli elementi - quali tag h2 e p*/
