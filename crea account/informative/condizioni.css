@@ -1,21 +1,21 @@
-body{
-    background-image: url("../../media/sfondo_accedi.jpg");
+body {
+    background-image: url("../../media/sfondo_accedi.jpg"); /*seleziona l'immagine di sfondo del body*/
     background-repeat: no-repeat; /*non vogliamo che l'immagine si ripeta*/
     background-size: cover; /*coprire tutta lo sfondo con quell'immagine*/
-    height: 100%;
+    height: 100%; /*occupa tutto lo spazio a disposizione*/
     width: 100%;
 }
 
-h1,h2,h3{
-    font-family: 'Times New Roman', 'serif';
-    color: rgb(255, 194, 108);
-    font-weight: 100;
+h1,h2,h3 { /*stile intestazioni*/
+    font-family: 'Times New Roman', 'serif'; /*selezione del font*/
+    color: rgb(255, 194, 108); /*selezione del colore del testo*/
+    font-weight: 100; /*selezione dimensione del testo*/
 }
 
 
-ol{
-    list-style-type: upper-roman;
-    color: #FFC26C;
-    margin-left: 35px;
+ol {
+    list-style-type: upper-roman; /*indice dell'elenco puntato è un numero romano maiuscolo*/
+    color: #FFC26C; /*colore del testo*/
+    margin-left: 35px; /*indenta la lista ordinata rispetto al resto del contenuto*/
 }
 
