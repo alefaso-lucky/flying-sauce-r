@@ -11,23 +11,25 @@ body {
   background-size: cover;
 }
 
+/* cell è il div principale che contiene tutto  */
 .cell {
   background-color: RGBA(24, 65, 73, 0.85);
-  border-radius: 50px;
-  border: medium solid RGB(255, 194, 108);
-  text-align: justify;
+  border-radius: 50px;  /* rendo gli spigoli curvi */
+  border: medium solid RGB(255, 194, 108); /* aggiungo un bordo dorato */
+  text-align: justify; /* testo allineato  */
   display: flex;
   flex-direction: column;         /*!! non display: inline-block perchè entrano in contrasto, bensì flex-direction:column*/
-  overflow-x: hidden;
   padding: 20px;
-  margin: 3% 15%;
+  margin: 3% 15%; /* margine per allinare */
 }
 
+/* applico dello stile ai paragrafi e alle liste */
 .cell p, .cell ul {
   color: white;
-  padding: 5px 20px;
+  padding: 5px 20px; /* padding per allontanare il testo dal bordo */
 }
 
+/* stile applicato al titolo in alto */
 .cell h1 {
   font-family: Times New Roman, serif;
   color: RGB(255, 194, 108);
@@ -35,6 +37,7 @@ body {
   color: #FFC26C;
 }
 
+/* stile applicato ai titoli dei vari paragrafi */
 .cell h2, h3, h4 {
   font-family: Times New Roman, serif;
   color: RGB(255, 194, 108);
