@@ -169,3 +169,7 @@ li {
 #to_piatto_singolo {
   text-align: end; /*tasto info a destra del riquadro*/
 }
+
+.remover {
+  cursor: pointer;
+}

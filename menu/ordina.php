@@ -89,7 +89,7 @@
                         if(pg_num_rows($ret) == 0)
                             $list = "<li>Carrello vuoto</li>";
                         while( $row = pg_fetch_array($ret) ) {
-                            $list .= "<li>" . $row[1] . "x " . $row[0] . "</li>";
+                            $list .= "<li><img src='media/remove_from_cart.png' alt='remove item from cart button' class='remover' height=20px width=auto/>" . $row[1] . "x " . $row[0] . "</li>";
                         }
                         echo $list;
                         pg_close($db); /* chiusura della connessione al database */

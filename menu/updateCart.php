@@ -8,7 +8,8 @@
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
 
     if(isset($_POST['name_piatto'])) {
-        $name_piatto = $_POST['name_piatto'];
+        $piatto = $_POST['name_piatto'];
+        $name_piatto = pg_escape_string($db, $piatto);
 
         //logica per aumentare il numero
         $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
@@ -33,7 +34,7 @@
     $list_fetch = "SELECT piatto, quantita FROM carrello WHERE email = 'test'";
     $ret_list_fetch = pg_query($db, $list_fetch);
     while($row = pg_fetch_array($ret_list_fetch)) {
-        $list .= "<li>" . $row[1] . "x " . $row[0] . "</li>";
+        $list .=  "<li><img src='media/remove_from_cart.png' alt='remove item from cart button' class='remover' height=20px width=auto/>" . $row[1] . "x " . $row[0] . "</li>";
     }
     pg_close($db);
     echo $list;
