@@ -51,7 +51,7 @@ else
             <input type="password" id ="psw" name="password" placeholder="Password"><br/>
           </div>
           <input type="submit" id="login" name="login" value="Login"><br/>
-          <p id="iscriviti">Non sei ancora iscritto? <a href="./registrati.php">Iscriviti ora</a></p>
+          <p id="iscriviti">Non sei ancora iscritto? <a href="registrati/registrati.php">Iscriviti ora</a></p>
           <?php
             if(!empty($_POST) && $_POST["login"]=="Login") {
               $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php 
+	/*anche qui come per la sezione di accedi non mi occupo di rendere sticky gli input di tipo password poichè di default essi non lo sono*/
 	if(isset($_POST['nome']))
 			$nome = $_POST['nome'];
 	else
@@ -12,14 +13,6 @@
 			$email = $_POST['email'];
 	else
 			$email = "";
-	if(isset($_POST['pass']))
-			$pass = $_POST['pass'];
-	else
-			$pass = "";
-	if(isset($_POST['repassword']))
-			$repassword = $_POST['repassword'];
-	else
-			$repassword = "";
 	if(isset($_POST['genere']))
 			$genere = $_POST['genere'];
 	else
@@ -32,10 +25,6 @@
 			$nazione = $_POST['nazione'];
 	else
 			$nazione = "";
-	if(isset($_POST['regione']))
-			$regione = $_POST['regione'];
-	else
-			$regione = "";
 	if(isset($_POST['citta']))
 			$citta = $_POST['citta'];
 	else
@@ -70,9 +59,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Registrati</title>
+	<base href="http://localhost/progetto/FlyingSauce-r-/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link rel="stylesheet" href="./registrati.css">
+	<link rel="stylesheet" href="./registrati/registrati.css">
 	<script type="text/javascript">
 			function validaModulo(form){
 				//non effettuo controlli se i campi sono pieni poichè ho esplicitato con html la parola required
@@ -95,68 +84,68 @@
 	</script>
 </head>
 <body>
+<?php require "../base/navSimple.php"; ?>
 <div class="fullbody">
 	<div class="container">
-		<div class="panel">
-			<div class="leftpanel">
-				<div class="content">
-					<h3>Esplora la varietà culinaria italiana con Flying Sauce!</h3>
-						<p>Iscriviti per gustare la pasta stellata e scoprire i sapori
-							genuini dell'Italia.
-						</p>
-				</div>
-			<img src="reg_img.jpg" alt="registrati_img">
+		<div class="leftpanel">
+			<div class="content">
+				<h3>Esplora la cucina italiana con Flying Sauce!</h3>
+					<p>Iscriviti per gustare la pasta stellata e scoprire i sapori
+						genuini dell'Italia.
+					</p>
 			</div>
-			<form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="post" onSubmit="return validaModulo(this)">
-			<h2>Sign-up</h2>
-				<fieldset>
-					<legend>Dati Personali</legend>
-					<div class="input-container">
-						<input class="input-field" name="nome" placeholder="Nome*" value="<?php echo $nome ?>" required/>
-						<input class="input-field" name="cognome" placeholder="Cognome*" value="<?php echo $cognome ?>" required/>
-						<input class="input-field" name="numero" placeholder="Numero telefonico" type="tel" pattern="[0-9]{10}" value="<?php echo $numero ?>"/>
-						<input class="input-field" name="email" type="email" placeholder="E-mail*" value="<?php echo $email ?>" required/>
-						<input class="input-field" name="pass" type="password" placeholder="Password*" required/>
-						<input class="input-field" name="repassword" type="password" placeholder="Conferma password*" required/>
-					</div>
-					<div id="gender-radio">
-						<legend>Genere:</legend>
-						<label for="male-field">
-							<input name="genere" type="radio" id="male-field" value="M" <?php if($genere == 'M') echo 'checked';?>/><span>Uomo</span>
-						</label>
-						<label for="female-field">
-							<input name="genere" type="radio" id="female-field" value="F" <?php if($genere == 'F') echo 'checked';?>/><span>Donna</span>
-						</label>
-						<label for="noGender-field">
-							<input name="genere" type="radio" id="noGender-field" value="" <?php if($genere == '') echo 'checked';?>/><span>Non specificato</span>
-						</label>
-					</div>
-				</fieldset>
-				<fieldset>
-					<legend>Indirizzo</legend>
-					<div class="input-container">
-						<input class="input-field" name="nazione" placeholder="Nazione*" value="<?php echo $nazione ?>" required/>
-						<input class="input-field" name="citta" placeholder="Città*" value="<?php echo $citta ?>" required/>
-						<input class="input-field" name="via" placeholder="Via o piazza*" value="<?php echo $via ?>" required/>
-						<input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/>
-					</div>
-				</fieldset>
-				<input id="submit" name="submit" type="submit" value="Iscriviti"/>
-				<p id="info" style="text-align: center;">
-					Cliccando su Iscriviti, accetti le nostre <a href="./informative/condizioni.php">Condizioni</a>. Scopri in che modo
-					raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="./informative/infoPrivacy.php">Informativa
-					sulla privacy</a>.
-					<br/>Fai già parte della nostra famiglia? <a href="./accedi.php">Accedi ora</a>
-				</p>
-					<?php
-						if(isset($alert))
-							echo $alert;
-					?>
-			</form>
+		<img src="media/reg_img.jpg" alt="registrati_img">
 		</div>
+		<form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="post" onSubmit="return validaModulo(this)">
+		<h2>Sign-up</h2>
+			<fieldset>
+				<legend>Dati Personali</legend>
+				<div class="input-container">
+					<input class="input-field" name="nome" placeholder="Nome*" value="<?php echo $nome ?>" required/>
+					<input class="input-field" name="cognome" placeholder="Cognome*" value="<?php echo $cognome ?>" required/>
+					<input class="input-field" name="numero" placeholder="Numero telefonico" type="tel" pattern="[0-9]{10}" value="<?php echo $numero ?>"/>
+					<input class="input-field" name="email" type="email" placeholder="E-mail*" value="<?php echo $email ?>" required/>
+					<input class="input-field" name="pass" type="password" placeholder="Password*" required/>
+					<input class="input-field" name="repassword" type="password" placeholder="Conferma password*" required/>
+				</div>
+				<div id="gender-radio">
+					<legend>Genere:</legend>
+					<label for="male-field">
+						<input name="genere" type="radio" id="male-field" value="M" <?php if($genere == 'M') echo 'checked';?>/><span>Uomo</span>
+					</label>
+					<label for="female-field">
+						<input name="genere" type="radio" id="female-field" value="F" <?php if($genere == 'F') echo 'checked';?>/><span>Donna</span>
+					</label>
+					<label for="noGender-field">
+						<input name="genere" type="radio" id="noGender-field" value="" <?php if($genere == '') echo 'checked';?>/><span>Non specificato</span>
+					</label>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Indirizzo</legend>
+				<div class="input-container">
+					<input class="input-field" name="nazione" placeholder="Nazione*" value="<?php echo $nazione ?>" required/>
+					<input class="input-field" name="citta" placeholder="Città*" value="<?php echo $citta ?>" required/>
+					<input class="input-field" name="via" placeholder="Via o piazza*" value="<?php echo $via ?>" required/>
+					<input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/>
+				</div>
+			</fieldset>
+			<input id="submit" name="submit" type="submit" value="Iscriviti"/>
+			<p id="info" style="text-align: center;">
+				Cliccando su Iscriviti, accetti le nostre <a href="crea%20account/informative/condizioni.php">Condizioni</a>. Scopri in che modo
+				raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="crea%20account/informative/infoPrivacy.php">Informativa
+				sulla privacy</a>.
+				<br/>Fai già parte della nostra famiglia? <a href="accedi/accedi.php">Accedi ora</a>
+			</p>
+				<?php
+					if(isset($alert))
+						echo $alert;
+				?>
+		</form>
 	</div>
 </div>
- </body>
+<?php require "../base/footer.php"; ?>
+</body>
 </html>
 
 <?php

@@ -1,10 +1,10 @@
 * {
-  margin: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
 body{
+  margin: 0;
   background: #F4DAB4;      /*colore di sfondo analogo alle altre pagine del sito*/
 }
 
@@ -117,7 +117,7 @@ form h2 {
 
 /*descrizione dello slogan*/
 .leftpanel p {
-  font-size: 24px;      /*dimensione del testo*/
+  font-size: 22px;      /*dimensione del testo*/
   color: #FFF0DA;   /*colore del testo*/
 }
 
@@ -154,7 +154,7 @@ form h2 {
   }
 
   /*il form occupa più spazio*/
-  form{
+  .container form{
     min-width: 40%;
   }
 }
@@ -164,7 +164,7 @@ form h2 {
     display: none;
   }
 
-  form{       /*il form occupa tutto il container*/
+  .container form{       /*il form occupa tutto il container*/
     width: 100%;
   }
 }
