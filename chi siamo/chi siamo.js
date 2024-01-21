@@ -1,3 +1,4 @@
+// Queste funzioni servono per modificare l'immagine nel momento in cui il cursore vi passa sopra e ne esce
 function overImg1() {
   document.getElementById("img1").src="../media/notteStellata1_hover.jpg";
 }

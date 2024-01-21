@@ -60,33 +60,33 @@
           <div class="grid-item" id="grid-item1" onmousemove = overImg1() onmouseleave = "leaveImg1()">
             <img src="../media/notteStellata1.jpg" id="img1"></img>
             <div class="overlay">
-              <div class="testoImg">
+              <p class="testoImg">
                 Il coraggio di intraprendere nuove strade è stato un pilastro fondamentale del nostro percorso. L'apertura a nuove idee e l'audacia di esplorare nuovi orizzonti gastronomici ci hanno permesso di distinguerci nel panorama culinario internazionale.
-              </div>
+              </p>
             </div>
           </div>
           <div class="grid-item" id="grid-item2" onmouseover = overImg2() onmouseleave = "leaveImg2()">
             <img src="../media/notteStellata2.jpg" id="img2"></img>
             <div class="overlay">
-              <div class="testoImg">
+              <p class="testoImg">
                 L'impegno nel perseguire i propri sogni è stato un motore trainante per il nostro successo. La determinazione nel perseguire l'eccellenza culinaria e nel superare le sfide ha reso il nostro percorso gratificante e ha contribuito a consolidare la reputazione di "Flying Sauce" come destinazione culinaria di primo livello.
-              </div>
+              </p>
             </div>
           </div>
           <div class="grid-item" id="grid-item3" onmouseover = overImg3() onmouseleave = "leaveImg3()">
             <img src="../media/notteStellata3.jpg" id="img3"></img>
             <div class="overlay">
-              <div class="testoImg">
+              <p class="testoImg">
                 L'autenticità del nostro brand è un altro elemento cruciale che abbiamo costantemente valorizzato. La coerenza nel rappresentare e preservare la ricchezza dei sapori italiani è fondamentale per la nostra identità aziendale. La fedeltà ai principi culinari tradizionali e l'attenzione alla qualità sono elementi che abbiamo sempre posto al centro della nostra missione.
-              </div>
+              </p>
             </div>
           </div>
           <div class="grid-item" id="grid-item4" onmouseover = overImg4() onmouseleave = "leaveImg4()">
             <img src="../media/notteStellata4.jpg" id="img4"></img>
             <div class="overlay">
-              <div class="testoImg">
+              <p class="testoImg">
                 La possibilità di esportare i gusti italiani in tutto il mondo è un traguardo che abbiamo abbracciato con entusiasmo e responsabilità. Ci impegniamo a offrire esperienze gastronomiche autentiche, trasportando i sapori tradizionali delle nostre cucine direttamente alle tavole internazionali.
-              </div>
+              </p>
             </div>
           </div>
       </div>
