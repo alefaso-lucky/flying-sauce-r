@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- non abbiamo inserito il controllo per rendere sticky la password poichè questa di default non lo è -->
 <?php
 if(isset($_POST['email']))
   $email = $_POST['email'];
@@ -6,12 +7,12 @@ else
   $email = "";
 ?>
 
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <base href="http://localhost/progetto/FlyingSauce-r-/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="./accedi.css">
+    <link rel="stylesheet" href="./accedi/accedi.css">
     <script language="javascript" type="text/javascript">
       function validatePassword() {
         password = document.getElementById("psw").value;
@@ -24,12 +25,11 @@ else
         return true;
       }
     </script>
-
   </head>
   <body>
-  <div class="fullbody">    <!--fullbody nasce per non far contrasto con il successivo inserimento nella navbar e del footer-->
+  <?php require "../base/navSimple.php"; ?>
+  <div class="fullbody">
     <div class="container">
-      <div class="panel">
         <div class="leftpanel">
           <div class="content">
             <h3>Accedi e vola con FlyingSauce!</h3>
@@ -38,16 +38,16 @@ else
                 portando la freschezza dei nostri piatti direttamente sulla tua tavola!
               </p>
           </div>
-        <img src="accedi_img.jpg" alt="accedi_img">
+        <img src="media/accedi_img.jpg" alt="accedi_img">
         </div>
         <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
           <h2>Member Login</h2>
           <div class="input-field">
-            <span><img src="./email_icon.png" width="20px" height="20px"></span>
+            <span><img src="media/email_icon.png" width="20px" height="20px"></span>
             <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
           </div>
           <div class="input-field">
-            <span><img src="./pass_icon.png" width="20px" height="20px"></span>
+            <span><img src="media/pass_icon.png" width="20px" height="20px"></span>
             <input type="password" id ="psw" name="password" placeholder="Password"><br/>
           </div>
           <input type="submit" id="login" name="login" value="Login"><br/>
@@ -102,7 +102,7 @@ else
             }
           ?>
       </form>
-      </div>
     </div>
   </div>
+  <?php require "../base/footer.php"; ?>
   </body>

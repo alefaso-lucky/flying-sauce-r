@@ -17,7 +17,7 @@ body {
   border: medium solid RGB(255, 194, 108);
   text-align: justify;
   display: flex;
-  display: inline-block;
+  flex-direction: column;         /*!! non display: inline-block perchè entrano in contrasto, bensì flex-direction:column*/
   overflow-x: hidden;
   padding: 20px;
   margin: 3% 15%;
