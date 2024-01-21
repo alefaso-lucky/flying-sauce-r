@@ -106,3 +106,4 @@ else
   </div>
   <?php require "../base/footer.php"; ?>
   </body>
+</html>
