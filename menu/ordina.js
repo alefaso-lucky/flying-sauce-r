@@ -17,18 +17,26 @@ document.addEventListener('DOMContentLoaded', function () {
             };
             var stringa = "name_piatto=" + name;
             xmlhttp.send(stringa);
-            //updateList(xmlhttp);
         });
     });
 
     const removerElements = document.querySelectorAll('.remover');
     removerElements.forEach(function(listItemButton) {
         listItemButton.addEventListener('click', function() {
-            const listItem = listItemButton.outerHTML;
-            const piatto_to_remove = listItem.textContent;
-            // piatto_to_remove funzionerà? qua dentro c'è veramente la stringa interna a <li>
-            //if the dish quantity is more than one then we must update the entry in the database, otherwise
-            //it would be the case to removerlo.
+            const listItem = listItemButton.parentNode;
+            var piatto_to_remove = listItem.textContent;
+            piatto_to_remove = piatto_to_remove.substring(3, piatto_to_remove.length);
+            
+            //chiamata AJAX per rimuovere il piatto
+            const xmlhttpd = new XMLHttpRequest();
+            xmlhttpd.open('POST', 'menu/updateCart.php', true);
+            xmlhttpd.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
+            xmlhttpd.onload = function () { //onload quindi quando readyState è 4
+                if(xmlhttpd.status === 200)
+                    cartList.innerHTML = xmlhttpd.responseText;
+            };
+            var stringa = "name_piatto=" + piatto_to_remove + "&delete=" + true;
+            xmlhttpd.send(stringa);
         });
     });
 });
