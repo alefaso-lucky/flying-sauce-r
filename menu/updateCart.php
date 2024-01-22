@@ -8,17 +8,30 @@
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
 
     if(isset($_POST['name_piatto'])) {
+        $piatto = $_POST['name_piatto'];
+        $name_piatto = pg_escape_string($db, $piatto);
+
+        //logica per aumentare il numero
+        $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
+        $ret_select = pg_query($db, $check);
+
         if(isset($_POST['delete'])) {
             //if the dish quantity is more than one then we must update the entry in the database, otherwise
             //it would be the case to removerlo.
+            $row = pg_fetch_array($ret_select);
+            if($row['quantita'] == 1) {
+                //deletion
+                $deletionQuery = "DELETE FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'";
+                pg_query($db, $deletionQuery);
+            }
+            else {
+                //update
+                $quantita = $row['quantita'] - 1;
+                $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";
+                pg_query($db, $updateQuery);
+            }
         }
         else {
-            $piatto = $_POST['name_piatto'];
-            $name_piatto = pg_escape_string($db, $piatto);
-
-            //logica per aumentare il numero
-            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
-            $ret_select = pg_query($db, $check);
             if(pg_num_rows($ret_select) > 0) {
                 //update logic
                 $row = pg_fetch_array($ret_select);

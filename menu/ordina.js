@@ -12,33 +12,39 @@ document.addEventListener('DOMContentLoaded', function () {
             xmlhttp.open('POST', 'menu/updateCart.php', true);
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
             xmlhttp.onload = function () { //onload quindi quando readyState è 4
-                if(xmlhttp.status === 200)
+                if(xmlhttp.status === 200) {
                     cartList.innerHTML = xmlhttp.responseText;
+                    addListenerToRemovers();
+                }
             };
             var stringa = "name_piatto=" + name;
             xmlhttp.send(stringa);
         });
     });
 
-    const removerElements = document.querySelectorAll('.remover');
-    removerElements.forEach(function(listItemButton) {
-        listItemButton.addEventListener('click', function() {
-            const listItem = listItemButton.parentNode;
-            var piatto_to_remove = listItem.textContent;
-            piatto_to_remove = piatto_to_remove.substring(3, piatto_to_remove.length);
-            
-            //chiamata AJAX per rimuovere il piatto
-            const xmlhttpd = new XMLHttpRequest();
-            xmlhttpd.open('POST', 'menu/updateCart.php', true);
-            xmlhttpd.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
-            xmlhttpd.onload = function () { //onload quindi quando readyState è 4
-                if(xmlhttpd.status === 200)
-                    cartList.innerHTML = xmlhttpd.responseText;
-            };
-            var stringa = "name_piatto=" + piatto_to_remove + "&delete=" + true;
-            xmlhttpd.send(stringa);
+    addListenerToRemovers();
+    function addListenerToRemovers() {
+        const removerElements = document.querySelectorAll('.remover');
+        removerElements.forEach(function(listItemButton) {
+            listItemButton.addEventListener('click', function() {
+                const listItem = listItemButton.parentNode;
+                var piatto_to_remove = listItem.textContent;
+                piatto_to_remove = piatto_to_remove.substring(3, piatto_to_remove.length);
+                //chiamata AJAX per rimuovere il piatto
+                const xmlhttpd = new XMLHttpRequest();
+                xmlhttpd.open('POST', 'menu/updateCart.php', true);
+                xmlhttpd.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
+                xmlhttpd.onload = function () { //onload quindi quando readyState è 4
+                    if(xmlhttpd.status === 200) {
+                        cartList.innerHTML = xmlhttpd.responseText;
+                        addListenerToRemovers(); //dopo aver cambiato il contenuto della lista bisogna riaggiungere i listener a tutti i bottoni
+                    }
+                };
+                var stringa = "name_piatto=" + piatto_to_remove + "&delete=" + true;
+                xmlhttpd.send(stringa);
+            });
         });
-    });
+    }
 });
 /*
 function updateList(xmlhttp) {
