@@ -13,6 +13,10 @@
 			$email = $_POST['email'];
 	else
 			$email = "";
+	if(isset($_POST['pass']))
+		$pass = $_POST['pass'];
+	else
+		$pass = "";
 	if(isset($_POST['genere']))
 			$genere = $_POST['genere'];
 	else
