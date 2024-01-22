@@ -5,24 +5,29 @@
 			$newpass = $_POST['newpass'];
 	else
 			$newpass = "";
-
-  function aggiorna_password() {
+  echo "$newpass";
+  function aggiorna_password($newpass) {
   require_once "./logindb.php";
   $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+  echo "<script> console.log('ciao0') </script>";
 
   $sql = "SELECT * FROM utenti WHERE email=$1;";
   $prep = pg_prepare($db, "selectUtente", $sql);
   $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
   if (!$utente) {
     echo "ERRORE QUERY: " . pg_last_error($db);
+    echo "<script> console.log('ciao1') </script>";
   } else {
     $row = pg_fetch_assoc($utente);
     $pass = $row['password'];
+    echo "<script> console.log('ciao2') </script>";
   }
 
-  if (! empty($newpass)) {
+  echo "<script>console.log("."$newpass".");</script>";
+  if (!empty($newpass)) {
     if (password_verify($pass, $newpass)) {
       $alert = "<p class='alert'><strong><br/>La nuova password non può coincidere con la vecchia password. Riprova</strong></p>";
+      echo "<script> console.log('ciao3') </script>";
     } else {
       $sql_update = <<<_QUERY
       UPDATE utenti
@@ -34,15 +39,19 @@
       $prep = pg_prepare($db, "updatePassword", $sql_update);
       if (!$prep) {
         echo pg_last_error($db);
+        echo "<script> console.log('ciao4') </script>";
       } else {
         echo "<p>Prepared Statement Creato</p>";
+        echo "<script> console.log('ciao5') </script>";
 
         $hash = password_hash($newpass, PASSWORD_DEFAULT);
         $ret_update = pg_execute($db, "updatePassword", array($hash, $_SESSION["email"]));
         if (!$ret_update) {
           echo "ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db);
+          echo "<script> console.log('ciao6') </script>";
         } else {
           echo "<p>Aggiornamento riuscito con Prepared Statement</p>";
+          echo "<script> console.log('ciao7') </script>";
           return true;
         }
       }
@@ -50,11 +59,13 @@
   }
 
     pg_close($db);
+    echo "<script> console.log('ciao8') </script>";
     return false;
 }
 
 if (!empty($_POST) && $_POST["submitPass"] == "Aggiorna password") {
-  if (aggiorna_password()) {
+  echo "<script>console.log("."$newpass".");</script>";
+  if (aggiorna_password($newpass)) {
     $alert = "<p class='alert'><strong><br/>Password aggiornata con successo.</strong></p>";
   } else {
     $alert = "<p class='alert'><strong><br/>Errore durante l'aggiornamento. Riprova</strong></p>";
