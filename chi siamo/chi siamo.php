@@ -11,37 +11,40 @@
     <?php //require '../base/nav.php' ?>
 
     <!-- div per contenere uno slider per le slides -->
-    <div class="slider">
-      <!-- div per contenere le varie slides che scorrono -->
-      <div class="slides">
-        <!-- pulsanti per scorrere le slides -->
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
+    <div class="container">
 
-        <!-- le varie slides -->
-        <div class="slide first">
+      <div class="slider">
+        <input type="radio" class="radio" name="images" id="radio-1" checked>
+        <input type="radio" class="radio" name="images" id="radio-2">
+        <input type="radio" class="radio" name="images" id="radio-3">
+        <input type="radio" class="radio" name="images" id="radio-4">
+
+        <div class="slide" id="slide-1">
           <img src="../media/chi_siamo1.jpg" alt="">
+          <div class="slide-text">Testo slide 1</div>
         </div>
-        <div class="slide">
+        <div class="slide" id="slide-2">
           <img src="../media/chi_siamo2.jpg" alt="">
+          <div class="slide-text">Testo slide 2</div>
         </div>
-        <div class="slide">
+        <div class="slide" id="slide-3">
           <img src="../media/chi_siamo3.png" alt="">
+          <div class="slide-text">Testo slide 3</div>
         </div>
-        <div class="slide">
+        <div class="slide" id="slide-4">
           <img src="../media/chi_siamo4.jpg" alt="">
+          <div class="slide-text">Testo slide 4</div>
         </div>
+      </div>
 
+      <div class="dots">
+        <label for="radio-1" id="label-1"></label>
+        <label for="radio-2" id="label-2"></label>
+        <label for="radio-3" id="label-3"></label>
+        <label for="radio-4" id="label-4"></label>
       </div>
-        <div class="navigation-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
-          <label for="radio4" class="manual-btn"></label>
-        </div>
-      </div>
+
+    </div>
 
       <p>
         In qualità di imprenditore e fondatore del ristorante "Flying Sauce", desidero esprimere la mia profonda gratitudine per<br>

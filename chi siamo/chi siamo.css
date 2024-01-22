@@ -9,74 +9,88 @@ body {
   background-color: #FFF0DA;
 }
 
-.slider {
-    width: 100%;
-    height: 800px;
-    overflow: hidden;
+/* per lo slider */
+.radio {
+  display: none; /* rendo i radio button invisibili */
 }
 
-.slides {
-  width: 500%;
-  height: 800px;
-  display: flex;
-  flex-direction: column;
+.container {
+  position: relative; /* la classe container è un riferimento per position */
+  max-width: 800px;
+  height: 500px;
+  margin: 5% auto;
 }
 
-.slides input {
-  display: none;
-}
-
-.slide  {
-  width: 20%;
-  transition: 2s;
-}
-
-.slide img{
+.slider { /* slider conterrà le diverse slide con le immagini e il testo */
   width: 100%;
-  height: 800px;
+  overflow: hidden; 
+  position: absolute; /* posizione assoluta relativamente a container */
+  height: 500px;
+  border: solid 1px black;  
 }
 
-/* per muovere manualmente le slide */
+.slide { /* una singola slide contiene l'immagine e il testo */
+  position: absolute; /* posizione assoluta relativamente a container */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; /* con le 4 istruzioni sovrastanti la slide prende tutto lo spazio possibile */
+  opacity: 0; /* inizialmente è invisibile */
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* object-fit specifica come l'immagine deve essere ridimensionata per entrare in .slide, con cover l'immagine mantiene le sue proporzioni e riempie lo spazio assegnato con width e heigh. L'immagine viene tagliata se necessario */
+}
 
-.navigation-manual {
+.slide-text { /* questa classe si riferisce al testo presente sulle slide */
   position: absolute;
-  margin-top: -30%;
-  margin-left: 2%;
+  width: 100%;
+  left: 5%;
+  top: 70%;
+  color: blue; /* DA CAMBIARE */
+  font-weight: 900;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace; /* DA CAMBIARE */
+}
+
+.dots { /* questa classe è un blocco che contiene le laber che si riferiscono ai radio button per la selezione della slide, utile per assegnare uno stile ai bottoni */
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.manual-btn {
-  border: 1px solid  #FFC26C;
-  background-color: #FFC26C;
-  padding: 5px;
-  border-radius: 20px;
+.dots label { /* questo selettore serve per assegnare dello stile ai bottoni radio */
+  width: 15px;
+  height: 15px;
+  background-color: black; /* DA CAMBIARE? */
+  margin: 0 10px;
+  border-radius: 50%; /* li rendo rotondi */
   cursor: pointer;
+  opacity: 0.3; /* di base il radio button è opaco */
 }
 
-.manual-btn:not(:last-child) {
-  margin-bottom: 100px;
+.dots label:hover {
+  opacity: 0.7; /* quando il cursore passa sul radio button questo si scurisce */
 }
 
-.manual-btn:hover {
-  background-color:rgb(24, 65, 73);
-  border: 1px solid rgb(24, 65, 73);
+#radio-1:checked ~ #slide-1, /* questi selettori servono ad applicare stile ad una slide quando un radio button è selezionato */
+#radio-2:checked ~ #slide-2,
+#radio-3:checked ~ #slide-3,
+#radio-4:checked ~ #slide-4 {
+  opacity: 1; /* rende la slide visibile */
 }
 
-#radio1:checked ~ .first{
-  margin-bottom: 0;
-}
-
-#radio2:checked ~ .first{
-  margin-bottom: -8.37%;
-}
-
-#radio3:checked ~ .first{
-  margin-bottom: -16.74%;
-}
-
-#radio4:checked ~ .first{
-  margin-bottom: -25.11%;
+/* NON FUNZIONA */
+#radio-1:checked ~ .dots label[for="radio-1"], /* questi selettori servono ad applicare stile ad una laber quando un radio button è selezionato */
+#radio-2:checked ~ .dots label[for="radio-2"],
+#radio-3:checked ~ .dots label[for="radio-3"],
+#radio-4:checked ~ .dots label[for="radio-4"]  {
+  background-color: greenyellow; /* la laber cambia colore quando il relativo radio è selezionato */
+  opacity: 1;
 }
 
 /* Per il grid container delle immagini */
