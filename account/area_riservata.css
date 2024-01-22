@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  margin: 0;
+  background: #F4DAB4;
+}
+
+/*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
+.fullbody {
+  display: flex;
+  justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
+}
+
+/*contiene i due div che andranno affiancati (immagine e slogan + form)*/
+.container {
+  width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
+  height: 70vh;   /*altezza corrispondente al 70% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
+  background: #46666D;    /*colore di sfondo*/
+  border-radius: 120px;   /*arrotondo i bordi del div*/
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
+  overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
+  display: flex;
+  margin: 3% 0;
+}
+
+.columnside {
+  flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  justify-content: center;
+  background-color: rgb(24, 65, 73);
+  border-right: thin solid #E4A33F;
+  left: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.columnside h1 {
+  color: rgb(255, 194, 108);
+  text-align: center;
+  font-size: x-large;
+}
+
+/*i singoli elementi della colonna di sx*/
+.selezione {
+  padding: 10px;
+  text-align: center;
+  font-size: 22px;
+  color: #FFF0DA;
+  margin: 10px 0;
+  text-decoration: none;
+  display: block;   /*necessario perchè altrimenti il tag sarebbe inline */
+}
+
+#logout {
+  border: none;     /*nessun bordo visibile*/
+  border-radius: 50px;      /*angoli arrotondati*/
+  background: rgb(255, 194, 108);     /*colore di sfondo al pulsante di login*/
+  color: #FFF0DA;     /*colore al testo interno*/
+  font-size: large;     /*dimensione del testo*/
+  width: 130px;     /*larghezza del bottone*/
+  height: 50px;     /*altezza del bottone*/
+  margin: 15px 0;       /*margine top-bottom*/
+  cursor: pointer;      /*il cursore diventa la manina*/
+}
+
+/*all'hover cambia il colore del bottone per accedere*/
+#logout:hover {
+  background: #46666D;
+}
+
+.account_content{
+  flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color:#FFF0DA;
+}
+
+#Spedizione a{
+  opacity: 0.7;   /*di default il colore è opacizzato*/
+  text-decoration: none;    /*nessuna sottolineatura*/
+  color: rgb(255, 194, 108);      /*applico un colore ai tag a*/
+}
+
+#Spedizione a:hover{
+  opacity:1;    /*con l'hover si riporta alla tonalità originale*/
+}
+
+.sezione{
+  margin: 0 20px;     /*margine laterale per distanziarla dal bordo*/
+}
+
+.sezione h3{
+  font-size: 35px;
+  color: rgb(255, 194, 108);
+}
+
+.input-element{
+  margin: 5px 0;
+}
+
+.input-element span{
+  margin-right: 10px;
+}
+
+.disabled_input{
+  height: 30px;     /*rendo i campi di input di sola lettura più alti*/
+  margin-bottom: 5px;     /*applico un margine inferiore per distanziarli gli uni dagli altri*/
+  font-size: 20px;
+}
+
+.input-field{
+  display: block;
+  width: 50%;
+  margin: 5px 0;      /*top-bottom per distanziare tra loro gli input del form*/
+  height: 50px;     /*setto un'altezza*/
+  margin: 8px 0;     /*margine top-bottom*/
+  border: 2px solid #184149;    /*bordo al div*/
+  border-radius: 50px;      /*per i bordi arrotondati*/
+  display: flex;
+  background: transparent;      /*gli input devono avere background trasparente*/
+  font-size: 15px;      /*dimensione del testo negli input*/
+  color: #FFF0DA;     /*colore del testo che viene inserito negli input*/
+  padding: 15px;
+}
+
+.input-field:focus {
+  outline: 2px solid rgb(255, 194, 108); /*al focus, il cambio il colore del bordo(outline) di input*/
+}
+
+.submit_buttons {
+    box-sizing: border-box; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
+    display: inline-block; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
+    border: thin solid rgb(255, 194, 108); /*bordo dorato*/
+    background-color: #184149;
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 15px 25px; /*per dare volume al bottone*/
+    color: rgb(255, 194, 108); /*colore del testo uguale a quello del bordo*/
+    font-size: 13px; /*scelta della dimensione del testo*/
+
+    cursor: pointer; /*fa uscire la "manina"*/
+    transition: all .6s ease; /*rende l'animazione di hover più smooth*/
+}
+
+.submit_buttons:hover {
+    /*al passaggio del mouse il colore del bordo, dello sfondo e del testo dei bottoni cambia
+    in modo da renderli visivamente responsivi*/
+    border: thin solid #184149;
+    background-color: #FFF0DA;
+    color: #5D7A7F;
+}
