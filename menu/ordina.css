@@ -44,6 +44,7 @@ body {
   background-color: #46666D;
   border-right: thin solid #184149;
   right: 0px;
+  overflow-y: auto;
 }
 
 .categoria {
