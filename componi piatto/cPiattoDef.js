@@ -3,6 +3,10 @@ var myImg = new Image(597, 618); /* crea un nuovo oggetto immagine di dimensioni
 myImg.src = "media/sfondoComponi.PNG"; /* imposta la src dell'immagine */
 myImg.onload = function() { /* si assicura che l'immagine venga caricata prima di disegnarla sul Canvas */
     c.getContext('2d').drawImage(myImg, 0,0); /* disegna l'immagine sul Canvas, questa è l'immagine che fa da sfondo al Canvas */
+    printImage('quantita_1.png', 50, 442); /* chiamate al metodo printImage per le informazioni che vengono mostrate di default*/
+    printImage('pasta_1.png', 50, 307);
+    printImage('sugo_1.png', 50, 172);
+    printImage('topping_1.png', 50, 37);
 }
 
 /**

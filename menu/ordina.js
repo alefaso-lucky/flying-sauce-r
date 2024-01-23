@@ -29,7 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
             listItemButton.addEventListener('click', function() {
                 const listItem = listItemButton.parentNode;
                 var piatto_to_remove = listItem.textContent;
-                piatto_to_remove = piatto_to_remove.substring(3, piatto_to_remove.length);
+                var number_of_characters_to_ignore = 3;
+                if(!isNaN(piatto_to_remove[1]))
+                    number_of_characters_to_ignore = 4;
+                piatto_to_remove = piatto_to_remove.substring(number_of_characters_to_ignore, piatto_to_remove.length);
                 //chiamata AJAX per rimuovere il piatto
                 const xmlhttpd = new XMLHttpRequest();
                 xmlhttpd.open('POST', 'menu/updateCart.php', true);

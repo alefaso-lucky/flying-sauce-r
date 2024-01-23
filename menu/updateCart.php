@@ -10,7 +10,7 @@
     if(isset($_POST['name_piatto'])) {
         $piatto = $_POST['name_piatto'];
         $name_piatto = pg_escape_string($db, $piatto);
-
+        
         //logica per aumentare il numero
         $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
         $ret_select = pg_query($db, $check);
@@ -40,11 +40,9 @@
                 pg_query($db, $updateQuery);
             }
             else {
+                //add logic
                 $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', 'test', 1)";
                 $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
-                if($ret_insert) {
-                    //echo "successo";
-                }
             }
         }
     }
@@ -57,5 +55,5 @@
         $list .=  "<li><img src='media/remove_from_cart.png' alt='remove item from cart button' class='remover' height=20px width=auto/>" . $row[1] . "x " . $row[0] . "</li>";
     }
     pg_close($db);
-    echo $list;
+    echo $piatto . $list;
 ?>
