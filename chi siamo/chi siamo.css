@@ -3,7 +3,8 @@ body {
   padding: 0;
   /* box-sizing: border-box; */
   height: 100vh; /* per metterla a tutta la pagina */
-
+  width: 100vw;
+  overflow-x: hidden;
   justify-content: center;
   align-items: center;
   background-color: #FFF0DA;
@@ -12,6 +13,10 @@ body {
 /* per lo slider */
 .radio {
   display: none; /* rendo i radio button invisibili */
+}
+
+.background-container {
+  background-color:  rgb(24, 65, 73); /* colore di sfondo alle immagini */
 }
 
 .container {
@@ -23,9 +28,9 @@ body {
 
 .slider { /* slider conterrà le diverse slide con le immagini e il testo */
   width: 100%;
+  height: 100%;
   overflow: hidden; 
-  position: absolute; /* posizione assoluta relativamente a container */
-  height: 500px;
+  position: relative; /* posizione assoluta relativamente a container */
   border: solid 1px black;  
 }
 
@@ -45,13 +50,28 @@ body {
 
 .slide-text { /* questa classe si riferisce al testo presente sulle slide */
   position: absolute;
-  width: 100%;
-  left: 5%;
-  top: 70%;
-  color: blue; /* DA CAMBIARE */
-  font-weight: 900;
+  width: 30%;
+  right: 5%;
+  top: 10%;
+  bottom: 10%;
+  color: white;
+  background-color: rgba(24, 65, 73, 0.4);
+  border-radius: 50px;  /* rendo gli spigoli curvi */
+  border: medium solid rgba(255, 194, 108, 0.8); /* aggiungo un bordo dorato */
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: left;
+  font-family: 'Montserrat', Courier, monospace; /* DA CAMBIARE */
+}
+.slide-text strong {
+  color: rgb(255, 194, 108);
   font-size: 18px;
-  font-family: 'Courier New', Courier, monospace; /* DA CAMBIARE */
+}
+@media(max-width: 900px) { /* rimpicciolisce il font quando lo schermo si rimpicciolisce */
+  .slide-text {
+    font-size: 9px;
+  }
 }
 
 .dots { /* questa classe è un blocco che contiene le laber che si riferiscono ai radio button per la selezione della slide, utile per assegnare uno stile ai bottoni */
@@ -66,15 +86,15 @@ body {
 .dots label { /* questo selettore serve per assegnare dello stile ai bottoni radio */
   width: 15px;
   height: 15px;
-  background-color: black; /* DA CAMBIARE? */
+  background-color: rgb(255, 194, 108);
   margin: 0 10px;
   border-radius: 50%; /* li rendo rotondi */
   cursor: pointer;
-  opacity: 0.3; /* di base il radio button è opaco */
+  opacity: 0.7; /* di base il radio button è opaco */
 }
 
 .dots label:hover {
-  opacity: 0.7; /* quando il cursore passa sul radio button questo si scurisce */
+  opacity: 1; /* quando il cursore passa sul radio button questo si scurisce */
 }
 
 #radio-1:checked ~ #slide-1, /* questi selettori servono ad applicare stile ad una slide quando un radio button è selezionato */
@@ -84,13 +104,14 @@ body {
   opacity: 1; /* rende la slide visibile */
 }
 
-/* NON FUNZIONA */
-#radio-1:checked ~ .dots label[for="radio-1"], /* questi selettori servono ad applicare stile ad una laber quando un radio button è selezionato */
-#radio-2:checked ~ .dots label[for="radio-2"],
-#radio-3:checked ~ .dots label[for="radio-3"],
-#radio-4:checked ~ .dots label[for="radio-4"]  {
-  background-color: greenyellow; /* la laber cambia colore quando il relativo radio è selezionato */
-  opacity: 1;
+/* per il testo all'interno della pagine */
+
+.middle-page-text {
+  position: relative;
+  text-align: center;
+  margin-left: 50px;
+  text-decoration: solid;
+  font-family: Montserrat, sans-serif;
 }
 
 /* Per il grid container delle immagini */
@@ -114,6 +135,7 @@ div.grid-item { /* grid-item è una classe applicata a ciascun div che contiene 
 div.grid-item img{ /* stile applicato alle immagini contenute nmel grid-item */
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .overlay { /* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
@@ -136,6 +158,26 @@ div.grid-item:hover .overlay {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%); /* queste istruzioni servono per centrare il paragrafo nell'immagine */
+}
+@media(max-width: 1200px) { /* rimpicciolisce il font quando lo schermo si rimpicciolisce */
+  .testoImg {
+    font-size: 12px;
+  }
+}
+@media(max-width: 900px) {
+  .testoImg {
+    font-size: 10px;
+  }
+}
+@media(max-width: 800px) {
+  .testoImg {
+    font-size: 8px;
+  }
+}
+@media(max-width: 700px) {
+  .testoImg {
+    font-size: 7px;
+  }
 }
 
 div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */

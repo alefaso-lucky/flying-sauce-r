@@ -21,13 +21,13 @@
         <!--fetch dell'elemento desiderato-->
         <?php
             $nome = $_POST['name']; /* questa pagina è la action di un form con metodo post quindi è possibile accedere
-            alla variabile super globale $_POST per accedere all'unica informazione passata che
-            è il name del piatto sul quale l'utente vuole più informazioni */
+                                    alla variabile super globale $_POST per accedere all'unica informazione passata che
+                                    è il name del piatto sul quale l'utente vuole più informazioni */
             $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'"; /* interrogazione SQL
-            sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
+                                    sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
             $ret = pg_query($db, $sql); /* viene eseguita la query */
             $row = pg_fetch_array($ret); /* con pg_fetch_array si ottiene un array che contiene le informazioni relative alla prima
-            (e in questo caso unica) riga del risultato della query */
+                                    (e in questo caso unica) riga del risultato della query */
             $nome = $row[0]; /* vengono inserite in variabili dal nome indicativo le informazioni estratte dal database */
             $lista_ingredienti = $row[1];
             $descrizione_lunga = $row[2];
