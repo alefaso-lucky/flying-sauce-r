@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 var number_of_characters_to_ignore = 3;
                 if(!isNaN(piatto_to_remove[1]))
                     number_of_characters_to_ignore = 4;
+                console.log(piatto_to_remove);
                 piatto_to_remove = piatto_to_remove.substring(number_of_characters_to_ignore, piatto_to_remove.length);
+                console.log(piatto_to_remove);
                 //chiamata AJAX per rimuovere il piatto
                 const xmlhttpd = new XMLHttpRequest();
                 xmlhttpd.open('POST', 'menu/updateCart.php', true);
