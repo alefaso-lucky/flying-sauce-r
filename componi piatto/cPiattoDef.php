@@ -29,9 +29,15 @@
         if(pg_num_rows($ret_select) > 0) {
             //update logic
             $row = pg_fetch_array($ret_select);
-            $quantita = $row['quantita'] + 1;
-            $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";
-            pg_query($db, $updateQuery);
+            if($row['quantita'] < 99) {
+                $quantita = $row['quantita'] + 1;
+                $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";
+                pg_query($db, $updateQuery);
+                $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";
+            }
+            else {
+                $result_feedback = "<script>alert('Siamo italiani, amiamo la pasta... ma sei sicuro di non stare esagerando? Hai già aggiunto al carrello 99 piatti personalizzati uguale a questo!');</script>";
+            }
         }
         else {
             //add logic
@@ -40,7 +46,7 @@
         }
 
         pg_close($db);
-        echo "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";
+        echo $result_feedback;
     }
 ?>
     <body>
