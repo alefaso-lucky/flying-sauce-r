@@ -13,7 +13,7 @@ body {
 
 /* cell è il div principale che contiene tutto  */
 .cell {
-  background-color: RGBA(24, 65, 73, 0.85);
+  background-color: rgba(24, 65, 73, 0.85);
   border-radius: 50px;  /* rendo gli spigoli curvi */
   border: medium solid RGB(255, 194, 108); /* aggiungo un bordo dorato */
   text-align: justify; /* testo allineato  */
