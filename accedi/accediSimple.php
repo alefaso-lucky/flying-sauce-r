@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!-- non abbiamo inserito il controllo per rendere sticky la password poichè questa di default non lo è -->
 <?php
-if(isset($_POST['email']))
-  $email = $_POST['email'];
-else
-  $email = "";
+  if(isset($_POST['email']))
+    $email = $_POST['email'];
+  else
+    $email = "";
 ?>
 
 <html>
   <head>
     <meta charset="utf-8">
-    <base href="http://localhost/progetto/Flying_Sauce_r/">
+    <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="./accedi/accedi.css">
     <script language="javascript" type="text/javascript">
@@ -65,24 +65,29 @@ else
           			else{
           				if(password_verify($password, $hash)){
           					session_start();
-                            $_SESSION["loggato"] = True;
-                            $_SESSION["email"] = $email;
-                            header("refresh:0.01;URL=./area_riservata.php");
+                    $_SESSION["loggato"] = True;
+                    $_SESSION["email"] = $email;
+                    header("refresh:0.01;URL=./area_riservata.php");
           				}
           				else{
-                            $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
-                            echo "$alert";
+                    $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
+                    echo "$alert";
           				}
           			}
               }
               else{
-                  $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
-                  echo "$alert";
+                $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                echo "$alert";
               }
             }
 
             function get_pwd($email){
-            		require ".\logindb.php";
+            		/*connessione al database*/
+                $host="localhost";
+                $db='GruppoXX';
+                $user="www";
+                $password="password";
+                $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
             		//CONNESSIONE AL DB
              		$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
              		$sql = "SELECT password FROM utenti WHERE email=$1;";
@@ -92,7 +97,7 @@ else
              			echo "ERRORE QUERY: " . pg_last_error($db);
              			return false;
              		}else{
-             			if ($row = pg_fetch_assoc($ret)){
+             			if ($row = pg_fetch_assoc($ret)) {
              				$pass = $row['password'];
              				return $pass;
              			}else{
