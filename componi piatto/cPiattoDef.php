@@ -6,7 +6,7 @@
         <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
         <meta charset="utf-8">
     </head>
-<?php/*la pagina deve rielaborare il form perche è sticky quindi la invia a se stessa e si ricarica*/
+<?php /*la pagina deve rielaborare il form perche è sticky quindi la invia a se stessa e si ricarica*/
     /*se le informazioni del form sono disponibili bisogna aggiungere il prodotto al carrello e poi portare l'utente
     al menu in modo che possa aggiungere altri prodotti ed eventualmente procedere al pagamento*/
     if(isset($_POST['quantita'])) {
