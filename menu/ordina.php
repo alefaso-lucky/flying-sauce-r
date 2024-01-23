@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     <head>
         <title>Menu</title> <!--titolo della scheda-->
         <meta charset="utf-8"> <!--character encoding-->
@@ -7,6 +7,18 @@
         <link rel="stylesheet" href="menu/ordina.css"> <!--collegamento al foglio di stile-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> <!--collegamento al font-->
     </head>
+
+    <?php
+        session_start();
+        if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
+            $logged = $_SESSION['loggato'];
+            $email_user = $_SESSION['email'];
+        }
+        else {
+            $logged = false;
+            $email_user = "";
+        }
+    ?>
 
     <body>
         <?php require "../base/navSimple.php" ?> <!--inserimento navbar-->

@@ -13,8 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
             xmlhttp.onload = function () { //onload quindi quando readyState è 4
                 if(xmlhttp.status === 200) {
-                    cartList.innerHTML = xmlhttp.responseText;
-                    addListenerToRemovers();
+                    if(xmlhttp.responseText == "NOT LOGGED") {
+                        window.location = "accedi/accediSimple.php"; 
+                    }
+                    else {
+                        cartList.innerHTML = xmlhttp.responseText;
+                        addListenerToRemovers();
+                    }
                 }
             };
             var stringa = "name_piatto=" + name;
@@ -32,17 +37,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 var number_of_characters_to_ignore = 3;
                 if(!isNaN(piatto_to_remove[1]))
                     number_of_characters_to_ignore = 4;
-                console.log(piatto_to_remove);
                 piatto_to_remove = piatto_to_remove.substring(number_of_characters_to_ignore, piatto_to_remove.length);
-                console.log(piatto_to_remove);
                 //chiamata AJAX per rimuovere il piatto
                 const xmlhttpd = new XMLHttpRequest();
                 xmlhttpd.open('POST', 'menu/updateCart.php', true);
                 xmlhttpd.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
                 xmlhttpd.onload = function () { //onload quindi quando readyState è 4
                     if(xmlhttpd.status === 200) {
-                        cartList.innerHTML = xmlhttpd.responseText;
-                        addListenerToRemovers(); //dopo aver cambiato il contenuto della lista bisogna riaggiungere i listener a tutti i bottoni
+                        if(xmlhttpd.responseText == "NOT LOGGED") {
+                            window.location = "accedi/accediSimple.php"; 
+                        }
+                        else {
+                            cartList.innerHTML = xmlhttpd.responseText;
+                            addListenerToRemovers(); //dopo aver cambiato il contenuto della lista bisogna riaggiungere i listener a tutti i bottoni
+                        }
                     }
                 };
                 var stringa = "name_piatto=" + piatto_to_remove + "&delete=" + true;

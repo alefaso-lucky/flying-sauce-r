@@ -65,9 +65,10 @@
           			else{
           				if(password_verify($password, $hash)){
           					session_start();
-                    $_SESSION["loggato"] = True;
+                    $_SESSION["loggato"] = true;
                     $_SESSION["email"] = $email;
-                    header("refresh:0.01;URL=./area_riservata.php");
+                    //header("refresh:0.01;URL=./area_riservata.php");
+                    header("refresh:0.01;URL=../menu/ordina.php");
           				}
           				else{
                     $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
