@@ -55,5 +55,5 @@
         $list .=  "<li><img src='media/remove_from_cart.png' alt='remove item from cart button' class='remover' height=20px width=auto/>" . $row[1] . "x " . $row[0] . "</li>";
     }
     pg_close($db);
-    echo $piatto . $list;
+    echo $list;
 ?>
