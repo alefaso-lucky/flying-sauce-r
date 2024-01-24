@@ -43,9 +43,8 @@
 			$civico = "";
 	if(!empty($_POST) && $_POST["submit"]=="Iscriviti"){
 		if(email_exist($email)){
-			$alert = "<p class='alert'>"."<strong><br/>Email $email già esistente. Riprova</strong>"."</p>";
-		}
-		else{
+			$alert = "Email $email già esistente. Riprova";
+			echo "<script type='text/javascript'>alert('$alert')</script>";
 			//ORA posso inserire il nuovo utente nel db
 			if(insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $regione, $citta, $via, $civico, $numero)){
 					$alert = "<p class='alert'>"."<strong><br/>Utente registrato con successo.</strong>"."</p>";
@@ -55,7 +54,8 @@
 					header("refresh:0.3;URL=./area_riservata.php");
 			}
 			else{
-				$alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
+				$alert = "Errore durante la registrazione. Riprova";
+				echo "<script type='text/javascript'>alert('$alert')</script>";
 			}
 		}
 	}
@@ -143,7 +143,7 @@
 			</p>
 				<?php
 					if(isset($alert))
-						echo $alert;
+						echo "<script type='text/javascript'>alert('$alert')</script>";
 				?>
 		</form>
 	</div>

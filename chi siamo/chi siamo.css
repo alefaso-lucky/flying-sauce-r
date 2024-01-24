@@ -25,7 +25,7 @@ body {
   position: relative; /* la classe container è un riferimento per position */
   max-width: 800px;
   height: 500px;
-  margin: 5% auto;
+  margin: 10px auto;
 }
 
 .slider { /* slider conterrà le diverse slide con le immagini e il testo */
@@ -50,7 +50,6 @@ body {
   height: 100%;
   object-fit: cover; /* object-fit specifica come l'immagine deve essere ridimensionata per entrare in .slide, con cover l'immagine mantiene le sue proporzioni e riempie lo spazio assegnato con width e heigh. L'immagine viene tagliata se necessario */
 }
-
 .slide-text { /* questa classe si riferisce al testo presente sulle slide */
   position: absolute; /* queste istruzioni servono per posizionare il testo */
   width: 30%;
@@ -91,20 +90,14 @@ body {
   background-color: rgb(255, 194, 108);
   margin: 0 10px;
   border-radius: 50%; /* li rendo rotondi */
-  cursor: pointer;
   opacity: 0.7; /* di base il radio button è opaco */
 }
 
-.dots label:hover {
-  opacity: 1; /* quando il cursore passa sul radio button questo si scurisce */
+@keyframes fade { /* animazione usata quando varia la slide dello slideshow, vedi JS */
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
-#radio-1:checked ~ #slide-1, /* questi selettori servono ad applicare stile ad una slide quando un radio button è selezionato */
-#radio-2:checked ~ #slide-2,
-#radio-3:checked ~ #slide-3,
-#radio-4:checked ~ #slide-4 {
-  opacity: 1; /* rende la slide visibile */
-}
 
 /* per il testo all'interno della pagine */
 
