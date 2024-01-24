@@ -11,7 +11,7 @@
             <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th></tr>
             
         </table>
-        <a id="bottone_secondario" href="#/ordina.php">COMPONI ORA IL TUO PIATTO</a> <!--bottone per andare alla pagina Componi Piatto-->
+        <a id="bottone_secondario" href="#">INDIETRO</a> <!--bottone per andare alla pagina precedente-->
     </div>
 </body>
 </html>
