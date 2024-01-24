@@ -17,23 +17,40 @@ body {
     flex-direction: column;         /*!! non display: inline-block perchè entrano in contrasto, bensì flex-direction:column*/
     padding: 20px;
     width: 100%;/*questo non funziona bene*/
-    margin: 3% 0%; /* margine per allinare */
+    margin: 5% 0%; /* margine per allinare */
 }
-
-h1{
-    text-align: center;
+/*
+ul.a {
+    list-style-type: circle;
+}
+*/
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+li{
+    display: inline-block;
+    font-size: 35px;
     font-family: Times New Roman, serif;    
     font-weight: 100;
     color: #FFC26C;
 }
 
 /*tabella*/
+table{
+    padding: 20px;
+}
+
 th{
     color: #FFC26C;
 }
 
 td{
-    color: whitesmoke;
+    color: rgb(245, 245, 245);
     text-align: center;
 }
 
@@ -42,6 +59,7 @@ tr:nth-child(even) {
 }
  
 #bottoni{
+    display: flex;
     justify-content: space-between;
 }
 
