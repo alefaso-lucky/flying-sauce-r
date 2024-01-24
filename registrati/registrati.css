@@ -28,6 +28,8 @@ body{
 
 .rightpanel{
   flex: 7;
+  -webkit-flex: 7;
+  -ms-flex: 7;
   margin: 0 10px;
 }
 
@@ -149,6 +151,8 @@ p a:hover{
 .leftpanel {
   position: relative;
   flex: 5;
+  -webkit-flex: 5;
+  -ms-flex: 5;
   height: 100%;   /*altezza del 100% rispetto al container*/
   z-index: 0; /* Assicura che l'immagine sia dietro i testi */
 }

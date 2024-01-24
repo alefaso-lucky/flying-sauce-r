@@ -29,6 +29,8 @@ body{
 
 .rightpanel{
   flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
 }
 
 /*per tutti i figli diretti di right panel - dunque h2, p e form*/
@@ -57,11 +59,15 @@ body{
 /*negli span sono contenute le icone (img)*/
 .input-field span {
   flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
   text-align: center;
 }
 
 .input-field input {
   flex: 5;
+  -webkit-flex: 5;
+  -ms-flex: 5;
   background: none;   /*non voglio sia visibile il campo di input*/
   border: none;   /*non voglio sia visibile il bordo del campo di input*/
   outline: none;    /*non voglio che al click sul campo sia visibile la linea di contorno*/
@@ -108,6 +114,8 @@ body{
 .leftpanel {
   position: relative;
   flex: 5;
+  -webkit-flex: 5;
+  -ms-flex: 5;
   height: 100%;   /*altezza del 100% rispetto al container*/
   z-index: 0; /* Assicura che l'immagine sia dietro i testi */
 }
