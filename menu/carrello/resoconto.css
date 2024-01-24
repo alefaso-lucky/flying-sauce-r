@@ -6,7 +6,8 @@ body {
     margin: 0;
     width: 100%;
 }
-  
+
+/*contenitore di tutti gli elementi*/
 #row {
     box-sizing: border-box;
     background-color: rgba(24, 65, 73, 0.85);
@@ -17,9 +18,14 @@ body {
     padding: 20px;
     width: 100%;/*questo non funziona bene*/
     margin: 3% 0%; /* margine per allinare */
-  }
+}
 
-
+h1{
+    font-family: Times New Roman, serif;
+    color: RGB(255, 194, 108);
+    font-weight: 100;
+    color: #FFC26C;
+}
 
 
 /*pulsanti per spostarsi avanti e indietro nel carrello*/
