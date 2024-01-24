@@ -86,6 +86,11 @@
                     ciao ciao ciao
                 </p>
             </div>
+            <div id="sezione3">
+                <p>
+                    ciao ciao ciaofefefef
+                </p>
+            </div>
             <div id=bottoni>
                 <p id="bottone_secondario" onclick="cambiaSezione('-')">INDIETRO</p> <!--bottone per andare alla pagina precedente-->
                 <p id="bottone_primario" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->

@@ -15,7 +15,7 @@ body {
     border-bottom: medium solid RGB(255, 194, 108); /* aggiungo un bordo inferiore dorato */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     width: 100%;/*questo non funziona bene*/
     min-height: 500px;
@@ -32,8 +32,12 @@ body {
     width: 100%;
 }
 
-#sezione2 {
+#sezione2, #sezione3 {
     display: none;
+}
+
+#titolo-sezione2, #titolo-sezione3 {
+    visibility: hidden;
 }
 
 /*
