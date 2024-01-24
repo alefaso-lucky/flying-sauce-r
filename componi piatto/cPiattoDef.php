@@ -7,6 +7,7 @@
         <meta charset="utf-8">
     </head>
 <?php
+    session_start();
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
         echo "<p id="."logged"." style="."'display: none'".">";
     }
@@ -44,8 +45,7 @@
                 $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
             }
             else {/*viene mostarto un alert perchè sono stati inseriti troppi piatti uguali*/
-                $result_feedback = "<script>alert('Siamo italiani, amiamo la pasta... ma sei sicuro di non stare esagerando? 
-                Hai già aggiunto al carrello 99 piatti personalizzati uguale a questo!');</script>";
+                $result_feedback = "<script>alert('Siamo italiani, amiamo la pasta... ma sei sicuro di non stare esagerando? Hai già aggiunto al carrello 99 piatti personalizzati uguale a questo!');</script>";
             }
         }
         else {/*il piatto composto viene aggiunto per la prima volta in questo carrello*/
@@ -54,7 +54,7 @@
         }
 
         pg_close($db);
-        echo $result_feedback;
+        echo $result_feedback . "COCOOOOOOOOO";
     }
 ?>
     <body>

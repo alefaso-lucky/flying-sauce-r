@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body{
+    margin: 0;
+    background: #F4DAB4;      /*colore di sfondo analogo alle altre pagine del sito*/
+  }
+  
+  /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
+  .fullbody {
+    display: flex;
+    justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
+  }
+  
+  /*contiene i due div che andranno affiancati (immagine e slogan + form)*/
+  .container {
+    width: 85vw;    /*larghezza corrispondente all'85% della larghezza della finestra del browser anche in caso di ridimensionamento*/
+    height: 80vh;   /*altezza corrispondente all'80% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
+    background: #46666D;    /*colore di sfondo*/
+    border-radius: 120px;   /*arrotondo i bordi del div*/
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
+    overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
+    display: flex;
+    align-items: center;              /*allineo al centro in senso verticale (per il form)*/
+    justify-content:space-between;    /*i due div affiancati con spazio tra di essi*/
+    margin: 3% 0;
+  }
+  
+  .container form {
+    display: flex;
+    flex-direction: column;     /*gli elementi del form disposti per colonne*/
+    align-items: center;    /*allineo al centro in senso verticale per gli elementi - quali tag h2 e p*/
+    width: 30%;   /*larghezza massima rispetto al padre*/
+  }
+  
+  form h2 {
+    color: rgb(255, 194, 108);    /*colore alla scritta*/
+    margin-bottom: 10px;    /*margine inferiore*/
+    font-size: 40px;      /*rendo più grande*/
+  }
+  
+  .input-field {
+    width: 90%;     /*larghezza max del div contenente i campi di input e l'icona rispetto a form*/
+    height: 50px;     /*setto un'altezza*/
+    margin: 10px 0;     /*margine top-bottom*/
+    border: 2px solid #184149;    /*bordo al div*/
+    border-radius: 50px;      /*per i bordi arrotondati*/
+    display: flex;
+    align-items: center;      /*per allineare al centro verticalmente le icone nel div*/
+  }
+  
+  /*negli span sono contenute le icone (img)*/
+  .input-field span {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .input-field input {
+    flex: 5;
+    background: none;   /*non voglio sia visibile il campo di input*/
+    border: none;   /*non voglio sia visibile il bordo del campo di input*/
+    outline: none;    /*non voglio che al click sul campo sia visibile la linea di contorno*/
+    font-size: 20px;    /*setto una dimensione del campo di input*/
+    color: #FFF0DA;     /*per il colore quando digiti nel campo di input*/
+  }
+  
+  #login {
+    border: none;     /*nessun bordo visibile*/
+    border-radius: 50px;      /*angoli arrotondati*/
+    background: rgb(255, 194, 108);     /*colore di sfondo al pulsante di login*/
+    color: #FFF0DA;     /*colore al testo interno*/
+    font-size: large;     /*dimensione del testo*/
+    width: 130px;     /*larghezza del bottone*/
+    height: 50px;     /*altezza del bottone*/
+    margin: 15px 0;       /*margine top-bottom*/
+    cursor: pointer;      /*il cursore diventa la manina*/
+  }
+  
+  /*all'hover cambia il colore del bottone per accedere*/
+  #login:hover {
+    background: #184149;
+  }
+  
+  /*un tag p che ti invita ad iscriverti*/
+  #iscriviti {
+    font-size: 20px;    /*dimensione del testo*/
+    color: #FFF0DA;     /*colore del testo*/
+  }
+  
+  #iscriviti a{
+    opacity: 0.7;   /*di default il colore è opacizzato*/
+    text-decoration: none;    /*nessuna sottolineatura*/
+    color: rgb(255, 194, 108);      /*applico un colore ai tag a*/
+  }
+  
+  #iscriviti a:hover{
+    opacity:1;    /*con l'hover si riporta alla tonalità originale*/
+  }
+  
+  .leftpanel {
+    position: relative;
+    width: 70%;   /*larghezza del 70% rispetto al container*/
+    height: 100%;   /*altezza del 100% rispetto al container*/
+    z-index: 0; /* Assicura che l'immagine sia dietro i testi */
+  }
+  
+  .content {
+    position: absolute;
+    left: 5%;         /*distanza dal bordo sinistro rispetto a leftpanel, il suo genitore*/
+    top: 50%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
+    translate: 0 -50% 0;  /*l'elemento viene spostato del 50% vers l'alto in modo da centrarlo verticalmente rispetto a leftpanel*/
+    max-width: 25%;     /*massima larghezza di content*/
+    z-index: 1;       /*il div che contiene tutto il test in rilievo rispetto al resto*/
+  }
+  
+  /*descrizione dello slogan*/
+  .leftpanel p {
+    font-size: 22px;      /*dimensione del testo*/
+    color: #FFF0DA;   /*colore del testo*/
+  }
+  
+  .leftpanel img {
+    width: 100%; /*per occupare tutto leftpanel*/
+    height: 100%;   /*l'immagine deve sempre occupare il 100% dell'altezza*/
+    object-fit: cover; /*l'immagine non subisce alterazioni */
+  }
+  
+  /*slogan d'effetto*/
+  .leftpanel h3{
+    font-size: 50px;      /*grandezza del font*/
+    font-weight: bold;      /*scrittura in grassetto per attirare l'attenzione*/
+    color: rgb(255, 194, 108);      /*colore del testo*/
+  }
+  
+  /*avviso in caso ci siano problemi nell'accesso*/
+  .alert {
+    width: 70%;     /*di form occupa solo il 70% della larghezza*/
+    text-align: center;     /*allineo il testo al centro*/
+    font-size: 20px;      /*grandezza del font*/
+    color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
+  }
+  
+  @media(max-width: 1500px){
+    .leftpanel p {
+      display: none;      /*sotto una determinata larghezza della finestra la descrizione dello slogan scompare*/
+    }
+  
+    /*h3 diventa più grande a livello di font ma occupa meno spazio*/
+    .leftpanel h3{
+      font-size: 45px;
+      max-width: 10%;
+    }
+  
+    /*il form occupa più spazio*/
+    .container form{
+      min-width: 40%;
+    }
+  }
+  
+  @media(max-width: 1000px){
+    .leftpanel{     /*sotto una determinata larghezza della finestra scompare completamente l'immagine e il div di sinistra*/
+      display: none;
+    }
+  
+    .container form{       /*il form occupa tutto il container*/
+      width: 100%;
+    }
+  }
+  

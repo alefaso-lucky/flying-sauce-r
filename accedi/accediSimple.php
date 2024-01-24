@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="./accedi/accedi.css">
+    <link rel="stylesheet" href="./accedi/accediSimple.css">
     <script language="javascript" type="text/javascript">
       function validatePassword() {
         password = document.getElementById("psw").value;
