@@ -27,7 +27,7 @@
               Benvenuti nel cuore della nostra tradizione culinaria, dove la storia della nostra pasta si intreccia con secoli di passione e maestria. La nostra avventura inizia nelle cucine delle famiglie più autentiche, dove ricette tramandate di generazione in generazione sono diventate la base della nostra filosofia gastronomica.
               La nostra pasta racconta storie di antiche tradizioni e segreti tramandati, mescolati con la freschezza di ingredienti accuratamente selezionati. Ogni forma e taglio riflettono la nostra dedizione per offrire un'esperienza culinaria autentica e memorabile.
               Attraverso il nostro percorso, abbiamo celebrato la diversità regionale e l'amore per l'eccellenza culinaria. Ogni piatto di pasta è una finestra su un viaggio attraverso le ricette di famiglia, le piazze affollate e gli aromi avvolgenti delle cucine italiane.
-              Unisciti a noi in questo viaggio gastronomico, dove la storia della nostra pasta diventa un capitolo del tuo pranzo o della tua cena, portando il calore delle tradizioni direttamente sulla tua tavola.
+              Unisciti a noi in questo viaggio gastronomico, portando il calore delle tradizioni direttamente sulla tua tavola.
             </div>
           </div>
           <div class="slide" id="slide-2">
@@ -80,7 +80,7 @@
       <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
       <div class="grid-img-container">
           <div class="grid-item" id="grid-item1" onmousemove = overImg1() onmouseleave = "leaveImg1()">
-            <img src="../media/notteStellata1.jpg" id="img1"></img>
+            <img src="../media/gridImg1.jpg" id="img1" width="167px" height="250px"></img>
             <div class="overlay">
               <p class="testoImg">
                 Il coraggio di intraprendere nuove strade è stato un pilastro fondamentale del nostro percorso. L'apertura a nuove idee e l'audacia di esplorare nuovi orizzonti gastronomici ci hanno permesso di distinguerci nel panorama culinario internazionale.
@@ -88,7 +88,7 @@
             </div>
           </div>
           <div class="grid-item" id="grid-item2" onmouseover = overImg2() onmouseleave = "leaveImg2()">
-            <img src="../media/notteStellata2.jpg" id="img2"></img>
+            <img src="../media/gridImg2.jpg" id="img2" width="150px" height="200px"></img>
             <div class="overlay">
               <p class="testoImg">
                 L'impegno nel perseguire i propri sogni è stato un motore trainante per il nostro successo. La determinazione nel perseguire l'eccellenza culinaria e nel superare le sfide ha reso il nostro percorso gratificante e ha contribuito a consolidare la reputazione di "Flying Sauce" come destinazione culinaria di primo livello.
@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="grid-item" id="grid-item3" onmouseover = overImg3() onmouseleave = "leaveImg3()">
-            <img src="../media/notteStellata3.jpg" id="img3"></img>
+            <img src="../media/gridImg3.jpg" id="img3" width="150px" height="500px"></img>
             <div class="overlay">
               <p class="testoImg">
                 L'autenticità del nostro brand è un altro elemento cruciale che abbiamo costantemente valorizzato. La coerenza nel rappresentare e preservare la ricchezza dei sapori italiani è fondamentale per la nostra identità aziendale. La fedeltà ai principi culinari tradizionali e l'attenzione alla qualità sono elementi che abbiamo sempre posto al centro della nostra missione.
@@ -104,7 +104,7 @@
             </div>
           </div>
           <div class="grid-item" id="grid-item4" onmouseover = overImg4() onmouseleave = "leaveImg4()">
-            <img src="../media/notteStellata4.jpg" id="img4"></img>
+            <img src="../media/gridImg4.jpg" id="img4" width="300px" height="200px"></img>
             <div class="overlay">
               <p class="testoImg">
                 La possibilità di esportare i gusti italiani in tutto il mondo è un traguardo che abbiamo abbracciato con entusiasmo e responsabilità. Ci impegniamo a offrire esperienze gastronomiche autentiche, trasportando i sapori tradizionali delle nostre cucine direttamente alle tavole internazionali.
