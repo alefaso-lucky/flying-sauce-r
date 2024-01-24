@@ -22,6 +22,8 @@ function cambiaSezione(direzione) {
             document.getElementById("sezione3").style.display = "inline-block";
             document.getElementById("titolo-sezione2").style.visibility = "hidden";
             document.getElementById("titolo-sezione3").style.visibility = "visible";
+            document.getElementById("bottoni").style.display = "none";
+            document.getElementById("final_button").style.display = "inline-block";
         }
         else {
             sezione = 1;
