@@ -21,12 +21,29 @@ body {
 }
 
 h1{
-    font-family: Times New Roman, serif;
-    color: RGB(255, 194, 108);
+    text-align: center;
+    font-family: Times New Roman, serif;    
     font-weight: 100;
     color: #FFC26C;
 }
 
+/*tabella*/
+th{
+    color: #FFC26C;
+}
+
+td{
+    color: whitesmoke;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(47, 94, 104);
+}
+ 
+#bottoni{
+    justify-content: space-between;
+}
 
 /*pulsanti per spostarsi avanti e indietro nel carrello*/
 #bottone_primario {
