@@ -16,7 +16,7 @@
                 <a class="bot" href="#">COMPONI ORA</a> <!--bottone per andare alla pagina Componi Piatto-->
             </div>
             <div id=dx>
-            <p id=frasedx>l'insuperabile proposta</br>italiana</p>
+                <p id=frasedx>la proposta italiana</p>
                 <a class="bot" href="#">MENU</a> <!--bottone per andare alla pagina Menu-->
             </div>
         </div>
