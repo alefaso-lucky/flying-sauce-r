@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
-	/*anche qui come per la sezione di accedi non mi occupo di rendere sticky gli input di tipo password poichè di default essi non lo sono*/
+	/*anche qui come per la sezione di accedi non mi occupo di 
+	rendere sticky gli input di tipo password poichè di default essi non lo sono*/
 	if(isset($_POST['nome']))
 			$nome = $_POST['nome'];
 	else
@@ -65,7 +66,7 @@
 	<meta charset="utf-8">
 	<base href="http://localhost/Flying_Sauce_r/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link rel="stylesheet" href="./registrati/registrati.css">
+	<link rel="stylesheet" href="./registrati/registratiSimple.css">
 	<script type="text/javascript">
 			function validaModulo(form){
 				//non effettuo controlli se i campi sono pieni poichè ho esplicitato con html la parola required

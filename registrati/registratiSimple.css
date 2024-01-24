@@ -1,15 +1,14 @@
 * {
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
   
   body{
     margin: 0;
-    background: #F4DAB4;      /*colore di sfondo analogo alle altre pagine del sito*/
+    background: #F4DAB4;  /*colore di sfondo analogo alle altre pagine del sito*/
   }
   
-  /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e 
-  avere sempre container posizionato al centro*/
+  /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
   .fullbody {
     display: flex;
     justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
@@ -18,7 +17,7 @@
   /*contiene i due div che andranno affiancati (immagine e slogan + form)*/
   .container {
     width: 85vw;    /*larghezza corrispondente all'85% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-    height: 700px;   /*altezza corrispondente all'80% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
+    /*height: 80vh;   /*altezza corrispondente all'80% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
     background: #46666D;    /*colore di sfondo*/
     border-radius: 120px;   /*arrotondo i bordi del div*/
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -30,10 +29,11 @@
   }
   
   .container form {
+    width: 70%;   /*larghezza rispetto al padre*/
+    margin: 0 10px;   /*applico un margine laterale al form*/
     display: flex;
     flex-direction: column;     /*gli elementi del form disposti per colonne*/
     align-items: center;    /*allineo al centro in senso verticale per gli elementi - quali tag h2 e p*/
-    width: 30%;   /*larghezza massima rispetto al padre*/
   }
   
   form h2 {
@@ -42,32 +42,63 @@
     font-size: 40px;      /*rendo più grande*/
   }
   
+  fieldset{
+    border-color: rgb(255, 194, 108);     /*per dare un colore al bordo del fieldset*/
+    border-radius: 40px;      /*per arrotondarne i bordi*/
+    width: 100%;      /*per fare in modo che occupi tutta la larghezza del form*/
+  }
+  
+  .input-container{
+    display: grid;      /*posiziono tutti i campi di input (contenuti nel div) in una griglia*/
+    grid-template-columns: auto auto; /* Due colonne con dimensione automatica*/
+    gap: 10px;    /*per impostare lo spazio tra le due colonne*/
+  }
+  
+  /*un div che contiene i radio per la scelta del genere di appartenenza*/
+  #gender-radio{
+    display: flex;
+    flex-direction: row;              /*gli elementi in questo div saranno disposti su una stessa riga*/
+    justify-content: space-around;    /*per distanziare i radio per la sezione genere*/
+  }
+  
   .input-field {
-    width: 90%;     /*larghezza max del div contenente i campi di input e l'icona rispetto a form*/
+    width: 100%;     /*affinchè ciascun campo occupichi la lunghezza max della colonna in cui si trova*/
     height: 50px;     /*setto un'altezza*/
-    margin: 10px 0;     /*margine top-bottom*/
+    margin: 5px 0;     /*margine top-bottom*/
     border: 2px solid #184149;    /*bordo al div*/
     border-radius: 50px;      /*per i bordi arrotondati*/
     display: flex;
-    align-items: center;      /*per allineare al centro verticalmente le icone nel div*/
+    background: transparent;      /*gli input devono avere background trasparente*/
+    font-size: 15px;      /*dimensione del testo negli input*/
+    color: #FFF0DA;     /*colore del testo che viene inserito negli input*/
+    padding: 15px;
   }
   
-  /*negli span sono contenute le icone (img)*/
-  .input-field span {
-    flex: 1;
-    text-align: center;
+  .input-field:focus {
+    outline: 2px solid rgb(255, 194, 108); /*al focus, il cambio il colore del bordo(outline) di input*/
   }
   
-  .input-field input {
-    flex: 5;
-    background: none;   /*non voglio sia visibile il campo di input*/
-    border: none;   /*non voglio sia visibile il bordo del campo di input*/
-    outline: none;    /*non voglio che al click sul campo sia visibile la linea di contorno*/
-    font-size: 20px;    /*setto una dimensione del campo di input*/
-    color: #FFF0DA;     /*per il colore quando digiti nel campo di input*/
+  input[type='radio'] {
+    display: none; /*nasconde i "cerchietti" dei radio button che sono poi "ricreati in CSS con uno stile più calzante al resto della pagina"*/
   }
   
-  #login {
+  label span::before {
+    content: ''; /*inserisce un contenuto vuoto prima delle scritte dei vari radio buttons, questo contenuto vuoto sostituisce il "cerchietto" precedentemente rimosso*/
+    /*i seguenti righi danno uno stile al contenuto inserito*/
+    border-radius: 6px; /*arrotonda il contenuto*/
+    border: 1px solid rgb(24, 65, 73); /*il contenuto ha un bordo ma non un background, in questo modo replica l'idea del radio button non selezionato*/
+    width: 15px; /*definisce la larghezza del contenuto*/
+    height: 15px; /*definisce la larghezza del contenuto*/
+    margin: 0px 5px; /*definisce margine nullo verticalmente ma presente in orizzontale in modo da distanziare il contenuto dal testo a esso legato*/
+    display: inline-block; /*per permettere alle modifiche relative a larghezza e altezza di avere effetto*/
+  }
+  
+  label input:checked+span::before {
+    /*quando l'input è checked da un background color al contenuto inserito*/
+    background-color: #184149;
+  }
+  
+  #submit {
     border: none;     /*nessun bordo visibile*/
     border-radius: 50px;      /*angoli arrotondati*/
     background: rgb(255, 194, 108);     /*colore di sfondo al pulsante di login*/
@@ -79,25 +110,25 @@
     cursor: pointer;      /*il cursore diventa la manina*/
   }
   
-  /*all'hover cambia il colore del bottone per accedere*/
-  #login:hover {
+  /*all'hover cambia il colore del bottone per registrarsi*/
+  #submit:hover {
     background: #184149;
   }
   
-  /*un tag p che ti invita ad iscriverti*/
-  #iscriviti {
-    font-size: 20px;    /*dimensione del testo*/
-    color: #FFF0DA;     /*colore del testo*/
+  
+  #info, legend, label{     /*info, legend e i label hanno tutti lo stesso stile*/
+    font-size: 16px;        /*per settare una dimensione del font a questi elementi*/
+    color: #FFF0DA;     /*per impostare un colore*/
   }
   
-  #iscriviti a{
-    opacity: 0.7;   /*di default il colore è opacizzato*/
-    text-decoration: none;    /*nessuna sottolineatura*/
-    color: rgb(255, 194, 108);      /*applico un colore ai tag a*/
+  #info a{      /*per i tag a delle info*/
+    opacity: 0.7;   /*di deafult il colore è opacizzato*/
+    text-decoration: none;    /*la sottolineatura non la rendo visibile*/
+    color: rgb(255, 194, 108);      /*un colore differente per i link*/
   }
   
-  #iscriviti a:hover{
-    opacity:1;    /*con l'hover si riporta alla tonalità originale*/
+  #info a:hover{
+    opacity:1;   /*con l'hover si riportano i link alla tonalità originale*/
   }
   
   .leftpanel {
@@ -110,9 +141,9 @@
   .content {
     position: absolute;
     left: 5%;         /*distanza dal bordo sinistro rispetto a leftpanel, il suo genitore*/
-    top: 47%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
+    top: 50%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
     translate: 0 -50% 0;  /*l'elemento viene spostato del 50% vers l'alto in modo da centrarlo verticalmente rispetto a leftpanel*/
-    max-width: 25%;     /*massima larghezza di content*/
+    max-width: 30%;     /*massima larghezza di content*/
     z-index: 1;       /*il div che contiene tutto il test in rilievo rispetto al resto*/
   }
   
@@ -130,7 +161,7 @@
   
   /*slogan d'effetto*/
   .leftpanel h3{
-    font-size: 50px;      /*grandezza del font*/
+    font-size: 40px;      /*grandezza del font*/
     font-weight: bold;      /*scrittura in grassetto per attirare l'attenzione*/
     color: rgb(255, 194, 108);      /*colore del testo*/
   }
@@ -154,9 +185,9 @@
       max-width: 10%;
     }
   
-    /*il form occupa più spazio*/
+    /*il form di container occupa più spazio*/
     .container form{
-      min-width: 40%;
+      min-width: 60%;
     }
   }
   
