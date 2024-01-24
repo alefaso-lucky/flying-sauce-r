@@ -214,16 +214,15 @@
                             sulla privacy</a>.
                         </p>
                     </form>
-                    <p>Fai già parte della nostra famiglia?
-                        <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
-                            <input type="hidden" name="accedi" value="<?php echo $accedi; ?>">
-                            <input type="submit" name="switch_accedi" value="Accedi ora" id="switch_button">
-                        </form>
-                        <?php
-                            if(isset($alert))
-                                echo $alert;
-                        ?>
-                    </p>
+                    <p>Fai già parte della nostra famiglia?</p>
+                    <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
+                        <input type="hidden" name="accedi" value="<?php echo $accedi; ?>">
+                        <input type="submit" name="switch_accedi" value="Accedi ora" id="switch_button">
+                    </form>
+                    <?php
+                        if(isset($alert))
+                            echo $alert;
+                    ?>
                 </div>
             </div>
         <?php }?>
