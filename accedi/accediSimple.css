@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     font-family: 'Montserrat', sans-serif;
   }
   
@@ -8,7 +8,8 @@
     background: #F4DAB4;      /*colore di sfondo analogo alle altre pagine del sito*/
   }
   
-  /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
+  /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e 
+  avere sempre container posizionato al centro*/
   .fullbody {
     display: flex;
     justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
@@ -17,7 +18,7 @@
   /*contiene i due div che andranno affiancati (immagine e slogan + form)*/
   .container {
     width: 85vw;    /*larghezza corrispondente all'85% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-    height: 80vh;   /*altezza corrispondente all'80% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
+    height: 700px;   /*altezza corrispondente all'80% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
     background: #46666D;    /*colore di sfondo*/
     border-radius: 120px;   /*arrotondo i bordi del div*/
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -109,7 +110,7 @@
   .content {
     position: absolute;
     left: 5%;         /*distanza dal bordo sinistro rispetto a leftpanel, il suo genitore*/
-    top: 50%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
+    top: 47%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
     translate: 0 -50% 0;  /*l'elemento viene spostato del 50% vers l'alto in modo da centrarlo verticalmente rispetto a leftpanel*/
     max-width: 25%;     /*massima larghezza di content*/
     z-index: 1;       /*il div che contiene tutto il test in rilievo rispetto al resto*/
