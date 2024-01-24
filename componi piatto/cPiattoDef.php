@@ -9,7 +9,13 @@
 <?php
     session_start();
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
+        $logged = $_SESSION['loggato'];
+        $email_user = $_SESSION['email'];
         echo "<p id="."logged"." style="."'display: none'".">";
+    }
+    else {
+        $logged = false;
+        $email_user = "";
     }
 
     /*la pagina deve rielaborare il form perche è sticky quindi la invia a se stessa e si ricarica*/
@@ -55,7 +61,7 @@
         }
 
         if($product_present_in_menu) {
-            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
+            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'"; //manca il modo per far arrivare l'email qui
             $ret_select = pg_query($db, $check); /*viene eseguita la query*/
 
             /*aggiornare l'elenco del carrello*/
@@ -64,7 +70,7 @@
                 $row = pg_fetch_array($ret_select);
                 if($row['quantita'] < 99) {/*viene aumentata la quantità relativa al piatto*/
                     $quantita = $row['quantita'] + 1;/*viene incrementata quantità*/
-                    $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";/*viene preparata la query */
+                    $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = '$email_user'";/*viene preparata la query */
                     pg_query($db, $updateQuery);/*viene eseguita la query */
                     $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
                 }
@@ -73,8 +79,9 @@
                 }
             }
             else {/*il piatto composto viene aggiunto per la prima volta in questo carrello*/
-                $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', 'test', 1)";
+                $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', '$email_user', 1)";
                 $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
+                $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
             }
         }
         else {
