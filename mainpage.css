@@ -1,0 +1,98 @@
+body {
+    background: #FFF0DA;
+    margin: 0;
+}
+/*SECONDA SEZIONE della hompage, dedicata a suggerire azioni all'utente*/
+#contenitore_2{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10% 10%;
+    font-family: lucida handwriting, Cursive;
+    font-size: 20px;
+}
+
+#contenitore_2 p{
+    color: rgb(255, 194, 108);;
+}
+/*tre colonne che consigliano tre percorsi differenti per navigare nel sito*/
+#sx {
+    margin: 5px;
+    border: 7px solid #385723;
+    border-radius: 10px;
+    background-image: url("media/home/mainSX.jpg");
+    background-repeat:none;
+    background-size: cover;
+    width: 370px;
+    height: 600px;
+}
+#frasesx{
+    position: relative;
+    top: 85px;
+    left: 15px;
+}
+#cc {
+    margin: 5px;
+    border: 7px solid #ffffff;
+    border-radius: 10px;
+    background-image: url("media/home/mainCC.png");
+    background-repeat:none;
+    background-size: cover;
+    width: 370px;
+    height: 600px;
+}
+#frasecc{
+    position: relative;
+    top: 530px;
+    left: 80px;
+}
+#dx {
+    margin: 5px;
+    border: 7px solid #C00000;
+    border-radius: 10px;
+    background-image: url("media/home/mainDX.png");
+    background-repeat:none;
+    background-size: cover;
+    width: 370px;
+    height: 600px;
+}
+#frasedx{
+    text-align: right;
+    position: relative;
+    top: 380px;
+    right: 15px;
+}
+
+
+
+
+
+/*pulsanti per spostarsi in altre pagine*/
+.bot{
+    text-decoration: none;
+    font-family: serif;
+    display: inline-block;
+    border: thin solid rgb(255, 194, 108);
+    background-color: rgb(70, 102, 109);
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 10px 20px;  /*per aumentare quello che circonda il bottone*/
+    color: rgb(255, 194, 108);
+    font-size: 15px;
+    cursor: pointer; /*facciamo uscire la manina*/
+    transition: all .3s ease;
+}
+
+.bot:hover{
+    border: thin solid #184149;
+    background-color:rgb(245, 207, 154);
+    color: #5D7A7F;
+}
+
+#contenitore_2 .bot{
+    font-size: 20px;
+    position: relative;
+    width: 100px;
+    text-align: center;
+    top: 40%;
+    left: 35%;
+}
