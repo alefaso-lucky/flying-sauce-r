@@ -14,11 +14,28 @@ body {
     border-top: medium solid RGB(255, 194, 108); /* aggiungo un bordo superiore dorato */
     border-bottom: medium solid RGB(255, 194, 108); /* aggiungo un bordo inferiore dorato */
     display: flex;
-    flex-direction: column;         /*!! non display: inline-block perchè entrano in contrasto, bensì flex-direction:column*/
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     width: 100%;/*questo non funziona bene*/
+    min-height: 500px;
     margin: 5% 0%; /* margine per allinare */
 }
+
+#internal-row {
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+#tabella-carrello {
+    width: 100%;
+}
+
+#sezione2 {
+    display: none;
+}
+
 /*
 ul.a {
     list-style-type: circle;
@@ -99,3 +116,9 @@ tr:nth-child(even) {
     color: #5D7A7F;
 }
   
+#totale {
+    text-align: right;
+    color: #FFC26C;
+    margin-left: 40px;
+    margin-right: 40px;
+}
