@@ -4,7 +4,7 @@
 	<base href="http://localhost/Flying_Sauce_r/">
 	<link rel="stylesheet" href="./menu/carrello/resoconto.css">
     <?php
-    /*
+    
         session_start();
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
             $logged = $_SESSION['loggato'];
@@ -22,6 +22,13 @@
         <h1>CARRELLO</h1>
         <table>
             <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th></tr>
+            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
+            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
+            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
+            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
+            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
+            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
+            
             <?php
                 /*connessione al database*/
                 $host="localhost";
@@ -47,9 +54,10 @@
                         echo "<tr><td>".$piatto."</td><td>".$quantita."</td><td>".$price."</td></tr>";
                     }
                 }
+                pg_close($db);
             ?>
         </table>
-        <div>
+        <div id=bottoni>
             <a id="bottone_secondario" href="#">INDIETRO</a> <!--bottone per andare alla pagina precedente-->
             <a id="bottone_primario" href="#">AVANTI</a> <!--bottone per andare alla pagina successiva-->
         </div>
