@@ -3,7 +3,7 @@
     <meta charset="utf-8">
 	<base href="http://localhost/Flying_Sauce_r/">
 	<link rel="stylesheet" href="./menu/carrello/resoconto.css">
-    <?php
+    <?php/*
     
         session_start();
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
@@ -14,21 +14,46 @@
             header("Location: http://localhost/Flying_Sauce_r/accedi/accediSimple.php"); 
             exit();
         }
-    
+    */
     ?>
 </head>
 <body>
     <div id="row">
-        <h1>CARRELLO</h1>
+        <ul>
+            <li>CARRELLO</li>
+            <li>SPEDIZIONE</li>
+            <li>PAGAMENTO</li>
+        </ul>
         <table>
-            <?php
-                /*connessione al database*/
+            <tr>
+                <th>Company</th>     <th>Contact</th>     <th>Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>    <td>Maria Anders</td>     <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>     <td>Francisco Chang</td>     <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>     <td>Roland Mendel</td>     <td>Austria</td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>     <td>Helen Bennett</td>     <td>UK</td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>    <td>Yoshi Tannamuri</td>    <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Magazzini Alimentari Riuniti</td>    <td>Giovanni Rovelli</td>    <td>Italy</td>
+            </tr>
+            <?php /*
+                /*connessione al database
                 $host="localhost";
                 $db='GruppoXX';
                 $user="www";
                 $password="password";
-                $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-                $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
+                $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione 
+                $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione 
 
                 $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                 $cart_query = pg_query($db, $cart);
@@ -47,7 +72,7 @@
                     }
                 }
                 pg_close($db);
-            ?>
+            */?>
         </table>
         <div id=bottoni>
             <a id="bottone_secondario" href="#">INDIETRO</a> <!--bottone per andare alla pagina precedente-->
