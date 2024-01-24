@@ -4,6 +4,7 @@
 	<base href="http://localhost/Flying_Sauce_r/">
 	<link rel="stylesheet" href="./menu/carrello/resoconto.css">
     <?php
+    /*
         session_start();
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
             $logged = $_SESSION['loggato'];
@@ -13,7 +14,7 @@
             header("Location: http://localhost/Flying_Sauce_r/accedi/accediSimple.php"); 
             exit();
         }
-
+    */
     ?>
 </head>
 <body>

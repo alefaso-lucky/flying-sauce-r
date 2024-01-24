@@ -4,16 +4,18 @@ body {
     background-repeat:repeat-y;
     background-size: cover;
     margin: 0;
+    width: 100%;
 }
   
 #row {
+    box-sizing: border-box;
     background-color: rgba(24, 65, 73, 0.85);
     border-top: medium solid RGB(255, 194, 108); /* aggiungo un bordo superiore dorato */
     border-bottom: medium solid RGB(255, 194, 108); /* aggiungo un bordo inferiore dorato */
     display: flex;
     flex-direction: column;         /*!! non display: inline-block perchè entrano in contrasto, bensì flex-direction:column*/
     padding: 20px;
-    width: 90%;/*questo non funziona bene*/
+    width: 100%;/*questo non funziona bene*/
     margin: 3% 0%; /* margine per allinare */
   }
 
