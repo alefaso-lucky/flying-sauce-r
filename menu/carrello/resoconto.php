@@ -14,21 +14,13 @@
             header("Location: http://localhost/Flying_Sauce_r/accedi/accediSimple.php"); 
             exit();
         }
-    */
+    
     ?>
 </head>
 <body>
     <div id="row">
         <h1>CARRELLO</h1>
         <table>
-            <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th></tr>
-            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
-            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
-            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
-            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
-            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
-            <tr><td>Pietanza</td><td>Quantità</td><td>Prezzo</td></tr>
-            
             <?php
                 /*connessione al database*/
                 $host="localhost";
