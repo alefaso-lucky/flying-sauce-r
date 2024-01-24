@@ -17,6 +17,8 @@ body {
 
 .background-container {
   background-color:  rgb(24, 65, 73); /* colore di sfondo alle immagini */
+  position: relative;
+  height: 500px;
 }
 
 .container {
@@ -29,9 +31,10 @@ body {
 .slider { /* slider conterrà le diverse slide con le immagini e il testo */
   width: 100%;
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   position: relative; /* posizione assoluta relativamente a container */
-  border: solid 1px black;  
+  border: solid 1px rgba(255, 194, 108, 0.8);
+  box-sizing: border-box; /* il bordo è applicato al content */
 }
 
 .slide { /* una singola slide contiene l'immagine e il testo */
@@ -49,22 +52,22 @@ body {
 }
 
 .slide-text { /* questa classe si riferisce al testo presente sulle slide */
-  position: absolute;
+  position: absolute; /* queste istruzioni servono per posizionare il testo */
   width: 30%;
   right: 5%;
   top: 10%;
   bottom: 10%;
   color: white;
-  background-color: rgba(24, 65, 73, 0.4);
+  background-color: rgba(24, 65, 73, 0.4); /* applico un colore al background */
   border-radius: 50px;  /* rendo gli spigoli curvi */
   border: medium solid rgba(255, 194, 108, 0.8); /* aggiungo un bordo dorato */
-  padding: 10px 20px;
+  padding: 15px 20px; /* padding per distanziare il testo dal bordo */
   font-weight: 700;
   font-size: 11px;
   text-align: left;
-  font-family: 'Montserrat', Courier, monospace; /* DA CAMBIARE */
+  font-family: 'Montserrat', Courier, monospace;
 }
-.slide-text strong {
+.slide-text strong { /* titolo del testo nella slide */
   color: rgb(255, 194, 108);
   font-size: 18px;
 }
@@ -77,10 +80,9 @@ body {
 .dots { /* questa classe è un blocco che contiene le laber che si riferiscono ai radio button per la selezione della slide, utile per assegnare uno stile ai bottoni */
   width: 100%;
   position: absolute;
-  bottom: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  bottom: 5%; /* distanti dal fondo del contenitore */
+  display: flex; /* allineati in riga */
+  justify-content: center; /* centrati */
 }
 
 .dots label { /* questo selettore serve per assegnare dello stile ai bottoni radio */
@@ -109,16 +111,16 @@ body {
 .middle-page-text {
   position: relative;
   text-align: center;
-  margin-left: 50px;
   text-decoration: solid;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Per il grid container delle immagini */
 
 div.grid-img-container {
   margin: 10px 50px; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
-  min-width: 500px; /* larghezza minima */
+  max-height: 200px;
+  width: 90%;
   display: grid; /* utilizzo un display grid per posizionare le immaigni */
   grid-template-areas: /* specifico come le immagini sono disposte nella griglia */
     'img1 img2 img3'
@@ -134,7 +136,7 @@ div.grid-item { /* grid-item è una classe applicata a ciascun div che contiene 
 
 div.grid-item img{ /* stile applicato alle immagini contenute nmel grid-item */
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -151,8 +153,9 @@ div.grid-item:hover .overlay {
 
 .testoImg { /* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
   font-family: "Goudy Old Style", sans-serif;
-  color: black;
+  color: rgb(255, 194, 108);
   font-size: 14pt;
+  font-weight: 900;
   text-align: center;
   position: absolute;
   top: 40%;
