@@ -106,7 +106,14 @@
 
 <html>
 <head>
+    <!--obbligatorie per ogni pagina prodotta-->
 	<meta charset="utf-8">
+    <title>Autenticazione</title>
+    <meta name="author" content="Gruppo08">
+    <meta name="description" content="Visualizzazione delle sezioni di accesso e registrazione">
+    <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <!--fine parte obbligatoria-->
 	<base href="http://localhost/progetto/FlyingSauce-r-/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="./registrati/validazioneInput.js"></script>
