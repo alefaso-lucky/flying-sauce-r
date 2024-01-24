@@ -47,11 +47,12 @@
 			echo "<script type='text/javascript'>alert('$alert')</script>";
 			//ORA posso inserire il nuovo utente nel db
 			if(insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $regione, $citta, $via, $civico, $numero)){
-					$alert = "<p class='alert'>"."<strong><br/>Utente registrato con successo.</strong>"."</p>";
-					session_start();
-					$_SESSION["loggato"] = True;
-					$_SESSION["email"] = $email;
-					header("refresh:0.3;URL=./area_riservata.php");
+				$alert = "Utente registrato con successo";
+				echo "<script type='text/javascript'>alert('$alert')</script>";
+				session_start();
+				$_SESSION["loggato"] = True;
+				$_SESSION["email"] = $email;
+				header("refresh:0.3;URL=./area_riservata.php");
 			}
 			else{
 				$alert = "Errore durante la registrazione. Riprova";
