@@ -31,30 +31,57 @@
         $topping = $_POST['topping'];
         $name_piatto = "Piatto " . "$quantita " . "di " . "$pasta " . "con " . "$sugo " . "e " . "$topping";/*viene crato il nome del piatto composto*/
         $name_piatto = pg_escape_string($db, $name_piatto);/*inserisce caratteri di escape qualora fosse necessario*/
-        $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
-        $ret_select = pg_query($db, $check); /*viene eseguita la query*/
-
-        /*aggiornare l'elenco del carrello*/
-        if(pg_num_rows($ret_select) > 0) {
-            /*già è stato inserito un piatto personalizzato con queste caratteristiche*/
-            $row = pg_fetch_array($ret_select);
-            if($row['quantita'] < 99) {/*viene aumentata la quantità relativa al piatto*/
-                $quantita = $row['quantita'] + 1;/*viene incrementata quantità*/
-                $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";/*viene preparata la query */
-                pg_query($db, $updateQuery);/*viene eseguita la query */
-                $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
+        
+        /* se il piatto non è presente a menu bisogna aggiungerlo, questo permette di rispariamare tempo nella popolazione
+        del menu */
+        $is_in_menu = "SELECT nome FROM menu WHERE nome = '$name_piatto'";
+        $is_in_menu_query = pg_query($db, $is_in_menu); /*viene eseguita la query*/;
+        if(!(pg_num_rows($is_in_menu_query) > 0)) {
+            //echo "<script>console.log("."'ciao1'".");</script>";
+            $lista_ingredienti = $pasta.", ".$sugo.", ".$topping;
+            $categoria = "Piatto personalizzato";
+            $prezzo = 150;
+            $add_to_menu = "INSERT INTO menu (nome, lista_ingredienti, categoria, prezzo) VALUES ('$name_piatto', '$lista_ingredienti', '$categoria', '$prezzo')";
+            $add_to_menu_query = pg_query($db, $add_to_menu);
+            if(!$add_to_menu_query) {
+                $product_present_in_menu = false;
             }
-            else {/*viene mostarto un alert perchè sono stati inseriti troppi piatti uguali*/
-                $result_feedback = "<script>alert('Siamo italiani, amiamo la pasta... ma sei sicuro di non stare esagerando? Hai già aggiunto al carrello 99 piatti personalizzati uguale a questo!');</script>";
+            else {
+                $product_present_in_menu = true;
             }
         }
-        else {/*il piatto composto viene aggiunto per la prima volta in questo carrello*/
-            $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', 'test', 1)";
-            $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
+        else {
+            $product_present_in_menu = true;
         }
 
+        if($product_present_in_menu) {
+            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
+            $ret_select = pg_query($db, $check); /*viene eseguita la query*/
+
+            /*aggiornare l'elenco del carrello*/
+            if(pg_num_rows($ret_select) > 0) {
+                /*già è stato inserito un piatto personalizzato con queste caratteristiche*/
+                $row = pg_fetch_array($ret_select);
+                if($row['quantita'] < 99) {/*viene aumentata la quantità relativa al piatto*/
+                    $quantita = $row['quantita'] + 1;/*viene incrementata quantità*/
+                    $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";/*viene preparata la query */
+                    pg_query($db, $updateQuery);/*viene eseguita la query */
+                    $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
+                }
+                else {/*viene mostarto un alert perchè sono stati inseriti troppi piatti uguali*/
+                    $result_feedback = "<script>alert('Siamo italiani, amiamo la pasta... ma sei sicuro di non stare esagerando? Hai già aggiunto al carrello 99 piatti personalizzati uguale a questo!');</script>";
+                }
+            }
+            else {/*il piatto composto viene aggiunto per la prima volta in questo carrello*/
+                $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', 'test', 1)";
+                $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
+            }
+        }
+        else {
+            $result_feedback = "<script>alert('Problema nella connessione al server, colpa nostra... riprova più tardi');</script>";
+        }
         pg_close($db);
-        echo $result_feedback . "COCOOOOOOOOO";
+        echo $result_feedback;
     }
 ?>
     <body>
