@@ -5,8 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function cambiaSezione(direzione) {
     if(sezione == 1) {
         if(direzione == '+') {
-            document.getElementById("sezione1");
             sezione = 2;
+            document.getElementById("sezione1").style.display = "none";
+            document.getElementById("sezione2").style.display = "inline-block";
+            document.getElementById("titolo-sezione1").style.visibility = "hidden";
+            document.getElementById("titolo-sezione2").style.visibility = "visible";
         }
         else {
             window.location = "menu/ordina.php"; 
@@ -14,11 +17,18 @@ function cambiaSezione(direzione) {
     }
     else {
         if(direzione == '+') {
-            console.log("ciao2");
             sezione = 3;
+            document.getElementById("sezione2").style.display = "none";
+            document.getElementById("sezione3").style.display = "inline-block";
+            document.getElementById("titolo-sezione2").style.visibility = "hidden";
+            document.getElementById("titolo-sezione3").style.visibility = "visible";
         }
         else {
             sezione = 1;
+            document.getElementById("sezione1").style.display = "inline-block";
+            document.getElementById("sezione2").style.display = "none";
+            document.getElementById("titolo-sezione1").style.visibility = "visible";
+            document.getElementById("titolo-sezione2").style.visibility = "hidden";
         }
     }
 }
