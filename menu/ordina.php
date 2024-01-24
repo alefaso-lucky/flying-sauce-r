@@ -94,7 +94,7 @@
                     <!--AJAX inserisce i List Items sulla base del contenuto del carrello dell'utente ma comunque al primo
                     caricamento bisogna mostrare i valori-->
                     <?php
-                        $sql = "SELECT piatto, quantita FROM carrello WHERE email = 'test'"; /* interrogazione SQL
+                        $sql = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'"; /* interrogazione SQL
                         sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
                         $ret = pg_query($db, $sql); /* viene eseguita la query */
                         $list = "";

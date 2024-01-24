@@ -18,7 +18,7 @@
             $name_piatto = pg_escape_string($db, $piatto);
             
             //logica per aumentare il numero
-            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'"; //manca il modo per far arrivare l'email qui
+            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'"; //manca il modo per far arrivare l'email qui
             $ret_select = pg_query($db, $check);
 
             if(isset($_POST['delete'])) {
@@ -27,13 +27,13 @@
                 $row = pg_fetch_array($ret_select);
                 if($row['quantita'] == 1) {
                     //deletion
-                    $deletionQuery = "DELETE FROM carrello WHERE piatto = '$name_piatto' AND email = 'test'";
+                    $deletionQuery = "DELETE FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'";
                     pg_query($db, $deletionQuery);
                 }
                 else {
                     //update
                     $quantita = $row['quantita'] - 1;
-                    $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";
+                    $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = '$email_user'";
                     pg_query($db, $updateQuery);
                 }
             }
@@ -43,7 +43,7 @@
                     $row = pg_fetch_array($ret_select);
                     if($row['quantita'] < 99) {
                         $quantita = $row['quantita'] + 1;
-                        $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = 'test'";
+                        $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = '$email_user'";
                         pg_query($db, $updateQuery);
                     }
                     else {
@@ -52,7 +52,7 @@
                 }
                 else {
                     //add logic
-                    $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', 'test', 1)";
+                    $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', '$email_user', 1)";
                     $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
                 }
             }
@@ -60,7 +60,7 @@
         
         //questa parte serve a ricaricare la lista visibile all'utente, la parte precedente deve aggiornare la lista stessa
         $list = "";
-        $list_fetch = "SELECT piatto, quantita FROM carrello WHERE email = 'test'";
+        $list_fetch = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
         $ret_list_fetch = pg_query($db, $list_fetch);
         while($row = pg_fetch_array($ret_list_fetch)) {
             $list .=  "<li><img src='media/remove_from_cart.png' alt='remove item from cart button' class='remover' height=20px width=auto/>" . $row[1] . "x " . $row[0] . "</li>";
