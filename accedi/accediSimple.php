@@ -33,12 +33,13 @@
         <div class="leftpanel">
           <div class="content">
             <h3>Accedi e vola con FlyingSauce!</h3>
-              <p>Entra nel cielo della pasta da asporto di FlyingSauce
+              <p>
+                Entra nel cielo della pasta da asporto di FlyingSauce
                 per gustare la comodità della consegna tramite droni,
                 portando la freschezza dei nostri piatti direttamente sulla tua tavola!
               </p>
           </div>
-        <img src="media/accedi_img.jpg" alt="accedi_img">
+          <img src="media/accedi_img.jpg" alt="accedi_img">
         </div>
         <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
           <h2>Member Login</h2>
