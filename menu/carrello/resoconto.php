@@ -12,6 +12,7 @@
             
         </table>
         <a id="bottone_secondario" href="#">INDIETRO</a> <!--bottone per andare alla pagina precedente-->
+        <a id="bottone_primario" href="#">AVANTI</a> <!--bottone per andare alla pagina successiva-->
     </div>
 </body>
 </html>
