@@ -106,8 +106,15 @@
 
 <html>
 <head>
+    <!--obbligatorie per ogni pagina prodotta-->
 	<meta charset="utf-8">
-	<base href="http://localhost/Flying_Sauce_r/">
+    <title>Autenticazione</title>
+    <meta name="author" content="Gruppo08">
+    <meta name="description" content="Visualizzazione delle sezioni di accesso e registrazione">
+    <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <!--fine parte obbligatoria-->
+	<base href="http://localhost/progetto/FlyingSauce-r-/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="./registrati/validazioneInput.js"></script>
 </head>
@@ -207,16 +214,15 @@
                             sulla privacy</a>.
                         </p>
                     </form>
-                    <p>Fai già parte della nostra famiglia?
-                        <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
-                            <input type="hidden" name="accedi" value="<?php echo $accedi; ?>">
-                            <input type="submit" name="switch_accedi" value="Accedi ora" id="switch_button">
-                        </form>
-                        <?php
-                            if(isset($alert))
-                                echo $alert;
-                        ?>
-                    </p>
+                    <p>Fai già parte della nostra famiglia?</p>
+                    <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
+                        <input type="hidden" name="accedi" value="<?php echo $accedi; ?>">
+                        <input type="submit" name="switch_accedi" value="Accedi ora" id="switch_button">
+                    </form>
+                    <?php
+                        if(isset($alert))
+                            echo $alert;
+                    ?>
                 </div>
             </div>
         <?php }?>
