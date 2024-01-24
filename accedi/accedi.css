@@ -17,7 +17,7 @@ body{
 /*contiene i due div che andranno affiancati (leftpanel + rightpanel)*/
 .container {
   width: 85vw;    /*larghezza corrispondente all'85% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  height: 700px;   /*altezza corrispondente a 700px*/
+  height: 750px;   /*altezza corrispondente a 700px*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -42,7 +42,8 @@ body{
 
 .rightpanel h2 {
   color: rgb(255, 194, 108);    /*colore alla scritta*/
-  margin-bottom: 10px;    /*margine inferiore*/
+  margin: 10px;    /*margine inferiore*/
+  margin-top: 0;
   font-size: 40px;      /*rendo più grande*/
 }
 

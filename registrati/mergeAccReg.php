@@ -211,10 +211,9 @@
                         <p style="text-align: center;">
                             Cliccando su Iscriviti, accetti le nostre <a href="crea%20account/informative/condizioni.php">Condizioni</a>. Scopri in che modo
                             raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="crea%20account/informative/infoPrivacy.php">Informativa
-                            sulla privacy</a>.
+                            sulla privacy</a>.<br/>Fai già parte della nostra famiglia?
                         </p>
                     </form>
-                    <p>Fai già parte della nostra famiglia?</p>
                     <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
                         <input type="hidden" name="accedi" value="<?php echo $accedi; ?>">
                         <input type="submit" name="switch_accedi" value="Accedi ora" id="switch_button">
