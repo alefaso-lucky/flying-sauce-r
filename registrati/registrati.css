@@ -14,29 +14,31 @@ body{
   justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
 }
 
-/*contiene i due div che andranno affiancati (immagine e slogan + form)*/
+/*contiene i due div che andranno affiancati (leftpanel + rightpanel)*/
 .container {
   width: 85vw;    /*larghezza corrispondente all'85% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  height: 80vh;   /*altezza corrispondente all'80% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
   overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
   display: flex;
-  align-items: center;              /*allineo al centro in senso verticale (per il form)*/
-  justify-content:space-between;    /*i due div affiancati con spazio tra di essi*/
+  align-items: center;              /*allineo al centro in senso verticale (per il rightpanel)*/
   margin: 3% 0;
 }
 
-.container form {
-  width: 70%;   /*larghezza rispetto al padre*/
-  margin: 0 10px;   /*applico un margine laterale al form*/
-  display: flex;
-  flex-direction: column;     /*gli elementi del form disposti per colonne*/
-  align-items: center;    /*allineo al centro in senso verticale per gli elementi - quali tag h2 e p*/
+.rightpanel{
+  flex: 7;
+  margin: 0 10px;
 }
 
-form h2 {
+/*per tutti i figli diretti di right panel - dunque h2, p e form*/
+.rightpanel > *{
+  display: flex;
+  flex-direction: column;     /*gli elementi del div (h2, form e p) disposti per colonne*/
+  align-items: center;
+}
+
+.rightpanel h2 {
   color: rgb(255, 194, 108);    /*colore alla scritta*/
   margin-bottom: 10px;    /*margine inferiore*/
   font-size: 40px;      /*rendo più grande*/
@@ -108,6 +110,7 @@ label input:checked+span::before {
   height: 50px;     /*altezza del bottone*/
   margin: 15px 0;       /*margine top-bottom*/
   cursor: pointer;      /*il cursore diventa la manina*/
+  text-align: center;
 }
 
 /*all'hover cambia il colore del bottone per registrarsi*/
@@ -115,25 +118,37 @@ label input:checked+span::before {
   background: #184149;
 }
 
-
-#info, legend, label{     /*info, legend e i label hanno tutti lo stesso stile*/
+p, legend, label{     /*info, legend e i label hanno tutti lo stesso stile*/
   font-size: 16px;        /*per settare una dimensione del font a questi elementi*/
   color: #FFF0DA;     /*per impostare un colore*/
 }
 
-#info a{      /*per i tag a delle info*/
+p a{      /*per i tag a delle info*/
   opacity: 0.7;   /*di deafult il colore è opacizzato*/
   text-decoration: none;    /*la sottolineatura non la rendo visibile*/
   color: rgb(255, 194, 108);      /*un colore differente per i link*/
 }
 
-#info a:hover{
+p a:hover{
   opacity:1;   /*con l'hover si riportano i link alla tonalità originale*/
+}
+
+#switch_button{
+  background: none;   /*non voglio sia visibile lo sfondo*/
+  border: none;   /*nessun contorno*/
+  outline: none;    /*non voglio che al click sia visibile la linea di contorno*/
+  color: rgb(255, 194, 108);      /*applico un colore*/
+  opacity: 0.7;
+  font-size: 20px;    /*setto una dimensione al testo*/
+}
+
+#switch_button:hover{
+  opacity:1;    /*con l'hover si riporta alla tonalità originale*/
 }
 
 .leftpanel {
   position: relative;
-  width: 70%;   /*larghezza del 70% rispetto al container*/
+  flex: 5;
   height: 100%;   /*altezza del 100% rispetto al container*/
   z-index: 0; /* Assicura che l'immagine sia dietro i testi */
 }
