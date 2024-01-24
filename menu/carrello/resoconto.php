@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 	<base href="http://localhost/Flying_Sauce_r/">
-	<link rel="stylesheet" href="./registrati/resoconto.css">
+	<link rel="stylesheet" href="./menu/carrello/resoconto.css">
     <?php
         session_start();
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
@@ -48,8 +48,10 @@
                 }
             ?>
         </table>
-        <a id="bottone_secondario" href="#">INDIETRO</a> <!--bottone per andare alla pagina precedente-->
-        <a id="bottone_primario" href="#">AVANTI</a> <!--bottone per andare alla pagina successiva-->
+        <div>
+            <a id="bottone_secondario" href="#">INDIETRO</a> <!--bottone per andare alla pagina precedente-->
+            <a id="bottone_primario" href="#">AVANTI</a> <!--bottone per andare alla pagina successiva-->
+        </div>
     </div>
 </body>
 </html>

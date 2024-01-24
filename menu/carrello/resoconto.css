@@ -1,0 +1,58 @@
+/*decorazione di sfondo*/
+body {
+    background-image: url("../../media/sfondo_accedi.jpg");
+    background-repeat:repeat-y;
+    background-size: cover;
+    margin: 0;
+}
+  
+#row {
+    background-color: rgba(24, 65, 73, 0.85);
+    border-top: medium solid RGB(255, 194, 108); /* aggiungo un bordo superiore dorato */
+    border-bottom: medium solid RGB(255, 194, 108); /* aggiungo un bordo inferiore dorato */
+    display: flex;
+    flex-direction: column;         /*!! non display: inline-block perchè entrano in contrasto, bensì flex-direction:column*/
+    padding: 20px;
+    width: 90%;/*questo non funziona bene*/
+    margin: 3% 0%; /* margine per allinare */
+  }
+
+
+
+
+/*pulsanti per spostarsi avanti e indietro nel carrello*/
+#bottone_primario {
+    text-decoration: none;
+    font-family: serif;
+    display: inline-block;
+    border: thin solid rgb(255, 194, 108);
+    background-color: rgb(70, 102, 109);
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 10px 20px;  /*per aumentare quello che circonda il bottone*/
+    color: rgb(255, 194, 108);
+    font-size: 15px;
+    cursor: pointer; /*facciamo uscire la manina*/
+    transition: all .3s ease;
+}
+
+#bottone_secondario {
+    text-decoration: none;
+    font-family: serif;
+    display: inline-block;
+    border: thin solid rgb(255, 194, 108);
+    border-radius: 7px; /*per i bordi arrotondati*/
+    -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
+    padding: 10px 20px;  /*per aumentare quello che circonda il bottone*/
+    color: rgb(255, 194, 108);
+    font-size: 15px;
+    cursor: pointer; /*facciamo uscire la manina*/
+    transition: all .3s ease;
+}
+
+#bottone_primario:hover, #bottone_secondario:hover{
+    border: thin solid #184149;
+    background-color:rgb(245, 207, 154);
+    color: #5D7A7F;
+}
+  

@@ -40,7 +40,7 @@
 		$civico = $_POST['civico'];
 	else
 		$civico = "";
-    if(isset($_GET['accedi']))
+    if(isset($_GET['accedi']))                  /*variabile get resa sticky*/ 
         $accedi = $_GET['accedi'];
     else
         $accedi = "true";
@@ -56,7 +56,7 @@
                         session_start();
                         $_SESSION["loggato"] = True;
                         $_SESSION["email"] = $email;
-                        header("refresh:0.3;URL=./area_riservata.php");
+                        header("refresh:0.3;URL=./account/area_riservata.php");
                 }
                 else{
                     $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
@@ -67,22 +67,22 @@
         if(isset($_POST["login"]) && $_POST["login"]=="Login") {
             $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
             if(checkdnsrr($dominio, "MX")){
-              $password = $_POST['password'];
-              $hash = get_pwd($email);
-                    if(!$hash){
-                        $alert = "<span class='alert'>"."<strong><br/>L'utente associato all'email $email non esiste.</strong>"."</span>";
-                echo "$alert";
+                $password = $_POST['password'];
+                $hash = get_pwd($email);
+                if(!$hash){
+                    $alert = "<span class='alert'>"."<strong><br/>L'utente associato all'email $email non esiste.</strong>"."</span>";
+                    echo "$alert";
+                }
+                else{
+                    if(password_verify($password, $hash)){
+                        session_start();
+                        $_SESSION["loggato"] = True;
+                        $_SESSION["email"] = $email;
+                        header("refresh:0.01;URL=./account/area_riservata.php");
                     }
                     else{
-                        if(password_verify($password, $hash)){
-                            session_start();
-                  $_SESSION["loggato"] = True;
-                  $_SESSION["email"] = $email;
-                  header("refresh:0.01;URL=./area_riservata.php");
-                        }
-                        else{
-                  $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
-                  echo "$alert";
+                        $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
+                        echo "$alert";
                         }
                     }
             }
@@ -90,7 +90,7 @@
                 $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
                 echo "$alert";
             }
-          }
+        }
     }
 
     if(isset($_GET["switch_iscriviti"]) && $_GET["switch_iscriviti"] == "Iscriviti ora"){
@@ -125,7 +125,7 @@
                         portando la freschezza dei nostri piatti direttamente sulla tua tavola!
                     </p>
                 </div>
-            <img src="media/accedi_img.jpg" alt="accedi_img">
+            <img src="media/accedi_img.jpg" alt="accedi_img" width="1500px">
             </div>
             <div class="rightpanel">
                 <h2>Member Login</h2>
@@ -154,7 +154,7 @@
             </div>
         </div>
     <?php
-    }else { ?>
+    }else { ?>     
         <link rel="stylesheet" href="./registrati/registrati.css">
         <div class="container">
             <div class="leftpanel">
@@ -164,7 +164,7 @@
                             genuini dell'Italia.
                         </p>
                 </div>
-            <img src="media/reg_img.jpg" alt="registrati_img">
+            <img src="media/reg_img.jpg" alt="registrati_img" width="1500px">
             </div>
             <div class="rightpanel">
                 <h2>Sign-up</h2>
@@ -237,12 +237,15 @@ function get_pwd($email){
     $ret = pg_execute($db, "sqlPassword", array($email));
     if(!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db);
+        pg_close($db);
         return false;
     }else{
         if ($row = pg_fetch_assoc($ret)){
             $pass = $row['password'];
+            pg_close($db);
             return $pass;
         }else{
+            pg_close($db);
             return false;
         }
     }
@@ -257,13 +260,16 @@ function email_exist($email){
 	$ret = pg_execute($db, "sqlEmail", array($email));
 	if(!$ret) {
 		echo "ERRORE QUERY: " . pg_last_error($db);
+        pg_close($db);
 		return false;
 	}
 	else{
 		if ($row = pg_fetch_assoc($ret)){
+            pg_close($db);
 			return true;
 		}
 		else{
+            pg_close($db);
 			return false;
 		}
 	}
@@ -273,16 +279,17 @@ function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta
 	require "./logindb.php";
 	//CONNESSIONE AL DB
 	$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
-		//echo "Connessione al database riuscita<br/>";
 	$hash = password_hash($pass, PASSWORD_DEFAULT);
 	$sql = "INSERT INTO utenti(nome, cognome, password, email, genere, nazione, citta, via, civico, telefono) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
 	$prep = pg_prepare($db, "insertUser", $sql);
 	$ret = pg_execute($db, "insertUser", array($nome, $cognome, $hash, $email, $genere, $nazione, $citta, $via, $civico, $numero));
 	if(!$ret) {
 		echo "ERRORE QUERY: " . pg_last_error($db);
+        pg_close($db);
 		return false;
 	}
 	else{
+        pg_close($db);
 		return true;
 	}
 }
