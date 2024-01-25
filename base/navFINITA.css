@@ -1,0 +1,82 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+header{
+  background-color: #184149;      /*colore dell'header*/
+  display: flex;          /*perchè all'interno di header ci sta anche nav*/
+  align-items: center;      /*allineo verticalmente il div e nav*/
+  position: sticky;
+}
+
+.important-elem img{
+  flex:2;
+  margin-left: 10px;    /*margine per distanziare dal bordo*/
+}
+
+.topnav {
+  flex:8;
+}
+
+header a {
+  color:  rgb(255, 194, 108);     /*colore a tutti i tag in header*/
+  padding: 14px 35px;           /*padding agli estremi*/
+  text-decoration: none;      /*nessuna sottolineatura ai link*/
+  transition: all 0.5s;
+  font-size: 17px;        /*dimensione del font*/
+}
+
+a:hover{
+  color:  #FFF0DA;      /*colore del tag cambia al passaggio del mouse con una transizione (settata prima)*/
+}
+
+.nav-right{
+  float: right;     /*il div che contiene carrello e account si trova a dx*/
+}
+
+.nav-right a{
+  padding: 14px 15px;     /*padding agli estremi*/
+}
+
+.important-elem #hamb {
+  display: none;          /*normalmente non è visibile*/
+}
+
+/*per dispositivi con schermo sotto una determinata percentuale in pixel*/
+@media screen and (max-width: 950px) {
+  .topnav a {display: none;}        /*link di nav non sono visibili*/
+  .important-elem #hamb {
+    float: right;         /*questo link diventa visibile e si posiziona a destra*/
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}      /*se la classe è sia topnav che responsive position relative*/
+
+  .important-elem img{
+    flex:0;
+  }
+
+  /*questo div contiene img e hamburger*/
+  .important-elem{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;     /*img e hamburger saranno distanziati*/
+    align-items: center;      /*l'hamburger uscirà centrato verticalmente*/
+  }
+
+  header{
+    flex-direction: column;     /*tutti gli elementi (div e nav) in colonna*/
+  }
+
+  /*sopra avevamo definito per questo div(che contiene login e carrello), float right*/
+  .nav-right{
+    float: none;    /*ora annullo l'opzione*/
+  }
+
+  .topnav.responsive a{
+    float: none;
+    display: block;           /*così ogni link è posizionato su una linea*/
+    text-align: center;     /*e il testo sarà allineato al centro*/
+  }
+}
