@@ -15,7 +15,7 @@ body {
     color: rgb(255, 194, 108);;
 }
 /*tre colonne che consigliano tre percorsi differenti per navigare nel sito*/
-#sx {
+#sx2 {
     margin: 5px;
     border: 7px solid #385723;
     border-radius: 10px;
@@ -30,7 +30,7 @@ body {
     top: 85px;
     left: 15px;
 }
-#cc {
+#cc2 {
     margin: 5px;
     border: 7px solid #ffffff;
     border-radius: 10px;
@@ -45,7 +45,7 @@ body {
     top: 530px;
     left: 80px;
 }
-#dx {
+#dx2 {
     margin: 5px;
     border: 7px solid #C00000;
     border-radius: 10px;
@@ -62,9 +62,36 @@ body {
     right: 15px;
 }
 
+/*TERZA SEZIONE della hompage, dedicata a mostrare la pasta della settimana*/
+#contenitore_3 {
+    box-sizing: border-box;
+    background-color: #46666D;
+    color:rgb(255, 194, 108);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;/*questo non funziona bene*/
+    margin: 5% 0%; /* margine per allinare */
+}
+/*descrizione testuale della proposta a sinistra dello schermo*/
+#sx3{
+    margin: 50px;
+    width: 700px;
+}
 
+#sx3 h2{
+    font-weight: 100;
+    font-family: lucida handwriting, Cursive;
+}
 
-
+#sx3 p{
+    font-size: 20px;
+}
+/*immagine illustrativa a destra dello schermo*/
+#contenitore_3 img{
+    width: 400px;
+}
 
 /*pulsanti per spostarsi in altre pagine*/
 .bot{
