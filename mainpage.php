@@ -3,6 +3,8 @@
     <head>
         <title>Flying Sauce&reg;</title>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="mainpage.css">
         <script type="text/javascript" src="./mainpage.js"></script>
     </head>
@@ -71,14 +73,25 @@
         <!--quarto blocco, recenzioni di clienti-->
         <div class=row>
         <p class="recensioni">
-            La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore profondo e avvolgente.</br>
+            <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
+            La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore
+            profondo e avvolgente.  La consegna è stata rapida e il servizio clienti è stato 
+            molto disponibile. Tornerò sicuramente a ordinare!</br>
             Angela F.
         </p>
         <p class="recensioni" >
-            recensione 2
+            <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
+            Ho ordinato diverse volte da questo sito e ogni volta sono rimasto colpito dalla
+            maestria culinaria. Consiglio vivamente a tutti gli amanti della cucina italiana 
+            di provare questo servizio.</br>
+            Marck C.
         </p>
         <p class="recensioni">
-            RECENSIONE 3
+            <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
+            La qualità del cibo è fuori dal comune. Ogni piatto è preparato con passione e 
+            dedizione. Ho provato diverse specialità e tutte sono state al di là delle aspettative. 
+            Un'esperienza culinaria che consiglio a tutti!</br>
+            Richard W.
         </p>
         </div>
         <!--quinta blocco, link ai vari social network-->
@@ -89,6 +102,8 @@
             <a class="social" href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina youtube-->
         </div>
     </body>
+    
+    <!--segue il js per gestire los corrimento delle recensioni della sezione 4-->
     <script>
         var myIndex = 0;
         carousel();

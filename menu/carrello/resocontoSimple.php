@@ -1,4 +1,4 @@
-<?php
+<?php /*
         session_start();
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
             $logged = $_SESSION['loggato'];
@@ -10,59 +10,46 @@
         }
 
         if(isset($_POST['finalize_order']) && $_POST['finalize_order']) {
-            /*connessione al database*/
+            /*connessione al database
             $host="localhost";
             $db='GruppoXX';
             $user="www";
             $password="password";
-            $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-            $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
+            $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione 
+            $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione 
 
             $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
             $cart_query = pg_query($db, $cart);
             $totale = 0;
 
-            $create_order = "INSERT INTO ordinazioni (id, email, total) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1')";
+            $create_order = "INSERT INTO ordinazioni (id, email, total) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '$totale')";
             $create_order_query = pg_query($db, $create_order);
-            $order_id = "SELECT id FROM ordinazioni WHERE email = '$email_user' AND total = '-1'";
-            $order_id_query = pg_query($db, $order_id);
-            $id = pg_fetch_array($order_id_query);
-            $id = $id[0];
             /*if(true) {
                 $create_order_query = pg_get_result($db);
                 $create_order_query = pg_result_error($create_order_query);
                 echo $create_order_query;
-            }*/
-
+            }
             while($row = pg_fetch_array($cart_query)) {
-                echo "hi";
                 $piatto = $row[0];
                 $quantita = $row[1];
                 $price_menu = "SELECT prezzo FROM menu WHERE nome = '$piatto'";
                 $price_menu_query = pg_query($db, $price_menu);
                 $row_price = pg_fetch_array($price_menu_query);
                 if(!$row_price) {
-                    echo "hi2";
+                    
                 }
                 else {
                     $price = $row_price[0] * $quantita;
-                    $create_order_item = "INSERT INTO ordinazioni_elementi (piatto, id_ordinazione, quantita, subtotale) VALUES ('$piatto', '$id', '$quantita', '$price')";
-                    $create_order_item_query = pg_query($db, $create_order_item);
+                    
+                    $create_order_item = "INSERT INTO ordinazioni_elementi (piatto, id_ordinazione, quantita, subtotale) VALUES ('$piatto')";
+
                     $totale += $price;
-                    echo "hi3";
                 }
             }
-            $order_price = "UPDATE ordinazioni SET total = '$totale' WHERE id = '$id'";
-            $order_price_query = pg_query($db, $order_price);
-
-            //pulire carrello
-            $deletionQuery = "DELETE FROM carrello WHERE email = '$email_user'";
-            pg_query($db, $deletionQuery);
-
             pg_close($db);
-            exit("Orderd placed");
+            exit("COCOOOOOOOOOOOOOOO");
         }
-
+*/
 ?>
 <!DOCTYPE html>
 <head>
@@ -83,7 +70,6 @@
                 <table id="tabella-carrello">
                     <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th>
                     </tr>
-                    <!--
                     <tr>
                         <td>Alfreds Futterkiste</td>    <td>Maria Anders</td>     <td>Germany</td>
                     </tr>
@@ -101,15 +87,15 @@
                     </tr>
                     <tr>
                         <td>Magazzini Alimentari Riuniti</td>    <td>Giovanni Rovelli</td>    <td>Italy</td>
-                    </tr> -->
+                    </tr>
                     <?php
-                        /*connessione al database*/
+                        /*connessione al database
                         $host="localhost";
                         $db='GruppoXX';
                         $user="www";
                         $password="password";
-                        $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-                        $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
+                        $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione 
+                        $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione 
 
                         $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                         $cart_query = pg_query($db, $cart);
@@ -129,14 +115,65 @@
                                 $totale += $price;
                             }
                         }
-                        pg_close($db);
+                        pg_close($db);*/
                     ?>
                 </table>
-                <p id="totale" >Totale: <?php echo $totale; ?></p>
+                <p id="totale" >Totale: $100<?php /* echo $totale; */?></p>
             </div>
             <div id="sezione2">
                 <p>
-                    ciao ciao ciao
+                    Il servizio di spedizione di Flying Sauce offre un'esperienza di consegna unica, consentendo 
+                    di gustare le pietanze tipiche italiane comodamente a casa propria, ovunque nel mondo, grazie 
+                    all'utilizzo avanzato dei droni. Il nostro sistema di spedizione è suddiviso in tre categorie 
+                    per soddisfare le esigenze di ogni cliente:
+                </p>
+                <div>
+                    <div>
+                        <h1>AVANZATA</h1>
+                        <h2>COSTO: $1500</h2>
+                        <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata">
+                        <p>
+                            Velocità : 111111km/h</br>
+                            Tempo di arrivo medio : 1h 30min</br>
+                            Modello : SRT333W</br>
+                        </p>
+                        <p>
+                            Ideale per chi desidera una deliziosa esperienza culinaria senza rinunciare alla 
+                            rapidità.
+                        </p>
+                    </div>
+                    <div>
+                        <h1>LAMPO</h1>
+                        <h2>COSTO: $3000</h2>
+                        <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo">
+                        <p>
+                            Velocità : 111*10^5km/h</br>
+                            Tempo di arrivo medio : 30min</br>
+                            Modello : PFT443A</br>
+                        </p>
+                        <p>
+                            Un'opzione perfetta per chi vuole gustare subito l'eccellenza della cucina italiana.
+                        </p>
+                    </div>
+                    <div>
+                        <h1>BASE</h1>
+                        <h2>COSTO: $1000</h2>
+                        <img src="./media/carrello./droneBase.png" alt="drone spedizione base">
+                        <p>
+                            Velocità : 11Km/h
+                            Tempo di arrivo medio : 3h
+                            Modello : PQZ408B
+                        </p>
+                        <p>
+                            Un compromesso perfetto tra velocità e convenienza.
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    Con Flying Sauce, non solo vi garantiamo la freschezza delle nostre pietanze, ma vi offriamo anche
+                    la flessibilità di scegliere il livello di rapidità che meglio si adatta alle vostre esigenze. 
+                    Deliziate il vostro palato con la nostra pasta, consegnata con efficienza e precisione grazie alla
+                    nostra avanzata tecnologia di droni.
                 </p>
             </div>
             <div id="sezione3">

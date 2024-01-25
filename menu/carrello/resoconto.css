@@ -36,10 +36,6 @@ body {
     display: none;
 }
 
-#titolo-sezione2, #titolo-sezione3 {
-    visibility: hidden;
-}
-
 /*
 ul.a {
     list-style-type: circle;

@@ -98,7 +98,7 @@ body {
     justify-content: center;
     margin: 10% 10%;
     font-family: lucida handwriting, Cursive;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #contenitore_2 p{
@@ -112,8 +112,8 @@ body {
     background-image: url("media/home/mainSX.jpg");
     background-repeat:none;
     background-size: cover;
-    width: 370px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 }
 #frasesx{
     position: relative;
@@ -127,12 +127,12 @@ body {
     background-image: url("media/home/mainCC.png");
     background-repeat:none;
     background-size: cover;
-    width: 370px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 }
 #frasecc{
     position: relative;
-    top: 530px;
+    top: 445px;
     left: 80px;
 }
 #dx2 {
@@ -142,8 +142,8 @@ body {
     background-image: url("media/home/mainDX.png");
     background-repeat:none;
     background-size: cover;
-    width: 370px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 }
 #frasedx{
     text-align: right;
@@ -160,7 +160,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /*min-height: 300px;*/
     padding: 20px;
     width: 100%;
     margin: 5% 0%; /* margine per allinare */
@@ -231,8 +230,8 @@ body {
     position: relative;
     width: 140px;
     text-align: center;
-    top: 220px;
-    left: 100px;
+    top: 200px;
+    left: 60px;
 }
 
 .row .bot{
