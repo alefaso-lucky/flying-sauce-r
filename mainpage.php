@@ -22,7 +22,7 @@
             </div>
         </div>
         <!--terzo blocco, pasta della settimana-->
-        <div id=contenitore_3>
+        <div class=row>
             <div id=sx3>
                 <h1>LA PASTA DELLA SETTIMANA:</h1>
                 <h2>La Lasagna</h2>
@@ -35,6 +35,20 @@
                 <a class="bot" href="#">SCOPRI DI PIU'</a> <!--bottone per andare alla pagina Singolo piatto-->
             </div>
             <img src="media/home/pastaDellaSettimana.jpg" alt="la pasta della settimana è lasagna alla bolognese">
+        </div>
+        <!--quarto blocco, recenzioni di clienti-->
+        <div class=row>
+            <p id=recensioni>
+                La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore profondo e avvolgente.</br>
+                Angela F.
+            </p>
+        </div>
+        <!--quinta blocco, link ai vari social network-->
+        <div id=contenitore_5>
+            Seguici su
+            <a class="social" href="#"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina facebook-->
+            <a class="social" href="#"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina instagram-->
+            <a class="social" href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina youtube-->
         </div>
     </body>
 </html>
