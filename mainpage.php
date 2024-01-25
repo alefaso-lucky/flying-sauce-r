@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
+      $logged = $_SESSION['loggato'];
+      $email_user = $_SESSION['email'];
+  }
+  else {
+      $logged = false;
+      $email_user = "";
+  }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,17 +69,40 @@
         <!--terzo blocco, pasta della settimana-->
         <div class=row>
             <div id=sx3>
-                <h1>LA PASTA DELLA SETTIMANA:</h1>
-                <h2>La Lasagna</h2>
-                <p>
+                <?php
+                  if($logged) {
+                    $img_promozione = "media/home/pastaDellaSettimana.jpg";
+                    $alt_img_promozione = "la pasta della settimana è lasagna alla bolognese";
+                    $titolo_promozione = "LA PASTA DELLA SETTIMANA:";
+                    $sottotitolo_promozione = "La Lasagna";
+                    $paragrafo_promozione = <<<PAR
                     Pasta fresca, un impasto realizzato con cura, con uova biologiche e farina di
                     grano tenero con carne di manzo Wagyu, delicatamente marinata con erbe aromatiche
                     e vino rosso. Questa lasagna, ispirata alla nonna, è molto più di un semplice
                     pasto. È un viaggio sensoriale, un tributo all’amore e alla tradizione.
+                    PAR;
+                    $bottone_promozione = "SCOPRI DI PIU'";
+                  }
+                  else {
+                    $img_promozione = "media/home/pastaDellaSettimana.jpg";
+                    $alt_img_promozione = "foto di due clienti che ricevono il loro pasto da un drone";
+                    $titolo_promozione = "OVUNQUE NEL MONDO";
+                    $sottotitolo_promozione = "Flying Sauce";
+                    $paragrafo_promozione = <<<PAR
+                    Accedi ed entra a far parte della famiglia di Flying Sauce, il cibo è uno dei piaceri
+                    della vita, quindi perché accontentarsi? Scegli Flying Sauce!
+                    PAR;
+                    $bottone_promozione = "ACCEDI AD UN MONDO TUTTO ITALIANO";
+                  }
+                ?>
+                <h1><?php echo "$titolo_promozione"; ?></h1>
+                <h2><?php echo "$sottotitolo_promozione"; ?></h2>
+                <p>
+                  <?php echo "$paragrafo_promozione"; ?>
                 </p>
-                <a class="bot" href="#">SCOPRI DI PIU'</a> <!--bottone per andare alla pagina Singolo piatto-->
-            </div>
-            <img src="media/home/pastaDellaSettimana.jpg" alt="la pasta della settimana è lasagna alla bolognese">
+                <a class="bot" href="#"><?php echo "$bottone_promozione"; ?></a> <!--bottone per andare alla pagina Singolo piatto-->
+            </div>                
+            <img src="<?php echo $img_promozione; ?>" alt="<?php echo $alt_img_promozione; ?>">
         </div>
         <!--quarto blocco, recenzioni di clienti-->
         <div class=row>
