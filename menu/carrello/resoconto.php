@@ -54,6 +54,11 @@
             }
             $order_price = "UPDATE ordinazioni SET total = '$totale' WHERE id = '$id'";
             $order_price_query = pg_query($db, $order_price);
+
+            //pulire carrello
+            $deletionQuery = "DELETE FROM carrello WHERE email = '$email_user'";
+            pg_query($db, $deletionQuery);
+
             pg_close($db);
             exit("Orderd placed");
         }
