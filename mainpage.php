@@ -32,6 +32,7 @@
                     e vino rosso. Questa lasagna, ispirata alla nonna, è molto più di un semplice 
                     pasto. È un viaggio sensoriale, un tributo all’amore e alla tradizione.
                 </p>
+                <a class="bot" href="#">SCOPRI DI PIU'</a> <!--bottone per andare alla pagina Singolo piatto-->
             </div>
             <img src="media/home/pastaDellaSettimana.jpg" alt="la pasta della settimana è lasagna alla bolognese">
         </div>
