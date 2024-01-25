@@ -6,6 +6,7 @@ body {
 #contenitore_2{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 10% 10%;
     font-family: lucida handwriting, Cursive;
     font-size: 20px;
@@ -68,7 +69,7 @@ body {
     background-color: #46666D;
     color:rgb(255, 194, 108);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
     padding: 20px;
     width: 100%;/*questo non funziona bene*/
@@ -76,7 +77,6 @@ body {
 }
 /*descrizione testuale della proposta a sinistra dello schermo*/
 #sx3{
-    margin: 50px;
     width: 700px;
 }
 
