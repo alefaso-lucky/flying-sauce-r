@@ -20,6 +20,7 @@
         <script type="text/javascript" src="./mainpage.js"></script>
     </head>
     <body>
+      <?php require "base/navSimple.php" ?>
       <!--  Codice per lo slideshow -->
       <div class="slideshow-background">
         <div class="container">
@@ -135,6 +136,8 @@
             <a class="social" href="#"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina instagram-->
             <a class="social" href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina youtube-->
         </div>
+
+        <?php require "base/footer.php"; ?> <!--inserimento footer-->
     </body>
     
     <!--segue il js per gestire los corrimento delle recensioni della sezione 4-->
