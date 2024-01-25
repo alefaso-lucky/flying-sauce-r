@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
   height: 100vh; /* per metterla a tutta la pagina */
   width: 100vw;
   overflow-x: hidden;
@@ -9,7 +8,9 @@ body {
   align-items: center;
   background-color: #FFF0DA;
 }
-
+@media(max-width: 1000px) {
+  body { overflow-x: auto;}
+}
 /* per lo slider */
 .radio {
   display: none; /* rendo i radio button invisibili */
@@ -34,6 +35,7 @@ body {
   overflow: hidden;
   position: relative; /* posizione assoluta relativamente a container */
   border: solid 1px rgba(255, 194, 108, 0.8);
+  border-radius: 10px;
   box-sizing: border-box; /* il bordo è applicato al content */
 }
 
@@ -57,9 +59,10 @@ body {
   top: 10%;
   bottom: 10%;
   color: white;
-  background-color: rgba(24, 65, 73, 0.4); /* applico un colore al background */
+  background-color: rgba(24, 65, 73, 0.7); /* applico un colore al background */
   border-radius: 50px;  /* rendo gli spigoli curvi */
   border: medium solid rgba(255, 194, 108, 0.8); /* aggiungo un bordo dorato */
+  box-shadow:  2px 5px 5px rgba(0, 0, 0, 0.3); /* aggiunge una leggere afocatura all'immagine */
   padding: 15px 20px; /* padding per distanziare il testo dal bordo */
   font-weight: 700;
   font-size: 11px;
@@ -105,15 +108,16 @@ body {
   position: relative;
   text-align: center;
   text-decoration: solid;
+  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
 }
 
 /* Per il grid container delle immagini */
 
 div.grid-img-container {
-  margin: 10px 50px; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
-  max-height: 200px;
-  width: 90%;
+  margin: 10px auto; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
+  height: 200px;
+  width: 900px;
   display: grid; /* utilizzo un display grid per posizionare le immaigni */
   grid-template-areas: /* specifico come le immagini sono disposte nella griglia */
     'img1 img2 img3'
@@ -122,19 +126,29 @@ div.grid-img-container {
 }
 
 div.grid-item { /* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */
+  position: relative;
   display: flex;
-  transition: .5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
-  box-shadow: 2px 2px 3px rgba(0,0,0,.4); /* applica una ombra opaca di 2px a detra e in basso che si "blurra" per 3px */
+  transition: 0.5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.6); /* applica una ombra opaca di 2px a detra e in basso che si "blurra" per 3px */
 }
+div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */
+  box-shadow: 6px 6px 6px rgba(0,0,0,0.6); /* viene applica un'ombra all'immagine più spessa */
+  transform: scale(1.2); /* l'immagine viene ingrandita */
+  z-index: 1; /* trasla l'immagine al di sopra di tutto */
+}
+
 
 div.grid-item img{ /* stile applicato alle immagini contenute nmel grid-item */
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+div.grid-item:hover img {
+   filter: grayscale(100%); /* quando si passa col cursore sull'immagine questa diventa grigia */
+}
 
 .overlay { /* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
-  position: absolute; /* prende la dimensione rlativamente al contenitore, in questo caso grid-item */
+  position: absolute; /* prende la dimensione rlspetto al contenitore, in questo caso grid-item */
   height: 100%;
   width: 100%;
   opacity: 0; /* di base è invisibile */
@@ -147,38 +161,17 @@ div.grid-item:hover .overlay {
 .testoImg { /* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
   font-family: "Goudy Old Style", sans-serif;
   color: rgb(255, 194, 108);
+  -webkit-text-stroke: 0.5px black; /* per aggiungere del bordo ai singoli caratteri, funziona solo con i broeser che la supportano */
+  text-stroke: 2px black; /* questa istruzione è utile per browser che non supportano l'istruzione precedente */
   font-size: 14pt;
   font-weight: 900;
   text-align: center;
-  position: absolute;
-  top: 40%;
+  user-select: none; /* non permette all'utente di selezionare il testo */
+  width: 90%; /* questa istruzione assegna una larghezza al paragrafo */
+  position: absolute; /* posozione assolita rispetto a grid-item */
+  top: 45%; /* queste istruzioni servono per centrare il testo all'interno del contenitore */
   left: 50%;
   transform: translate(-50%, -50%); /* queste istruzioni servono per centrare il paragrafo nell'immagine */
-}
-@media(max-width: 1200px) { /* rimpicciolisce il font quando lo schermo si rimpicciolisce */
-  .testoImg {
-    font-size: 12px;
-  }
-}
-@media(max-width: 900px) {
-  .testoImg {
-    font-size: 10px;
-  }
-}
-@media(max-width: 800px) {
-  .testoImg {
-    font-size: 8px;
-  }
-}
-@media(max-width: 700px) {
-  .testoImg {
-    font-size: 7px;
-  }
-}
-
-div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */
-  box-shadow: 6px 6px 6px rgba(0,0,0,.3); /* viene applica un'ombra all'immagine più spessa */
-  transform: scale(1.2); /* l'immagine viene ingrandita */
 }
 
 /* le successive istruzioni servono per assegnare gli id alle aree del grid template ai grid items */

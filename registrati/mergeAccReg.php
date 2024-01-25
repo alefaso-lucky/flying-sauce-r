@@ -46,21 +46,26 @@
         $accedi = "true";
     if(!empty($_POST)){
         if(isset($_POST["iscriviti"]) && $_POST["iscriviti"]=="Iscriviti"){
-            if(email_exist($email)){
-                $alert = "<p class='alert'>"."<strong><br/>Email $email già esistente. Riprova</strong>"."</p>";
-            }
-            else{
-                //ORA posso inserire il nuovo utente nel db
-                if(insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero)){
-                        $alert = "<p class='alert'>"."<strong><br/>Utente registrato con successo.</strong>"."</p>";
-                        session_start();
-                        $_SESSION["loggato"] = True;
-                        $_SESSION["email"] = $email;
-                        header("refresh:0.3;URL=./account/area_riservata.php");
+            $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
+            if(checkdnsrr($dominio, "MX")){
+                if(email_exist($email)){
+                    $alert = "<p class='alert'>"."<strong><br/>Email $email già esistente. Riprova</strong>"."</p>";
                 }
                 else{
-                    $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
+                    //ORA posso inserire il nuovo utente nel db
+                    if(insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero)){
+                            session_start();
+                            $_SESSION["loggato"] = True;
+                            $_SESSION["email"] = $email;
+                            header("refresh:0.1;URL=./account/area_riservata.php");
+                    }
+                    else{
+                        $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
+                    }
                 }
+            }
+            else{
+                $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
             }
         }
 
@@ -71,7 +76,6 @@
                 $hash = get_pwd($email);
                 if(!$hash){
                     $alert = "<span class='alert'>"."<strong><br/>L'utente associato all'email $email non esiste.</strong>"."</span>";
-                    echo "$alert";
                 }
                 else{
                     if(password_verify($password, $hash)){
@@ -82,13 +86,11 @@
                     }
                     else{
                         $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
-                        echo "$alert";
                         }
                     }
             }
             else{
                 $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
-                echo "$alert";
             }
         }
     }
@@ -136,7 +138,7 @@
                 </div>
                 <div class="rightpanel">
                     <h2>Member Login</h2>
-                    <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> onSubmit="return validatePassword();" method="post">
+                    <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" onSubmit="return validatePassword();" method="post">
                         <div class="input-field">
                             <span><img src="media/email_icon.png" width="20px" height="20px"></span>
                             <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
@@ -154,7 +156,7 @@
                     </form>
                     <?php
                         if(isset($alert))
-                            echo $alert;
+                            echo "$alert";
                     ?>
                 </div>
             </div>
@@ -174,7 +176,7 @@
                 </div>
                 <div class="rightpanel">
                     <h2>Sign-up</h2>
-                    <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="post" onSubmit="return validaModulo(this)">
+                    <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" method="post" onSubmit="return validaModulo(this)">
                         <fieldset>
                             <legend>Dati Personali</legend>
                             <div class="input-container">
@@ -207,7 +209,7 @@
                                 <input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/>
                             </div>
                         </fieldset>
-                        <input id="submit" name="iscriviti" type="iscriviti" value="Iscriviti"/>
+                        <input id="submit" name="iscriviti" type="submit" value="Iscriviti"/>
                         <p style="text-align: center;">
                             Cliccando su Iscriviti, accetti le nostre <a href="crea%20account/informative/condizioni.php">Condizioni</a>. Scopri in che modo
                             raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="crea%20account/informative/infoPrivacy.php">Informativa
@@ -220,7 +222,7 @@
                     </form>
                     <?php
                         if(isset($alert))
-                            echo $alert;
+                            echo "$alert";
                     ?>
                 </div>
             </div>
@@ -240,7 +242,7 @@ function get_pwd($email){
     $prep = pg_prepare($db, "sqlPassword", $sql);
     $ret = pg_execute($db, "sqlPassword", array($email));
     if(!$ret) {
-        echo "ERRORE QUERY: " . pg_last_error($db);
+        //echo "ERRORE QUERY: " . pg_last_error($db);
         pg_close($db);
         return false;
     }else{
@@ -263,7 +265,7 @@ function email_exist($email){
 	$prep = pg_prepare($db, "sqlEmail", $sql);
 	$ret = pg_execute($db, "sqlEmail", array($email));
 	if(!$ret) {
-		echo "ERRORE QUERY: " . pg_last_error($db);
+		//echo "ERRORE QUERY: " . pg_last_error($db);
         pg_close($db);
 		return false;
 	}
@@ -288,7 +290,7 @@ function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta
 	$prep = pg_prepare($db, "insertUser", $sql);
 	$ret = pg_execute($db, "insertUser", array($nome, $cognome, $hash, $email, $genere, $nazione, $citta, $via, $civico, $numero));
 	if(!$ret) {
-		echo "ERRORE QUERY: " . pg_last_error($db);
+		//echo "ERRORE QUERY: " . pg_last_error($db);
         pg_close($db);
 		return false;
 	}
