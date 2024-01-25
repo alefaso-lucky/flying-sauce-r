@@ -84,15 +84,21 @@ tr:nth-child(even) {
 /*SECONDA PAGINA visionata, presenta la scelta di tre diverse spedizioni*/
 #sezione2 .spiegazione{
     color: whitesmoke;
-    max-width: 1000px;
+    max-width: 800px;
 }
 
 #tipi_spedizione{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
     color:rgba(24, 65, 73);
     margin: 80px;
+}
+
+.opzione{
+    position: relative;
+    top: 20px;
+    left:110px;
 }
 
 .proposta_sp{
@@ -100,17 +106,23 @@ tr:nth-child(even) {
     background-color: #FFC26C;
     margin: 10px;
     border-radius: 70px;
-    max-width: 250px;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slogan{
     color:#5D7A7F;
+    width: 200px;;
 }
 
 #sp_lampo{
     border-style: solid;
     border-color: crimson;
     border-width: 7px;
+    height: 550px;
 }
 
 

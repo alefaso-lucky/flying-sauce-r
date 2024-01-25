@@ -129,6 +129,7 @@
                 </p>
                 <div id=tipi_spedizione>
                     <div class=proposta_sp>
+                        <input class=opzione name="spedizione" value="AVANZATA" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                         <h1>AVANZATA</h1>
                         <h2>COSTO: $1500</h2>
                         <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata">
@@ -143,6 +144,7 @@
                         </p>
                     </div>
                     <div class=proposta_sp id=sp_lampo>
+                        <input class=opzione name="spedizione" value="LAMPO" type="radio" checked/> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                         <h1>LAMPO</h1>
                         <h2>COSTO: $3000</h2>
                         <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo">
@@ -156,6 +158,7 @@
                         </p>
                     </div>
                     <div class=proposta_sp>
+                        <input class=opzione name="spedizione" value="BASE" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                         <h1>BASE</h1>
                         <h2>COSTO: $1000</h2>
                         <img src="./media/carrello./droneBase.png" alt="drone spedizione base">
