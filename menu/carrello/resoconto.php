@@ -22,32 +22,40 @@
             $cart_query = pg_query($db, $cart);
             $totale = 0;
 
-            $create_order = "INSERT INTO ordinazioni (id, email, total) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '$totale')";
+            $create_order = "INSERT INTO ordinazioni (id, email, total) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1')";
             $create_order_query = pg_query($db, $create_order);
+            $order_id = "SELECT id FROM ordinazioni WHERE email = '$email_user' AND total = '-1'";
+            $order_id_query = pg_query($db, $order_id);
+            $id = pg_fetch_array($order_id_query);
+            $id = $id[0];
             /*if(true) {
                 $create_order_query = pg_get_result($db);
                 $create_order_query = pg_result_error($create_order_query);
                 echo $create_order_query;
             }*/
+
             while($row = pg_fetch_array($cart_query)) {
+                echo "hi";
                 $piatto = $row[0];
                 $quantita = $row[1];
                 $price_menu = "SELECT prezzo FROM menu WHERE nome = '$piatto'";
                 $price_menu_query = pg_query($db, $price_menu);
                 $row_price = pg_fetch_array($price_menu_query);
                 if(!$row_price) {
-                    
+                    echo "hi2";
                 }
                 else {
                     $price = $row_price[0] * $quantita;
-                    
-                    $create_order_item = "INSERT INTO ordinazioni_elementi (piatto, id_ordinazione, quantita, subtotale) VALUES ('$piatto')";
-
+                    $create_order_item = "INSERT INTO ordinazioni_elementi (piatto, id_ordinazione, quantita, subtotale) VALUES ('$piatto', '$id', '$quantita', '$price')";
+                    $create_order_item_query = pg_query($db, $create_order_item);
                     $totale += $price;
+                    echo "hi3";
                 }
             }
+            $order_price = "UPDATE ordinazioni SET total = '$totale' WHERE id = '$id'";
+            $order_price_query = pg_query($db, $order_price);
             pg_close($db);
-            exit("COCOOOOOOOOOOOOOOO");
+            exit("Orderd placed");
         }
 
 ?>

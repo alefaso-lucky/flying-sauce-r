@@ -46,9 +46,8 @@ function cambiaSezione(direzione) {
         xmlhttp.onload = function () { //onload quindi quando readyState è 4
             if(xmlhttp.status === 200) {
                 console.log(xmlhttp.responseText);
-                if(xmlhttp.responseText == "COCOOOOOOOOOOOOOOO") {
-                    window.location = "accedi/accediSimple.php";
-                    console.log("ciao2");
+                if(xmlhttp.responseText == "Order placed") {
+                    console.log("Nice");
                 }
             }
         };
