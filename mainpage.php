@@ -4,8 +4,40 @@
         <title>Flying Sauce&reg;</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="mainpage.css">
+        <script type="text/javascript" src="./mainpage.js"></script>
     </head>
     <body>
+      <!--  Codice per lo slideshow -->
+      <div class="slideshow-background">
+        <div class="container">
+          <div class="slider">
+            <div class="slide" id="slide-1">
+              <img src="./media/home/mainSlideshow1.png" alt="">
+              <div class="slide-text" id="text-slide-1">
+                «Stelle in tavola, droni in aria»
+              </div>
+            </div>
+            <div class="slide" id="slide-2">
+              <img src="./media/home/mainSlideshow2.jpg" alt="">
+              <div class="slide-text" id="text-slide-2">
+                «Il meglio della tradizione italiana a portata di drone»
+              </div>
+            </div>
+            <div class="slide" id="slide-3">
+              <img src="./media/home/mainSlideshow3.png" alt="">
+              <div class="slide-text" id="text-slide-3">
+                «FlyingSauce, oltre alla pasta c’è di più»
+              </div>
+            </div>
+
+            <div class="fixed-content">
+              <p>SCOPRI I NOSTRI PRODOTTI</p>
+              <button class="bot" id="ordina-ora-btn" onclick="window.location.href='http://localhost/~apian/FlyingSauce-r-/menu/ordina.php'">ORDINA ORA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <!--secondo blocco, tre sezioni che conducono a tre percorsi diversi del sito-->
         <div id=contenitore_2>
             <div id=sx2>
@@ -27,9 +59,9 @@
                 <h1>LA PASTA DELLA SETTIMANA:</h1>
                 <h2>La Lasagna</h2>
                 <p>
-                    Pasta fresca, un impasto realizzato con cura, con uova biologiche e farina di 
-                    grano tenero con carne di manzo Wagyu, delicatamente marinata con erbe aromatiche 
-                    e vino rosso. Questa lasagna, ispirata alla nonna, è molto più di un semplice 
+                    Pasta fresca, un impasto realizzato con cura, con uova biologiche e farina di
+                    grano tenero con carne di manzo Wagyu, delicatamente marinata con erbe aromatiche
+                    e vino rosso. Questa lasagna, ispirata alla nonna, è molto più di un semplice
                     pasto. È un viaggio sensoriale, un tributo all’amore e alla tradizione.
                 </p>
                 <a class="bot" href="#">SCOPRI DI PIU'</a> <!--bottone per andare alla pagina Singolo piatto-->
@@ -65,12 +97,14 @@
         var i;
         var x = document.getElementsByClassName("recensioni");
         for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
+            x[i].style.display = "none";
         }
         myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
         setTimeout(carousel, 4000); // cambia recensione ogni 4 secondi
         }
+
+
     </script>
 </html>
