@@ -121,14 +121,14 @@
                 <p id="totale" >Totale: $100<?php /* echo $totale; */?></p>
             </div>
             <div id="sezione2">
-                <p>
+                <p class=spiegazione>
                     Il servizio di spedizione di Flying Sauce offre un'esperienza di consegna unica, consentendo 
                     di gustare le pietanze tipiche italiane comodamente a casa propria, ovunque nel mondo, grazie 
                     all'utilizzo avanzato dei droni. Il nostro sistema di spedizione è suddiviso in tre categorie 
                     per soddisfare le esigenze di ogni cliente:
                 </p>
-                <div>
-                    <div>
+                <div id=tipi_spedizione>
+                    <div class=proposta_sp>
                         <h1>AVANZATA</h1>
                         <h2>COSTO: $1500</h2>
                         <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata">
@@ -137,12 +137,12 @@
                             Tempo di arrivo medio : 1h 30min</br>
                             Modello : SRT333W</br>
                         </p>
-                        <p>
+                        <p class=slogan>
                             Ideale per chi desidera una deliziosa esperienza culinaria senza rinunciare alla 
                             rapidità.
                         </p>
                     </div>
-                    <div>
+                    <div class=proposta_sp id=sp_lampo>
                         <h1>LAMPO</h1>
                         <h2>COSTO: $3000</h2>
                         <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo">
@@ -151,25 +151,25 @@
                             Tempo di arrivo medio : 30min</br>
                             Modello : PFT443A</br>
                         </p>
-                        <p>
+                        <p class=slogan>
                             Un'opzione perfetta per chi vuole gustare subito l'eccellenza della cucina italiana.
                         </p>
                     </div>
-                    <div>
+                    <div class=proposta_sp>
                         <h1>BASE</h1>
                         <h2>COSTO: $1000</h2>
                         <img src="./media/carrello./droneBase.png" alt="drone spedizione base">
                         <p>
-                            Velocità : 11Km/h
-                            Tempo di arrivo medio : 3h
-                            Modello : PQZ408B
+                            Velocità : 11Km/h</br>
+                            Tempo di arrivo medio : 3h</br>
+                            Modello : PQZ408B</br>
                         </p>
-                        <p>
+                        <p class=slogan>
                             Un compromesso perfetto tra velocità e convenienza.
                         </p>
                     </div>
                 </div>
-                <p>
+                <p class=spiegazione>
                     Con Flying Sauce, non solo vi garantiamo la freschezza delle nostre pietanze, ma vi offriamo anche
                     la flessibilità di scegliere il livello di rapidità che meglio si adatta alle vostre esigenze. 
                     Deliziate il vostro palato con la nostra pasta, consegnata con efficienza e precisione grazie alla
