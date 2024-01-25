@@ -87,9 +87,9 @@
                 </div>
             </div>
             <div class="columnside dx"> <!--colonna destra WORK IN PROGRESS-->
-                <form id="pay_button_form" action="componi">
-                    <input id="pay_button" type="submit" value="VAI AL PAGAMENTO" name="pagamento" class="menu_buttons" />
-                </form>
+                <div id="pay_button_form">
+                    <a class="menu_buttons" id="pay_button" href="http://localhost/Flying_Sauce_r/menu/carrello/resoconto.php">VAI AL PAGAMENTO</a>
+                </div>
                 <ul id="cart-list">
                     <!--AJAX inserisce i List Items sulla base del contenuto del carrello dell'utente ma comunque al primo
                     caricamento bisogna mostrare i valori-->
