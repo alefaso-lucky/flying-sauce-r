@@ -93,8 +93,9 @@
             </div>
             <div id=bottoni>
                 <p id="bottone_secondario" onclick="cambiaSezione('-')">INDIETRO</p> <!--bottone per andare alla pagina precedente-->
-                <p id="bottone_primario" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->
+                <p class="bottone_primario" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->
             </div>
+            <a id="final_button" class="bottone_primario" href="menu/ordina.php">VAI AL MENU</a> <!--bottone per andare alla pagina successiva-->
         </div>
     </div>
 </body>

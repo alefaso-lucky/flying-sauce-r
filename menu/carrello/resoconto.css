@@ -85,8 +85,9 @@ tr:nth-child(even) {
 }
 
 /*pulsanti per spostarsi avanti e indietro nel carrello*/
-#bottone_primario {
+.bottone_primario {
     text-decoration: none;
+    text-align: center;
     font-family: serif;
     display: inline-block;
     border: thin solid rgb(255, 194, 108);
@@ -114,12 +115,16 @@ tr:nth-child(even) {
     transition: all .3s ease;
 }
 
-#bottone_primario:hover, #bottone_secondario:hover{
+.bottone_primario:hover, #bottone_secondario:hover{
     border: thin solid #184149;
     background-color:rgb(245, 207, 154);
     color: #5D7A7F;
 }
-  
+
+#final_button {
+    display: none;
+}
+
 #totale {
     text-align: right;
     color: #FFC26C;
