@@ -17,7 +17,7 @@ body{
 /*contiene i due div che andranno affiancati (leftpanel + rightpanel)*/
 .container {
   width: 85vw;    /*larghezza corrispondente all'85% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  height: 750px;   /*altezza corrispondente a 700px*/
+  height: 770px;   /*altezza corrispondente a 800px*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -151,9 +151,9 @@ body{
 
 /*avviso in caso ci siano problemi nell'accesso*/
 .alert {
-  width: 70%;     /*di form occupa solo il 70% della larghezza*/
   text-align: center;     /*allineo il testo al centro*/
-  font-size: 20px;      /*grandezza del font*/
+  font-size: 18px;      /*grandezza del font*/
+  margin:0;
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
 }
 
