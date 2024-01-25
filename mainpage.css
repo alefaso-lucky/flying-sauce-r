@@ -188,7 +188,8 @@ body {
     display:none;
     max-width: 500px;
     text-align: center;
-    line-height: 1.3;/*aumenta la spaziatura tra le riche*/
+    line-height: 1.3;/*aumenta la spaziatura tra le righe*/
+    min-height: 140px;
     padding: 70px;
     border-style: double;
     border-color: rgb(255, 194, 108) #46666D rgb(255, 194, 108) #46666D;
