@@ -1,4 +1,4 @@
-<?php/*
+<?php /*
         session_start();
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
             $logged = $_SESSION['loggato'];
@@ -66,7 +66,7 @@
                 <li id="titolo-sezione2">&#x26AC;</li>
                 <li id="titolo-sezione3">&#x26AC;</li>
             </ul>
-<!--            <div id="sezione1">
+            <div id="sezione1">
                 <table id="tabella-carrello">
                     <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th>
                     </tr>
@@ -118,8 +118,8 @@
                         pg_close($db);*/
                     ?>
                 </table>
-                <p id="totale" >Totale: $100<?php/* echo $totale; */?></p>
-            </div>-->
+                <p id="totale" >Totale: $100<?php /* echo $totale; */?></p>
+            </div>
             <div id="sezione2">
                 <p>
                     Il servizio di spedizione di Flying Sauce offre un'esperienza di consegna unica, consentendo 
