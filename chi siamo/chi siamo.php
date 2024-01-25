@@ -79,35 +79,35 @@
       <!-- Per visualizzare le immagini con il testo -->
       <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
       <div class="grid-img-container">
-          <div class="grid-item" id="grid-item1" onmousemove = overImg1() onmouseleave = "leaveImg1()">
-            <img src="../media/gridImg1.jpg" id="img1" width="167px" height="250px"></img>
+          <div class="grid-item" id="grid-item1">
+            <img src="../media/gridImg1.jpg" id="img1" width="px" height="50px"></img>
             <div class="overlay">
-              <p class="testoImg">
+              <p class="testoImg" id="testoImg1">
                 Il coraggio di intraprendere nuove strade è stato un pilastro fondamentale del nostro percorso. L'apertura a nuove idee e l'audacia di esplorare nuovi orizzonti gastronomici ci hanno permesso di distinguerci nel panorama culinario internazionale.
               </p>
             </div>
           </div>
-          <div class="grid-item" id="grid-item2" onmouseover = overImg2() onmouseleave = "leaveImg2()">
-            <img src="../media/gridImg2.jpg" id="img2" width="150px" height="200px"></img>
+          <div class="grid-item" id="grid-item2">
+            <img src="../media/gridImg2.jpg" id="img2" width="50" height="50px"></img>
             <div class="overlay">
-              <p class="testoImg">
+              <p class="testoImg" id="testoImg2">
                 L'impegno nel perseguire i propri sogni è stato un motore trainante per il nostro successo. La determinazione nel perseguire l'eccellenza culinaria e nel superare le sfide ha reso il nostro percorso gratificante e ha contribuito a consolidare la reputazione di "Flying Sauce" come destinazione culinaria di primo livello.
               </p>
             </div>
           </div>
-          <div class="grid-item" id="grid-item3" onmouseover = overImg3() onmouseleave = "leaveImg3()">
-            <img src="../media/gridImg3.jpg" id="img3" width="150px" height="500px"></img>
+          <div class="grid-item" id="grid-item3">
+            <img src="../media/gridImg3.jpg" id="img3" width="50px" height="100px"></img>
             <div class="overlay">
-              <p class="testoImg">
-                L'autenticità del nostro brand è un altro elemento cruciale che abbiamo costantemente valorizzato. La coerenza nel rappresentare e preservare la ricchezza dei sapori italiani è fondamentale per la nostra identità aziendale. La fedeltà ai principi culinari tradizionali e l'attenzione alla qualità sono elementi che abbiamo sempre posto al centro della nostra missione.
+              <p class="testoImg" id="testoImg3">
+                La possibilità di esportare i gusti italiani in tutto il mondo è un traguardo che abbiamo abbracciato con entusiasmo e responsabilità. Ci impegniamo a offrire esperienze gastronomiche autentiche, trasportando i sapori tradizionali delle nostre cucine direttamente alle tavole internazionali.
               </p>
             </div>
           </div>
-          <div class="grid-item" id="grid-item4" onmouseover = overImg4() onmouseleave = "leaveImg4()">
-            <img src="../media/gridImg4.jpg" id="img4" width="300px" height="200px"></img>
+          <div class="grid-item" id="grid-item4">
+            <img src="../media/gridImg4.jpg" id="img4" width="100px" height="50px"></img>
             <div class="overlay">
-              <p class="testoImg">
-                La possibilità di esportare i gusti italiani in tutto il mondo è un traguardo che abbiamo abbracciato con entusiasmo e responsabilità. Ci impegniamo a offrire esperienze gastronomiche autentiche, trasportando i sapori tradizionali delle nostre cucine direttamente alle tavole internazionali.
+              <p class="testoImg" id="testoImg4">
+                L'autenticità del nostro brand è un altro elemento cruciale che abbiamo costantemente valorizzato. La coerenza nel rappresentare e preservare la ricchezza dei sapori italiani è fondamentale per la nostra identità aziendale. La fedeltà ai principi culinari tradizionali e l'attenzione alla qualità sono elementi che abbiamo sempre posto al centro della nostra missione.
               </p>
             </div>
           </div>

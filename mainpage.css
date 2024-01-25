@@ -9,11 +9,11 @@ body {
     justify-content: center;
     margin: 10% 10%;
     font-family: lucida handwriting, Cursive;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #contenitore_2 p{
-    color: rgb(255, 194, 108);;
+    color: rgb(255, 194, 108);
 }
 /*tre colonne che consigliano tre percorsi differenti per navigare nel sito*/
 #sx2 {
@@ -23,8 +23,8 @@ body {
     background-image: url("media/home/mainSX.jpg");
     background-repeat:none;
     background-size: cover;
-    width: 370px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 }
 #frasesx{
     position: relative;
@@ -38,12 +38,12 @@ body {
     background-image: url("media/home/mainCC.png");
     background-repeat:none;
     background-size: cover;
-    width: 370px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 }
 #frasecc{
     position: relative;
-    top: 530px;
+    top: 445px;
     left: 80px;
 }
 #dx2 {
@@ -53,8 +53,8 @@ body {
     background-image: url("media/home/mainDX.png");
     background-repeat:none;
     background-size: cover;
-    width: 370px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 }
 #frasedx{
     text-align: right;
@@ -64,15 +64,15 @@ body {
 }
 
 /*TERZA SEZIONE della hompage, dedicata a mostrare la pasta della settimana*/
-#contenitore_3 {
+.row{
     box-sizing: border-box;
     background-color: #46666D;
     color:rgb(255, 194, 108);
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px;
-    width: 100%;/*questo non funziona bene*/
+    width: 100%;
     margin: 5% 0%; /* margine per allinare */
 }
 /*descrizione testuale della proposta a sinistra dello schermo*/
@@ -89,10 +89,37 @@ body {
     font-size: 20px;
 }
 /*immagine illustrativa a destra dello schermo*/
-#contenitore_3 img{
+.row img{
     width: 400px;
+    filter: drop-shadow(8px 8px 10px rgb(40, 40, 40)); /*crea l'ombra sotto la foto*/
 }
 
+/*QUARTA SEZIONE della hompage, dedicata a mostrare la le recensioni dei clienti*/
+.recensioni{
+    display:none;
+    max-width: 500px;
+    text-align: center;
+    line-height: 1.3;/*aumenta la spaziatura tra le riche*/
+    padding: 70px;
+    border-style: double;
+    border-color: rgb(255, 194, 108) #46666D rgb(255, 194, 108) #46666D;
+}
+/*QUINTA SEZIONE della hompage, dedicata a consigliare i nostri social*/
+#contenitore_5{
+    text-align: center;
+    color: #46666D; 
+    font-weight: 900;
+    padding: 20px;
+    margin: 6% 0%; /* margine per allinare */
+}
+
+#contenitore_5 a{
+    filter: invert(100%);
+    text-decoration: none; /*per togliere gli effetti dei link*/
+}
+#contenitore_5 a:hover{
+    filter: invert(50%);
+}
 /*pulsanti per spostarsi in altre pagine*/
 .bot{
     text-decoration: none;
@@ -109,17 +136,25 @@ body {
     transition: all .3s ease;
 }
 
+#contenitore_2 .bot{
+    font-size: 20px;
+    position: relative;
+    width: 140px;
+    text-align: center;
+    top: 200px;
+    left: 60px;
+}
+
+.row .bot{
+    background-color: #184149;
+    position: relative;
+    text-align: center;
+    left: 35%;
+}
+
 .bot:hover{
     border: thin solid #184149;
     background-color:rgb(245, 207, 154);
     color: #5D7A7F;
 }
 
-#contenitore_2 .bot{
-    font-size: 20px;
-    position: relative;
-    width: 140px;
-    text-align: center;
-    top: 220px;
-    left: 100px;
-}
