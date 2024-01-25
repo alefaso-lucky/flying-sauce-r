@@ -38,10 +38,16 @@
         </div>
         <!--quarto blocco, recenzioni di clienti-->
         <div class=row>
-            <p id=recensioni>
-                La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore profondo e avvolgente.</br>
-                Angela F.
-            </p>
+        <p class="recensioni">
+            La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore profondo e avvolgente.</br>
+            Angela F.
+        </p>
+        <p class="recensioni" >
+            recensione 2
+        </p>
+        <p class="recensioni">
+            RECENSIONE 3
+        </p>
         </div>
         <!--quinta blocco, link ai vari social network-->
         <div id=contenitore_5>
@@ -51,4 +57,20 @@
             <a class="social" href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina youtube-->
         </div>
     </body>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+        var i;
+        var x = document.getElementsByClassName("recensioni");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 4000); // cambia recensione ogni 4 secondi
+        }
+    </script>
 </html>
