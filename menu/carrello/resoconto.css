@@ -87,12 +87,17 @@ tr:nth-child(even) {
     max-width: 800px;
 }
 
+#sezione2 {
+    flex-direction: column;
+    align-items: center;
+}
+
 #tipi_spedizione{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     color:rgba(24, 65, 73);
-    margin: 80px;
+    margin: 20px 80px;
 }
 
 input[type=radio] {

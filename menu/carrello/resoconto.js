@@ -7,9 +7,10 @@ function cambiaSezione(direzione) {
         if(direzione == '+') {
             sezione = 2;
             document.getElementById("sezione1").style.display = "none";
-            document.getElementById("sezione2").style.display = "inline-block";
+            document.getElementById("sezione2").style.display = "flex";
             document.getElementById("titolo-sezione1").innerHTML = "&#x26AC;";
             document.getElementById("titolo-sezione2").innerText = "SPEDIZIONE";
+            document.getElementById("avanti").innerText = "FINALIZZA ORDINE";
         }
         else {
             window.location = "menu/ordina.php"; 
@@ -34,6 +35,7 @@ function cambiaSezione(direzione) {
             document.getElementById("sezione2").style.display = "none";
             document.getElementById("titolo-sezione1").innerText = "CARRELLO";
             document.getElementById("titolo-sezione2").innerHTML = "&#x26AC;";
+            document.getElementById("avanti").innerText = "AVANTI";
         }
     }
 
