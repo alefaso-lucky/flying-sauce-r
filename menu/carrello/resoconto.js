@@ -42,7 +42,6 @@ function cambiaSezione(direzione) {
     function finalizeOrder() {
         //richiesta AJAX per aggiungere elemento al database
         const xmlhttp = new XMLHttpRequest();
-        console.log("ciao1");
         xmlhttp.open('POST', 'menu/carrello/resoconto.php', true);
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
         xmlhttp.onload = function () { //onload quindi quando readyState è 4

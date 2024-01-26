@@ -11,13 +11,7 @@
 
         if(isset($_POST['finalize_order']) && $_POST['finalize_order']) {
             /*connessione al database*/
-            $host="localhost";
-            $db='GruppoXX';
-            $user="www";
-            $password="password";
-            $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-            $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
-
+            require "../../connessionedb.php";
             $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
             $cart_query = pg_query($db, $cart);
             $totale = 0;
@@ -108,13 +102,8 @@
                     </tr> -->
                     <?php
                         /*connessione al database*/
-                        $host="localhost";
-                        $db='GruppoXX';
-                        $user="www";
-                        $password="password";
-                        $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-                        $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
-
+                        require "../../connessionedb.php";
+                        
                         $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                         $cart_query = pg_query($db, $cart);
                         $totale = 0;
