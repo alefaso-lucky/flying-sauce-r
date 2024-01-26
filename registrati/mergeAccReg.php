@@ -121,7 +121,7 @@
     <script src="./registrati/validazioneInput.js"></script>
 </head>
 <body>
-    <?php require "../base/navSimple.php"; ?>
+    <?php require "../base/navFINITA.php"; ?>
     <div class="fullbody">
         <?php if($accedi=='true') {?>
             <link rel="stylesheet" href="./accedi/accedi.css">
