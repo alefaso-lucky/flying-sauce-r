@@ -96,7 +96,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 10% 10%;
+    margin: 10% 0%;
     font-family: lucida handwriting, Cursive;
     font-size: 15px;
 }
