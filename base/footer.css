@@ -101,6 +101,10 @@ footer {
     color: rgb(242, 243, 244);
 }
 
+#newsletter_field:focus {
+    outline: solid rgb(255, 194, 108);
+}
+
 ::placeholder {
     color: gray;
     opacity: 1; /*Firefox imposta una opacity più bassa al placeholder, per risolvere la impostiamo ad 1 manualmente*/
