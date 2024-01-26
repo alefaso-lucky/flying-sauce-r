@@ -22,7 +22,9 @@
             $cart_query = pg_query($db, $cart);
             $totale = 0;
 
-            $create_order = "INSERT INTO ordinazioni (id, email, total) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1')";
+            $tipo_spedizione = $_POST['spedizione'];
+            $prezzo_spedizione = $_POST['prezzo_spedizione'];
+            $create_order = "INSERT INTO ordinazioni (id, email, total, tipo_spedizione) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1', '$tipo_spedizione')";
             $create_order_query = pg_query($db, $create_order);
             $order_id = "SELECT id FROM ordinazioni WHERE email = '$email_user' AND total = '-1'";
             $order_id_query = pg_query($db, $order_id);
@@ -52,6 +54,7 @@
                     echo "hi3";
                 }
             }
+            $totale += $prezzo_spedizione;
             $order_price = "UPDATE ordinazioni SET total = '$totale' WHERE id = '$id'";
             $order_price_query = pg_query($db, $order_price);
 

@@ -53,7 +53,21 @@ function cambiaSezione(direzione) {
                 }
             }
         };
-        var stringa = "finalize_order=" + true;
+
+        if(document.getElementById("rbsx").checked) {
+            var spedizione = "AVANZATA";
+            var prezzo_spedizione = 1500;        
+        }
+        else if(document.getElementById("rbcc").checked) {
+            var spedizione = "LAMPO";
+            var prezzo_spedizione = 3000;
+        }
+        else {
+            var spedizione = "BASE";
+            var prezzo_spedizione = 1000;
+        }
+
+        var stringa = "finalize_order=" + true + "&spedizione=" + spedizione + "&prezzo_spedizione=" + prezzo_spedizione;
         xmlhttp.send(stringa);
     }
 }
