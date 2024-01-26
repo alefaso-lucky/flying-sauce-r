@@ -17,7 +17,8 @@ body{
 /*contiene i due div che andranno affiancati (immagine e slogan + form)*/
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  height: 70vh;   /*altezza corrispondente al 70% dell'altezza della finestra del browser anche in caso di ridimensionamento*/
+  min-width: 530px;
+  height: 500px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -40,7 +41,7 @@ body{
   text-align: center;
 }
 
-.columnside h1 {
+.columnside p {
   color: rgb(255, 194, 108);
   text-align: center;
   font-size: x-large;
@@ -55,6 +56,7 @@ body{
   margin: 10px 0;
   text-decoration: none;
   display: block;   /*necessario perchè altrimenti il tag sarebbe inline */
+  cursor: pointer;
 }
 
 #logout {
@@ -84,13 +86,14 @@ body{
   color:#FFF0DA;
 }
 
-#Spedizione a{
+#Spedizione p span{
   opacity: 0.7;   /*di default il colore è opacizzato*/
   text-decoration: none;    /*nessuna sottolineatura*/
   color: rgb(255, 194, 108);      /*applico un colore ai tag a*/
+  cursor: pointer;
 }
 
-#Spedizione a:hover{
+#Spedizione p span:hover{
   opacity:1;    /*con l'hover si riporta alla tonalità originale*/
 }
 
@@ -98,9 +101,10 @@ body{
   margin: 0 20px;     /*margine laterale per distanziarla dal bordo*/
 }
 
-.sezione h3{
-  font-size: 35px;
+.sezione h1{
+  font-size: 30px;
   color: rgb(255, 194, 108);
+  margin: 0;
 }
 
 .input-element{
@@ -119,7 +123,6 @@ body{
 
 .input-field{
   display: block;
-  width: 50%;
   margin: 5px 0;      /*top-bottom per distanziare tra loro gli input del form*/
   height: 50px;     /*setto un'altezza*/
   margin: 8px 0;     /*margine top-bottom*/
@@ -136,7 +139,7 @@ body{
   outline: 2px solid rgb(255, 194, 108); /*al focus, il cambio il colore del bordo(outline) di input*/
 }
 
-.submit_buttons {
+.buttons {
     box-sizing: border-box; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
     display: inline-block; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
     border: thin solid rgb(255, 194, 108); /*bordo dorato*/
@@ -151,10 +154,30 @@ body{
     transition: all .6s ease; /*rende l'animazione di hover più smooth*/
 }
 
-.submit_buttons:hover {
+.buttons:hover {
     /*al passaggio del mouse il colore del bordo, dello sfondo e del testo dei bottoni cambia
     in modo da renderli visivamente responsivi*/
     border: thin solid #184149;
     background-color: #FFF0DA;
     color: #5D7A7F;
+}
+
+/*avviso in caso ci siano problemi nell'accesso*/
+.alert {
+  width: 70%;     /*di form occupa solo il 70% della larghezza*/
+  text-align: center;     /*allineo il testo al centro*/
+  font-size: 20px;      /*grandezza del font*/
+  color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
+}
+
+@media (max-width: 800px) {
+    .sezione .brief-description {
+      display: none;
+    }
+}
+
+@media (max-width: 1400px){
+  .columnside p{
+    display: none;
+  }
 }
