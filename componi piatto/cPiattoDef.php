@@ -11,7 +11,7 @@
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
         $logged = $_SESSION['loggato'];
         $email_user = $_SESSION['email'];
-        echo "<p id="."logged"." style="."'display: none'".">";
+        //echo "<p id="."logged"." style="."'display: none'".">"; non più necessario
     }
     else {
         $logged = false;
@@ -21,7 +21,7 @@
     /*la pagina deve rielaborare il form perche è sticky quindi la invia a se stessa e si ricarica*/
     /*se le informazioni del form sono disponibili bisogna aggiungere il prodotto al carrello e poi portare l'utente
     al menu in modo che possa aggiungere altri prodotti ed eventualmente procedere al pagamento*/
-    if(isset($_POST['quantita'])) {
+    if(isset($_POST['quantita']) && $logged) {
         /*connessione al database*/
         $host="localhost";
         $db='GruppoXX';
@@ -95,7 +95,7 @@
         <?php require '../base/navSimple.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
         <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->
             <div> <!--contenitore del form di composizione del piatto-->
-                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return isUserLogged()"> <!--form per la composizione del piatto-->
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return <?php echo $logged; ?>;"> <!--form per la composizione del piatto-->
 
                 <!--la seguente porzione di codice è composta da 4 parti che permettono di scegliere i 4 attributi del piatto-->
                         <!--prima scelta-->
