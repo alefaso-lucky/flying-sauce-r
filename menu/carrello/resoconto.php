@@ -72,6 +72,7 @@
     <script src="menu/carrello/resoconto.js"></script>
 </head>
 <body>
+    <?php require "../../base/navSimple.php" ?> <!--inserimento navbar-->
     <div id="row">
         <div id="internal-row">
             <ul>
@@ -114,6 +115,14 @@
                         $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                         $cart_query = pg_query($db, $cart);
                         $totale = 0;
+
+                        //se non ci sono elementi nel carrello
+                        if(!(pg_num_rows($cart_query) > 0)) {
+                            pg_close($db);
+                            echo "<script>alert("."'Carrello Vuoto, scegli dei prodotti dal nostro menu prima di procedere alla finalizzazione dell\'ordine'"."); window.location = "."'http://localhost/Flying_Sauce_r/menu/ordina.php';"."</script>";
+                            exit();
+                        }
+
                         while($row = pg_fetch_array($cart_query)) {
                             $piatto = $row[0];
                             $quantita = $row[1];
@@ -211,6 +220,7 @@
             <a id="final_button" class="bottone_primario" href="menu/ordina.php">VAI AL MENU</a> <!--bottone per andare alla pagina successiva-->
         </div>
     </div>
+    <?php require "../../base/footer.php"; ?> <!--inserimento footer-->
 </body>
 
 </html>
