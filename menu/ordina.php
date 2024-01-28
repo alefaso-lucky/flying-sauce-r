@@ -21,7 +21,7 @@
     ?>
 
     <body>
-        <?php require "../base/navSimple.php" ?> <!--inserimento navbar-->
+        <?php require "../base/navFINITA.php" ?> <!--inserimento navbar-->
         
         <div class="row"> <!--righa con tutto il contenuto della pagina-->
             <div class="columnside sx"> <!--colonna di sinistra della pagina-->

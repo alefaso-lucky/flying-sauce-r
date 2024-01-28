@@ -7,9 +7,10 @@ function cambiaSezione(direzione) {
         if(direzione == '+') {
             sezione = 2;
             document.getElementById("sezione1").style.display = "none";
-            document.getElementById("sezione2").style.display = "inline-block";
+            document.getElementById("sezione2").style.display = "flex";
             document.getElementById("titolo-sezione1").innerHTML = "&#x26AC;";
             document.getElementById("titolo-sezione2").innerText = "SPEDIZIONE";
+            document.getElementById("avanti").innerText = "FINALIZZA ORDINE";
         }
         else {
             window.location = "menu/ordina.php"; 
@@ -34,13 +35,13 @@ function cambiaSezione(direzione) {
             document.getElementById("sezione2").style.display = "none";
             document.getElementById("titolo-sezione1").innerText = "CARRELLO";
             document.getElementById("titolo-sezione2").innerHTML = "&#x26AC;";
+            document.getElementById("avanti").innerText = "AVANTI";
         }
     }
 
     function finalizeOrder() {
         //richiesta AJAX per aggiungere elemento al database
         const xmlhttp = new XMLHttpRequest();
-        console.log("ciao1");
         xmlhttp.open('POST', 'menu/carrello/resoconto.php', true);
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
         xmlhttp.onload = function () { //onload quindi quando readyState è 4
@@ -51,7 +52,21 @@ function cambiaSezione(direzione) {
                 }
             }
         };
-        var stringa = "finalize_order=" + true;
+
+        if(document.getElementById("rbsx").checked) {
+            var spedizione = "AVANZATA";
+            var prezzo_spedizione = 1500;        
+        }
+        else if(document.getElementById("rbcc").checked) {
+            var spedizione = "LAMPO";
+            var prezzo_spedizione = 3000;
+        }
+        else {
+            var spedizione = "BASE";
+            var prezzo_spedizione = 1000;
+        }
+
+        var stringa = "finalize_order=" + true + "&spedizione=" + spedizione + "&prezzo_spedizione=" + prezzo_spedizione;
         xmlhttp.send(stringa);
     }
 }

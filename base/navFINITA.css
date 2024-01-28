@@ -1,13 +1,14 @@
 *{
   font-family: 'Montserrat', sans-serif;
-  margin: 0;
 }
 
 header{
   background-color: #184149;      /*colore dell'header*/
   display: flex;          /*perchè all'interno di header ci sta anche nav*/
   align-items: center;      /*allineo verticalmente il div e nav*/
-  position: sticky;
+  position: sticky;     /*la navbar deve essere sticky*/
+  top: 0; /* per avere l'header in cima alla finestra*/
+  z-index: 5; /*in modo che sia sempre in avanti rispetto a qualsiasi altro elemento*/
 }
 
 .important-elem img{
@@ -19,7 +20,7 @@ header{
   flex:8;
 }
 
-header a {
+header a, .important-elem span {
   color:  rgb(255, 194, 108);     /*colore a tutti i tag in header*/
   padding: 14px 35px;           /*padding agli estremi*/
   text-decoration: none;      /*nessuna sottolineatura ai link*/
@@ -27,7 +28,7 @@ header a {
   font-size: 17px;        /*dimensione del font*/
 }
 
-a:hover{
+header a:hover, .important-elem span:hover{
   color:  #FFF0DA;      /*colore del tag cambia al passaggio del mouse con una transizione (settata prima)*/
 }
 

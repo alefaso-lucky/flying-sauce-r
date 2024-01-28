@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Componi il tuo piatto</title>
+        <title>Flying Sauce&reg; - Componi il tuo piatto</title>
         <link rel="stylesheet" href="./cPiattoDef.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
         <meta charset="utf-8">
@@ -11,7 +11,7 @@
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
         $logged = $_SESSION['loggato'];
         $email_user = $_SESSION['email'];
-        echo "<p id="."logged"." style="."'display: none'".">";
+        //echo "<p id="."logged"." style="."'display: none'".">"; non più necessario
     }
     else {
         $logged = false;
@@ -21,15 +21,10 @@
     /*la pagina deve rielaborare il form perche è sticky quindi la invia a se stessa e si ricarica*/
     /*se le informazioni del form sono disponibili bisogna aggiungere il prodotto al carrello e poi portare l'utente
     al menu in modo che possa aggiungere altri prodotti ed eventualmente procedere al pagamento*/
-    if(isset($_POST['quantita'])) {
+    if(isset($_POST['quantita']) && $logged) {
         /*connessione al database*/
-        $host="localhost";
-        $db='GruppoXX';
-        $user="www";
-        $password="password";
-        $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-        $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
-        
+        require "../connessionedb.php";
+
         /*preleva le informazioni dal form*/
         $quantita = $_POST['quantita'];
         $pasta = $_POST['pasta'];
@@ -92,10 +87,10 @@
     }
 ?>
     <body>
-        <?php require '../base/navSimple.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
+        <?php require '../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
         <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->
             <div> <!--contenitore del form di composizione del piatto-->
-                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return isUserLogged()"> <!--form per la composizione del piatto-->
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return <?php echo $logged; ?>;"> <!--form per la composizione del piatto-->
 
                 <!--la seguente porzione di codice è composta da 4 parti che permettono di scegliere i 4 attributi del piatto-->
                         <!--prima scelta-->

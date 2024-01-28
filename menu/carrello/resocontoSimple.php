@@ -130,7 +130,8 @@
                 <div id=tipi_spedizione>
                     <div class=proposta_sp>
                         <label for="rbsx">
-                            <h1>AVANZATA</h1><input class=opzione id=rbsx name="spedizione" value="AVANZATA" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <input class=opzione id=rbsx name="spedizione" value="AVANZATA" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <h1>AVANZATA</h1>
                         </label>
                         <h2>COSTO: $1500</h2>
                         <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata">
@@ -145,9 +146,9 @@
                         </p>
                     </div>
                     <div class=proposta_sp id=sp_lampo>
-                        <label for="rbsx">
-                            <h1>LAMPO</h1>
+                        <label for="rbcc">
                             <input class=opzione id=rbcc name="spedizione" value="LAMPO" type="radio" checked/> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <h1>LAMPO</h1>
                         </label>
                         <h2>COSTO: $3000</h2>
                         <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo">
@@ -162,8 +163,8 @@
                     </div>
                     <div class=proposta_sp>
                         <label for="rbdx">
-                            <h1>BASE</h1>
                             <input class=opzione id=rbdx name="spedizione" value="BASE" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <h1>BASE</h1>
                         </label>
                         <h2>COSTO: $1000</h2>
                         <img src="./media/carrello./droneBase.png" alt="drone spedizione base">

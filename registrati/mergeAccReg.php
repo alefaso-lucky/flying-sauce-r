@@ -57,7 +57,7 @@
                             session_start();
                             $_SESSION["loggato"] = True;
                             $_SESSION["email"] = $email;
-                            header("refresh:0.1;URL=./account/area_riservata.php");
+                            header("refresh:0.1;URL=../account/area_riservata.php");
                     }
                     else{
                         $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
@@ -82,7 +82,7 @@
                         session_start();
                         $_SESSION["loggato"] = True;
                         $_SESSION["email"] = $email;
-                        header("refresh:0.01;URL=./account/area_riservata.php");
+                        header("refresh:0.01;URL=../account/area_riservata.php");
                     }
                     else{
                         $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
@@ -121,7 +121,7 @@
     <script src="./registrati/validazioneInput.js"></script>
 </head>
 <body>
-    <?php require "../base/navSimple.php"; ?>
+    <?php require "../base/navFINITA.php"; ?>
     <div class="fullbody">
         <?php if($accedi=='true') {?>
             <link rel="stylesheet" href="./accedi/accedi.css">

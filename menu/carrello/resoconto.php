@@ -11,18 +11,14 @@
 
         if(isset($_POST['finalize_order']) && $_POST['finalize_order']) {
             /*connessione al database*/
-            $host="localhost";
-            $db='GruppoXX';
-            $user="www";
-            $password="password";
-            $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-            $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
-
+            require "../../connessionedb.php";
             $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
             $cart_query = pg_query($db, $cart);
             $totale = 0;
 
-            $create_order = "INSERT INTO ordinazioni (id, email, total) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1')";
+            $tipo_spedizione = $_POST['spedizione'];
+            $prezzo_spedizione = $_POST['prezzo_spedizione'];
+            $create_order = "INSERT INTO ordinazioni (id, email, total, tipo_spedizione) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1', '$tipo_spedizione')";
             $create_order_query = pg_query($db, $create_order);
             $order_id = "SELECT id FROM ordinazioni WHERE email = '$email_user' AND total = '-1'";
             $order_id_query = pg_query($db, $order_id);
@@ -52,6 +48,7 @@
                     echo "hi3";
                 }
             }
+            $totale += $prezzo_spedizione;
             $order_price = "UPDATE ordinazioni SET total = '$totale' WHERE id = '$id'";
             $order_price_query = pg_query($db, $order_price);
 
@@ -72,6 +69,7 @@
     <script src="menu/carrello/resoconto.js"></script>
 </head>
 <body>
+    <?php require "../../base/navSimple.php" ?> <!--inserimento navbar-->
     <div id="row">
         <div id="internal-row">
             <ul>
@@ -104,16 +102,19 @@
                     </tr> -->
                     <?php
                         /*connessione al database*/
-                        $host="localhost";
-                        $db='GruppoXX';
-                        $user="www";
-                        $password="password";
-                        $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
-                        $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
-
+                        require "../../connessionedb.php";
+                        
                         $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                         $cart_query = pg_query($db, $cart);
                         $totale = 0;
+
+                        //se non ci sono elementi nel carrello
+                        if(!(pg_num_rows($cart_query) > 0)) {
+                            pg_close($db);
+                            echo "<script>alert("."'Carrello Vuoto, scegli dei prodotti dal nostro menu prima di procedere alla finalizzazione dell\'ordine'"."); window.location = "."'http://localhost/Flying_Sauce_r/menu/ordina.php';"."</script>";
+                            exit();
+                        }
+
                         while($row = pg_fetch_array($cart_query)) {
                             $piatto = $row[0];
                             $quantita = $row[1];
@@ -135,8 +136,68 @@
                 <p id="totale" >Totale: <?php echo $totale; ?></p>
             </div>
             <div id="sezione2">
-                <p>
-                    ciao ciao ciao
+                <p class=spiegazione>
+                    Il servizio di spedizione di Flying Sauce offre un'esperienza di consegna unica, consentendo 
+                    di gustare le pietanze tipiche italiane comodamente a casa propria, ovunque nel mondo, grazie 
+                    all'utilizzo avanzato dei droni. Il nostro sistema di spedizione è suddiviso in tre categorie 
+                    per soddisfare le esigenze di ogni cliente:
+                </p><br>
+                <div id=tipi_spedizione>
+                    <div class=proposta_sp>
+                        <label for="rbsx">
+                            <input class=opzione id=rbsx name="spedizione" value="AVANZATA" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <h1>AVANZATA</h1>
+                        </label>
+                        <h2>COSTO: $1500</h2>
+                        <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata">
+                        <p>
+                            Velocità : 111111km/h</br>
+                            Tempo di arrivo medio : 1h 30min</br>
+                            Modello : SRT333W</br>
+                        </p>
+                        <p class=slogan>
+                            Ideale per chi desidera una deliziosa esperienza culinaria senza rinunciare alla 
+                            rapidità.
+                        </p>
+                    </div>
+                    <div class=proposta_sp id=sp_lampo>
+                        <label for="rbcc">
+                            <input class=opzione id=rbcc name="spedizione" value="LAMPO" type="radio" checked/> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <h1>LAMPO</h1>
+                        </label>
+                        <h2>COSTO: $3000</h2>
+                        <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo">
+                        <p>
+                            Velocità : 111*10^5km/h</br>
+                            Tempo di arrivo medio : 30min</br>
+                            Modello : PFT443A</br>
+                        </p>
+                        <p class=slogan>
+                            Un'opzione perfetta per chi vuole gustare subito l'eccellenza della cucina italiana.
+                        </p>
+                    </div>
+                    <div class=proposta_sp>
+                        <label for="rbdx">
+                            <input class=opzione id=rbdx name="spedizione" value="BASE" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
+                            <h1>BASE</h1>
+                        </label>
+                        <h2>COSTO: $1000</h2>
+                        <img src="./media/carrello./droneBase.png" alt="drone spedizione base">
+                        <p>
+                            Velocità : 11Km/h</br>
+                            Tempo di arrivo medio : 3h</br>
+                            Modello : PQZ408B</br>
+                        </p>
+                        <p class=slogan>
+                            Un compromesso perfetto tra velocità e convenienza.
+                        </p>
+                    </div>
+                </div>
+                <p class=spiegazione>
+                    Con Flying Sauce, non solo vi garantiamo la freschezza delle nostre pietanze, ma vi offriamo anche
+                    la flessibilità di scegliere il livello di rapidità che meglio si adatta alle vostre esigenze. 
+                    Deliziate il vostro palato con la nostra pasta, consegnata con efficienza e precisione grazie alla
+                    nostra avanzata tecnologia di droni.
                 </p>
             </div>
             <div id="sezione3">
@@ -146,11 +207,12 @@
             </div>
             <div id=bottoni>
                 <p id="bottone_secondario" onclick="cambiaSezione('-')">INDIETRO</p> <!--bottone per andare alla pagina precedente-->
-                <p class="bottone_primario" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->
+                <p class="bottone_primario" id="avanti" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->
             </div>
             <a id="final_button" class="bottone_primario" href="menu/ordina.php">VAI AL MENU</a> <!--bottone per andare alla pagina successiva-->
         </div>
     </div>
+    <?php require "../../base/footer.php"; ?> <!--inserimento footer-->
 </body>
 
 </html>

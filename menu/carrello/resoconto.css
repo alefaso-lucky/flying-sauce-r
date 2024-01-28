@@ -42,7 +42,7 @@ ul.a {
     list-style-type: circle;
 }
 */
-ul {
+#row ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
@@ -50,7 +50,7 @@ ul {
     padding: 0;
 }
   
-li{
+#row li{
     display: inline-block;
     font-size: 35px;
     font-family: Times New Roman, serif;    
@@ -87,19 +87,24 @@ tr:nth-child(even) {
     max-width: 800px;
 }
 
+#sezione2 {
+    flex-direction: column;
+    align-items: center;
+}
+
 #tipi_spedizione{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     color:rgba(24, 65, 73);
-    margin: 80px;
+    margin: 20px 80px;
 }
 
 input[type=radio] {
     display: none; /*nasconde i "cerchietti" dei radio button che sono poi "ricreati in CSS con uno stile più calzante al resto della pagina"*/
 }
 
-label h1:after {
+label h1:before {
     content: ''; /*inserisce un contenuto vuoto prima delle scritte dei vari radio buttons, questo contenuto vuoto sostituisce il "cerchietto" precedentemente rimosso*/
     /*i seguenti righi danno uno stile al contenuto inserito*/
     border-radius: 6px; /*arrotonda il contenuto*/
@@ -110,7 +115,7 @@ label h1:after {
     display: inline-block; /*per permettere alle modifiche relative a larghezza e altezza di avere effetto*/
 }
 
-input:checked+label h1:after{
+label input:checked+h1:before{
     /*quando l'input è checked da un background color al contenuto inserito*/
     background-color: rgb(70, 102, 109);
 }

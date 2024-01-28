@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="chi siamo.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Chi siamo</title>
-    <script src="chi siamo.js"></script>
+    <script src="./chi siamo.js"></script>
 </head>
 <body>
     <?php //require '../base/nav.php' ?>

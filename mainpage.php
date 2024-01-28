@@ -46,7 +46,7 @@
 
             <div class="fixed-content">
               <p>SCOPRI I NOSTRI PRODOTTI</p>
-              <button class="bot" id="ordina-ora-btn" onclick="window.location.href='http://localhost/~apian/FlyingSauce-r-/menu/ordina.php'">ORDINA ORA</button>
+              <button class="bot" id="ordina-ora-btn" onclick="window.location.href='./menu/ordina.php'">ORDINA ORA</button>
             </div>
           </div>
         </div>
