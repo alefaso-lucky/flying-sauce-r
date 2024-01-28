@@ -86,8 +86,8 @@
                     }
                     else{
                         $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
-                        }
                     }
+                }
             }
             else{
                 $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
@@ -116,7 +116,7 @@
     <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
     <!--fine parte obbligatoria-->
-	<base href="http://localhost/progetto/FlyingSauce-r-/">
+	<base href="http://localhost/Flying_Sauce_r/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="./registrati/validazioneInput.js"></script>
 </head>
@@ -138,6 +138,7 @@
                 </div>
                 <div class="rightpanel">
                     <h2>Member Login</h2>
+                    <!--valutare necessarietà di .accedi qui-->
                     <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" onSubmit="return validatePassword();" method="post">
                         <div class="input-field">
                             <span><img src="media/email_icon.png" width="20px" height="20px"></span>
@@ -235,9 +236,8 @@
 <?php
 
 function get_pwd($email){
-    require ".\logindb.php";
+    require "../connessionedb.php";
     //CONNESSIONE AL DB
-    $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     $sql = "SELECT password FROM utenti WHERE email=$1;";
     $prep = pg_prepare($db, "sqlPassword", $sql);
     $ret = pg_execute($db, "sqlPassword", array($email));
@@ -258,9 +258,8 @@ function get_pwd($email){
 }
 
 function email_exist($email){
-	require "./logindb.php";
+	require "../connessionedb.php";
 	//CONNESSIONE AL DB
-	$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
 	$sql = "SELECT email FROM utenti WHERE email=$1";
 	$prep = pg_prepare($db, "sqlEmail", $sql);
 	$ret = pg_execute($db, "sqlEmail", array($email));
@@ -282,7 +281,7 @@ function email_exist($email){
 }
 
 function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero){
-	require "./logindb.php";
+	require "../connessionedb.php";
 	//CONNESSIONE AL DB
 	$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
 	$hash = password_hash($pass, PASSWORD_DEFAULT);

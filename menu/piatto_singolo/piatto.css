@@ -69,6 +69,7 @@ body {
     font-size: 15px; /*dimensione del testo*/
     cursor: pointer; /*per far uscire la manina*/
     transition: all .3s ease; /*per rendere l'animazione meno brusca*/
+    text-decoration: none;
 }
 
 .menu_button:hover { /*stile del tasto per tornare al menu al passaggio del mouse*/

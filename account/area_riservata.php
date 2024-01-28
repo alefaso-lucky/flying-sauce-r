@@ -83,7 +83,7 @@
   }
 
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../registrati/logindb.php";
+    require_once "../connessionedb.php";
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     $sql = "SELECT * FROM utenti WHERE email=$1;";
@@ -157,7 +157,7 @@ $_SESSION["selected"] = "Anagrafica";
           </div>
           <div class="account_content">
             <?php
-              require "../registrati/logindb.php";
+              require "../connessionedb.php";
               $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
               $sql = "SELECT nome, cognome, genere, email, nazione, citta, via, civico, telefono FROM utenti WHERE email = '" . $_SESSION['email'] . "';";
               $ret = pg_query($db, $sql); /* viene eseguita la query */

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="menu/piatto_singolo/piatto.css"> <!--collegamento al foglio di stile-->
     </head>
     <body>
-        <?php require '../../base/navSimple.php'; ?> <!--Inserimento della navbar-->
+        <?php require '../../base/navFINITA.php'; ?> <!--Inserimento della navbar-->
         <!--Connessione al database-->
         <?php
             $host="localhost";
