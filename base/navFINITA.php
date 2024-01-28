@@ -2,6 +2,7 @@
 <!-- questo link usato al posto di definire le immagini per carrello e login -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
 <link rel="stylesheet" href="./base/navFINITA.css">
 <script type="text/javascript">
   function myFunction() {

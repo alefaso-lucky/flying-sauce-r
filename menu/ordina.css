@@ -134,6 +134,7 @@ h1 {
   cursor: pointer;
   /*facciamo uscire la manina*/
   transition: all .3s ease;
+  text-decoration: none;
 }
 
 #pay_button_form {
@@ -165,9 +166,14 @@ h1 {
   font-weight: 100;
 }
 
+#cart-list {
+  padding-inline-start: 10px;
+}
+
 #cart-list * {
   color: #FFC26C;
   padding: 3px;
+  list-style: none;
 }
 
 #info_button {
