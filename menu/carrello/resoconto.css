@@ -146,9 +146,7 @@ label input:checked+h1:before{
 
 /*TERZA PAGINA visionata, conferma che l'ordine è riuscito correttamente*/
 #sezione3{
-    display: flex;
-    color:rgb(245, 245, 245);
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
 }
 

@@ -20,7 +20,7 @@ function cambiaSezione(direzione) {
         if(direzione == '+') {
             sezione = 3;
             document.getElementById("sezione2").style.display = "none";
-            document.getElementById("sezione3").style.display = "inline-block";
+            document.getElementById("sezione3").style.display = "flex";
             document.getElementById("titolo-sezione2").innerHTML = "&#x26AC;";
             document.getElementById("titolo-sezione3").innerText = "PAGAMENTO";
             document.getElementById("bottoni").style.display = "none";
