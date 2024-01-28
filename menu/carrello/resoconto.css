@@ -82,7 +82,7 @@ tr:nth-child(even) {
 }
 
 /*SECONDA PAGINA visionata, presenta la scelta di tre diverse spedizioni*/
-#sezione2 .spiegazione{
+.spiegazione{
     color: whitesmoke;
     max-width: 800px;
 }
@@ -139,8 +139,13 @@ input:checked+label h1:after{
     height: 550px;
 }
 
-
-
+/*TERZA PAGINA visionata, conferma che l'ordine è riuscito correttamente*/
+#sezione3{
+    display: flex;
+    color:rgb(245, 245, 245);
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 
 
