@@ -6,12 +6,12 @@ function validaModulo(form){
         form.pass.select();
         return false;
     }else{
-        validatePassword();
+        return validatePassword(form.pass.value); //mancava il return
     }
 }
 
-function validatePassword() {
-    password = document.getElementById("psw").value;
+function validatePassword(password) {
+    //password = document.getElementById("psw").value; questo rigo funzionerebbe se la funzione fosse chiamata solo in accedi
     // Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()\-_=\+{};:,<\.>]).{8,}$/;
     if(passwordRegex.test(password) == false){

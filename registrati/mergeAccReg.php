@@ -139,7 +139,7 @@
                 <div class="rightpanel">
                     <h2>Member Login</h2>
                     <!--valutare necessarietà di .accedi qui-->
-                    <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" onSubmit="return validatePassword();" method="post">
+                    <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" onSubmit="return validatePassword(password.value);" method="post">
                         <div class="input-field">
                             <span><img src="media/email_icon.png" width="20px" height="20px"></span>
                             <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
