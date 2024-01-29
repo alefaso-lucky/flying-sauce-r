@@ -18,7 +18,7 @@ body{
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
   min-width: 530px;
-  height: 500px;   /*altezza del container*/
+  height: 540px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -164,14 +164,19 @@ body{
 
 /*avviso in caso ci siano problemi nell'accesso*/
 .alert {
-  width: 70%;     /*di form occupa solo il 70% della larghezza*/
+  /* width: 100%;     /*di form occupa solo il 70% della larghezza*/
   text-align: center;     /*allineo il testo al centro*/
-  font-size: 20px;      /*grandezza del font*/
+  margin: 0px;
+  height: 10px;
+  font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
 }
 
 @media (max-width: 800px) {
     .sezione .brief-description {
+      display: none;
+    }
+    .alert {
       display: none;
     }
 }
