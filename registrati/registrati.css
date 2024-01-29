@@ -122,18 +122,18 @@ label input:checked+span::before {
   background: #184149;
 }
 
-p, legend, label{     /*info, legend e i label hanno tutti lo stesso stile*/
+.fullbody p, .fullbody legend, .fullbody label{     /*info, legend e i label hanno tutti lo stesso stile*/
   font-size: 16px;        /*per settare una dimensione del font a questi elementi*/
   color: #FFF0DA;     /*per impostare un colore*/
 }
 
-p a{      /*per i tag a delle info*/
+.fullbody p a{      /*per i tag a delle info*/
   opacity: 0.7;   /*di deafult il colore è opacizzato*/
   text-decoration: none;    /*la sottolineatura non la rendo visibile*/
   color: rgb(255, 194, 108);      /*un colore differente per i link*/
 }
 
-p a:hover{
+.fullbody p a:hover{
   opacity:1;   /*con l'hover si riportano i link alla tonalità originale*/
 }
 
