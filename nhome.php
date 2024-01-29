@@ -95,7 +95,7 @@
                     della vita, quindi perché accontentarsi? Scegli Flying Sauce!
                     PAR;
                     $bottone_promozione = "ACCEDI AD UN MONDO TUTTO ITALIANO";
-                    $bottone_percorso = "/dadefinire";
+                    $bottone_percorso = "membership/account.php";
                   }
                 ?>
                 <h1><?php echo "$titolo_promozione"; ?></h1>

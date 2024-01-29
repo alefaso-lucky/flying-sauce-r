@@ -25,13 +25,10 @@ function printImage(name, xcoordinate, ycoordinate) {
         c.getContext('2d').drawImage(myImg, xcoordinate, ycoordinate); /* disegna l'immagine desiderata sul Canvas alle coordinate desiderate*/
     }
 }
-/* non più necessario
+
 function isUserLogged(is_logged) {
-    return is_logged;
-    var logged = document.getElementById("logged");
-    if(logged == null) {
-        window.location = "accedi/accediSimple.php";
-        return false;
-    }
+    if(is_logged)
+        return true;
+    window.location = "membership/account.php";
     return false;
-}*/
+}

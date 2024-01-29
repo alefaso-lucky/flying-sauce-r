@@ -5,7 +5,7 @@
             $email_user = $_SESSION['email'];
         }
         else {
-            header("Location: http://localhost/Flying_Sauce_r/accedi/accediSimple.php"); 
+            header("Location: http://localhost/Flying_Sauce_r/membership/account.php"); 
             exit();
         }
 

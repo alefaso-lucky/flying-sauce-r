@@ -90,7 +90,7 @@
         <?php require '../../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
         <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->
             <div> <!--contenitore del form di composizione del piatto-->
-                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return <?php echo $logged; ?>;"> <!--form per la composizione del piatto-->
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return isUserLogged(<?php echo $logged; ?>);"> <!--form per la composizione del piatto-->
 
                 <!--la seguente porzione di codice è composta da 4 parti che permettono di scegliere i 4 attributi del piatto-->
                         <!--prima scelta-->

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             xmlhttp.onload = function () { //onload quindi quando readyState è 4
                 if(xmlhttp.status === 200) {
                     if(xmlhttp.responseText == "NOT LOGGED") {
-                        window.location = "accedi/accediSimple.php"; 
+                        window.location = "membership/account.php"; 
                     }
                     else {
                         cartList.innerHTML = xmlhttp.responseText;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 xmlhttpd.onload = function () { //onload quindi quando readyState è 4
                     if(xmlhttpd.status === 200) {
                         if(xmlhttpd.responseText == "NOT LOGGED") {
-                            window.location = "accedi/accediSimple.php"; 
+                            window.location = "membership/account.php"; 
                         }
                         else {
                             cartList.innerHTML = xmlhttpd.responseText;
