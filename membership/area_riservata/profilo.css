@@ -1,11 +1,13 @@
-* {
+body{
+  margin: 0;
+  background: #F4DAB4;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
-body{
-  margin: 0;
-  background: #F4DAB4;
+body * {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/

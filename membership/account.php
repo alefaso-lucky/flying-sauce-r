@@ -57,7 +57,7 @@
                             session_start();
                             $_SESSION["loggato"] = True;
                             $_SESSION["email"] = $email;
-                            header("refresh:0.1;URL=../account/area_riservata.php");
+                            header("refresh:0.1;URL=./area_riservata/profilo.php");
                     }
                     else{
                         $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
@@ -82,7 +82,7 @@
                         session_start();
                         $_SESSION["loggato"] = True;
                         $_SESSION["email"] = $email;
-                        header("refresh:0.01;URL=../account/area_riservata.php");
+                        header("refresh:0.01;URL=./area_riservata/profilo.php");
                     }
                     else{
                         $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
@@ -97,12 +97,12 @@
 
     if(isset($_GET["switch_iscriviti"]) && $_GET["switch_iscriviti"] == "Iscriviti ora"){
         $accedi = false;
-        header("refresh:0;URL=./mergeAccReg.php?accedi=false");
+        header("refresh:0;URL=./account.php?accedi=false");
     }
 
     if(isset($_GET["switch_accedi"]) && $_GET["switch_accedi"] == "Accedi ora"){
         $accedi = true;
-        header("refresh:0;URL=./mergeAccReg.php?accedi=true");
+        header("refresh:0;URL=./account.php?accedi=true");
     }
 ?>
 
@@ -118,13 +118,13 @@
     <!--fine parte obbligatoria-->
 	<base href="http://localhost/Flying_Sauce_r/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="./registrati/validazioneInput.js"></script>
+    <script src="membership/validazioneInput.js"></script>
 </head>
 <body>
     <?php require "../base/navFINITA.php"; ?>
     <div class="fullbody">
         <?php if($accedi=='true') {?>
-            <link rel="stylesheet" href="./accedi/accedi.css">
+            <link rel="stylesheet" href="membership/accedi.css">
             <div class="container">
                 <div class="leftpanel">
                     <div class="content">
@@ -164,7 +164,7 @@
         <?php
         }
         else { ?>     
-            <link rel="stylesheet" href="./registrati/registrati.css">
+            <link rel="stylesheet" href="membership/registrati.css">
             <div class="container">
                 <div class="leftpanel">
                     <div class="content">
@@ -235,67 +235,65 @@
 
 <?php
 
-function get_pwd($email){
-    require "../connessionedb.php";
-    //CONNESSIONE AL DB
-    $sql = "SELECT password FROM utenti WHERE email=$1;";
-    $prep = pg_prepare($db, "sqlPassword", $sql);
-    $ret = pg_execute($db, "sqlPassword", array($email));
-    if(!$ret) {
-        //echo "ERRORE QUERY: " . pg_last_error($db);
-        pg_close($db);
-        return false;
-    }else{
-        if ($row = pg_fetch_assoc($ret)){
-            $pass = $row['password'];
+    function get_pwd($email){
+        require "../connessionedb.php";
+        //CONNESSIONE AL DB
+        $sql = "SELECT password FROM utenti WHERE email=$1;";
+        $prep = pg_prepare($db, "sqlPassword", $sql);
+        $ret = pg_execute($db, "sqlPassword", array($email));
+        if(!$ret) {
+            //echo "ERRORE QUERY: " . pg_last_error($db);
             pg_close($db);
-            return $pass;
+            return false;
         }else{
+            if ($row = pg_fetch_assoc($ret)){
+                $pass = $row['password'];
+                pg_close($db);
+                return $pass;
+            }else{
+                pg_close($db);
+                return false;
+            }
+        }
+    }
+
+    function email_exist($email){
+        require "../connessionedb.php";
+        //CONNESSIONE AL DB
+        $sql = "SELECT email FROM utenti WHERE email=$1";
+        $prep = pg_prepare($db, "sqlEmail", $sql);
+        $ret = pg_execute($db, "sqlEmail", array($email));
+        if(!$ret) {
+            //echo "ERRORE QUERY: " . pg_last_error($db);
             pg_close($db);
             return false;
         }
+        else{
+            if ($row = pg_fetch_assoc($ret)){
+                pg_close($db);
+                return true;
+            }
+            else{
+                pg_close($db);
+                return false;
+            }
+        }
     }
-}
 
-function email_exist($email){
-	require "../connessionedb.php";
-	//CONNESSIONE AL DB
-	$sql = "SELECT email FROM utenti WHERE email=$1";
-	$prep = pg_prepare($db, "sqlEmail", $sql);
-	$ret = pg_execute($db, "sqlEmail", array($email));
-	if(!$ret) {
-		//echo "ERRORE QUERY: " . pg_last_error($db);
-        pg_close($db);
-		return false;
-	}
-	else{
-		if ($row = pg_fetch_assoc($ret)){
+    function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero){
+        require "../connessionedb.php";
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO utenti(nome, cognome, password, email, genere, nazione, citta, via, civico, telefono) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+        $prep = pg_prepare($db, "insertUser", $sql);
+        $ret = pg_execute($db, "insertUser", array($nome, $cognome, $hash, $email, $genere, $nazione, $citta, $via, $civico, $numero));
+        if(!$ret) {
+            //echo "ERRORE QUERY: " . pg_last_error($db);
             pg_close($db);
-			return true;
-		}
-		else{
+            return false;
+        }
+        else{
             pg_close($db);
-			return false;
-		}
-	}
-}
-
-function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero){
-	require "../connessionedb.php";
-	//CONNESSIONE AL DB
-	$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
-	$hash = password_hash($pass, PASSWORD_DEFAULT);
-	$sql = "INSERT INTO utenti(nome, cognome, password, email, genere, nazione, citta, via, civico, telefono) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
-	$prep = pg_prepare($db, "insertUser", $sql);
-	$ret = pg_execute($db, "insertUser", array($nome, $cognome, $hash, $email, $genere, $nazione, $citta, $via, $civico, $numero));
-	if(!$ret) {
-		//echo "ERRORE QUERY: " . pg_last_error($db);
-        pg_close($db);
-		return false;
-	}
-	else{
-        pg_close($db);
-		return true;
-	}
-}
+            return true;
+        }
+    }
 ?>

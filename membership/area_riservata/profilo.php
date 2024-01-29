@@ -40,9 +40,8 @@
   }
 
   function aggiorna_password($newpass) {
-  require_once "../registrati/logindb.php";
-  $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
-
+  require_once "../../connessionedb.php";
+  
   $sql = "SELECT * FROM utenti WHERE email=$1;";
   $prep = pg_prepare($db, "selectUtente", $sql);
   $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
@@ -83,8 +82,7 @@
   }
 
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../connessionedb.php";
-    $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+    require_once "../../connessionedb.php";
 
     $sql = "SELECT * FROM utenti WHERE email=$1;";
     $prep = pg_prepare($db, "selectUtente", $sql);
@@ -131,17 +129,17 @@ $_SESSION["selected"] = "Anagrafica";
     <meta name="description" content="Visualizzazione dell'area riservata se sei autenticato">
     <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
-	  <base href="http://localhost/progetto/FlyingSauce-r-/">
+	  <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="./account/area_riservata.css">
-    <script src="./account/area_riservata.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="membership/area_riservata/profilo.css">
+    <script src="membership/area_riservata/profilo.js" charset="utf-8"></script>
     <title></title>
   </head>
   <body onload="switchDiv(<?php echo $_SESSION['selected'] ?>)">     <!-- al caricamento del body il div mostrato è quello con id anagrafica -->
     <?php
     if(isset($_SESSION["loggato"]) && $_SESSION["loggato"]==True) {
 
-    require "../base/navSimple.php" ; ?>
+    require "../../base/navFINITA.php" ; ?>
     <div class="fullbody">
       <div class="container">
           <div class="columnside">
@@ -157,7 +155,7 @@ $_SESSION["selected"] = "Anagrafica";
           </div>
           <div class="account_content">
             <?php
-              require "../connessionedb.php";
+              require "../../connessionedb.php";
               $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
               $sql = "SELECT nome, cognome, genere, email, nazione, citta, via, civico, telefono FROM utenti WHERE email = '" . $_SESSION['email'] . "';";
               $ret = pg_query($db, $sql); /* viene eseguita la query */
