@@ -46,7 +46,7 @@
 
             <div class="fixed-content">
               <p>SCOPRI I NOSTRI PRODOTTI</p>
-              <button class="bot" id="ordina-ora-btn" onclick="window.location.href='./menu/ordina.php'">ORDINA ORA</button>
+              <button class="bot" id="ordina-ora-btn" onclick="window.location.href='./menu/ordina_ora.php'">ORDINA ORA</button>
             </div>
           </div>
         </div>
@@ -83,6 +83,7 @@
                     pasto. È un viaggio sensoriale, un tributo all’amore e alla tradizione.
                     PAR;
                     $bottone_promozione = "SCOPRI DI PIU'";
+                    $bottone_percorso = "menu/piatto.php?name=Lasagna+alla+Bolognese";
                   }
                   else {
                     $img_promozione = "media/home/clienti_ricevono_pasta.jpeg";
@@ -94,6 +95,7 @@
                     della vita, quindi perché accontentarsi? Scegli Flying Sauce!
                     PAR;
                     $bottone_promozione = "ACCEDI AD UN MONDO TUTTO ITALIANO";
+                    $bottone_percorso = "/dadefinire";
                   }
                 ?>
                 <h1><?php echo "$titolo_promozione"; ?></h1>
@@ -101,7 +103,7 @@
                 <p>
                   <?php echo "$paragrafo_promozione"; ?>
                 </p>
-                <a class="bot" href="#"><?php echo "$bottone_promozione"; ?></a> <!--bottone per andare alla pagina Singolo piatto-->
+                <a class="bot" href="<?php echo $bottone_percorso; ?>"><?php echo "$bottone_promozione"; ?></a> <!--bottone per andare alla pagina Singolo piatto-->
             </div>                
             <img src="<?php echo $img_promozione; ?>" alt="<?php echo $alt_img_promozione; ?>" width="400px" height="400px">
         </div>

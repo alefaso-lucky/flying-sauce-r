@@ -1,4 +1,7 @@
 <?php
+    /* questa pagina era originariamente il ricevente della richiesta AJAX fatta da ordina_ora.js, si è rilevato poi inutile
+    spedire la richiesta ad un'altra pagina piuttosto che direttamente a ordina_ora.php e quindi per ridurre il numero
+    complessivo di pagine dinamiche questo codice è stato integrato in ordina_ora.php */
     session_start();
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
         $logged = $_SESSION['loggato'];

@@ -13,14 +13,27 @@
             require '../connessionedb.php';
             
             /*fetch dell'elemento desiderato*/
-            $nome = $_GET['name']; /* questa pagina è la action di un form con metodo post quindi è possibile accedere
-                                    alla variabile super globale $_GET per accedere all'unica informazione passata che
-                                    è il name del piatto sul quale l'utente vuole più informazioni */
+            if(isset($_GET['name']))
+                $nome = $_GET['name']; /* questa pagina è la action di un form con metodo post quindi è possibile accedere
+                                        alla variabile super globale $_GET per accedere all'unica informazione passata che
+                                        è il name del piatto sul quale l'utente vuole più informazioni */
+            else
+                $nome = "Spaghetti Cacio e Pepe"; /* valore di default */
+
             $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'"; /* interrogazione SQL
                                     sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
             $ret = pg_query($db, $sql); /* viene eseguita la query */
+            
             $row = pg_fetch_array($ret); /* con pg_fetch_array si ottiene un array che contiene le informazioni relative alla prima
                                     (e in questo caso unica) riga del risultato della query */
+
+            if(!$row) {
+                $nome = "Spaghetti Cacio e Pepe"; /* se l'utente modifica l'URL comunque viene caricato un piatto, quello di default */
+                $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'";
+                $ret = pg_query($db, $sql);
+                $row = pg_fetch_array($ret);
+            }
+
             $nome = $row[0]; /* vengono inserite in variabili dal nome indicativo le informazioni estratte dal database */
             $lista_ingredienti = $row[1];
             $descrizione_lunga = $row[2];

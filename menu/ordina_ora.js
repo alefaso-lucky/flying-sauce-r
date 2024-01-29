@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             //richiesta AJAX per aggiungere elemento al database
             const xmlhttp = new XMLHttpRequest();
-            xmlhttp.open('POST', 'menu/updateCart.php', true);
+            xmlhttp.open('POST', 'menu/ordina_ora.php', true);
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
             xmlhttp.onload = function () { //onload quindi quando readyState è 4
                 if(xmlhttp.status === 200) {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             };
-            var stringa = "name_piatto=" + name;
+            var stringa = "name_piatto=" + name + "&update_cart=" + true;
             xmlhttp.send(stringa);
         });
     });
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 piatto_to_remove = piatto_to_remove.substring(number_of_characters_to_ignore, piatto_to_remove.length);
                 //chiamata AJAX per rimuovere il piatto
                 const xmlhttpd = new XMLHttpRequest();
-                xmlhttpd.open('POST', 'menu/updateCart.php', true);
+                xmlhttpd.open('POST', 'menu/ordina_ora.php', true);
                 xmlhttpd.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
                 xmlhttpd.onload = function () { //onload quindi quando readyState è 4
                     if(xmlhttpd.status === 200) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                 };
-                var stringa = "name_piatto=" + piatto_to_remove + "&delete=" + true;
+                var stringa = "name_piatto=" + piatto_to_remove + "&delete=" + true + "&update_cart=" + true;
                 xmlhttpd.send(stringa);
             });
         });
