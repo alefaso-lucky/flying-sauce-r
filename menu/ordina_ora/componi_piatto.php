@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Flying Sauce&reg; - Componi il tuo piatto</title>
-        <link rel="stylesheet" href="./cPiattoDef.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
+        <link rel="stylesheet" href="./componi_piatto.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
         <meta charset="utf-8">
     </head>
@@ -23,7 +23,7 @@
     al menu in modo che possa aggiungere altri prodotti ed eventualmente procedere al pagamento*/
     if(isset($_POST['quantita']) && $logged) {
         /*connessione al database*/
-        require "../connessionedb.php";
+        require "../../connessionedb.php";
 
         /*preleva le informazioni dal form*/
         $quantita = $_POST['quantita'];
@@ -67,7 +67,7 @@
                     $quantita = $row['quantita'] + 1;/*viene incrementata quantità*/
                     $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = '$email_user'";/*viene preparata la query */
                     pg_query($db, $updateQuery);/*viene eseguita la query */
-                    $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
+                    $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina_ora.php'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
                 }
                 else {/*viene mostarto un alert perchè sono stati inseriti troppi piatti uguali*/
                     $result_feedback = "<script>alert('Siamo italiani, amiamo la pasta... ma sei sicuro di non stare esagerando? Hai già aggiunto al carrello 99 piatti personalizzati uguale a questo!');</script>";
@@ -76,7 +76,7 @@
             else {/*il piatto composto viene aggiunto per la prima volta in questo carrello*/
                 $sql = "INSERT INTO carrello (piatto, email, quantita) VALUES ('$name_piatto', '$email_user', 1)";
                 $ret_insert = pg_query($db, $sql); /* viene eseguita la query */
-                $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina.php/'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
+                $result_feedback = "<script>" . "window.location =" . "'http://localhost/Flying_Sauce_r/menu/ordina_ora.php'" . ";" . "</script>";/*sposta l'utente dalla pagina corrente a ordina.php*/
             }
         }
         else {
@@ -87,7 +87,7 @@
     }
 ?>
     <body>
-        <?php require '../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
+        <?php require '../../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
         <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->
             <div> <!--contenitore del form di composizione del piatto-->
                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return <?php echo $logged; ?>;"> <!--form per la composizione del piatto-->
@@ -139,14 +139,14 @@
                         </label>
                 </form>
                 <p id="bottoni"> <!--bottoni per tornare al menu e aggiungere al carrello il piatto composto-->
-                    <a href="menu/ordina.php/" id="menu" class="choice_buttons">VAI AL MENU</a>
+                    <a href="menu/ordina_ora.php" id="menu" class="choice_buttons">VAI AL MENU</a>
                     <input id="carrello" class="choice_buttons" form="form_grid" name="submit" type="submit" value="AGGIUNGI AL CARRELLO"/> <!--WORK IN PROGRESS-->
                 </p>
             </div>
             <canvas id="piattoComposto" width="597px" height="618px" style="border:1px solid #d3d3d3;">canvas non disponibile su questo browser</canvas> <!--Canvas sul quale mostrare le scelte effettuate-->
-            <script type="text/javascript" src="componi%20piatto/cPiattoDef.js"></script> <!--script che alimenta il canvas-->
+            <script type="text/javascript" src="menu/ordina_ora/componi_piatto.js"></script> <!--script che alimenta il canvas-->
         </div>
-        <?php require "../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
+        <?php require "../../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
     </body>
 
 </html>

@@ -16,11 +16,11 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="mainpage.css">
-        <script type="text/javascript" src="./mainpage.js"></script>
+        <link rel="stylesheet" href="./home.css">
+        <script type="text/javascript" src="./home.js"></script>
     </head>
     <body>
-      <?php require "base/navSimple.php" ?>
+      <?php require "base/navFINITA.php" ?>
       <!--  Codice per lo slideshow -->
       <div class="slideshow-background">
         <div class="container">
@@ -60,11 +60,11 @@
             </div>
             <div id=cc2>
                 <p id=frasecc>dall'idea alla forchetta</p>
-                <a class="bot" href="#">COMPONI ORA</a> <!--bottone per andare alla pagina Componi Piatto-->
+                <a class="bot" href="menu/ordina_ora/componi_piatto.php">COMPONI ORA</a> <!--bottone per andare alla pagina Componi Piatto-->
             </div>
             <div id=dx2>
                 <p id=frasedx>la proposta italiana</p>
-                <a class="bot" href="#">MENU</a> <!--bottone per andare alla pagina Menu-->
+                <a class="bot" href="menu/ordina_ora.php">MENU</a> <!--bottone per andare alla pagina Menu-->
             </div>
         </div>
         <!--terzo blocco, pasta della settimana-->
@@ -85,7 +85,7 @@
                     $bottone_promozione = "SCOPRI DI PIU'";
                   }
                   else {
-                    $img_promozione = "media/home/pastaDellaSettimana.jpg";
+                    $img_promozione = "media/home/clienti_ricevono_pasta.jpeg";
                     $alt_img_promozione = "foto di due clienti che ricevono il loro pasto da un drone";
                     $titolo_promozione = "OVUNQUE NEL MONDO";
                     $sottotitolo_promozione = "Flying Sauce";
@@ -103,7 +103,7 @@
                 </p>
                 <a class="bot" href="#"><?php echo "$bottone_promozione"; ?></a> <!--bottone per andare alla pagina Singolo piatto-->
             </div>                
-            <img src="<?php echo $img_promozione; ?>" alt="<?php echo $alt_img_promozione; ?>">
+            <img src="<?php echo $img_promozione; ?>" alt="<?php echo $alt_img_promozione; ?>" width="400px" height="400px">
         </div>
         <!--quarto blocco, recenzioni di clienti-->
         <div class=row>

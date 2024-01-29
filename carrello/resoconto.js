@@ -13,7 +13,7 @@ function cambiaSezione(direzione) {
             document.getElementById("avanti").innerText = "FINALIZZA ORDINE";
         }
         else {
-            window.location = "menu/ordina.php"; 
+            window.location = "menu/ordina_ora.php"; 
         }
     }
     else {
@@ -42,7 +42,7 @@ function cambiaSezione(direzione) {
     function finalizeOrder() {
         //richiesta AJAX per aggiungere elemento al database
         const xmlhttp = new XMLHttpRequest();
-        xmlhttp.open('POST', 'menu/carrello/resoconto.php', true);
+        xmlhttp.open('POST', 'carrello/resoconto.php', true);
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // la chiamata al metodo setRequestHeader è necessaria in caso si usi POST
         xmlhttp.onload = function () { //onload quindi quando readyState è 4
             if(xmlhttp.status === 200) {

@@ -11,7 +11,7 @@
 
         if(isset($_POST['finalize_order']) && $_POST['finalize_order']) {
             /*connessione al database*/
-            require "../../connessionedb.php";
+            require "../connessionedb.php";
             $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
             $cart_query = pg_query($db, $cart);
             $totale = 0;
@@ -65,11 +65,11 @@
 <head>
     <meta charset="utf-8">
 	<base href="http://localhost/Flying_Sauce_r/">
-	<link rel="stylesheet" href="./menu/carrello/resoconto.css">
-    <script src="menu/carrello/resoconto.js"></script>
+    <link rel="stylesheet" href="carrello/resoconto.css">
+    <script src="carrello/resoconto.js"></script>
 </head>
 <body>
-    <?php require "../../base/navSimple.php" ?> <!--inserimento navbar-->
+    <?php require "../base/navFINITA.php" ?> <!--inserimento navbar-->
     <div id="row">
         <div id="internal-row">
             <ul>
@@ -102,7 +102,7 @@
                     </tr> -->
                     <?php
                         /*connessione al database*/
-                        require "../../connessionedb.php";
+                        require "../connessionedb.php";
                         
                         $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                         $cart_query = pg_query($db, $cart);
@@ -111,7 +111,7 @@
                         //se non ci sono elementi nel carrello
                         if(!(pg_num_rows($cart_query) > 0)) {
                             pg_close($db);
-                            echo "<script>alert("."'Carrello Vuoto, scegli dei prodotti dal nostro menu prima di procedere alla finalizzazione dell\'ordine'"."); window.location = "."'http://localhost/Flying_Sauce_r/menu/ordina.php';"."</script>";
+                            echo "<script>alert("."'Carrello Vuoto, scegli dei prodotti dal nostro menu prima di procedere alla finalizzazione dell\'ordine'"."); window.location = "."'http://localhost/Flying_Sauce_r/menu/ordina_ora.php';"."</script>";
                             exit();
                         }
 
@@ -201,18 +201,21 @@
                 </p>
             </div>
             <div id="sezione3">
-                <p>
-                    ciao ciao ciaofefefef
+                <p class=spiegazione>
+                    L’ordine è andato a buon fine, buon appetito!</br>
+                    Arriverà il drone all’indirizzo indicato al momento della iscrizione, il pagamento sarà svolto al momento 
+                    della consegna  e sarà possibile pagare in contanti o con carta direttamente al drone della consegna.
                 </p>
+                <img src="./media/carrello/bollinoVerde.png" alt="ordine stornato con successo">
             </div>
             <div id=bottoni>
                 <p id="bottone_secondario" onclick="cambiaSezione('-')">INDIETRO</p> <!--bottone per andare alla pagina precedente-->
                 <p class="bottone_primario" id="avanti" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->
             </div>
-            <a id="final_button" class="bottone_primario" href="menu/ordina.php">VAI AL MENU</a> <!--bottone per andare alla pagina successiva-->
+            <a id="final_button" class="bottone_primario" href="menu/ordina_ora.php">VAI AL MENU</a> <!--bottone per andare alla pagina successiva-->
         </div>
     </div>
-    <?php require "../../base/footer.php"; ?> <!--inserimento footer-->
+    <?php require "../base/footer.php"; ?> <!--inserimento footer-->
 </body>
 
 </html>

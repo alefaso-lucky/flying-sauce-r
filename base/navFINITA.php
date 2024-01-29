@@ -24,8 +24,8 @@
   </div>
   <!-- nav: elemento destinato solo ai blocchi principali di collegamenti di navigazione. -->
   <nav class="topnav" id="myNav">
-    <a href="#home">Home</a>
-    <a href="#ordina">Ordina</a>
+    <a href="nhome.php">Home</a>
+    <a href="menu/ordina_ora.php">Ordina</a>
     <a href="#fantasie">Fantasie</a>
     <a href="#chi_siamo">Chi siamo</a>
     <div class="nav-right">

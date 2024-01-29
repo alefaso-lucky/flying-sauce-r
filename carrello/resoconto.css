@@ -1,6 +1,6 @@
 /*decorazione di sfondo*/
 body {
-    background-image: url("../../media/sfondo_accedi.jpg");
+    background-image: url("../media/sfondo_accedi.jpg");
     background-repeat:repeat-y;
     background-size: cover;
     margin: 0;

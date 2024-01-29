@@ -6,7 +6,7 @@
     $connection_string = "host=$host dbname=$db user=$user password=$password";
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
     if( $db == false )
-        echo "Ritornellotto";
+        echo "not ok";
     else
         echo "tutto ok";
     $sql = "SELECT nome, descrizione_breve, foto FROM menu WHERE categoria = 'classici'";
