@@ -53,14 +53,14 @@
             <div id="policies_footer">
                 <p>
                     LINK UTILI<br/>
-                    <span><a href="#">Privacy Policy</a></span><br/>
-                    <span><a href="#">Cookie Policy</a></span>
+                    <span><a href="informative/infoPrivacy.php">Privacy Policy</a></span><br/>
+                    <span><a href="informative/condizioni.php">Membership Policy</a></span>
                 </p>
             </div>
             <div id="social_footer">
                 <p>SEGUICI SU</p>
                 <a href="#"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a>
-                <a href="#"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a>
+                <a href="https://www.instagram.com/flying.sauce/"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a>
                 <a href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a>
             </div>
         </div>

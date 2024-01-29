@@ -135,7 +135,7 @@
         <div id=contenitore_5>
             Seguici su
             <a class="social" href="#"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina facebook-->
-            <a class="social" href="#"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina instagram-->
+            <a class="social" href="https://www.instagram.com/flying.sauce/"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina instagram-->
             <a class="social" href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina youtube-->
         </div>
 

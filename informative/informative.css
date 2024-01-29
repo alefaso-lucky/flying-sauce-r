@@ -12,7 +12,6 @@ body {
 
 .cell * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
@@ -61,5 +60,5 @@ h1,h2,h3 { /*stile intestazioni*/
 ol {
   list-style-type: upper-roman; /*indice dell'elenco puntato è un numero romano maiuscolo*/
   color: #FFC26C; /*colore del testo*/
-  margin-left: 35px; /*indenta la lista ordinata rispetto al resto del contenuto*/
+  padding-left: 35px; /*indenta la lista ordinata rispetto al resto del contenuto*/
 }
