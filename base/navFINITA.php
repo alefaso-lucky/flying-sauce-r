@@ -29,8 +29,25 @@
     <a href="#fantasie">Fantasie</a>
     <a href="#chi_siamo">Chi siamo</a>
     <div class="nav-right">
-      <a href="#">Login <i class="fa fa-user-circle-o"></i></a>
-      <a href="#"><i class="fa fa-shopping-cart"></i></a>
+      <?php
+        if (session_id() == "") {
+          session_start();
+        }  
+        if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
+          $logged = $_SESSION['loggato'];
+          $email_user = $_SESSION['email'];
+          $nav_name = $email_user;
+          $nav_name_anchor = "membership/area_riservata/profilo.php";
+        }
+        else {
+            $logged = false;
+            $email_user = "";
+            $nav_name = "Login";
+            $nav_name_anchor = "membership/account.php";
+        }
+      ?>
+      <a href="<?php echo $nav_name_anchor ?>"><?php echo $nav_name ?> <i class="fa fa-user-circle-o"></i></a>
+      <a href="carrello/resoconto.php"><i class="fa fa-shopping-cart"></i></a>
     </div>
   </nav>
 </header>
