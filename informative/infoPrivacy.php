@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<base href="http://localhost/Flying_Sauce_r/">
-		<link rel="stylesheet" href="crea%20account/informative/infoPrivacy.css">
+		<link rel="stylesheet" href="informative/informative.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	</head>
 
 	<body>
-		<?php require "../../base/navSimple.php"; ?>
+		<?php require "../base/navFINITA.php"; ?>
 		<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>
@@ -79,6 +79,6 @@
 		             Continuando a utilizzare i nostri servizi, l'utente accetta automaticamente le condizioni d'uso aggiornate.
 		        </p>
 		</div>
-		<?php require "../../base/footer.php"; ?>
+		<?php require "../base/footer.php"; ?>
 	</body>
 </html>

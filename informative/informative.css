@@ -1,14 +1,20 @@
-* {
+body {
+  background-image: url("../media/sfondo_accedi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; /*occupa tutto lo spazio a disposizione*/
+  width: 100%;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  background-image: url("../../media/sfondo_accedi.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.cell * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* cell è il div principale che contiene tutto  */
@@ -43,4 +49,17 @@ body {
   color: RGB(255, 194, 108);
   font-weight: 100;
   font-weight: bold;
+}
+
+h1,h2,h3 { /*stile intestazioni*/
+  font-family: 'Times New Roman', 'serif'; /*selezione del font*/
+  color: rgb(255, 194, 108); /*selezione del colore del testo*/
+  font-weight: 100; /*selezione dimensione del testo*/
+}
+
+
+ol {
+  list-style-type: upper-roman; /*indice dell'elenco puntato è un numero romano maiuscolo*/
+  color: #FFC26C; /*colore del testo*/
+  margin-left: 35px; /*indenta la lista ordinata rispetto al resto del contenuto*/
 }

@@ -1,5 +1,5 @@
 body {
-    background-image: url("../../media/sfondo_accedi.jpg"); /*seleziona l'immagine di sfondo del body*/
+    background-image: url("../media/sfondo_accedi.jpg"); /*seleziona l'immagine di sfondo del body*/
     background-repeat: no-repeat; /*non vogliamo che l'immagine si ripeta*/
     background-size: cover; /*coprire tutta lo sfondo con quell'immagine*/
     height: 100%; /*occupa tutto lo spazio a disposizione*/

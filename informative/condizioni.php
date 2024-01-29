@@ -2,13 +2,12 @@
 <html>
 	<head>
         <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
-		<link rel="stylesheet" href="crea%20account/informative/infoPrivacy.css"><!--collega il foglio di stile per la pagina infoPrivacy-->
-        <link rel="stylesheet" href="crea%20account/informative/condizioni.css"><!--collega il foglio di stile per questa pagina-->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"><!--collega il font Montserrat-->
+		<link rel="stylesheet" href="informative/informative.css"><!--collega il foglio di stile per la pagina infoPrivacy-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"><!--collega il font Montserrat-->
 	</head>
 
 	<body>
-		<?php require "../../base/navSimple.php"; ?> <!--aggiunge la navbar in testa alla pagina-->
+		<?php require "../base/navFINITA.php"; ?> <!--aggiunge la navbar in testa alla pagina-->
 		<div class="cell"> <!--contenitore di tutti gli elementi della pagina-->
             <h1>Condizioni</h1> <!--titolo principale della pagina -->
             <h2>Condizioni di Iscrizione a Flying Sauce</h2> <!--sottotitolo-->
@@ -72,6 +71,6 @@
                 entusiasti di portare un pezzo d'Italia direttamente a casa tua!
             </p>
 	    </div>
-        <?php require "../../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
+        <?php require "../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
 	</body>
 </html>
