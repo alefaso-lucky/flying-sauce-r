@@ -49,7 +49,7 @@
             $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
             if(checkdnsrr($dominio, "MX")){
                 if(email_exist($email)){
-                    $alert = "<p class='alert'>"."<strong><br/>Email $email già esistente. Riprova</strong>"."</p>";
+                    $alert = "<span class='alert'>"."<strong>Email $email già esistente. Riprova</strong>"."</span>";
                 }
                 else{
                     //ORA posso inserire il nuovo utente nel db
@@ -60,12 +60,12 @@
                             header("refresh:0.1;URL=./area_riservata/profilo.php");
                     }
                     else{
-                        $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
+                        $alert = "<span class='alert'>"."<strong>Errore durante la registrazione. Riprova</strong>"."</span>";
                     }
                 }
             }
             else{
-                $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                $alert = "<span class='alert'>"."<strong>Dominio inesistente.</strong>"."</span>";
             }
         }
 
@@ -75,7 +75,7 @@
                 $password = $_POST['password'];
                 $hash = get_pwd($email);
                 if(!$hash){
-                    $alert = "<span class='alert'>"."<strong><br/>L'utente associato all'email $email non esiste.</strong>"."</span>";
+                    $alert = "<span class='alert'>"."<strong>L'utente associato all'email $email non esiste.</strong>"."</span>";
                 }
                 else{
                     if(password_verify($password, $hash)){
@@ -85,12 +85,12 @@
                         header("refresh:0.01;URL=./area_riservata/profilo.php");
                     }
                     else{
-                        $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
+                        $alert = "<span class='alert'>"."<strong>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
                     }
                 }
             }
             else{
-                $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                $alert = "<span class='alert'>"."<strong>Dominio inesistente.</strong>"."</span>";
             }
         }
     }
@@ -146,9 +146,9 @@
                         </div>
                         <div class="input-field">
                             <span><img src="media/pass_icon.png" width="20px" height="20px"></span>
-                            <input type="password" id ="psw" name="password" placeholder="Password"><br/>
+                            <input type="password" id ="psw" name="password" placeholder="Password">
                         </div>
-                        <input type="submit" id="login" name="login" value="Login"><br/>
+                        <input type="submit" id="login" name="login" value="Login">
                     </form>
                     <p id="iscriviti">Non sei ancora iscritto?</p>
                     <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">

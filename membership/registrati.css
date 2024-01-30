@@ -192,7 +192,7 @@ label input:checked+span::before {
   text-align: center;     /*allineo il testo al centro*/
   font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
-  margin: 0;
+  margin:10px 0;
 }
 
 @media(max-width: 1500px){
