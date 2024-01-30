@@ -4,6 +4,7 @@ window.onload = function () {
   // chiamata alla funzione showSlide per visualizzare la prima slide al caricamento della pagina
   showSlide(1);
 };
+
 // Questa funzione è chiamata ogni volta che viene selezionata una slide per visualizzarla 
 function showSlide(slideIndex) {
 
