@@ -49,7 +49,7 @@
   }
 
   function aggiorna_password($newpass) {
-  require_once "../../logindb.php";
+  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/ 
   $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   $sql = "SELECT * FROM utenti WHERE email=$1;";
@@ -92,7 +92,7 @@
   }
 
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../logindb.php";
+    require_once "../../logindb.php";     /*require_once "../../connessionedb.php";*/ 
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     $sql = "SELECT * FROM utenti WHERE email=$1;";
@@ -173,7 +173,7 @@ if(!isset($_SESSION["visibleSpedizione"])) {
         </div>
         <div class="account_content">
           <?php
-            require "../../logindb.php";
+            require "../../logindb.php";        /*require_once "../../connessionedb.php";*/ 
             $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
             $sql = "SELECT nome, cognome, genere, email, nazione, citta, via, civico, telefono FROM utenti WHERE email = '" . $_SESSION['email'] . "';";
             $ret = pg_query($db, $sql); /* viene eseguita la query */
