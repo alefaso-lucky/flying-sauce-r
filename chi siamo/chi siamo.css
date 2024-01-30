@@ -20,6 +20,7 @@ body {
   background-color:  rgb(24, 65, 73); /* colore di sfondo alle immagini */
   position: relative;
   height: 500px;
+  width: 100%;
 }
 
 .container {
@@ -95,23 +96,29 @@ body {
 }
 
 .dots label { /* questo selettore serve per assegnare dello stile ai bottoni radio */
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   background-color: rgb(255, 194, 108);
   margin: 0 10px;
   border-radius: 50%; /* li rendo rotondi */
   opacity: 0.7; /* di base il radio button è opaco */
+  cursor: pointer;
 }
 
 
 /* per il testo all'interno della pagine */
 
 .middle-page-text {
+  margin: 16px 80px;
   position: relative;
-  text-align: center;
+  text-align: justify;
   text-decoration: solid;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
+}
+
+.middle-page-text h2 {
+  color:rgba(24, 65, 73, 0.8);
 }
 
 /* Per il grid container delle immagini */
@@ -174,6 +181,9 @@ div.grid-item:hover .overlay {
   top: 45%; /* queste istruzioni servono per centrare il testo all'interno del contenitore */
   left: 50%;
   transform: translate(-50%, -50%); /* queste istruzioni servono per centrare il paragrafo nell'immagine */
+  background-color: rgba(255, 255, 255, 0.4); /* Aggiunge uno sfondo sfumato bianco */
+  border-radius: 10px; /* Aggiunge bordi arrotondati */
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.9);
 }
 
 /* le successive istruzioni servono per assegnare gli id alle aree del grid template ai grid items */

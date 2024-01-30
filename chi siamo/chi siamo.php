@@ -16,10 +16,10 @@
       <div class="container">
 
         <div class="slider">
-          <input type="radio" class="radio" name="images" id="radio-1" checked>
-          <input type="radio" class="radio" name="images" id="radio-2">
-          <input type="radio" class="radio" name="images" id="radio-3">
-          <input type="radio" class="radio" name="images" id="radio-4">
+          <input type="radio" class="radio" name="images" id="radio-1" onclick="showSlide(1)">
+          <input type="radio" class="radio" name="images" id="radio-2" onclick="showSlide(2)">
+          <input type="radio" class="radio" name="images" id="radio-3" onclick="showSlide(3)">
+          <input type="radio" class="radio" name="images" id="radio-4" onclick="showSlide(4)">
 
           <div class="slide" id="slide-1">
             <img src="../media/chi_siamo1.jpg" alt="">
@@ -65,49 +65,51 @@
       </div>
     </div>
 
-      <p class="middle-page-text">
-        In qualità di imprenditore e fondatore del ristorante "Flying Sauce", desidero esprimere la mia profonda gratitudine per<br>
-        il successo e i riconoscimenti significativi che la nostra azienda ha ottenuto negli ultimi anni. Sono estremamente<br>
-        orgoglioso del lavoro svolto dal mio team e della capacità della nostra iniziativa di portare i sapori autentici dell'Italia in<br>
-        tutto il mondo.<br>
-        Il nostro successo è stato guidato da valori chiave che ho sempre ritenuto essenziali nella gestione e nella promozione<br>
-        del marchio "Flying Sauce".  Sono grato per la nostra crescita continua e il successo ottenuto. "Flying Sauce" rappresenta<br>
-        non solo un ristorante di eccellenza, ma un ambasciatore culinario che incarna il coraggio, l'autenticità e l'impegno nel<br>
-        perseguire i propri sogni. Sono ansioso di vedere come il nostro viaggio culinario si svilupperà nel futuro, continuando a<br>
-        deliziare i palati in tutto il mondo.
-      </p>
+      <section class="middle-page-text">
+        <h2>Un Viaggio Culinario di Successo: La Nostra Storia</h2>
+        <p>
+          In qualità di imprenditore e fondatore del ristorante "Flying Sauce", desidero esprimere la mia profonda gratitudine per
+          il successo e i riconoscimenti significativi che la nostra azienda ha ottenuto negli ultimi anni. Sono estremamente
+          orgoglioso del lavoro svolto dal mio team e della capacità della nostra iniziativa di portare i sapori autentici dell'Italia in
+          tutto il mondo.
+          Il nostro successo è stato guidato da valori chiave che ho sempre ritenuto essenziali nella gestione e nella promozione
+          del marchio "Flying Sauce".  Sono grato per la nostra crescita continua e il successo ottenuto. "Flying Sauce" rappresenta
+          non solo un ristorante di eccellenza, ma un ambasciatore culinario che incarna il coraggio, l'autenticità e l'impegno nel
+          perseguire i propri sogni. Sono ansioso di vedere come il nostro viaggio culinario si svilupperà nel futuro, continuando a
+          deliziare i palati in tutto il mondo.
+        </p>
+      </section>
+      
       <!-- Per visualizzare le immagini con il testo -->
       <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
       <div class="grid-img-container">
           <div class="grid-item" id="grid-item1">
-            <img src="../media/gridImg1.jpg" id="img1" width="px" height="50px"></img>
+            <img src="../media/gridImg1.jpg" id="img1"></img>
             <div class="overlay">
               <p class="testoImg" id="testoImg1">
-                Il coraggio di intraprendere nuove strade è stato un pilastro fondamentale del nostro percorso. L'apertura a nuove idee e l'audacia di esplorare nuovi orizzonti gastronomici ci hanno permesso di distinguerci nel panorama culinario internazionale.
+                Il coraggio di intraprendere nuove strade
               </p>
             </div>
           </div>
           <div class="grid-item" id="grid-item2">
-            <img src="../media/gridImg2.jpg" id="img2" width="50" height="50px"></img>
+            <img src="../media/gridImg2.jpg" id="img2"></img>
             <div class="overlay">
               <p class="testoImg" id="testoImg2">
-                L'impegno nel perseguire i propri sogni è stato un motore trainante per il nostro successo. La determinazione nel perseguire l'eccellenza culinaria e nel superare le sfide ha reso il nostro percorso gratificante e ha contribuito a consolidare la reputazione di "Flying Sauce" come destinazione culinaria di primo livello.
-              </p>
+                L'impegno nel perseguire i propri sogni
             </div>
           </div>
           <div class="grid-item" id="grid-item3">
-            <img src="../media/gridImg3.jpg" id="img3" width="50px" height="100px"></img>
+            <img src="../media/gridImg3.jpg" id="img3"></img>
             <div class="overlay">
               <p class="testoImg" id="testoImg3">
-                La possibilità di esportare i gusti italiani in tutto il mondo è un traguardo che abbiamo abbracciato con entusiasmo e responsabilità. Ci impegniamo a offrire esperienze gastronomiche autentiche, trasportando i sapori tradizionali delle nostre cucine direttamente alle tavole internazionali.
-              </p>
+                La possibilità di esportare i gusti italiani in tutto il mondo
             </div>
           </div>
           <div class="grid-item" id="grid-item4">
-            <img src="../media/gridImg4.jpg" id="img4" width="100px" height="50px"></img>
+            <img src="../media/gridImg4.jpg" id="img4"></img>
             <div class="overlay">
               <p class="testoImg" id="testoImg4">
-                L'autenticità del nostro brand è un altro elemento cruciale che abbiamo costantemente valorizzato. La coerenza nel rappresentare e preservare la ricchezza dei sapori italiani è fondamentale per la nostra identità aziendale. La fedeltà ai principi culinari tradizionali e l'attenzione alla qualità sono elementi che abbiamo sempre posto al centro della nostra missione.
+                L'autenticità del nostro brand
               </p>
             </div>
           </div>
