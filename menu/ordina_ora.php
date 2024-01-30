@@ -146,7 +146,7 @@
                                                     <img src="media/info_button" alt="info-dish" width="24px" height="24px"/> <!--immagine "info" per eseguire la submit-->
                                                 </button>
                                             </form>
-                                            <div class="adder" name="<?=$nome?>"> <!--anchor perché cliccando si deve aggiungere al carrello (WORK IN PROGRESS, ancora non implementato)-->
+                                            <div class="adder" name="<?=$nome?>"> <!--appartiene alla classe adder perché cliccando si deve aggiungere il piatto al carrello con AJAX-->
                                                 <img src="<?php echo $foto ?>" alt="piatto di pasta" width="230px"> <!--immagine del piatto-->
                                                 <div class="nomepiatto"><?php echo $nome ?></div> <!--nome del piatto-->
                                                 <?php echo $descrizione_breve ?> <!--descrizione breve del piatto-->
