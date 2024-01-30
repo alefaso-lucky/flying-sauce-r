@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh; /* per metterla a tutta la pagina */
-  width: 100vw;
+  min-height: 100vh; /* per metterla a tutta la pagina */
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
@@ -44,6 +43,7 @@ body {
   position: absolute; /* posizione assoluta relativamente a container */
   width: 100%;
   height: 100%;
+  display: none; /* di base sono invisibili */
   top: 0;
   left: 0; /* con le 4 istruzioni sovrastanti la slide prende tutto lo spazio possibile */
   animation-name: fade; /* nome dell'animazione applicata */
@@ -105,7 +105,6 @@ body {
   cursor: pointer;
 }
 
-
 /* per il testo all'interno della pagine */
 
 .middle-page-text {
@@ -124,9 +123,10 @@ body {
 /* Per il grid container delle immagini */
 
 div.grid-img-container {
-  margin: 10px auto; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
-  height: 200px;
-  width: 900px;
+  margin: 35px auto; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
+  margin-bottom: 65px; /* margine in basso per distanziare dal footer */
+  height: 600px; /* la dimensione è impostata per contenere le immagini */
+  width: 900px; /* la dimensione è impostata per contenere le immagini */
   display: grid; /* utilizzo un display grid per posizionare le immaigni */
   grid-template-areas: /* specifico come le immagini sono disposte nella griglia */
     'img1 img2 img3'
