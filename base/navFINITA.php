@@ -26,8 +26,8 @@
   <nav class="topnav" id="myNav">
     <a href="nhome.php">Home</a>
     <a href="menu/ordina_ora.php">Ordina</a>
-    <a href="#fantasie">Fantasie</a>
-    <a href="#chi_siamo">Chi siamo</a>
+    <a href="menu/ordina_ora/componi_piatto.php">Componi</a>
+    <a href="chi%20siamo/chi%20siamo.php">Chi siamo</a>
     <div class="nav-right">
       <?php
         if (session_id() == "") {
