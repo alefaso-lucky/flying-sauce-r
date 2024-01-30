@@ -110,7 +110,7 @@
 <head>
     <!--obbligatorie per ogni pagina prodotta-->
 	<meta charset="utf-8">
-    <title>Autenticazione</title>
+    <title>Flying Sauce&reg; - Autenticazione</title>
     <meta name="author" content="Gruppo08">
     <meta name="description" content="Visualizzazione delle sezioni di accesso e registrazione">
     <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
@@ -214,7 +214,7 @@
                         <p style="text-align: center;">
                             Cliccando su Iscriviti, accetti le nostre <a href="crea%20account/informative/condizioni.php">Condizioni</a>. Scopri in che modo
                             raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="crea%20account/informative/infoPrivacy.php">Informativa
-                            sulla privacy</a>.<br/>Fai già parte della nostra famiglia?
+                            sulla privacy</a>.<br/>Ti sei già seduto alla nostra tavola?
                         </p>
                     </form>
                     <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
