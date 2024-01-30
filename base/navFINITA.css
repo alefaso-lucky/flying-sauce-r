@@ -45,7 +45,7 @@ header a:hover, .important-elem span:hover{
 }
 
 /*per dispositivi con schermo sotto una determinata percentuale in pixel*/
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1150px) {
   .topnav a {display: none;}        /*link di nav non sono visibili*/
   .important-elem #hamb {
     float: right;         /*questo link diventa visibile e si posiziona a destra*/

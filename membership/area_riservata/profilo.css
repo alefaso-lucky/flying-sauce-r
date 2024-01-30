@@ -1,13 +1,11 @@
-body{
-  margin: 0;
-  background: #F4DAB4;
+* {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
-body * {
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+body{
+  margin: 0;
+  background: #F4DAB4;
 }
 
 /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
@@ -20,7 +18,7 @@ body * {
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
   min-width: 530px;
-  height: 500px;   /*altezza del container*/
+  height: 540px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
@@ -121,6 +119,7 @@ body * {
   height: 30px;     /*rendo i campi di input di sola lettura più alti*/
   margin-bottom: 5px;     /*applico un margine inferiore per distanziarli gli uni dagli altri*/
   font-size: 20px;
+  width: 50%;
 }
 
 .input-field{
@@ -166,14 +165,19 @@ body * {
 
 /*avviso in caso ci siano problemi nell'accesso*/
 .alert {
-  width: 70%;     /*di form occupa solo il 70% della larghezza*/
+  /* width: 100%;     /*di form occupa solo il 70% della larghezza*/
   text-align: center;     /*allineo il testo al centro*/
-  font-size: 20px;      /*grandezza del font*/
+  margin: 0px;
+  height: 10px;
+  font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
 }
 
 @media (max-width: 800px) {
     .sezione .brief-description {
+      display: none;
+    }
+    .alert {
       display: none;
     }
 }

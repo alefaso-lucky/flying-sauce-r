@@ -24,24 +24,30 @@
   if (!empty($_POST)) {
     if(isset($_POST["submitPass"]) && $_POST["submitPass"] == "Aggiorna password"){
       if (aggiorna_password($newpass)) {
-        $alertPass = "<p class='alert'><strong><br/>Password aggiornata con successo.</strong></p>";
+        $alertPass = "<p class='alert'><strong>Password aggiornata con successo.</strong></p>";
       } else {
-        $alertPass = "<p class='alert'><strong><br/>Errore durante l'aggiornamento. Riprova</strong></p>";
+        $alertPass = "<p class='alert'><strong>Errore durante l'aggiornamento. Riprova</strong></p>";
       }
     }
 
     if(isset($_POST["submitAdd"]) && $_POST["submitAdd"] == "Aggiorna indirizzo"){
       if (aggiorna_indirizzo($nazione, $citta, $via, $civico)) {
-        $alertAddr = "<p class='alert'><strong><br/>Il tuo indirizzo di spedizione è stato aggiornato con successo.</strong></p>";
+        $alertAddr = "<p class='alert'><strong>Il tuo indirizzo di spedizione è stato aggiornato con successo.</strong></p>";
       } else {
-        $alertAddr = "<p class='alert'><strong><br/>Errore durante l'aggiornamento. Riprova</strong></p>";
+        $alertAddr = "<p class='alert'><strong>Errore durante l'aggiornamento. Riprova</strong></p>";
       }
+    }
+
+    if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
+      session_destroy();
+      header("refresh:0.01;URL=../../nhome.php");
     }
   }
 
   function aggiorna_password($newpass) {
-  require_once "../../connessionedb.php";
-  
+  require_once "../../logindb.php";
+  $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+
   $sql = "SELECT * FROM utenti WHERE email=$1;";
   $prep = pg_prepare($db, "selectUtente", $sql);
   $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
@@ -54,7 +60,7 @@
 
   if (!empty($newpass)) {
     if (password_verify($pass, $newpass)) {     /*primo parametro l'hash del db, il secondo è la password inserita tramite post*/
-      $alertPass = "<p class='alert><strong><br/>La nuova password non può coincidere con la vecchia password. Riprova.</strong></p>";
+      $alertPass = "<p class='alert><strong>La nuova password non può coincidere con la vecchia password. Riprova.</strong></p>";
     } else {
       $sql_update = <<<_QUERY
       UPDATE utenti
@@ -65,12 +71,12 @@
 
       $prep = pg_prepare($db, "updatePassword", $sql_update);
       if (!$prep) {
-        $alertPass = "<p class='alert'><strong><br/>pg_last_error($db).</strong></p>";
+        $alertPass = "<p class='alert'><strong>pg_last_error($db).</strong></p>";
       } else {
           $hash = password_hash($newpass, PASSWORD_DEFAULT);
           $ret_update = pg_execute($db, "updatePassword", array($hash, $_SESSION["email"]));
           if (!$ret_update) {
-            $alertPass = "<p class='alert'><strong><br/>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
+            $alertPass = "<p class='alert'><strong>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
           } else {
             pg_close($db);
             return true;
@@ -82,7 +88,8 @@
   }
 
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../connessionedb.php";
+    require_once "../../logindb.php";
+    $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     $sql = "SELECT * FROM utenti WHERE email=$1;";
     $prep = pg_prepare($db, "selectUtente", $sql);
@@ -104,11 +111,11 @@
 
         $prep = pg_prepare($db, "updateAddress", $sql_update);
         if (!$prep) {
-          $alertAddr = "<p class='alert'><strong><br/>pg_last_error($db).</strong></p>";
+          $alertAddr = "<p class='alert'><strong>pg_last_error($db).</strong></p>";
         } else {
             $ret_update = pg_execute($db, "updateAddress", array($nazione, $citta, $via, $civico, $_SESSION["email"]));
             if (!$ret_update) {
-              $alertAddr = "<p class='alert'><strong><br/>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
+              $alertAddr = "<p class='alert'><strong>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
             } else {
               pg_close($db);
               return true;
@@ -118,7 +125,17 @@
       return false;
   }
 
-$_SESSION["selected"] = "Anagrafica";
+/*
+ La gestione delle seguenti variabili di sessione è effettuata con JavaScript
+*/
+/* questa variabile di sessione memorizza quale div è selezionato per la visualizzazione */
+if(!isset($_SESSION["selected"])) {
+  $_SESSION["selected"] = "Anagrafica";
+}
+/* questa variabile di sessione memorizza l'id di quale versione delle informazioni di spedizione visualizzare. Di base è impostato su 'info', può cambiare in 'modifica' con le azione dell'utente */
+if(!isset($_SESSION["visibleSpedizione"])) {
+  $_SESSION["visibleSpedizione"] = "info-indirizzo";
+}
 
 ?>
 <html>
@@ -133,9 +150,8 @@ $_SESSION["selected"] = "Anagrafica";
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="membership/area_riservata/profilo.css">
     <script src="membership/area_riservata/profilo.js" charset="utf-8"></script>
-    <title></title>
   </head>
-  <body onload="switchDiv(<?php echo $_SESSION['selected'] ?>)">     <!-- al caricamento del body il div mostrato è quello con id anagrafica -->
+  <body>    
     <?php
     if(isset($_SESSION["loggato"]) && $_SESSION["loggato"]==True) {
 
@@ -148,14 +164,13 @@ $_SESSION["selected"] = "Anagrafica";
             <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><img src="media/sicurezza.png" alt="sec_icon" width="20px" height="20px">Sicurezza</div>
             <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px">Spedizione</div>
             <!-- <a href="#Storico" class="selezione" onclick="switchDiv('Storico')"><img src="./ordini.png" alt="ordine_icon" width="20px" height="20px">Storico ordini</a> -->
-            <form class="" action="./logout.php" method="post">
+            <form action=<?php echo $_SERVER["PHP_SELF"]; ?>  method="post">
               <input id ="logout" type="submit" name="Logout" value="Logout">
             </form>
-            <!--aggiungi volte in cui hai effettuato l'accesso oggi/ultimo accesso-->
           </div>
           <div class="account_content">
             <?php
-              require "../../connessionedb.php";
+              require "../../logindb.php";
               $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
               $sql = "SELECT nome, cognome, genere, email, nazione, citta, via, civico, telefono FROM utenti WHERE email = '" . $_SESSION['email'] . "';";
               $ret = pg_query($db, $sql); /* viene eseguita la query */
@@ -230,17 +245,17 @@ $_SESSION["selected"] = "Anagrafica";
                   <span>Numero civico:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled>
                 </div>
 
-                <p>Vuoi cambiare il tuo indirizzo di spedizione? <span onclick="visibleForm('aggiorna_indirizzo', 'info-indirizzo')">Modifica subito</span></p>
+                <p>Vuoi cambiare il tuo indirizzo di spedizione? <span id="changeToAggiorna" onclick="visibleForm('aggiorna-indirizzo', 'info-indirizzo')">Modifica subito</span></p>
               </div>
 
-              <div id="aggiorna_indirizzo" style="display: none">
+              <div id="aggiorna-indirizzo" style="display: none">
                 <form action=<?php echo $_SERVER["PHP_SELF"]; ?> method="post">
                   <input class="input-field" name="nazione" placeholder="Nazione*" value="<?php echo $nazione ?>" required/>
                   <input class="input-field" name="citta" placeholder="Città*" value="<?php echo $citta ?>" required/>
                   <input class="input-field" name="via" placeholder="Via o piazza*" value="<?php echo $via ?>" required/>
                   <input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/>
                   <input class="buttons" type="submit" name="submitAdd" value="Aggiorna indirizzo">
-                  <p>Hai cambiato idea? <span onclick="visibleForm('info-indirizzo', 'aggiorna_indirizzo')">Torna indietro</span></p>
+                  <p>Hai cambiato idea? <span id="changeToInfo" onclick="visibleForm('info-indirizzo', 'aggiorna-indirizzo')">Torna indietro</span></p>
                 </form>
                 <?php
                   if(isset($alertAddr))
@@ -253,7 +268,7 @@ $_SESSION["selected"] = "Anagrafica";
     <?php
     }
     else {
-      echo "Non puoi accedere a questa sezione del sito<br/>";
+      echo "Non puoi accedere a questa sezione del sito";
     }
    ?>
   </div>
