@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php require "../base/navFINITA.php" ; ?>
-
+    
     <!-- div per contenere uno slider per le slides -->
     <div class="background-container">
       <div class="container">
@@ -69,55 +69,57 @@
       </div>
     </div>
 
-      <section class="middle-page-text">
-        <h2>Un Viaggio Culinario di Successo: La Nostra Storia</h2>
-        <p>
-          In qualità di imprenditore e fondatore del ristorante "Flying Sauce", desidero esprimere la mia profonda gratitudine per
-          il successo e i riconoscimenti significativi che la nostra azienda ha ottenuto negli ultimi anni. Sono estremamente
-          orgoglioso del lavoro svolto dal mio team e della capacità della nostra iniziativa di portare i sapori autentici dell'Italia in
-          tutto il mondo.
-          Il nostro successo è stato guidato da valori chiave che ho sempre ritenuto essenziali nella gestione e nella promozione
-          del marchio "Flying Sauce".  Sono grato per la nostra crescita continua e il successo ottenuto. "Flying Sauce" rappresenta
-          non solo un ristorante di eccellenza, ma un ambasciatore culinario che incarna il coraggio, l'autenticità e l'impegno nel
-          perseguire i propri sogni. Sono ansioso di vedere come il nostro viaggio culinario si svilupperà nel futuro, continuando a
-          deliziare i palati in tutto il mondo.
-        </p>
-      </section>
-      
-      <!-- Per visualizzare le immagini con il testo -->
-      <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
-      <div class="grid-img-container">
-          <div class="grid-item" id="grid-item1">
-            <img src="media/gridImg1.jpg" id="img1"></img>
-            <div class="overlay">
-              <p class="testoImg" id="testoImg1">
-                Il coraggio di intraprendere nuove strade
-              </p>
-            </div>
+
+    <section class="middle-page-text">
+      <h2>Un Viaggio Culinario di Successo: La Nostra Storia</h2>
+      <p>
+        In qualità di imprenditore e fondatore del ristorante "Flying Sauce", desidero esprimere la mia profonda gratitudine per
+        il successo e i riconoscimenti significativi che la nostra azienda ha ottenuto negli ultimi anni. Sono estremamente
+        orgoglioso del lavoro svolto dal mio team e della capacità della nostra iniziativa di portare i sapori autentici dell'Italia in
+        tutto il mondo.
+        Il nostro successo è stato guidato da valori chiave che ho sempre ritenuto essenziali nella gestione e nella promozione
+        del marchio "Flying Sauce".  Sono grato per la nostra crescita continua e il successo ottenuto. "Flying Sauce" rappresenta
+        non solo un ristorante di eccellenza, ma un ambasciatore culinario che incarna il coraggio, l'autenticità e l'impegno nel
+        perseguire i propri sogni. Sono ansioso di vedere come il nostro viaggio culinario si svilupperà nel futuro, continuando a
+        deliziare i palati in tutto il mondo.
+      </p>
+    </section>
+    
+    <!-- Per visualizzare le immagini con il testo -->
+    <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
+    <div class="grid-img-container">
+        <div class="grid-item" id="grid-item1">
+          <img src="media/gridImg1.jpg" id="img1" width="100px" height="100px"></img>
+          <div class="overlay">
+            <p class="testoImg" id="testoImg1">
+              Il coraggio di intraprendere nuove strade
+            </p>
           </div>
-          <div class="grid-item" id="grid-item2">
-            <img src="media/gridImg2.jpg" id="img2"></img>
-            <div class="overlay">
-              <p class="testoImg" id="testoImg2">
-                L'impegno nel perseguire i propri sogni
-            </div>
+        </div>
+        <div class="grid-item" id="grid-item2">
+          <img src="media/gridImg2.jpg" id="img2" width="100px" height="100px"></img>
+          <div class="overlay">
+            <p class="testoImg" id="testoImg2">
+              L'impegno nel perseguire i propri sogni
           </div>
-          <div class="grid-item" id="grid-item3">
-            <img src="media/gridImg3.jpg" id="img3"></img>
-            <div class="overlay">
-              <p class="testoImg" id="testoImg3">
-                La possibilità di esportare i gusti italiani in tutto il mondo
-            </div>
+        </div>
+        <div class="grid-item" id="grid-item3" width="100px" height="200px">
+          <img src="media/gridImg3.jpg" id="img3"></img>
+          <div class="overlay">
+            <p class="testoImg" id="testoImg3">
+              La possibilità di esportare i gusti italiani in tutto il mondo
           </div>
-          <div class="grid-item" id="grid-item4">
-            <img src="media/gridImg4.jpg" id="img4"></img>
-            <div class="overlay">
-              <p class="testoImg" id="testoImg4">
-                L'autenticità del nostro brand
-              </p>
-            </div>
+        </div>
+        <div class="grid-item" id="grid-item4">
+          <img src="media/gridImg4.jpg" id="img4" width="200px" height="100px"></img>
+          <div class="overlay">
+            <p class="testoImg" id="testoImg4">
+              L'autenticità del nostro brand
+            </p>
           </div>
-      </div>
+        </div>
+    </div>
+
       <?php require "../base/footer.php"; ?> <!--inserimento footer-->
 </body>
 </html>
