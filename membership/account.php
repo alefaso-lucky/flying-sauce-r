@@ -212,8 +212,8 @@
                         </fieldset>
                         <input id="submit" name="iscriviti" type="submit" value="Iscriviti"/>
                         <p style="text-align: center;">
-                            Cliccando su Iscriviti, accetti le nostre <a href="crea%20account/informative/condizioni.php">Condizioni</a>. Scopri in che modo
-                            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="crea%20account/informative/infoPrivacy.php">Informativa
+                            Cliccando su Iscriviti, accetti le nostre <a href="informative/condizioni.php">Condizioni</a>. Scopri in che modo
+                            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="informative/infoPrivacy.php">Informativa
                             sulla privacy</a>.<br/>Ti sei già seduto alla nostra tavola?
                         </p>
                     </form>
