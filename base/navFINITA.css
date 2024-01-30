@@ -50,6 +50,7 @@ header a:hover, .important-elem span:hover{
   .important-elem #hamb {
     float: right;         /*questo link diventa visibile e si posiziona a destra*/
     display: block;
+    cursor: pointer;
   }
 
   .topnav.responsive {position: relative;}      /*se la classe è sia topnav che responsive position relative*/
