@@ -62,15 +62,15 @@
 
         <!--secondo blocco, tre sezioni che conducono a tre percorsi diversi del sito-->
         <div id=contenitore_2>
-            <div id=sx2>
+            <div id=sx2 class=col>
                 <p id=frasesx>una grande famiglia</p>
                 <a class="bot" href="chi%20siamo/chi%20siamo.php">CHI SIAMO</a> <!--bottone per andare alla pagina Chi siamo-->
             </div>
-            <div id=cc2>
+            <div id=cc2 class=col>
                 <p id=frasecc>dall'idea alla forchetta</p>
                 <a class="bot" href="menu/ordina_ora/componi_piatto.php">COMPONI ORA</a> <!--bottone per andare alla pagina Componi Piatto-->
             </div>
-            <div id=dx2>
+            <div id=dx2 class=col>
                 <p id=frasedx>la proposta italiana</p>
                 <a class="bot" href="menu/ordina_ora.php">MENU</a> <!--bottone per andare alla pagina Menu-->
             </div>
