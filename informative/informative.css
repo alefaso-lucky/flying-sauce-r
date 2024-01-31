@@ -1,19 +1,18 @@
+/*entrambe le informative - dunque sia condizioni che infoPrivacy- seguono le stesse regole di stile*/
 body {
-  background-image: url("../media/sfondo_accedi.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%; /*occupa tutto lo spazio a disposizione*/
-  width: 100%;
+  background-image: url("../media/sfondo_accedi.jpg");      /*link all'immagine che voglio sia settata come sfondo*/
+  background-repeat: no-repeat;     /*non voglio che l'immagine di sfondo si ripeta*/
+  background-size: cover;     /*l'immagine si adatta allo sfondo*/
+  height: 100%; /*occupa tutto lo spazio (in altezza) a disposizione*/
+  width: 100%;      /*occupa tutta la larghezza a sua disposizione*/
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: 0;     /*nessun padding*/
+  margin: 0;        /*nessun margine*/
   font-family: 'Montserrat', sans-serif;
 }
 
 .cell * {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  margin: 0;    /*gli elementi non devono avere alcun margine*/
 }
 
 /* cell è il div principale che contiene tutto  */
@@ -28,37 +27,24 @@ body {
   margin: 3% 15%; /* margine per allinare */
 }
 
-/* applico dello stile ai paragrafi e alle liste */
+/* applico dello stile ai paragrafi e alla lista non ordinata (di infoPrivacy) */
 .cell p, .cell ul {
-  color: white;
+  color: white;     /*colore per i tag p e gli elenchi unordered*/
   padding: 5px 20px; /* padding per allontanare il testo dal bordo */
+  list-style-position:inherit;
 }
 
-/* stile applicato al titolo in alto */
-.cell h1 {
-  font-family: Times New Roman, serif;
-  color: RGB(255, 194, 108);
-  font-weight: 100;
-  color: #FFC26C;
+/* stile applicato ai diversi titoli */
+.cell h1, .cell h2, .cell h3, .cell h4{
+  font-family: Times New Roman, serif;    /*font diverso al titolo in alto*/
+  color: rgb(255, 194, 108);    /*colore di base*/
+  font-weight: bold;     /*spessore del font*/
 }
 
-/* stile applicato ai titoli dei vari paragrafi */
-.cell h2, h3, h4 {
-  font-family: Times New Roman, serif;
-  color: RGB(255, 194, 108);
-  font-weight: 100;
-  font-weight: bold;
-}
-
-h1,h2,h3 { /*stile intestazioni*/
-  font-family: 'Times New Roman', 'serif'; /*selezione del font*/
-  color: rgb(255, 194, 108); /*selezione del colore del testo*/
-  font-weight: 100; /*selezione dimensione del testo*/
-}
-
-
+/*per l'elenco numerato della pagina di condizioni*/
 ol {
   list-style-type: upper-roman; /*indice dell'elenco puntato è un numero romano maiuscolo*/
   color: #FFC26C; /*colore del testo*/
   padding-left: 35px; /*indenta la lista ordinata rispetto al resto del contenuto*/
+  list-style-position: inherit;
 }

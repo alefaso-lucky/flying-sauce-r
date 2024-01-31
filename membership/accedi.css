@@ -24,9 +24,10 @@ body{
   overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
   display: flex;
   align-items: center;              /*allineo al centro in senso verticale (per il rightpanel)*/
-  margin: 3% 0;
+  margin: 3% 0;      /*margine top-bottom*/
 }
 
+/*per segnare lo spazio occupato dal rightpanel*/
 .rightpanel{
   flex: 3;
   -webkit-flex: 3;
@@ -57,7 +58,7 @@ body{
   align-items: center;      /*per allineare al centro verticalmente le icone nel div*/
 }
 
-/*negli span sono contenute le icone (img)*/
+/*negli span sono contenute le icone (img) da disporre al centro*/
 .input-field span {
   flex: 1;
   -webkit-flex: 1;
@@ -149,11 +150,11 @@ body{
   color: rgb(255, 194, 108);      /*colore del testo*/
 }
 
-/*avviso in caso ci siano problemi nell'accesso*/
+/*feedback agli utenti*/
 .alert {
   text-align: center;     /*allineo il testo al centro*/
   font-size: 18px;      /*grandezza del font*/
-  margin:0;
+  margin:10px 0;      /*un margine top-bottom ai messaggi di feedback agli utenti*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
 }
 

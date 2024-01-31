@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chi siamo</title>
+    <title>Flying Sauce&reg; - Chi siamo</title>
     <meta name="author" content="Gruppo08">
     <meta name="description" content="Una pagina statica che descrive i valori del sito">
     <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">

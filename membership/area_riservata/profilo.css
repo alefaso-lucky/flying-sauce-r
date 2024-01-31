@@ -165,9 +165,8 @@ body{
 
 /*avviso in caso ci siano problemi nell'accesso*/
 .alert {
-  /* width: 100%;     /*di form occupa solo il 70% della larghezza*/
-  text-align: center;     /*allineo il testo al centro*/
-  margin: 0px;
+  text-align: left;     /*allineo il testo al centro*/
+  margin: 15px 0;
   height: 10px;
   font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
@@ -177,9 +176,12 @@ body{
     .sezione .brief-description {
       display: none;
     }
-    .alert {
-      display: none;
-    }
+}
+
+@media (max-width: 1000px){
+  .alert {
+    display: none;
+  }
 }
 
 @media (max-width: 1400px){

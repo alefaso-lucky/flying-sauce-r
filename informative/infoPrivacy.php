@@ -11,7 +11,6 @@
 		<div class="cell">
 	        <h1>Informativa sulla privacy</h1>
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>
-
 		        <p>
 		            Benvenuti su Flying Sauce, il servizio esclusivo di consegna a
 		            domicilio di piatti di pasta italiani cucinati da chef stellati
