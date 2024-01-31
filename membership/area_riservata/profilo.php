@@ -272,9 +272,10 @@
   <?php require "../../base/footer.php"; ?>
   <div class="else-container">
     <?php
-    }
-    else {
-      echo "Non puoi accedere a questa sezione del sito";
+    } else {
+      /* nel caso in cui si acceda alla pagina senza essere loggati allora si riporta alla pagina di login */
+      header("Location: http://localhost/Flying_Sauce_r/membership/account.php");
+      exit();
     }
    ?>
   </div>
