@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php require "../base/navFINITA.php" ; ?>
-    
+
     <!-- div per contenere uno slider per le slides -->
     <div class="background-container">
       <div class="container">
@@ -84,7 +84,7 @@
         deliziare i palati in tutto il mondo.
       </p>
     </section>
-    
+
     <!-- Per visualizzare le immagini con il testo -->
     <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
     <div class="grid-img-container">

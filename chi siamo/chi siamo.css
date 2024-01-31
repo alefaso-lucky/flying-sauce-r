@@ -124,9 +124,9 @@ body {
 
 div.grid-img-container {
   margin: 35px auto; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
-  margin-bottom: 65px; /* margine in basso per distanziare dal footer */
-  height: 600px; /* la dimensione è impostata per contenere le immagini */
-  width: 900px; /* la dimensione è impostata per contenere le immagini */
+  margin-bottom: 145px; /* margine in basso per distanziare dal footer */
+  height: 300px; /* la dimensione è impostata per contenere le immagini */
+  width: 600px; /* la dimensione è impostata per contenere le immagini */
   display: grid; /* utilizzo un display grid per posizionare le immaigni */
   grid-template-areas: /* specifico come le immagini sono disposte nella griglia */
     'img1 img2 img3'
@@ -145,7 +145,6 @@ div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle i
   transform: scale(1.2); /* l'immagine viene ingrandita */
   z-index: 1; /* trasla l'immagine al di sopra di tutto */
 }
-
 
 div.grid-item img{ /* stile applicato alle immagini contenute nmel grid-item */
   width: 100%;
