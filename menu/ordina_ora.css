@@ -1,27 +1,25 @@
+/* contenitori principali */
 body {
-  margin: 0;
-  font-family: "Goudy Old Style", sans-serif;
-  /*display: flex;
-  flex-direction: column;*/
+  margin: 0; /* margine nullo in modo da non lasciare margini vuoti */
+  font-family: "Goudy Old Style", sans-serif; /* selezione font */
 }
 
 .row {
-  display: flex;
-  max-height: 650px;
-  /*margin-top: 89px; serviva se la navbar era fixed, ora è sticky*/
+  display: flex; /* il contenuto di tutta la pagina è ospitata da un container flex */
+  max-height: 650px; /* il container ha una massima altezza */
 }
 
 .scrollable_content {
-  overflow-y: scroll;
-  max-height: 650px;
+  overflow-y: scroll; /* eventuale overflow verticale può essere 'scrollato' */
+  max-height: 650px; /* stessa altezza massima della row */
 }
 
 /* Middle column */
 .content {
-  flex: 3;
+  flex: 3; /* la colonna centrale deve occupare più spazio delle laterali */
   -webkit-flex: 3;
   -ms-flex: 3;
-  background-color: #FFF0DA;
+  background-color: #FFF0DA; /* viene impostato un colore di sfondo */
 }
 
 /* Left and right column */
