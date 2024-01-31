@@ -11,9 +11,8 @@ body {
 }
 
 .container {
-  position: relative; /* la classe container è un riferimento per position */
   height: 500px;
-  margin: 50px;
+  margin: 0 25px;
   padding-top: 25px;
   align-items: center;
 }
