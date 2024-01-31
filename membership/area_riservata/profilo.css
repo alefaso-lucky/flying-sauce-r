@@ -5,7 +5,7 @@
 
 body{
   margin: 0;
-  background: #F4DAB4;
+  background: #F4DAB4;      /*colore di sfondo alla schermata*/
 }
 
 /*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
@@ -14,51 +14,50 @@ body{
   justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
 }
 
-/*contiene i due div che andranno affiancati (immagine e slogan + form)*/
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  min-width: 530px;
+  min-width: 530px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
   height: 540px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
   overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
   display: flex;
-  margin: 3% 0;
+  margin: 3% 0;   /*margine top bottom*/
 }
 
+/*div che rappresenta la colonna di sx da cui selezionare le voci*/
 .columnside {
-  flex: 2;
+  flex: 2;      /*spazio occupato dalla colonna di sinistra rispetto a container*/
   -webkit-flex: 2;
   -ms-flex: 2;
-  justify-content: center;
-  background-color: rgb(24, 65, 73);
-  border-right: thin solid #E4A33F;
-  left: 0px;
-  overflow: hidden;
+  background-color: rgb(24, 65, 73);      /*colore alla colonna*/
+  border-right: thin solid #E4A33F;     /*bordo di destra della colonna*/
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: column;     /*i div devono essere disposti per colonne*/
+  justify-content: center;      /*i div interni saranno centrati lungo l'asse principale (quello verticale in questo caso)*/
+  text-align: center;     /*per allineare al centro il bottone per effettuare Logout*/
 }
 
+/*per il tag che ti da il benvenuto con la tua email*/
 .columnside p {
-  color: rgb(255, 194, 108);
-  text-align: center;
-  font-size: x-large;
+  color: rgb(255, 194, 108);    /*per impostare un colore*/
+  text-align: center;       /*allineato al centro*/
+  font-size: x-large;     /*aumento le dimensioni del font*/
 }
 
 /*i singoli elementi della colonna di sx*/
 .selezione {
-  padding: 10px;
-  text-align: center;
-  font-size: 22px;
-  color: #FFF0DA;
-  margin: 10px 0;
-  text-decoration: none;
+  padding: 10px;      /*padding per ciascun div*/
+  text-align: center;   /*testo allineato al centro*/
+  font-size: 22px;      /*per settare la dimensione del font*/
+  color: #FFF0DA;     /*colore del font*/
+  margin: 10px 0;     /*un margine tra un div e il successivo*/
   display: block;   /*necessario perchè altrimenti il tag sarebbe inline */
-  cursor: pointer;
+  cursor: pointer;      /*al click sul div, il cursore si trasforma in una mano*/
 }
 
+/*l'input di tipo submit del form della colonna di sx*/
 #logout {
   border: none;     /*nessun bordo visibile*/
   border-radius: 50px;      /*angoli arrotondati*/
@@ -76,52 +75,49 @@ body{
   background: #46666D;
 }
 
+/*la colonna di destra*/
 .account_content{
-  flex: 3;
+  flex: 3;        /*spazio occupato dalla colonna di dx rispetto al container*/
   -webkit-flex: 3;
   -ms-flex: 3;
   display: flex;
-  align-items: center;
-  font-size: 20px;
-  color:#FFF0DA;
+  align-items: center;      /*elementi allineati al centro sull'asse trasversale (verticale)*/
+  font-size: 20px;        /*dimensione del font*/
+  color:#FFF0DA;      /*colore del font*/
 }
 
+/*il spezione lo span è quello che ti permette di passare alla schermata per modificare il tuo indirizzo*/
 #Spedizione p span{
   opacity: 0.7;   /*di default il colore è opacizzato*/
-  text-decoration: none;    /*nessuna sottolineatura*/
   color: rgb(255, 194, 108);      /*applico un colore ai tag a*/
-  cursor: pointer;
+  cursor: pointer;      /*il cursore diventa una manina*/
 }
 
+/*al passaggio del mouse sull'elemento span*/
 #Spedizione p span:hover{
   opacity:1;    /*con l'hover si riporta alla tonalità originale*/
 }
 
+/*ciascun div della classe sezione avrà un margine laterale*/
 .sezione{
-  margin: 0 20px;     /*margine laterale per distanziarla dal bordo*/
+  margin: 0 20px;     
 }
 
+/*titoli di ciascuna sezione*/
 .sezione h1{
-  font-size: 30px;
-  color: rgb(255, 194, 108);
-  margin: 0;
-}
-
-.input-element{
-  margin: 5px 0;
-}
-
-.input-element span{
-  margin-right: 10px;
+  font-size: 30px;      /*dimensione del font*/
+  color: rgb(255, 194, 108);      /*colore del font*/
+  margin: 0;        /*nessun margin*/
 }
 
 .disabled_input{
   height: 30px;     /*rendo i campi di input di sola lettura più alti*/
   margin-bottom: 5px;     /*applico un margine inferiore per distanziarli gli uni dagli altri*/
-  font-size: 20px;
-  width: 50%;
+  font-size: 20px;    /*aumento dimensione del font*/
+  width: 50%;     /*rendo più larga il campo di input*/
 }
 
+/*sono i campi di input modificabili (cambio password/indirizzo)*/
 .input-field{
   display: block;
   margin: 5px 0;      /*top-bottom per distanziare tra loro gli input del form*/
@@ -133,13 +129,14 @@ body{
   background: transparent;      /*gli input devono avere background trasparente*/
   font-size: 15px;      /*dimensione del testo negli input*/
   color: #FFF0DA;     /*colore del testo che viene inserito negli input*/
-  padding: 15px;
+  padding: 15px;      /*per non scrivere esattamente accanto al bordo del campo di input*/
 }
 
 .input-field:focus {
   outline: 2px solid rgb(255, 194, 108); /*al focus, il cambio il colore del bordo(outline) di input*/
 }
 
+/*bottoni sia di aggiorna password che di indirizzo*/
 .buttons {
     box-sizing: border-box; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
     display: inline-block; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
@@ -163,28 +160,30 @@ body{
     color: #5D7A7F;
 }
 
-/*avviso in caso ci siano problemi nell'accesso*/
+/*feedback all'utente in caso di compilazione dei form di cambio password/indirizzo*/
 .alert {
   text-align: left;     /*allineo il testo al centro*/
-  margin: 15px 0;
-  height: 10px;
+  margin: 15px 0;   /*margin top-bottom*/
   font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
 }
 
 @media (max-width: 800px) {
+  /*sotto una determinata soglia, la descrizione di ciascuna sezione sparisce*/
     .sezione .brief-description {
       display: none;
     }
 }
 
 @media (max-width: 1000px){
+  /*sotto una soglia ancora superiore gli elementi di .alert non risultano più visibili*/
   .alert {
     display: none;
   }
 }
 
 @media (max-width: 1400px){
+  /*sotto una soglia ancora superiore il mex di benvenuto con la tua email sparisce*/
   .columnside p{
     display: none;
   }

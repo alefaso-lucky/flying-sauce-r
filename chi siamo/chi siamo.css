@@ -12,6 +12,7 @@ body {
   display: none; /* rendo i radio button invisibili */
 }
 
+/* per applicare uno sfondo colorato allo slider */
 .background-container {
   background-color: #46666D; /* colore di sfondo alle immagini */
   position: relative;
@@ -19,14 +20,16 @@ body {
   width: 100%;
 }
 
+/* questa classe contiene lo slider */
 .container {
   position: relative; /* la classe container è un riferimento per position */
-  max-width: 800px;
+  max-width: 800px; /* imposto la dimensione dello slider che sarà dunque la dimensione delle singole slide */
   height: 500px;
   margin: 10px auto;
 }
 
-.slider { /* slider conterrà le diverse slide con le immagini e il testo */
+/* slider conterrà le diverse slide con le immagini e il testo */
+.slider {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -36,7 +39,8 @@ body {
   box-sizing: border-box; /* il bordo è applicato al content */
 }
 
-.slide { /* una singola slide contiene l'immagine e il testo */
+ /* una singola slide contiene l'immagine e il testo */
+.slide {
   position: absolute; /* posizione assoluta relativamente a container */
   width: 100%;
   height: 100%;
@@ -48,16 +52,19 @@ body {
   animation-iteration-count: 1; /* l'animazione è riptuta una volta */
 }
 @keyframes fade { /* animazione usata quando varia la slide dello slideshow, vedi JS */
-  from {opacity: .4}
+  from {opacity: 0.4} /* modifica l'opacità da 0.4 a 1 rendendo la slide visibile */
   to {opacity: 1}
 }
 
+/* le immagini occupano tutto lo spazio della slide */
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* object-fit specifica come l'immagine deve essere ridimensionata per entrare in .slide, con cover l'immagine mantiene le sue proporzioni e riempie lo spazio assegnato con width e heigh. L'immagine viene tagliata se necessario */
 }
-.slide-text { /* questa classe si riferisce al testo presente sulle slide */
+
+ /* questa classe si riferisce al testo presente sulle slide */
+.slide-text {
   position: absolute; /* queste istruzioni servono per posizionare il testo */
   width: 35%;
   right: 5%;
@@ -73,18 +80,20 @@ body {
   font-family: 'Montserrat', Courier, monospace;
 }
 
-.slide-text h1 { /* titolo del testo nella slide */
+ /* titolo del testo nella slide */
+.slide-text h1 {
   color: rgb(255, 194, 108);
   margin: 0;
 }
-
-@media(max-width: 750px) { /* rimpicciolisce il font quando lo schermo si rimpicciolisce */
+/* rimpicciolisce il font quando lo schermo si rimpicciolisce */
+@media(max-width: 750px) {
   .slide-text {
     font-size: 11px;
   }
 }
 
-.dots { /* questa classe è un blocco che contiene le laber che si riferiscono ai radio button per la selezione della slide, utile per assegnare uno stile ai bottoni */
+/* questa classe è un blocco che contiene le label che si riferiscono ai radio button per la selezione della slide, utile per assegnare uno stile ai bottoni */
+.dots {
   width: 100%;
   position: absolute;
   bottom: 5%; /* distanti dal fondo del contenitore */
@@ -92,7 +101,8 @@ body {
   justify-content: center; /* centrati */
 }
 
-.dots label { /* questo selettore serve per assegnare dello stile ai bottoni radio */
+/* questo selettore serve per assegnare dello stile ai bottoni radio */
+.dots label {
   width: 20px;
   height: 20px;
   background-color: rgb(255, 194, 108);
@@ -127,7 +137,7 @@ div.grid-img-container {
     'img4 img4 img3';
   gap: 8px; /* distanza tra le immagini */
 }
-
+/* quando la pagina diventa più piccola rende invisibili il titolo e il grid */
 @media(max-width: 700px) {
   div.grid-img-container,
   #grid-title {
@@ -136,7 +146,8 @@ div.grid-img-container {
 
 }
 
-div.grid-item { /* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */
+/* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */
+div.grid-item {
   position: relative;
   display: flex;
   transition: 0.5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
@@ -148,7 +159,8 @@ div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle i
   z-index: 1; /* trasla l'immagine al di sopra di tutto */
 }
 
-div.grid-item img{ /* stile applicato alle immagini contenute nmel grid-item */
+/* stile applicato alle immagini contenute nmel grid-item */
+div.grid-item img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -157,7 +169,8 @@ div.grid-item:hover img {
    filter: grayscale(100%); /* quando si passa col cursore sull'immagine questa diventa grigia */
 }
 
-.overlay { /* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
+/* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
+.overlay {
   position: absolute; /* prende la dimensione rlspetto al contenitore, in questo caso grid-item */
   height: 100%;
   width: 100%;
@@ -168,7 +181,8 @@ div.grid-item:hover .overlay {
   opacity: 1; /* quando si passa col cursore sull'immagine il testo diventa visibile */
 }
 
-.testoImg { /* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
+/* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
+.testoImg {
   font-family: "Goudy Old Style", sans-serif;
   color: rgb(255, 194, 108);
   -webkit-text-stroke: 0.5px black; /* per aggiungere del bordo ai singoli caratteri, funziona solo con i broeser che la supportano */
