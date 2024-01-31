@@ -70,6 +70,9 @@
     <title>Flying Sauce&reg; - Carrello</title>
     <meta charset="utf-8">
 	<base href="http://localhost/Flying_Sauce_r/">
+    <meta name="author" content="Gruppo08">
+    <meta name="description" content="pagina per finalizzare l'ordine">
+    <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
     <link rel="stylesheet" href="carrello/resoconto.css">
     <script src="carrello/resoconto.js"></script>
 </head>

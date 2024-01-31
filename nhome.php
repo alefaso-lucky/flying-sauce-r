@@ -23,6 +23,9 @@
         <title>Flying Sauce&reg;</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Gruppo08">
+        <meta name="description" content="Hompage del sito">
+        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--stylesheet per mostrare le icone delle stelle di recensioni e dei social network-->
         <link rel="stylesheet" href="./home.css">
         <script type="text/javascript" src="./home.js"></script>
