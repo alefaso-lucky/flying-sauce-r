@@ -26,6 +26,12 @@ function printImage(name, xcoordinate, ycoordinate) {
     }
 }
 
+/**
+ * Questa funzione autorizza il submit del form di Componi Piatto solo se l'utente è 
+ * loggato, inoltre se l'utente non è loggato viene redirezionato alla pagina di log-in
+ * @param {boolean} is_logged 
+ * @returns true se l'utente è loggato, false altrimenti
+ */
 function isUserLogged(is_logged) {
     if(is_logged)
         return true;

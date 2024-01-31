@@ -95,7 +95,7 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <title>Menu</title> <!--titolo della scheda-->
+        <title>Flying Sauce&reg; - Menu</title> <!--titolo della scheda-->
         <meta charset="utf-8"> <!--character encoding-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--base degli href della pagina-->
         <link rel="stylesheet" href="menu/ordina_ora.css"> <!--collegamento al foglio di stile-->
@@ -146,7 +146,7 @@
                                                     <img src="media/info_button" alt="info-dish" width="24px" height="24px"/> <!--immagine "info" per eseguire la submit-->
                                                 </button>
                                             </form>
-                                            <div class="adder" name="<?=$nome?>"> <!--anchor perché cliccando si deve aggiungere al carrello (WORK IN PROGRESS, ancora non implementato)-->
+                                            <div class="adder" name="<?=$nome?>"> <!--appartiene alla classe adder perché cliccando si deve aggiungere il piatto al carrello con AJAX-->
                                                 <img src="<?php echo $foto ?>" alt="piatto di pasta" width="230px"> <!--immagine del piatto-->
                                                 <div class="nomepiatto"><?php echo $nome ?></div> <!--nome del piatto-->
                                                 <?php echo $descrizione_breve ?> <!--descrizione breve del piatto-->
@@ -162,7 +162,7 @@
                 </div>
             </div>
             <div class="columnside dx"> <!--colonna destra-->
-                <div id="pay_button_form"> <!--tasto per andare al pagamento-->
+                <div id="pay_button_div"> <!--tasto per andare al pagamento-->
                     <a class="menu_buttons" id="pay_button" href="http://localhost/Flying_Sauce_r/carrello/resoconto.php">VAI AL PAGAMENTO</a>
                 </div>
                 <ul id="cart-list">

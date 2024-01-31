@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Piatto Selezionato</title> <!--titolo della scheda-->
+        <title>Flying Sauce&reg; - Piatto Selezionato</title> <!--titolo della scheda-->
         <meta character="utf-8"> <!--character encoding-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--base per gli href del documento-->
         <link rel="stylesheet" href="menu/piatto.css"> <!--collegamento al foglio di stile-->
@@ -18,7 +18,8 @@
                                         alla variabile super globale $_GET per accedere all'unica informazione passata che
                                         è il name del piatto sul quale l'utente vuole più informazioni */
             else
-                $nome = "Spaghetti Cacio e Pepe"; /* valore di default */
+                $nome = "Spaghetti Cacio e Pepe"; /* valore di default, l'utente comunque non dovrebbe mai poter accedere a
+                                                    questa pagina se non tramite il tasto che fa da form in ordina_ora.php */
 
             $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'"; /* interrogazione SQL
                                     sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
@@ -28,7 +29,7 @@
                                     (e in questo caso unica) riga del risultato della query */
 
             if(!$row) {
-                $nome = "Spaghetti Cacio e Pepe"; /* se l'utente modifica l'URL comunque viene caricato un piatto, quello di default */
+                $nome = "Spaghetti Cacio e Pepe"; /* se l'utente modifica l'URL e quindi non c'è corrispondenza nel db comunque viene caricato un piatto, quello di default */
                 $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'";
                 $ret = pg_query($db, $sql);
                 $row = pg_fetch_array($ret);
@@ -51,7 +52,6 @@
                 <h1><?php echo $nome ?></h1>
                 <p id="ingredienti"><?php echo $lista_ingredienti ?></p>
                 <div>
-                    <!--<a class="submit-field" href="#">ORDINA ORA</a>-->
                     <a class="menu_button" href="menu/ordina_ora.php">TORNA AL MENU</a>
                 </div>
             </div>

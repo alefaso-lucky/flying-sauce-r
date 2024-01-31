@@ -24,9 +24,10 @@ body{
   overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
   display: flex;
   align-items: center;              /*allineo al centro in senso verticale (per il rightpanel)*/
-  margin: 3% 0;
+  margin: 3% 0;   /*margine top-bottom*/
 }
 
+/*per segnare lo spazio occupato dal rightpanel*/
 .rightpanel{
   flex: 7;
   -webkit-flex: 7;
@@ -187,12 +188,12 @@ label input:checked+span::before {
   color: rgb(255, 194, 108);      /*colore del testo*/
 }
 
-/*avviso in caso ci siano problemi nell'accesso*/
+/*feedback agli utenti*/
 .alert {
   text-align: center;     /*allineo il testo al centro*/
   font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
-  margin: 0;
+  margin:10px 0;      /*un margine top-bottom ai messaggi di feedback agli utenti*/
 }
 
 @media(max-width: 1500px){

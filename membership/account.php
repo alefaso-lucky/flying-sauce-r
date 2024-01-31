@@ -49,7 +49,7 @@
             $dominio=mb_substr($_POST['email'], mb_strpos($_POST['email'], "@")+1);
             if(checkdnsrr($dominio, "MX")){
                 if(email_exist($email)){
-                    $alert = "<p class='alert'>"."<strong><br/>Email $email già esistente. Riprova</strong>"."</p>";
+                    $alert = "<span class='alert'>"."<strong>Email $email già esistente. Riprova</strong>"."</span>";
                 }
                 else{
                     //ORA posso inserire il nuovo utente nel db
@@ -60,12 +60,12 @@
                             header("refresh:0.1;URL=./area_riservata/profilo.php");
                     }
                     else{
-                        $alert = "<p class='alert'>"."<strong><br/>Errore durante la registrazione. Riprova</strong>"."</p>";
+                        $alert = "<span class='alert'>"."<strong>Errore durante la registrazione. Riprova</strong>"."</span>";
                     }
                 }
             }
             else{
-                $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                $alert = "<span class='alert'>"."<strong>Dominio inesistente.</strong>"."</span>";
             }
         }
 
@@ -75,7 +75,7 @@
                 $password = $_POST['password'];
                 $hash = get_pwd($email);
                 if(!$hash){
-                    $alert = "<span class='alert'>"."<strong><br/>L'utente associato all'email $email non esiste.</strong>"."</span>";
+                    $alert = "<span class='alert'>"."<strong>L'utente associato all'email $email non esiste.</strong>"."</span>";
                 }
                 else{
                     if(password_verify($password, $hash)){
@@ -85,12 +85,12 @@
                         header("refresh:0.01;URL=./area_riservata/profilo.php");
                     }
                     else{
-                        $alert = "<span class='alert'>"."<strong><br/>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
+                        $alert = "<span class='alert'>"."<strong>L'indirizzo email o la password che hai inserito non sono corretti. </strong>"."</span>";
                     }
                 }
             }
             else{
-                $alert = "<span class='alert'>"."<strong><br/>Dominio inesistente.</strong>"."</span>";
+                $alert = "<span class='alert'>"."<strong>Dominio inesistente.</strong>"."</span>";
             }
         }
     }
@@ -110,7 +110,7 @@
 <head>
     <!--obbligatorie per ogni pagina prodotta-->
 	<meta charset="utf-8">
-    <title>Autenticazione</title>
+    <title>Flying Sauce&reg; - Autenticazione</title>
     <meta name="author" content="Gruppo08">
     <meta name="description" content="Visualizzazione delle sezioni di accesso e registrazione">
     <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
@@ -146,9 +146,9 @@
                         </div>
                         <div class="input-field">
                             <span><img src="media/pass_icon.png" width="20px" height="20px"></span>
-                            <input type="password" id ="psw" name="password" placeholder="Password"><br/>
+                            <input type="password" id ="psw" name="password" placeholder="Password">
                         </div>
-                        <input type="submit" id="login" name="login" value="Login"><br/>
+                        <input type="submit" id="login" name="login" value="Login">
                     </form>
                     <p id="iscriviti">Non sei ancora iscritto?</p>
                     <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
@@ -212,9 +212,9 @@
                         </fieldset>
                         <input id="submit" name="iscriviti" type="submit" value="Iscriviti"/>
                         <p style="text-align: center;">
-                            Cliccando su Iscriviti, accetti le nostre <a href="crea%20account/informative/condizioni.php">Condizioni</a>. Scopri in che modo
-                            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="crea%20account/informative/infoPrivacy.php">Informativa
-                            sulla privacy</a>.<br/>Fai già parte della nostra famiglia?
+                            Cliccando su Iscriviti, accetti le nostre <a href="informative/condizioni.php">Condizioni</a>. Scopri in che modo
+                            raccogliamo, usiamo e condividiamo i tuoi dati nella nostra <a href="informative/infoPrivacy.php">Informativa
+                            sulla privacy</a>.<br/>Ti sei già seduto alla nostra tavola?
                         </p>
                     </form>
                     <form action=<?php echo $_SERVER["PHP_SELF"] ; ?> method="get">
@@ -236,7 +236,7 @@
 <?php
 
     function get_pwd($email){
-        require "../logindb.php";
+        require "../logindb.php";       /*require_once "../../connessionedb.php";*/ 
         //CONNESSIONE AL DB
         $sql = "SELECT password FROM utenti WHERE email=$1;";
         $prep = pg_prepare($db, "sqlPassword", $sql);
@@ -258,7 +258,7 @@
     }
 
     function email_exist($email){
-        require "../logindb.php";
+        require "../logindb.php";       /*require_once "../../connessionedb.php";*/ 
         //CONNESSIONE AL DB
         $sql = "SELECT email FROM utenti WHERE email=$1";
         $prep = pg_prepare($db, "sqlEmail", $sql);
@@ -281,7 +281,7 @@
     }
 
     function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero){
-        require "../logindb.php";
+        require "../logindb.php";       /*require_once "../../connessionedb.php";*/ 
         $hash = password_hash($pass, PASSWORD_DEFAULT);
         $sql = "INSERT INTO utenti(nome, cognome, password, email, genere, nazione, citta, via, civico, telefono) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
         $prep = pg_prepare($db, "insertUser", $sql);

@@ -1,111 +1,114 @@
+/* contenitori principali */
 body {
-  margin: 0;
-  font-family: "Goudy Old Style", sans-serif;
-  /*display: flex;
-  flex-direction: column;*/
+  margin: 0; /* margine nullo in modo da non lasciare margini vuoti */
+  font-family: "Goudy Old Style", sans-serif; /* selezione font */
 }
 
 .row {
-  display: flex;
-  max-height: 650px;
-  /*margin-top: 89px; serviva se la navbar era fixed, ora è sticky*/
+  display: flex; /* il contenuto di tutta la pagina è ospitata da un container flex */
+  max-height: 650px; /* il container ha una massima altezza */
 }
 
 .scrollable_content {
-  overflow-y: scroll;
-  max-height: 650px;
+  overflow-y: scroll; /* eventuale overflow verticale può essere 'scrollato' */
+  max-height: 650px; /* stessa altezza massima della row */
 }
 
 /* Middle column */
 .content {
-  flex: 3;
+  flex: 3; /* la colonna centrale deve occupare più spazio delle laterali */
   -webkit-flex: 3;
   -ms-flex: 3;
-  background-color: #FFF0DA;
+  background-color: #FFF0DA; /* viene impostato un colore di sfondo */
 }
 
 /* Left and right column */
 .columnside {
-  flex: 1;
+  flex: 1; /* le colonne laterali devono occupare meno spazio della centrale */
   -webkit-flex: 1;
   -ms-flex: 1;
-  position: relative;
 }
 
 .sx {
-  background-color: #F4DAB4;
-  border-right: thin solid #E4A33F;
-  /*per la linea laterale della sidenav*/
-  left: 0px;
-  text-align: center;
+  background-color: #F4DAB4; /* scelta colore di sfondo della colonna sinistra */
+  border-right: thin solid #E4A33F; /* bordo dorato per separare la colonna sinistra da quella centrale */
+  text-align: center; /* testo allineato al centro */
+}
+
+@media(max-width: 975px) { /* quando la finestra si riduce troppo la colonna sx viene cancellata*/
+  .sx {
+    display: none;
+  }
 }
 
 .dx {
-  background-color: #46666D;
-  border-right: thin solid #184149;
-  right: 0px;
-  overflow-y: auto;
+  background-color: #46666D; /* colore di sfondo della colonna destra */
+  border-right: thin solid #184149; /* bordo a destra verde scuro */
+  overflow-y: auto; /* quando il carrello è troppo grande è possibile scorrere in basso */
 }
 
 .categoria {
+  /* ogni categoria di piatti è un container flex che spazia i piatti in maniera equa e li wrappa se non c'è spazio */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-/*singoli piattti nella colonna centrale*/
-.primi {
-  padding: 10px;
-  text-align: center;
-  max-width: 250px;
-  cursor: pointer;
+.titolo { /* stile del testo del titolo di ogni categoria */
+  font-family: "Sofia", Lucida Handwriting, Garamond;
+  font-size: 40px;
+  font-weight: 100;
 }
 
+/*singoli piatti nella colonna centrale*/
+.primi {
+  padding: 10px; /* maggiore volume al singolo piatto */
+  text-align: center; /* testo allineato al centro */
+  max-width: 250px; /* massima larghezza in modo da garantire la visione orizzontale di più piatti */
+  cursor: pointer; /* compare il cursore 'manina' al passaggio in modo da far capire all'utente che cliccando succede qualcosa (viene aggiunto il prodotto al carrello) */
+}
+
+/* colore di sfondo diverso al passaggio del mouse sul singolo piatto */
 .primi:hover {
   background-color: #F4DAB4;
-  transition: all .3s ease;
+  transition: all .3s ease; /* transition per ammorbidire il cambiamento */
   border-radius: 20px;
 }
 
-.primi>a {
-  text-decoration: none;
-  color: #46666D;
-  font-family: serif;
+.remover {
+  cursor: pointer; /* compare il cursore 'manina' al passaggio sul simbolo di rimozione in modo da far capire all'utente che cliccando succede qualcosa (viene rimossa un'istanza del prodotto dal carrello) */
 }
 
 .nomepiatto {
-  font-size: 25px;
+  font-size: 25px; /* dimensione font e colore del nome del piatto */
   color: rgb(24, 65, 73);
 }
 
-/*i singoli elementi della colonna di sx*/
+/*stile della lista categorie nella colonna sx*/
 .piatti {
-  border: 1px solid #46666D;
-  padding: 10px;
-  border-radius: 70px;
-  /*per i bordi arrotondati*/
-  text-align: center;
-  background-color: #FFF0DA;
-  margin: 20px;
-  /*per distaccare gli elementi dell'elenco*/
-  font-size: 22px;
-  color: #46666D;
-  text-decoration: none;
-  display: block;
-  /*necessario perchè altrimenti il tag sarebbe inline */
+  border: 1px solid #46666D; /* caratteristiche bordo */
+  padding: 10px; /* padding per dare maggiore volume */
+  border-radius: 70px; /* bordo arrotondato dei tasti */
+  text-align: center; /* testo allineato al centro */
+  background-color: #FFF0DA; /* colore di sfondo */
+  margin: 20px; /* margin per distanziarli l'uno dall'altro */
+  font-size: 22px; /* dimensione testo */
+  color: #46666D; /* colore testo */
+  text-decoration: none; /*per rimuovere lo stile automatico del tag a*/
+  display: block; /* necessario perchè altrimenti il tag a sarebbe inline */
+}
+
+/* al passaggio del mouse la selezione delle categorie cambia */
+.piatti:hover {
+  background-color: #46666D; /* vengono cambiati il colore di sfondo, del testo e del bordo */
+  color: #FFF0DA;
+  border-color: #FFF0DA;
+  transition: all .2s ease; /* transition per ammorbidire il cambiamento */
 }
 
 h1 {
-  color: #E4A33F;
-  text-align: center;
-}
-
-/* Change color on hover */
-.piatti:hover {
-  background-color: #46666D;
-  color: #FFF0DA;
-  border-color: #FFF0DA;
-  transition: all .2s ease;
+  color: #E4A33F; /* colore delle intestazioni */
+  text-align: center; /* allineamento al centro */
 }
 
 /*domanda componi ora nella barra id sx*/
@@ -114,30 +117,25 @@ h1 {
   color: #46666D;
 }
 
-/*tasto componi ora nella barra id sx e titolo della col di dx*/
+/*tasto componi ora nella barra id sx e tasto vai al pagamento nella col di dx*/
 .menu_buttons {
   display: inline-block;
-  border: thin solid rgb(255, 194, 108);
+  border: thin solid rgb(255, 194, 108); /* colore bordo */
   /*background-color: #184149;sono indeciso tra i due background color*/
-  background-color: rgb(70, 102, 109);
-  border-radius: 7px;
-  /*per i bordi arrotondati*/
+  background-color: rgb(70, 102, 109); /* colore sfondo */
+  border-radius: 7px; /* tasto arrotondato */
   -webkit-border-radius: 7px;
-  /*per i bordi arrotondati su safari*/
-  padding: 10px 30px;
-  /*per aumentare quello che circonda il bottone*/
-  color: rgb(255, 194, 108);
-  
-  font-size: 15px;
-  width: 130px;
-
-  cursor: pointer;
-  /*facciamo uscire la manina*/
-  transition: all .3s ease;
-  text-decoration: none;
+  padding: 10px 30px; /* per dare più volume al bottone */
+  color: rgb(255, 194, 108); /* colore testo */
+  font-size: 15px; /* dimensione testo */
+  width: 130px; /* larghezza bottone */
+  cursor: pointer; /* compare il cursore 'manina' al passaggio in modo da far capire all'utente che cliccando succede qualcosa */
+  text-decoration: none; /* per togliere lo stile automatico della a */
+  transition: all .3s ease; /* transition per ammorbidire il cambiamento al passaggio del mouse */
 }
 
-#pay_button_form {
+/* il tasto per passare al carrello è contenuto in un contenitore flex che lo tiene allineato al centro */
+#pay_button_div {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -146,53 +144,47 @@ h1 {
   padding: 10px;
 }
 
+/* tasto per passare al carrello */
 #pay_button {
-  background-color: #184149;
-  text-align:left;
-  padding: 10px;
-  width: auto;
+  background-color: #184149; /* colore di sfondo  */
+  text-align: center; /* testo allineato al centro */
+  padding: 10px; /* padding per dare volume */
+  width: auto; /* larghezza automatica per contenere il testo */
 }
 
+/* al passaggio del mouse il tasto componi piatto e il tasto per passare al carrello 
+cambiano colore di sfondo, del bordo e del testo */
 .menu_buttons:hover, #pay_button:hover {
   border: thin solid #184149;
   background-color: #FFF0DA;
   color: #5D7A7F;
 }
 
-/*dettagli stilistici*/
-.titolo {
-  font-family: "Sofia", Lucida Handwriting, Garamond;
-  font-size: 40px;
-  font-weight: 100;
-}
-
+/*stile della lista del carrello*/
 #cart-list {
-  padding-inline-start: 10px;
+  padding-inline-start: 10px; /* rientranza meno pronunciata rispetto allo standard di 40px */
 }
 
 #cart-list * {
-  color: #FFC26C;
-  padding: 3px;
-  list-style: none;
+  color: #FFC26C; /* colore del testo dei list item */
+  padding: 3px; /* padding per dare maggiore volume */
+  list-style: none; /* viene tolto il segnetto che indica i singoli list item */
 }
 
+/* tasto per vedere i dettagli del singolo piatto */
 #info_button {
-  cursor: pointer;    /*facciamo uscire la manina*/
-  border: none;       /*eliminare bordo e sfondo del bottone di default*/
-  background: none;
-  height: 25px;
-  border-radius: 10px;
+  cursor: pointer; /* compare il cursore 'manina' al passaggio in modo da far capire all'utente che cliccando succede qualcosa (si va alla pagina di quello specifico piatto) */
+  border: none; /*eliminare bordo e sfondo del bottone di default*/
+  background: none; /* nessun sfondo per meglio integrarlo con il suo contenitore */
+  height: 25px; /* altezza del bottone */
+  border-radius: 10px; /* bordo arrotondato */
 }
 
 #info_button:hover {
-  background: fixed;
+  background: fixed; /* al passaggio del mouse viene impostato uno sfondo in modo da creare responsività */
   background-color: #FFF0DA;
 }
 
 #to_piatto_singolo {
-  text-align: end; /*tasto info a destra del riquadro*/
-}
-
-.remover {
-  cursor: pointer;
+  text-align: end; /* tasto info a destra del suo contenitore */
 }

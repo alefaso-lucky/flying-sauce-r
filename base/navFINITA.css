@@ -50,13 +50,13 @@ header a:hover, .important-elem span:hover{
   .important-elem #hamb {
     float: right;         /*questo link diventa visibile e si posiziona a destra*/
     display: block;
-    cursor: pointer;
+    cursor: pointer;      /*al click sull'hamburger il cursore diventa la manina*/
   }
 
   .topnav.responsive {position: relative;}      /*se la classe è sia topnav che responsive position relative*/
 
   .important-elem img{
-    flex:0;
+    flex:0;     /*prima avevamo flex:2 per definire la divisione degli spazi con la nav*/
   }
 
   /*questo div contiene img e hamburger*/
