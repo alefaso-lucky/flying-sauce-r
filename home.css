@@ -50,7 +50,7 @@ body {
 }
 .slide-text { /* questa classe si riferisce al testo presente sulle slide */
   position: absolute;
-  width:500px;
+  width: 500px;
   left: 8%;
   top: 32%;
   color: black;
