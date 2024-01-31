@@ -5,6 +5,7 @@
   if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
     session_destroy();
     header("refresh:0;");
+    exit();
   }
 
   if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
