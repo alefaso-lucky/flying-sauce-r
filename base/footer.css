@@ -105,3 +105,13 @@ footer {
     color: gray; /* colore del placeholder nell'input */
     opacity: 1; /*Firefox imposta una opacity più bassa al placeholder, per risolvere la impostiamo ad 1 manualmente*/
 }
+
+.social_footer {
+    text-decoration: none; /*per togliere gli effetti dei link*/
+    color:whitesmoke;
+    font-size: 30px;
+}
+
+.social_footer :hover{
+    filter: invert(50%);
+}
