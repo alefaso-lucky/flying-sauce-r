@@ -95,7 +95,7 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <title>Menu</title> <!--titolo della scheda-->
+        <title>Flying Sauce&reg; - Menu</title> <!--titolo della scheda-->
         <meta charset="utf-8"> <!--character encoding-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--base degli href della pagina-->
         <link rel="stylesheet" href="menu/ordina_ora.css"> <!--collegamento al foglio di stile-->
