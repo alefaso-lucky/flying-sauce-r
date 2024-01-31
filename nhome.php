@@ -155,21 +155,4 @@
 
         <?php require "base/footer.php"; ?> <!--inserimento footer-->
     </body>
-
-    <!--segue il js per gestire lo scorrimento delle recensioni della sezione 4-->
-    <script>
-        var myIndex = 0;
-        carousel();
-        function carousel() {
-          var i;
-          var x = document.getElementsByClassName("recensioni");
-          for (i = 0; i < x.length; i++) {/* pongo tutte le recensioni non visibili */
-              x[i].style.display = "none";
-          }
-          myIndex++;
-          if (myIndex > x.length) {myIndex = 1}/* normalizzo myIndex sul numero di recensioni */
-          x[myIndex-1].style.display = "block"; /* rendo visibile una recensione */
-          setTimeout(carousel, 4000); /*cambia recensione ogni 4 secondi*/
-        }
-    </script>
 </html>

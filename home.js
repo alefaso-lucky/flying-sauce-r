@@ -20,5 +20,19 @@ document.addEventListener("DOMContentLoaded", function () { // il listner serve 
     
     setTimeout(showSlides, 5000); // cambia slide ogni 10 secondi
   }
-
+  
+  /*segue il js per gestire lo scorrimento delle recensioni della sezione 4-->*/
+  var recIndex = 0;
+  carousel();
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("recensioni");
+    for (i = 0; i < x.length; i++) {/* pongo tutte le recensioni non visibili */
+        x[i].style.display = "none";
+    }
+    recIndex++;
+    if (myIndex > x.length) {recIndex = 1}/* normalizzo myIndex sul numero di recensioni */
+    x[recIndex-1].style.display = "block"; /* rendo visibile una recensione */
+    setTimeout(carousel, 4000); /*cambia recensione ogni 4 secondi*/
+  }
 });
