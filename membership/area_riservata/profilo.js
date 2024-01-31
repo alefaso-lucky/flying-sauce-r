@@ -1,16 +1,21 @@
 /* Deve essere utilizzato window.onload anziché un listner su DOMContentLoaded perché è necessario che le variabili di sessione siano caricate */
 window.onload = function () {
     var selectedDiv = sessionStorage.getItem("selected"); // questa variabile di sessione è l'ID del div che cliccato seleziona il div visibile;
-    document.getElementById("sel" + selectedDiv).click(); // clicca il div di selezione del div visibile
+
+    if(selectedDiv != null)
+      document.getElementById("sel" + selectedDiv).click(); // clicca il div di selezione del div visibile
+    else
+      document.getElementById("selAnagrafica").click();  // se non è selezionato un div allora mostra l'anagrafica
+
     if(selectedDiv == "Spedizione") // se il div da visializzare è "Spedizione" allora è necessario capire quale form visualizzare
       visualizzaFormSpedizione();
 }
 
   /* questa funzione viene chiamata all'onclick dei div di selezione. Cambia la visibilià dei div di informazioni rendnendo visibile il div selezionato dall'utente */
-  function switchDiv(visibleDiv){
+  function switchDiv(visibleDiv) {
       var specialDiv = document.getElementById(visibleDiv);
       var allSections = document.getElementsByClassName("sezione");
-//
+
       for(var i=0; i< allSections.length; i++){
         allSections[i].style.display= "none";     /*rendo invisibili prima tutti i div che appartengono alla classe sezione*/
       }
@@ -23,7 +28,7 @@ window.onload = function () {
   }
 
   /* questa funzione serve per cambiare il colore di backgroud dei div di selezione */
-  function coloreSelezionato(visibleDiv){
+  function coloreSelezionato(visibleDiv) {
       var otherSel = document.getElementsByClassName('selezione');
 
       for(var i=0; i<otherSel.length; i++){
@@ -35,7 +40,7 @@ window.onload = function () {
   }
 
   /* questa funzione viene chiamata quando l'utente seleziona quale form di "Spedizione" visualizzaare */
-  function visibleForm(idVisible, idInvisible){
+  function visibleForm(idVisible, idInvisible) {
       document.getElementById(idInvisible).style.display = 'none';
       document.getElementById(idVisible).style.display = 'block';
       sessionStorage.setItem("visibleSpedizione", idVisible); /* memorizzo nella variabile di sessione quale form di "Spedizione" è selezionato (info o modifica) */

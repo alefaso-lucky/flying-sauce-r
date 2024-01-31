@@ -42,14 +42,11 @@
       }
     }
 
-    if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
-      session_destroy();
-      header("refresh:0.01;URL=../../nhome.php");
-    }
+
   }
 
   function aggiorna_password($newpass) {
-  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/ 
+  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/
   $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   $sql = "SELECT * FROM utenti WHERE email=$1;";
@@ -92,7 +89,7 @@
   }
 
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../logindb.php";     /*require_once "../../connessionedb.php";*/ 
+    require_once "../../logindb.php";     /*require_once "../../connessionedb.php";*/
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     $sql = "SELECT * FROM utenti WHERE email=$1;";
@@ -168,13 +165,14 @@
           <div class="selezione" id="selAnagrafica" onclick="switchDiv('Anagrafica')"><img src="media/info_personali.png" alt="info_icon" width="20px" height="20px">Informazioni personali</div>
           <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><img src="media/sicurezza.png" alt="sec_icon" width="20px" height="20px">Sicurezza</div>
           <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px">Spedizione</div>
-          <form action=<?php echo $_SERVER["PHP_SELF"]; ?>  method="post">
+          <!-- Questo form aggiorna la variabile di sessione Logout e invia le informazioni alla homepage dove è presente la logica per il logout -->
+          <form action="http://localhost/Flying_Sauce_r/nhome.php" method="post">
             <input id ="logout" type="submit" name="Logout" value="Logout">
           </form>
         </div>
         <div class="account_content">
           <?php
-            require "../../logindb.php";        /*require_once "../../connessionedb.php";*/ 
+            require "../../logindb.php";        /*require_once "../../connessionedb.php";*/
             $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
             $sql = "SELECT nome, cognome, genere, email, nazione, citta, via, civico, telefono FROM utenti WHERE email = '" . $_SESSION['email'] . "';";
             $ret = pg_query($db, $sql); /* viene eseguita la query */

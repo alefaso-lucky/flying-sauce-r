@@ -1,5 +1,12 @@
 <?php
   session_start();
+
+  /* logica per il logut */
+  if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
+    session_destroy();
+    header("refresh:0;");
+  }
+
   if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
       $logged = $_SESSION['loggato'];
       $email_user = $_SESSION['email'];
@@ -104,7 +111,7 @@
                   <?php echo "$paragrafo_promozione"; ?>
                 </p>
                 <a class="bot" href="<?php echo $bottone_percorso; ?>"><?php echo "$bottone_promozione"; ?></a> <!--bottone per andare alla pagina Singolo piatto-->
-            </div>                
+            </div>
             <img src="<?php echo $img_promozione; ?>" alt="<?php echo $alt_img_promozione; ?>" width="400px" height="400px">
         </div>
         <!--quarto blocco, recenzioni di clienti-->
@@ -112,21 +119,21 @@
         <p class="recensioni">
             <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
             La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore
-            profondo e avvolgente.  La consegna è stata rapida e il servizio clienti è stato 
+            profondo e avvolgente.  La consegna è stata rapida e il servizio clienti è stato
             molto disponibile. Tornerò sicuramente a ordinare!</br>
             Angela F.
         </p>
         <p class="recensioni" >
             <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
             Ho ordinato diverse volte da questo sito e ogni volta sono rimasto colpito dalla
-            maestria culinaria. Consiglio vivamente a tutti gli amanti della cucina italiana 
+            maestria culinaria. Consiglio vivamente a tutti gli amanti della cucina italiana
             di provare questo servizio.</br>
             Marck C.
         </p>
         <p class="recensioni">
             <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
-            La qualità del cibo è fuori dal comune. Ogni piatto è preparato con passione e 
-            dedizione. Ho provato diverse specialità e tutte sono state al di là delle aspettative. 
+            La qualità del cibo è fuori dal comune. Ogni piatto è preparato con passione e
+            dedizione. Ho provato diverse specialità e tutte sono state al di là delle aspettative.
             Un'esperienza culinaria che consiglio a tutti!</br>
             Richard W.
         </p>
@@ -141,7 +148,7 @@
 
         <?php require "base/footer.php"; ?> <!--inserimento footer-->
     </body>
-    
+
     <!--segue il js per gestire los corrimento delle recensioni della sezione 4-->
     <script>
         var myIndex = 0;
