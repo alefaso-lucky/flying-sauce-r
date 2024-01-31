@@ -11,7 +11,6 @@
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
         $logged = $_SESSION['loggato'];
         $email_user = $_SESSION['email'];
-        //echo "<p id="."logged"." style="."'display: none'".">"; non più necessario
     }
     else {
         $logged = false;

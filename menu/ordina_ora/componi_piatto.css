@@ -160,7 +160,7 @@ label input:checked+span:before {
     text-decoration: none; /*rimuove lo stile automatico delle anchor*/
 
     cursor: pointer; /*fa uscire la "manina"*/
-    transition: all .6s ease; /*rende l'animazione di hover più smooth*/
+    transition: all .3s ease; /*rende l'animazione di hover più smooth*/
 }
 
 #carrello {
