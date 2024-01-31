@@ -1,10 +1,7 @@
 /*decorazione di sfondo*/
 body {
     background-image: url("../media/sfondo_accedi.jpg");
-    background-repeat:repeat-y;
-    background-size: cover;
-    margin: 0;
-    width: 100%;
+    margin: 0; /*per evitare che ci sia un margine intorno a tutti gli elementi*/
 }
 
 /*contenitore di tutti gli elementi*/
@@ -14,10 +11,9 @@ body {
     border-top: medium solid RGB(255, 194, 108); /* aggiungo un bordo superiore dorato */
     border-bottom: medium solid RGB(255, 194, 108); /* aggiungo un bordo inferiore dorato */
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: center; /*allinea i contenuti al centro dello schermo*/
     padding: 20px;
-    width: 100%;/*questo non funziona bene*/
+    width: 100%; /*riempie tutta la larghezza disponibile*/
     min-height: 500px;
     margin: 5% 0%; /* margine per allinare */
 }
@@ -27,34 +23,28 @@ body {
     display: flex;
     flex-direction: column;
 }
-/*PRIMA PAGINA visionata, contiene il resoconto di tutto ciò che è stato 
+
+/*PRIMA SEZIONE visionata, contiene il resoconto di tutto ciò che è stato 
 inserito nel carrello in una tabella che mostra anche il totale della spesa*/
 #tabella-carrello {
-    width: 100%;
+    width: 100%; /*occupa in larghezza tutto lo spazio disponibile*/
 }
 
-#sezione2, #sezione3 {
+#sezione2, #sezione3 {/*le sezioni successive alla prima non devono essere visibili al caricamento della corrente*/
     display: none;
 }
 
-/*
-ul.a {
-    list-style-type: circle;
-}
-*/
-#row ul {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+#row ul {/*elenco che simbileggia la sezione corrente nella pagina*/
+    display: flex; /*mostra le voci in orizzontale*/
+    justify-content: space-between;/*allinea l'elenco con dello spazio tra le voci*/
+    list-style-type: none; /*non mostra i punti di elenco*/
     margin: 0;
     padding: 0;
 }
   
 #row li{
-    display: inline-block;
     font-size: 35px;
-    font-family: Times New Roman, serif;    
-    font-weight: 100;
+    font-family: Times New Roman, serif;
     color: #FFC26C;
 }
 
@@ -69,32 +59,32 @@ th{
 
 td{
     color: rgb(245, 245, 245);
-    text-align: center;
+    text-align: center; /*allineamento dei testi nelle celle al centro delle colonne*/
 }
 
-tr:nth-child(even) {
+tr:nth-child(even) {/*seleziona le righe di numero pari della tabella*/
     background-color: rgb(47, 94, 104);
 }
  
 #bottoni{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*allineare i bottoni ai lati opposti dello schermo*/
 }
 
-/*SECONDA PAGINA visionata, presenta la scelta di tre diverse spedizioni*/
+/*SECONDA SEZIONE visionata, presenta la scelta di tre diverse spedizioni*/
 .spiegazione{
     color: whitesmoke;
     max-width: 800px;
 }
 
 #sezione2 {
-    flex-direction: column;
+    flex-direction: column; /*allinea gli elementi uno sotto l'altro*/
     align-items: center;
 }
 
 #tipi_spedizione{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;/*sposta gli elementi uno sotto l'altro se si rimpicciolisce la finestra*/
     align-items: center;
     color:rgba(24, 65, 73);
     margin: 20px 80px;
@@ -120,15 +110,15 @@ label input:checked+h1:before{
     background-color: rgb(70, 102, 109);
 }
 
-.proposta_sp{
+.proposta_sp{ /*colonne che mostrano i droni*/
     text-align: center;
     background-color: #FFC26C;
     margin: 10px;
-    border-radius: 70px;
+    border-radius: 70px; /*angoli smussati*/
     width: 300px;
     height: 500px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/*allinea gli elementi all'interno in verticale*/
     align-items: center;
 }
 
@@ -138,15 +128,13 @@ label input:checked+h1:before{
 }
 
 #sp_lampo{
-    border-style: solid;
-    border-color: crimson;
-    border-width: 7px;
+    border: 10px solid crimson; /*bordo alla colonna cetrale per darle rilevanza*/
     height: 550px;
 }
 
-/*TERZA PAGINA visionata, conferma che l'ordine è riuscito correttamente*/
+/*TERZA SEZIONE visionata, conferma che l'ordine è riuscito correttamente*/
 #sezione3{
-    flex-direction: column;
+    flex-direction: column;/*allinea gli elementi in verticale*/
     align-items: center;
 }
 

@@ -76,16 +76,15 @@
     <?php require "../base/navFINITA.php" ?> <!--inserimento navbar-->
     <div id="row">
         <div id="internal-row">
-            <ul>
+            <ul><!--indica la sezione corrente della pagina: carrello, spedizione, pagamento-->
                 <li id="titolo-sezione1">CARRELLO</li>
                 <li id="titolo-sezione2">&#x26AC;</li>
                 <li id="titolo-sezione3">&#x26AC;</li>
             </ul>
-            <div id="sezione1">
+            <div id="sezione1"><!--sezione mostrata inizialmente, contiene il resoconto del carrello dettagliato e il totale della spesa-->
                 <table id="tabella-carrello">
                     <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th>
                     </tr>
-                    <!--
                     <tr>
                         <td>Alfreds Futterkiste</td>    <td>Maria Anders</td>     <td>Germany</td>
                     </tr>
@@ -103,7 +102,8 @@
                     </tr>
                     <tr>
                         <td>Magazzini Alimentari Riuniti</td>    <td>Giovanni Rovelli</td>    <td>Italy</td>
-                    </tr> -->
+                    </tr> 
+                    
                     <?php
                         /*connessione al database*/
                         require "../connessionedb.php";
@@ -139,7 +139,7 @@
                 </table>
                 <p id="totale" >Totale: <?php echo $totale; ?></p>
             </div>
-            <div id="sezione2">
+            <div id="sezione2"><!--seconda sezione mostrata, illustra le diverse possibilità di spedizione con relative specifiche tecniche-->
                 <p class=spiegazione>
                     Il servizio di spedizione di Flying Sauce offre un'esperienza di consegna unica, consentendo 
                     di gustare le pietanze tipiche italiane comodamente a casa propria, ovunque nel mondo, grazie 
@@ -147,7 +147,7 @@
                     per soddisfare le esigenze di ogni cliente:
                 </p><br>
                 <div id=tipi_spedizione>
-                    <div class=proposta_sp>
+                    <div class=proposta_sp><!--prima proposta di spedizione, tipo medio-->
                         <label for="rbsx">
                             <input class=opzione id=rbsx name="spedizione" value="AVANZATA" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                             <h1>AVANZATA</h1>
@@ -164,7 +164,7 @@
                             rapidità.
                         </p>
                     </div>
-                    <div class=proposta_sp id=sp_lampo>
+                    <div class=proposta_sp id=sp_lampo><!--seconda proposta di spedizione, tipo più rapido-->
                         <label for="rbcc">
                             <input class=opzione id=rbcc name="spedizione" value="LAMPO" type="radio" checked/> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                             <h1>LAMPO</h1>
@@ -180,7 +180,7 @@
                             Un'opzione perfetta per chi vuole gustare subito l'eccellenza della cucina italiana.
                         </p>
                     </div>
-                    <div class=proposta_sp>
+                    <div class=proposta_sp><!--terza proposta di spedizione, tipo basilare-->
                         <label for="rbdx">
                             <input class=opzione id=rbdx name="spedizione" value="BASE" type="radio" /> <!--radio button, i 3 radio button per la stessa caratteristica hanno lo stesso attributo name in modo da essere legati-->
                             <h1>BASE</h1>
@@ -204,7 +204,7 @@
                     nostra avanzata tecnologia di droni.
                 </p>
             </div>
-            <div id="sezione3">
+            <div id="sezione3"><!--terza sezione mostrata, illustra la modalità di pagamento in contrassegno-->
                 <p class=spiegazione>
                     L’ordine è andato a buon fine, buon appetito!</br>
                     Arriverà il drone all’indirizzo indicato al momento della iscrizione, il pagamento sarà svolto al momento 
@@ -212,7 +212,7 @@
                 </p>
                 <img src="./media/carrello/bollinoVerde.png" alt="ordine stornato con successo">
             </div>
-            <div id=bottoni>
+            <div id=bottoni><!--bottoni per spostarsi tra le diverse sezioni sopraelencate-->
                 <p id="bottone_secondario" onclick="cambiaSezione('-')">INDIETRO</p> <!--bottone per andare alla pagina precedente-->
                 <p class="bottone_primario" id="avanti" onclick="cambiaSezione('+')">AVANTI</p> <!--bottone per andare alla pagina successiva-->
             </div>

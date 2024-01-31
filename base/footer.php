@@ -58,7 +58,7 @@
                 </p>
             </div>
             <div>
-                <p>SEGUICI SU</p>
+                <p id=follow>SEGUICI SU</p>
                 <a class="social_footer" href="https://www.facebook.com/profile.php?id=61555762993624"><i class="fa fa-facebook-square"></i></a> <!--bottone per andare alla pagina facebook-->
                 <a class="social_footer" href="https://www.instagram.com/flying.sauce/"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
             </div>
