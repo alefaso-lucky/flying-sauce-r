@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <title>Flying Sauce&reg; - Chi siamo</title>
@@ -15,16 +15,22 @@
 <body>
     <?php require "../base/navFINITA.php" ; ?>
 
-    <!-- div per contenere uno slider per le slides -->
+    <!-- div per applicare uno sfondo colorato allo slider-->
     <div class="background-container">
+      <!-- div che conterrà lo slider -->
       <div class="container">
+        <!-- lo slider che contiene: le varie slides (di cui sarò visualizzata solo una alla volta), i pulsanti per cambiare slide, una box di testo che appare sulla slide  -->
         <div class="slider">
+          <!-- questi radio buttons servono per cambiare la slide visualizzata, al loro click è eseguita la funzione JS showSlide() che mostra la slide selezionata -->
           <input type="radio" class="radio" name="images" id="radio-1" onclick="showSlide(1)">
           <input type="radio" class="radio" name="images" id="radio-2" onclick="showSlide(2)">
           <input type="radio" class="radio" name="images" id="radio-3" onclick="showSlide(3)">
           <input type="radio" class="radio" name="images" id="radio-4" onclick="showSlide(4)">
 
+          <!-- Ogni slide dello slideshow contiene un'immagine e una box di testo.
+            La prina slide dello slide show: -->
           <div class="slide" id="slide-1">
+
             <img src="media/chi_siamo1.jpg" alt="chi_siamoIMG1" width="800px" height="500px">
             <div class="slide-text">
               <h1>Le nostre origini</h1>
@@ -35,17 +41,19 @@
               </p>
             </div>
           </div>
+          <!-- La seconda slide dello slideshow -->
           <div class="slide" id="slide-2">
             <img src="media/chi_siamo2.jpg" alt="chi_siamoIMG2" width="800px" height="500px">
             <div class="slide-text">
               <h1>Chef - le nostre Stelle Michelin</h1>
               <p>
-                L'annuncio delle tre stelle Michelin per il mio piatto "Rosso Rubino e Verde Sinfonia" è stato un momento di straordinaria gioia e tensione. 
+                L'annuncio delle tre stelle Michelin per il mio piatto "Rosso Rubino e Verde Sinfonia" è stato un momento di straordinaria gioia e tensione.
                 Questo piatto combina audacemente mandorle tostate e barbabietole lavorate con varie tecniche per creare un equilibrio unico di sapori.
                 Il prestigioso riconoscimento sottolinea l'impegno per l'eccellenza gastronomica: mantenere gli standard elevati per soddisfare le aspettative del pubblico è ora una responsabilità più profonda.
               </p>
             </div>
           </div>
+          <!-- La terza slide dello slideshow -->
           <div class="slide" id="slide-3">
             <img src="media/chi_siamo3.png" alt="chi_siamoIMG3" width="800px" height="500px">
             <div class="slide-text">
@@ -58,12 +66,13 @@
               </p>
             </div>
           </div>
+          <!-- La quarta slide dello slideshow -->
           <div class="slide" id="slide-4">
             <img src="media/chi_siamo4.jpg" alt="chi_siamoIMG4" width="800px" height="500px">
             <div class="slide-text">
               <h1>Il futuro è oggi</h1>
               <p>
-                Siamo entusiasti di estendere la nostra passione per la cucina italiana a livello globale attraverso il nostro innovativo servizio di consegna. 
+                Siamo entusiasti di estendere la nostra passione per la cucina italiana a livello globale attraverso il nostro innovativo servizio di consegna.
                 La flessibilità dei supedroni ci permette di spostare i nostri chef in diverse regioni italiane, offrendo itinerari di gusto dinamici che esplorano la ricchezza culinaria del nostro Paese.
                 Ogni consegna non rappresenta solo un servizio, ma una missione volta a diffondere il patrimonio culinario italiano in ogni angolo del mondo, un morso alla volta.
               </p>
@@ -71,6 +80,8 @@
           </div>
         </div>
 
+        <!-- il seguente div conterrà delle label associate ai radio buttons per la seleziona della slide visibile,
+            Le label sonmo utilizzate per applicare dello stile ai radio button. -->
         <div class="dots">
           <label for="radio-1" id="label-1"></label>
           <label for="radio-2" id="label-2"></label>
@@ -80,7 +91,7 @@
       </div>
     </div>
 
-
+    <!-- La seguente sezione si trova al centro della pagina, contiene una citazioe titolata -->
     <section class="middle-page-text">
       <h2>Un Viaggio Culinario di Successo: La Nostra Storia</h2>
       <blockquote>
@@ -96,9 +107,11 @@
       </blockquote>
     </section>
 
-    <!-- Per visualizzare le immagini con il testo -->
-    <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
+    <!-- titolo del gird template -->
     <h2 id="grid-title">I nostri valori</h2>
+    <!-- Segue un div che sarà un display-grid, visualizza delle immagini con del testo posizionate in un layout a griglia.
+     Con CSS e JS è stato implementato un meccanismo per rendere insivibile il testo a meno che non si passi col cursore sull'immagine,
+     in questo caso oltre a visualizzare il testo l'immagine apparià più grigia e grande -->
     <div class="grid-img-container">
         <div class="grid-item" id="grid-item1">
           <img src="media/gridImg1.jpg" id="img1" width="100px" height="100px"></img>
