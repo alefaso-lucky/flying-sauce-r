@@ -35,6 +35,12 @@ body {
   text-align: center; /* testo allineato al centro */
 }
 
+@media(max-width: 975px) { /* quando la finestra si riduce troppo la colonna sx viene cancellata*/
+  .sx {
+    display: none;
+  }
+}
+
 .dx {
   background-color: #46666D; /* colore di sfondo della colonna destra */
   border-right: thin solid #184149; /* bordo a destra verde scuro */
