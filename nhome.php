@@ -7,7 +7,7 @@
     header("refresh:0;");
     exit();
   }
-
+  /* logica per mestrare la home ad un utente autenticato o meno */
   if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
       $logged = $_SESSION['loggato'];
       $email_user = $_SESSION['email'];
@@ -23,13 +23,13 @@
         <title>Flying Sauce&reg;</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--stylesheet per mostrare le icone delle stelle di recensioni e dei social network-->
         <link rel="stylesheet" href="./home.css">
         <script type="text/javascript" src="./home.js"></script>
     </head>
     <body>
-      <?php require "base/navFINITA.php" ?>
-      <!--  Codice per lo slideshow -->
+      <?php require "base/navFINITA.php" ?> <!--collegamento alla navbar-->
+      <!--  promo blocco, codice per lo slideshow -->
       <div class="slideshow-background">
         <div class="container">
           <div class="slider">
@@ -62,24 +62,24 @@
 
         <!--secondo blocco, tre sezioni che conducono a tre percorsi diversi del sito-->
         <div id=contenitore_2>
-            <div id=sx2 class=col>
+            <div id=sx2 class=col><!--prima colonna-->
                 <p id=frasesx>una grande famiglia</p>
                 <a class="bot" href="chi%20siamo/chi%20siamo.php">CHI SIAMO</a> <!--bottone per andare alla pagina Chi siamo-->
             </div>
-            <div id=cc2 class=col>
+            <div id=cc2 class=col><!--seconda colonna-->
                 <p id=frasecc>dall'idea alla forchetta</p>
                 <a class="bot" href="menu/ordina_ora/componi_piatto.php">COMPONI ORA</a> <!--bottone per andare alla pagina Componi Piatto-->
             </div>
-            <div id=dx2 class=col>
+            <div id=dx2 class=col><!--terza colonna-->
                 <p id=frasedx>la proposta italiana</p>
                 <a class="bot" href="menu/ordina_ora.php">MENU</a> <!--bottone per andare alla pagina Menu-->
             </div>
         </div>
-        <!--terzo blocco, pasta della settimana-->
+        <!--terzo blocco, varia in base all'autenticazione dell'utente-->
         <div class=row>
             <div id=sx3>
                 <?php
-                  if($logged) {
+                  if($logged) { /* se autenticato mostra la pasta della settimana */
                     $img_promozione = "media/home/pastaDellaSettimana.jpg";
                     $alt_img_promozione = "la pasta della settimana è lasagna alla bolognese";
                     $titolo_promozione = "LA PASTA DELLA SETTIMANA:";
@@ -90,10 +90,10 @@
                     e vino rosso. Questa lasagna, ispirata alla nonna, è molto più di un semplice
                     pasto. È un viaggio sensoriale, un tributo all’amore e alla tradizione.
                     PAR;
-                    $bottone_promozione = "SCOPRI DI PIU'";
+                    $bottone_promozione = "SCOPRI DI PIU'";/* permette di vedere le specifiche del Singolo Piatto*/
                     $bottone_percorso = "menu/piatto.php?name=Lasagna+alla+Bolognese";
                   }
-                  else {
+                  else {/* se non autenticato mostra un invito a fare il log-in */
                     $img_promozione = "media/home/clienti_ricevono_pasta.jpeg";
                     $alt_img_promozione = "foto di due clienti che ricevono il loro pasto da un drone";
                     $titolo_promozione = "OVUNQUE NEL MONDO";
@@ -102,7 +102,7 @@
                     Accedi ed entra a far parte della famiglia di Flying Sauce, il cibo è uno dei piaceri
                     della vita, quindi perché accontentarsi? Scegli Flying Sauce!
                     PAR;
-                    $bottone_promozione = "ACCEDI AD UN MONDO TUTTO ITALIANO";
+                    $bottone_promozione = "ACCEDI AD UN MONDO TUTTO ITALIANO";/* permette di autenticarsi */
                     $bottone_percorso = "membership/account.php";
                   }
                 ?>
@@ -111,20 +111,21 @@
                 <p>
                   <?php echo "$paragrafo_promozione"; ?>
                 </p>
-                <a class="bot" href="<?php echo $bottone_percorso; ?>"><?php echo "$bottone_promozione"; ?></a> <!--bottone per andare alla pagina Singolo piatto-->
+                <a class="bot" href="<?php echo $bottone_percorso; ?>"><?php echo "$bottone_promozione"; ?></a> <!--bottone per spostarsi in base all'autenticazione dell'utente-->
             </div>
             <img src="<?php echo $img_promozione; ?>" alt="<?php echo $alt_img_promozione; ?>" width="400px" height="400px">
         </div>
-        <!--quarto blocco, recenzioni di clienti-->
+        <!--quarto blocco, recenzioni di clienti che si alternano-->
         <div class=row>
           <div class="recensioni">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-            <blockquote>
+            <i class="fa fa-star"><!-- icona della stella di recensione -->
+            </i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <blockquote><!--citazione della recensione -->
               La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore
               profondo e avvolgente.  La consegna è stata rapida e il servizio clienti è stato
               molto disponibile. Tornerò sicuramente a ordinare!
             </blockquote>
-            <cite>Angela F. </cite>
+            <cite>Angela F. </cite><!--nome dell'utente che ha scritto la recensione-->
           </div>
           <div class="recensioni" >
           <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
@@ -145,7 +146,7 @@
             <cite>Richard W. </cite>
           </div>
         </div>
-        <!--quinto blocco, link ai vari social network-->
+        <!--quinto blocco, link ai vari social network(realmente funzionanti e collegati a pagine dedicate al progetto)-->
         <div id=contenitore_5>
             Seguici su
             <a class="social" href="https://www.facebook.com/profile.php?id=61555762993624"><i class="fa fa-facebook-square"></i></a> <!--bottone per andare alla pagina facebook-->
@@ -154,21 +155,4 @@
 
         <?php require "base/footer.php"; ?> <!--inserimento footer-->
     </body>
-
-    <!--segue il js per gestire los corrimento delle recensioni della sezione 4-->
-    <script>
-        var myIndex = 0;
-        carousel();
-        function carousel() {
-        var i;
-        var x = document.getElementsByClassName("recensioni");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}
-        x[myIndex-1].style.display = "block";
-        setTimeout(carousel, 4000); // cambia recensione ogni 4 secondi
-        }
-    </script>
 </html>
