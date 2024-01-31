@@ -1,68 +1,73 @@
-<?php /*
-        session_start();
+<?php
+        session_start(); /* viene inizializzata la sessione */
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
             $logged = $_SESSION['loggato'];
             $email_user = $_SESSION['email'];
         }
-        else {
-            header("Location: http://localhost/Flying_Sauce_r/membership/account.php"); 
+        else { /* se l'utente non è loggato non può accedere al carrello, viene quindi portato alla pagina per il login */
+            header("Location: http://localhost/Flying_Sauce_r/membership/account.php");
             exit();
         }
 
+        /* se si entra in questo if significa che resoconto.php sta ricevendo una richiesta AJAX, come per ordina_ora.php
+        lo script PHP in questione poteva essere in una pagina separata ma per compattezza, visto che lo script JavaScript
+        che esegue la richiesta AJAX è legato a resoconto.php, è stato integrato tutto nella stessa pagina */
         if(isset($_POST['finalize_order']) && $_POST['finalize_order']) {
-            /*connessione al database
-            require "../connessionedb.php";
-            $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
+            require "../connessionedb.php"; /*connessione al database*/
+            $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'"; /* viene eseguita la query per estrarre il carrello dell'utente */
             $cart_query = pg_query($db, $cart);
-            $totale = 0;
-
-            $tipo_spedizione = $_POST['spedizione'];
+            
+            $totale = 0; /* inizialmente il totale dell'ordine è 0 */
+            $tipo_spedizione = $_POST['spedizione']; /* vengono estratti i parametri ricevuti dallo script JavaScript che ha eseguito la richiesta AJAX */
             $prezzo_spedizione = $_POST['prezzo_spedizione'];
+
+            /* viene effettuata una query per creare un ordine, l'identificativo dell'ordine è un ordine crescente 
+            che viene assegnato in automatico, di conseguenza inizialmente è ignoto, per questo l'ordine creato ha totale -1,
+            una condizione che può essere verificata solo per un ordine in fase di creazione, poiché un singolo utente può stare
+            creando un solo ordine alla volta la combinazione di email e totale uguale a -1 permette di identificare univocamente
+            l'ordine e permette quindi di effettuare un'altra query al fine di scoprire l'identificativo che servirà poi per
+            impostare il vero totale dell'ordine */
             $create_order = "INSERT INTO ordinazioni (id, email, total, tipo_spedizione) VALUES (nextval('ordinazioni_id_seq'::regclass), '$email_user', '-1', '$tipo_spedizione')";
             $create_order_query = pg_query($db, $create_order);
             $order_id = "SELECT id FROM ordinazioni WHERE email = '$email_user' AND total = '-1'";
             $order_id_query = pg_query($db, $order_id);
             $id = pg_fetch_array($order_id_query);
             $id = $id[0];
-            /*if(true) {
-                $create_order_query = pg_get_result($db);
-                $create_order_query = pg_result_error($create_order_query);
-                echo $create_order_query;
-            }
 
+            /* per ogni elemento del carrello viene creata una entry 
+            nella tabella ordinazioni_elementi che contiene gli elementi di tutte le ordinazioni
+            legate alla ordinazione di appartenenza dall'identificativo univoco*/
             while($row = pg_fetch_array($cart_query)) {
-                echo "hi";
-                $piatto = $row[0];
+                $piatto = $row[0]; /* si estraggono piatto e quantità */
                 $quantita = $row[1];
-                $price_menu = "SELECT prezzo FROM menu WHERE nome = '$piatto'";
+                $price_menu = "SELECT prezzo FROM menu WHERE nome = '$piatto'"; /* una query sulla tabella menu evidenzia il prezzo del piatto */
                 $price_menu_query = pg_query($db, $price_menu);
                 $row_price = pg_fetch_array($price_menu_query);
-                if(!$row_price) {
-                    echo "hi2";
-                }
-                else {
+                /* se la query va a buon fine viene calcolato il prezzo totale di questa entry del carrello moltiplicando il prezzo per la quantità */
+                if( $row_price != false ) {
                     $price = $row_price[0] * $quantita;
+                    /* noto il nome, del piatto, l'id ordinazione, la quantità e il totale relativo a questo specifico piatto si può
+                    effettuare la query per aggiungere una entry alla tabella ordinazioni_elementi */
                     $create_order_item = "INSERT INTO ordinazioni_elementi (piatto, id_ordinazione, quantita, subtotale) VALUES ('$piatto', '$id', '$quantita', '$price')";
                     $create_order_item_query = pg_query($db, $create_order_item);
-                    $totale += $price;
-                    echo "hi3";
+                    $totale += $price; /* si aggiunge il prezzo di questo prodotto al prezzo totale che andrà nella tabella ordinazioni */
                 }
             }
-            $totale += $prezzo_spedizione;
+            $totale += $prezzo_spedizione; /* si aggiunge il prezzo della spedizione al prezzo totale che andrà nella tabella ordinazioni*/
             $order_price = "UPDATE ordinazioni SET total = '$totale' WHERE id = '$id'";
             $order_price_query = pg_query($db, $order_price);
 
-            //pulire carrello
-            $deletionQuery = "DELETE FROM carrello WHERE email = '$email_user'";
+            $deletionQuery = "DELETE FROM carrello WHERE email = '$email_user'"; /* si effettua una query per pulire il carrello dell'utente */
             pg_query($db, $deletionQuery);
 
-            pg_close($db);
-            exit("Orderd placed");
+            pg_close($db); /* viene chiusa la connessione al database */
+            exit("Orderd placed"); /* return a resoconto.js che ha generato la richiesta Ajax */
         }
-*/
+
 ?>
 <!DOCTYPE html>
 <head>
+    <title>Flying Sauce&reg; - Carrello</title>
     <meta charset="utf-8">
 	<base href="http://localhost/Flying_Sauce_r/">
     <link rel="stylesheet" href="carrello/resoconto.css">
@@ -77,63 +82,43 @@
                 <li id="titolo-sezione2">&#x26AC;</li>
                 <li id="titolo-sezione3">&#x26AC;</li>
             </ul>
-            <div id="sezione1"><!--sezione mostrata inizialmente, contiene il resoconto del carrello dettagliato e il totale della spesa-->
-                <table id="tabella-carrello">
-                    <tr><th>Pietanza</th><th>Quantità</th><th>Prezzo</th>
-                    </tr>
-                    <tr>
-                        <td>Alfreds Futterkiste</td>    <td>Maria Anders</td>     <td>Germany</td>
-                    </tr>
-                    <tr>
-                        <td>Centro comercial Moctezuma</td>     <td>Francisco Chang</td>     <td>Mexico</td>
-                    </tr>
-                    <tr>
-                        <td>Ernst Handel</td>     <td>Roland Mendel</td>     <td>Austria</td>
-                    </tr>
-                    <tr>
-                        <td>Island Trading</td>     <td>Helen Bennett</td>     <td>UK</td>
-                    </tr>
-                    <tr>
-                        <td>Laughing Bacchus Winecellars</td>    <td>Yoshi Tannamuri</td>    <td>Canada</td>
-                    </tr>
-                    <tr>
-                        <td>Magazzini Alimentari Riuniti</td>    <td>Giovanni Rovelli</td>    <td>Italy</td>
-                    </tr> 
-                    
-                    <!--<?php
-                        /*connessione al database
-                        require "../connessionedb.php";
+            <div id="sezione1"> <!--sezione mostrata inizialmente, contiene il resoconto del carrello dettagliato e il totale della spesa-->
+                <table id="tabella-carrello"> <!--la tabella è popolata sulla base del contenuto del database-->
+                    <?php
+                        require "../connessionedb.php"; /*connessione al database*/
                         
+                        /* viene effettuata una query per leggere il carrello dell'utente */
                         $cart = "SELECT piatto, quantita FROM carrello WHERE email = '$email_user'";
                         $cart_query = pg_query($db, $cart);
-                        $totale = 0;
-
-                        //se non ci sono elementi nel carrello
+                        $totale = 0; /* il totale della spesa dell'utente viene impostato a 0 */
+                        /* se non ci sono elementi nel carrello all'utente viene mostrato un alert e poi viene riportato al menu */
                         if(!(pg_num_rows($cart_query) > 0)) {
                             pg_close($db);
                             echo "<script>alert("."'Carrello Vuoto, scegli dei prodotti dal nostro menu prima di procedere alla finalizzazione dell\'ordine'"."); window.location = "."'http://localhost/Flying_Sauce_r/menu/ordina_ora.php';"."</script>";
                             exit();
                         }
 
+                        /* per ogni elemento del carrello viene creata una riga della tabella */
                         while($row = pg_fetch_array($cart_query)) {
                             $piatto = $row[0];
                             $quantita = $row[1];
+                            /* una query sulla tabella menu permette di scoprire il prezzo del piatto */
                             $price_menu = "SELECT prezzo FROM menu WHERE nome = '$piatto'";
                             $price_menu_query = pg_query($db, $price_menu);
                             $row_price = pg_fetch_array($price_menu_query);
-                            if(!$row_price) {
+                            if(!$row_price) { /* laddove per un problema tecnico la query per leggere il prezzo non andasse a buon fine viene scritto al posto del prezzo il messaggio "data not available" */
                                 echo "<tr><td>".$piatto."</td><td>".$quantita."</td><td>"."data not available"."</td></tr>";
                             }
-                            else {
+                            else { /* viene calcolato il totale relativo alla entry del carrello corrente e viene stampata una righa della tabella */
                                 $price = $row_price[0] * $quantita;
                                 echo "<tr><td>".$piatto."</td><td>".$quantita."</td><td>".$price."</td></tr>";
-                                $totale += $price;
+                                $totale += $price; /* viene aggiornato il totale da mostrare all'utente */
                             }
                         }
-                        pg_close($db);*/
-                    ?>-->
+                        pg_close($db); /* viene chiusa la connessione al database */
+                    ?>
                 </table>
-                <p id="totale" >Totale: <?php echo $totale; ?></p>
+                <p id="totale" >Totale: <?php echo $totale; ?></p> <!--dopo la tabella viene mostrato il totale della spesa-->
             </div>
             <div id="sezione2"><!--seconda sezione mostrata, illustra le diverse possibilità di spedizione con relative specifiche tecniche-->
                 <p class=spiegazione>
