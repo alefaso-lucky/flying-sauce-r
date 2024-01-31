@@ -37,7 +37,6 @@
         $is_in_menu = "SELECT nome FROM menu WHERE nome = '$name_piatto'";
         $is_in_menu_query = pg_query($db, $is_in_menu); /*viene eseguita la query*/;
         if(!(pg_num_rows($is_in_menu_query) > 0)) {
-            //echo "<script>console.log("."'ciao1'".");</script>";
             $lista_ingredienti = $pasta.", ".$sugo.", ".$topping;
             $categoria = "Piatto personalizzato";
             $prezzo = 150;

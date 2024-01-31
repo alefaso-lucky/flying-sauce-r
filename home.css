@@ -87,6 +87,9 @@ body {
   color: rgba(255, 194, 108);
   font-weight: 600;
   font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.3); /* Aggiunge uno sfondo sfumato bianco */
+  border-radius: 5px; /* Aggiunge bordi arrotondati */
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.7);
 }
 #ordina-ora-btn {
   width: 150px;
@@ -189,6 +192,10 @@ body {
 
 @media(max-width: 650px) {
   .row img {
+    display: none;
+  }
+
+  .slide-text {
     display: none;
   }
 }
