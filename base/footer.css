@@ -1,21 +1,19 @@
 footer {
     margin: 0; /*per evitare che il sito abbia i bordi bianchi intorno*/
-    margin-top: auto;
+    margin-top: auto; /* distanziamento automatico dagli elementi al di sopra del footer */
 }
 
 #footer_container {
-    min-height: 270px;
-    border-top: 2px solid rgb(255, 194, 108);
-    font-family: 'Montserrat', sans-serif;
-    /*position: absolute;
-    bottom: 0; /*non è noto se il posizionamento in questo modo sarà funzionale all'integrazione con il resto della pagina*/
+    min-height: 270px; /* altezza minima */
+    border-top: 2px solid rgb(255, 194, 108); /* bordo oro che separa il footer dal resto della pagina in alto */
+    font-family: 'Montserrat', sans-serif; /* font scelto */
     box-sizing: border-box; /*per poter decidere tutti gli aspetti del box, applicato anche a tutti i figli*/
-    color: rgb(255, 194, 108);
+    color: rgb(255, 194, 108); /* colore del testo */
     padding: 10px 30px; /*definito il padding del contenitore di tutto il footer*/
-    background-color: rgb(24, 65, 73);
+    background-color: rgb(24, 65, 73); /* colore di sfondo */
     width: 100%;
-    display: flex;
-    flex-wrap: nowrap; /*non c'è necessità di wrap visto che upper e lower footer container stanno uno sopra l'altro*/
+    display: flex; /* il footer occupa tutta la larghezza disponibile */
+    flex-wrap: nowrap; /*non c'è necessità di wrap visto che upper e lower footer container sono uno sopra l'altro*/
     flex-direction: column; /*in questo modo upper footer container e lower footer container vanno uno sopra all'altro*/
     justify-content: center; /*upper e lower footer sono al centro della pagina invece che schiacciati a sinistra*/
     align-items: center; /*upper e lower footer sono verticalmente allineati con il centro del footer esterno e non in altro o in basso*/
@@ -27,7 +25,7 @@ footer {
 
 #upper_footer_container {
     display: flex; /*upper e lower footer container non sono solo flex-element ma anche a loro volta flex-container*/
-    flex-wrap: wrap; /*voglio che gli elementi di upper footer si wrappino in caso di necessità*/
+    flex-wrap: wrap; /*tutti gli elementi di upper footer si wrappano in caso di necessità*/
     width: 100%; /*prende tutto lo spazio disponibile ma entro i limiti imposti da max-width per scelta estetica*/
     max-width: 1300px;
     justify-content: space-between; /*invece di mettere gli elementi al centro li metto uno a destra e l'altro a sinistra*/
@@ -71,7 +69,7 @@ footer {
 
 #submit_newsletter_footer {
     background-color: rgb(70, 102, 109); /*definisco il colore del bottone di submit e il colore della scritta*/
-    color: rgb(255, 194, 108);
+    color: rgb(255, 194, 108); /* colore del testo */
     padding: 10px 30px; /*le dimensioni*/
     border-color: rgb(127, 127, 127); /*colore del bordo*/
     border-radius: 7px; /*diventa arrotondato*/
@@ -80,13 +78,11 @@ footer {
     margin-left: 15px;
     margin-top: 10px;
     border: thin solid rgb(255, 194, 108);
-
-    cursor: pointer;
-    /*facciamo uscire la manina*/
-    transition: all .2s ease;
+    cursor: pointer; /* cursore a forma di 'manina' per creare responsività */
+    transition: all .2s ease; /* transition per ammorbidire l'animazione di hover */
 }
 
-#submit_newsletter_footer:hover {
+#submit_newsletter_footer:hover { /* al passaggio del mouse il tasto di submit della newsletter cambia colore e bordo */
     border: thin solid #184149;
     background-color: #FFF0DA;
     color: #5D7A7F;
@@ -102,11 +98,11 @@ footer {
 }
 
 #newsletter_field:focus {
-    outline: solid rgb(255, 194, 108);
+    outline: solid rgb(255, 194, 108); /* outline per evidenziare l'input quando è in focus */
 }
 
 ::placeholder {
-    color: gray;
+    color: gray; /* colore del placeholder nell'input */
     opacity: 1; /*Firefox imposta una opacity più bassa al placeholder, per risolvere la impostiamo ad 1 manualmente*/
 }
 

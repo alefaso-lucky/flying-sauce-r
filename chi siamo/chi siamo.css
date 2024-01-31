@@ -59,29 +59,28 @@ body {
 }
 .slide-text { /* questa classe si riferisce al testo presente sulle slide */
   position: absolute; /* queste istruzioni servono per posizionare il testo */
-  width: 30%;
-  height: auto;
+  width: 35%;
   right: 5%;
   top: 10%;
-  bottom: 10%;
+  height: auto;
   color: white;
   background-color: rgba(24, 65, 73, 0.7); /* applico un colore al background */
   border-radius: 50px;  /* rendo gli spigoli curvi */
   border: medium solid rgba(255, 194, 108, 0.8); /* aggiungo un bordo dorato */
   box-shadow:  2px 5px 5px rgba(0, 0, 0, 0.3); /* aggiunge una leggere afocatura all'immagine */
   padding: 15px 20px; /* padding per distanziare il testo dal bordo */
-  font-weight: 700;
-  font-size: 12px;
-  text-align: left;
+  font-size: 15px;
   font-family: 'Montserrat', Courier, monospace;
 }
-.slide-text h3 { /* titolo del testo nella slide */
+
+.slide-text h1 { /* titolo del testo nella slide */
   color: rgb(255, 194, 108);
-  font-size: 20px;
+  margin: 0;
 }
-@media(max-width: 900px) { /* rimpicciolisce il font quando lo schermo si rimpicciolisce */
+
+@media(max-width: 750px) { /* rimpicciolisce il font quando lo schermo si rimpicciolisce */
   .slide-text {
-    font-size: 9px;
+    font-size: 11px;
   }
 }
 
@@ -106,11 +105,7 @@ body {
 /* per il testo all'interno della pagine */
 
 .middle-page-text {
-  margin: 16px 80px;
-  position: relative;
   text-align: justify;
-  text-decoration: solid;
-  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -132,6 +127,7 @@ div.grid-img-container {
     'img4 img4 img3';
   gap: 8px; /* distanza tra le immagini */
 }
+
 @media(max-width: 700px) {
   div.grid-img-container,
   #grid-title {
