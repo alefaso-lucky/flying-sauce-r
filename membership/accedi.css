@@ -27,9 +27,9 @@ body{
   margin: 3% 0;      /*margine top-bottom*/
 }
 
-/*per segnare lo spazio occupato dal rightpanel*/
+/*per segnare lo spazio occupato dal rightpanel rispetto al container*/
 .rightpanel{
-  flex: 3;
+  flex: 3;      
   -webkit-flex: 3;
   -ms-flex: 3;
 }
@@ -38,12 +38,12 @@ body{
 .rightpanel > *{
   display: flex;
   flex-direction: column;     /*gli elementi del div (h2, form e p) disposti per colonne*/
-  align-items: center;
+  align-items: center;    /*voglio che siano allineati al centro rispetto all'asse trasversale (verticale)*/
 }
 
 .rightpanel h2 {
   color: rgb(255, 194, 108);    /*colore alla scritta*/
-  margin: 10px;    /*margine inferiore*/
+  margin-bottom: 10px;    /*margine inferiore*/
   margin-top: 0;
   font-size: 40px;      /*rendo più grande*/
 }
@@ -60,14 +60,14 @@ body{
 
 /*negli span sono contenute le icone (img) da disporre al centro*/
 .input-field span {
-  flex: 1;
+  flex: 1;      /*specifico lo spazio che lo span debba occupare rispetto al div input-field*/
   -webkit-flex: 1;
   -ms-flex: 1;
-  text-align: center;
+  text-align: center;   /*allineamento al centro degli elementi in esso contenuti*/
 }
 
 .input-field input {
-  flex: 5;
+  flex: 5;    /*specifico lo spazio che il campo di input debba avere rispetto al div input-field*/
   -webkit-flex: 5;
   -ms-flex: 5;
   background: none;   /*non voglio sia visibile il campo di input*/
@@ -105,7 +105,7 @@ body{
   border: none;   /*nessun contorno*/
   outline: none;    /*non voglio che al click sia visibile la linea di contorno*/
   color: rgb(255, 194, 108);      /*applico un colore*/
-  opacity: 0.7;
+  opacity: 0.7;     /*in generale il colore è leggermente opacizzato*/
   font-size: 20px;    /*setto una dimensione al testo*/
 }
 
@@ -113,13 +113,13 @@ body{
   opacity:1;    /*con l'hover si riporta alla tonalità originale*/
 }
 
+/*per segnare lo spazio occupato dal leftpanel rispetto al container*/
 .leftpanel {
   position: relative;
   flex: 5;
   -webkit-flex: 5;
   -ms-flex: 5;
   height: 100%;   /*altezza del 100% rispetto al container*/
-  z-index: 0; /* Assicura che l'immagine sia dietro i testi */
 }
 
 .content {
@@ -128,7 +128,6 @@ body{
   top: 47%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
   translate: 0 -50% 0;  /*l'elemento viene spostato del 50% vers l'alto in modo da centrarlo verticalmente rispetto a leftpanel*/
   max-width: 25%;     /*massima larghezza di content*/
-  z-index: 1;       /*il div che contiene tutto il test in rilievo rispetto al resto*/
 }
 
 /*descrizione dello slogan*/
@@ -144,9 +143,8 @@ body{
 }
 
 /*slogan d'effetto*/
-.leftpanel h3{
+.leftpanel h1{
   font-size: 50px;      /*grandezza del font*/
-  font-weight: bold;      /*scrittura in grassetto per attirare l'attenzione*/
   color: rgb(255, 194, 108);      /*colore del testo*/
 }
 
@@ -163,8 +161,8 @@ body{
     display: none;      /*sotto una determinata larghezza della finestra la descrizione dello slogan scompare*/
   }
 
-  /*h3 diventa più grande a livello di font ma occupa meno spazio*/
-  .leftpanel h3{
+  /*h1 diventa più piccola a livello di font ed occupa meno spazio*/
+  .leftpanel h1{
     font-size: 45px;
     max-width: 10%;
   }
