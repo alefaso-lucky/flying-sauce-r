@@ -236,7 +236,7 @@
 <?php
 
     function get_pwd($email){
-        require "../logindb.php";       /*require_once "../../connessionedb.php";*/ 
+        /*require "../logindb.php";*/       require_once "../connessionedb.php";
         //CONNESSIONE AL DB
         $sql = "SELECT password FROM utenti WHERE email=$1;";
         $prep = pg_prepare($db, "sqlPassword", $sql);
@@ -258,7 +258,7 @@
     }
 
     function email_exist($email){
-        require "../logindb.php";       /*require_once "../../connessionedb.php";*/ 
+        /*require "../logindb.php";*/       require_once "../connessionedb.php";
         //CONNESSIONE AL DB
         $sql = "SELECT email FROM utenti WHERE email=$1";
         $prep = pg_prepare($db, "sqlEmail", $sql);
@@ -281,7 +281,7 @@
     }
 
     function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero){
-        require "../logindb.php";       /*require_once "../../connessionedb.php";*/ 
+        /*require "../logindb.php";*/       require_once "../connessionedb.php";
         $hash = password_hash($pass, PASSWORD_DEFAULT);
         $sql = "INSERT INTO utenti(nome, cognome, password, email, genere, nazione, citta, via, civico, telefono) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
         $prep = pg_prepare($db, "insertUser", $sql);

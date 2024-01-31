@@ -169,7 +169,8 @@ body {
 }
 /*descrizione testuale della proposta a sinistra dello schermo*/
 #sx3{
-    width: 700px;
+  max-width: 700px;
+
 }
 
 #sx3 h2{
@@ -184,6 +185,12 @@ body {
 .row img{
     width: 400px;
     filter: drop-shadow(8px 8px 10px rgb(40, 40, 40)); /*crea l'ombra sotto la foto*/
+}
+
+@media(max-width: 650px) {
+  .row img {
+    display: none;
+  }
 }
 
 /*QUARTA SEZIONE della hompage, dedicata a mostrare la le recensioni dei clienti*/
@@ -240,9 +247,7 @@ body {
 
 .row .bot{
     background-color: #184149;
-    position: relative;
     text-align: center;
-    left: 35%;
 }
 
 .bot:hover{
