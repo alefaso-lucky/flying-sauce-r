@@ -113,7 +113,7 @@
     <title>Flying Sauce&reg; - Autenticazione</title>
     <meta name="author" content="Gruppo08">
     <meta name="description" content="Visualizzazione delle sezioni di accesso e registrazione">
-    <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
+    <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
     <!--fine parte obbligatoria-->
 	<base href="http://localhost/Flying_Sauce_r/">
