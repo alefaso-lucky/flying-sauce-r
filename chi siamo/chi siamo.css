@@ -2,14 +2,11 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh; /* per metterla a tutta la pagina */
-  overflow-x: hidden;
   justify-content: center;
   align-items: center;
   background-color: #FFF0DA;
 }
-@media(max-width: 1000px) {
-  body { overflow-x: auto;}
-}
+
 /* per lo slider */
 .radio {
   display: none; /* rendo i radio button invisibili */
@@ -133,6 +130,13 @@ div.grid-img-container {
     'img1 img2 img3'
     'img4 img4 img3';
   gap: 8px; /* distanza tra le immagini */
+}
+@media(max-width: 700px) {
+  div.grid-img-container,
+  #grid-title {
+    display: none;
+  }
+
 }
 
 div.grid-item { /* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */

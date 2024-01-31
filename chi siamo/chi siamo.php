@@ -28,9 +28,9 @@
           <div class="slide" id="slide-1">
             <img src="media/chi_siamo1.jpg" alt="">
             <div class="slide-text"><strong>Le nostre origini</strong></br>
-              Benvenuti nel cuore della nostra tradizione culinaria, dove la storia della nostra pasta si intreccia con secoli di passione e maestria. 
+              Benvenuti nel cuore della nostra tradizione culinaria, dove la storia della nostra pasta si intreccia con secoli di passione e maestria.
               La nostra avventura inizia nelle cucine delle famiglie più autentiche, dove ricette tramandate di generazione in generazione sono diventate la base della nostra filosofia gastronomica.
-              Attraverso il nostro percorso, abbiamo celebrato la diversità regionale e l'amore per l'eccellenza culinaria. 
+              Attraverso il nostro percorso, abbiamo celebrato la diversità regionale e l'amore per l'eccellenza culinaria.
               Unisciti a noi in questo viaggio gastronomico, portando il calore delle tradizioni direttamente sulla tua tavola.
             </div>
           </div>
@@ -44,7 +44,7 @@
           <div class="slide" id="slide-3">
             <img src="media/chi_siamo3.png" alt="">
             <div class="slide-text"><strong>Ingegneri - non solo pasta </strong></br>
-              Come capo ingegnere di "Flying Sauce", ho guidato lo sviluppo di una flotta avanzata di droni per la consegna globale di pasta calda. 
+              Come capo ingegnere di "Flying Sauce", ho guidato lo sviluppo di una flotta avanzata di droni per la consegna globale di pasta calda.
               La sfida principale era mantenere la temperatura ottimale durante il trasporto, risolta con successo attraverso un isolamento termico avanzato e un algoritmo intelligente. Abbiamo progettato hardware specifico per affrontare distanze considerevoli, ottimizzando l'efficienza delle operazioni di volo e garantendo autonomia sufficiente.
               Dal punto di vista della comunicazione, abbiamo implementato tecnologie avanzate per mantenere una comunicazione costante tra i droni e il centro di controllo. La sicurezza è stata una priorità con l'integrazione di sensori avanzati e algoritmi intelligenti.
             </div>
@@ -87,7 +87,7 @@
 
     <!-- Per visualizzare le immagini con il testo -->
     <!-- utilizzo JS per cambiare l'immagine in una versione più grigia -->
-    <h2>I nostri valori</h2>
+    <h2 id="grid-title">I nostri valori</h2>
     <div class="grid-img-container">
         <div class="grid-item" id="grid-item1">
           <img src="media/gridImg1.jpg" id="img1" width="100px" height="100px"></img>
