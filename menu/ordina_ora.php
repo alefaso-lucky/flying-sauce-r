@@ -162,7 +162,7 @@
                 </div>
             </div>
             <div class="columnside dx"> <!--colonna destra-->
-                <div id="pay_button_form"> <!--tasto per andare al pagamento-->
+                <div id="pay_button_div"> <!--tasto per andare al pagamento-->
                     <a class="menu_buttons" id="pay_button" href="http://localhost/Flying_Sauce_r/carrello/resoconto.php">VAI AL PAGAMENTO</a>
                 </div>
                 <ul id="cart-list">
