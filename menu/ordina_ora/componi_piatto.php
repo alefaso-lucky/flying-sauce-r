@@ -4,6 +4,9 @@
         <title>Flying Sauce&reg; - Componi il tuo piatto</title>
         <link rel="stylesheet" href="./componi_piatto.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
+        <meta name="author" content="Gruppo08">
+        <meta name="description" content="creazione di un piatto completamente personalizzato">
+        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
         <meta charset="utf-8">
     </head>
 <?php
