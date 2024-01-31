@@ -57,7 +57,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  /*require_once "../../logindb.php";*/  require_once "../../connessionedb.php";
+  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/
   //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -109,7 +109,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    /*require_once "../../logindb.php";*/     require_once "../../connessionedb.php";
+    require_once "../../logindb.php";    /*require_once "../../connessionedb.php";*/
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -206,7 +206,7 @@
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            /*require "../../logindb.php";  */      require_once "../../connessionedb.php";
+            require "../../logindb.php";       /*require_once "../../connessionedb.php";*/
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
             
             // query per ottenere le informazioni di anagrafica dell'utente dal sb
@@ -232,19 +232,19 @@
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
             </div>
             <div class="input-element">
-              <span>Nome:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['nome']; ?>" disabled>
+              <label>Nome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nome']; ?>" disabled></label>
             </div>
             <div class="input-element">
-              <span>Cognome:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['cognome']; ?>" disabled>
+              <label>Cognome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['cognome']; ?>" disabled></label>
             </div>
             <div class="input-element">
-              <span>Genere:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['genere']; ?>" disabled>
+              <label>Genere:<input type="text" class="disabled_input" value="<?php echo $_SESSION['genere']; ?>" disabled></label>
             </div>
             <div class="input-element">
-              <span>Email:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['email']; ?>" disabled>
+              <label>Email:<input type="text" class="disabled_input" value="<?php echo $_SESSION['email']; ?>" disabled></label>
             </div>
             <div class="input-element">
-              <span>Numero di cellulare:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['telefono']; ?>" disabled>
+              <label>Numero di cellulare:<input type="text" class="disabled_input" value="<?php echo $_SESSION['telefono']; ?>" disabled></label>
             </div>
           </div>
 
@@ -273,16 +273,16 @@
 
             <div id="info-indirizzo">
               <div class="input-element">
-                <span>Nazione:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['nazione']; ?>" disabled>
+                <label>Nazione:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nazione']; ?>" disabled></label>
               </div>
               <div class="input-element">
-                <span>Città:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['citta']; ?>" disabled>
+                <label>Città:<input type="text" class="disabled_input" value="<?php echo $_SESSION['citta']; ?>" disabled></label>
               </div>
               <div class="input-element">
-                <span>Via o piazza:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['via']; ?>" disabled>
+                <label>Via o piazza:<input type="text" class="disabled_input" value="<?php echo $_SESSION['via']; ?>" disabled></label>
               </div>
               <div class="input-element">
-                <span>Numero civico:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled>
+                <label>Numero civico:<input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled></label>
               </div>
 
               <p>Vuoi cambiare il tuo indirizzo di spedizione? <span id="changeToAggiorna" onclick="visibleForm('aggiorna-indirizzo', 'info-indirizzo')">Modifica subito</span></p>

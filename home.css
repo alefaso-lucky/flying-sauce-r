@@ -50,7 +50,11 @@ body {
 }
 .slide-text { /* questa classe si riferisce al testo presente sulle slide */
   position: absolute;
+<<<<<<< HEAD
   width: 500px;
+=======
+  width:35%;
+>>>>>>> b237ffe79abfcddb4253f7e9b13e15902f71a4f3
   left: 8%;
   top: 32%;
   color: black;
@@ -65,6 +69,12 @@ body {
   border-radius: 15px; /* Aggiunge bordi arrotondati */
   box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.7);
 }
+@media (max-width: 1000px){
+  .slide-text{
+    display: none;
+  } 
+}
+
 #text-slide-1 {
   box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.3); /* Aggiunge uno sfondo meno sfumato */
