@@ -105,11 +105,7 @@ body {
 /* per il testo all'interno della pagine */
 
 .middle-page-text {
-  margin: 16px 80px;
-  position: relative;
   text-align: justify;
-  text-decoration: solid;
-  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
 }
 

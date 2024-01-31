@@ -5,6 +5,7 @@
   if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
     session_destroy();
     header("refresh:0;");
+    exit();
   }
 
   if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
@@ -62,8 +63,8 @@
         <!--secondo blocco, tre sezioni che conducono a tre percorsi diversi del sito-->
         <div id=contenitore_2>
             <div id=sx2>
-                <p id=frasesx>suggerimenti dello chef</p>
-                <a class="bot" href="#">STUPISCITI</a> <!--bottone per andare alla pagina Stupisciti-->
+                <p id=frasesx>una grande famiglia</p>
+                <a class="bot" href="chi%20siamo/chi%20siamo.php">CHI SIAMO</a> <!--bottone per andare alla pagina Chi siamo-->
             </div>
             <div id=cc2>
                 <p id=frasecc>dall'idea alla forchetta</p>

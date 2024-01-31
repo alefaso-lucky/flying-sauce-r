@@ -71,7 +71,7 @@
 
     <section class="middle-page-text">
       <h2>Un Viaggio Culinario di Successo: La Nostra Storia</h2>
-      <p>
+      <blockquote>
         In qualità di imprenditore e fondatore del ristorante "Flying Sauce", desidero esprimere la mia profonda gratitudine per
         il successo e i riconoscimenti significativi che la nostra azienda ha ottenuto negli ultimi anni. Sono estremamente
         orgoglioso del lavoro svolto dal mio team e della capacità della nostra iniziativa di portare i sapori autentici dell'Italia in
@@ -81,7 +81,7 @@
         non solo un ristorante di eccellenza, ma un ambasciatore culinario che incarna il coraggio, l'autenticità e l'impegno nel
         perseguire i propri sogni. Sono ansioso di vedere come il nostro viaggio culinario si svilupperà nel futuro, continuando a
         deliziare i palati in tutto il mondo.
-      </p>
+      </blockquote>
     </section>
 
     <!-- Per visualizzare le immagini con il testo -->
