@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  /* logica per il logut */
+  /* logica per il logout */
   if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
     session_destroy();
     header("refresh:0;");
@@ -23,7 +23,7 @@
         <title>Flying Sauce&reg;</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./home.css">
         <script type="text/javascript" src="./home.js"></script>
     </head>
@@ -117,34 +117,39 @@
         </div>
         <!--quarto blocco, recenzioni di clienti-->
         <div class=row>
-        <p class="recensioni">
-            <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
-            La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore
-            profondo e avvolgente.  La consegna è stata rapida e il servizio clienti è stato
-            molto disponibile. Tornerò sicuramente a ordinare!</br>
-            Angela F.
-        </p>
-        <p class="recensioni" >
-            <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
-            Ho ordinato diverse volte da questo sito e ogni volta sono rimasto colpito dalla
-            maestria culinaria. Consiglio vivamente a tutti gli amanti della cucina italiana
-            di provare questo servizio.</br>
-            Marck C.
-        </p>
-        <p class="recensioni">
-            <i class="material-icons">&#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0 &#xe8d0</i></br>
-            La qualità del cibo è fuori dal comune. Ogni piatto è preparato con passione e
-            dedizione. Ho provato diverse specialità e tutte sono state al di là delle aspettative.
-            Un'esperienza culinaria che consiglio a tutti!</br>
-            Richard W.
-        </p>
+          <div class="recensioni">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <blockquote>
+              La pasta fresca era come una carezza di nonna, e il ragù di carne aveva un sapore
+              profondo e avvolgente.  La consegna è stata rapida e il servizio clienti è stato
+              molto disponibile. Tornerò sicuramente a ordinare!
+            </blockquote>
+            <cite>Angela F. </cite>
+          </div>
+          <div class="recensioni" >
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <blockquote>
+              Ho ordinato diverse volte da questo sito e ogni volta sono rimasto colpito dalla
+              maestria culinaria. Consiglio vivamente a tutti gli amanti della cucina italiana
+              di provare questo servizio.
+            </blockquote>
+            <cite>Marck C. </cite>
+          </div>
+          <div class="recensioni">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <blockquote>
+              La qualità del cibo è fuori dal comune. Ogni piatto è preparato con passione e
+              dedizione. Ho provato diverse specialità e tutte sono state al di là delle aspettative.
+              Un'esperienza culinaria che consiglio a tutti!
+            </blockquote>
+            <cite>Richard W. </cite>
+          </div>
         </div>
-        <!--quinta blocco, link ai vari social network-->
+        <!--quinto blocco, link ai vari social network-->
         <div id=contenitore_5>
             Seguici su
-            <a class="social" href="#"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina facebook-->
-            <a class="social" href="https://www.instagram.com/flying.sauce/"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina instagram-->
-            <a class="social" href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a> <!--bottone per andare alla pagina youtube-->
+            <a class="social" href="https://www.facebook.com/profile.php?id=61555762993624"><i class="fa fa-facebook-square"></i></a> <!--bottone per andare alla pagina facebook-->
+            <a class="social" href="https://www.instagram.com/flying.sauce/"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
         </div>
 
         <?php require "base/footer.php"; ?> <!--inserimento footer-->
@@ -154,7 +159,6 @@
     <script>
         var myIndex = 0;
         carousel();
-
         function carousel() {
         var i;
         var x = document.getElementsByClassName("recensioni");
@@ -166,7 +170,5 @@
         x[myIndex-1].style.display = "block";
         setTimeout(carousel, 4000); // cambia recensione ogni 4 secondi
         }
-
-
     </script>
 </html>
