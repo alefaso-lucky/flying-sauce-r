@@ -57,11 +57,7 @@
                     <span><a href="informative/condizioni.php">Membership Policy</a></span>
                 </p>
             </div>
-<<<<<<< HEAD
             <div>
-=======
-            <div id="social_footer"> <!--container della sezione che mostra i collegamenti ai social-->
->>>>>>> b237ffe79abfcddb4253f7e9b13e15902f71a4f3
                 <p>SEGUICI SU</p>
                 <a class="social_footer" href="https://www.facebook.com/profile.php?id=61555762993624"><i class="fa fa-facebook-square"></i></a> <!--bottone per andare alla pagina facebook-->
                 <a class="social_footer" href="https://www.instagram.com/flying.sauce/"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
