@@ -62,7 +62,7 @@ body {
   width: 35%;
   right: 5%;
   top: 10%;
-  bottom: 10%;
+  height: auto;
   color: white;
   background-color: rgba(24, 65, 73, 0.7); /* applico un colore al background */
   border-radius: 50px;  /* rendo gli spigoli curvi */
