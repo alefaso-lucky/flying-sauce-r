@@ -59,9 +59,8 @@
             </div>
             <div id="social_footer">
                 <p>SEGUICI SU</p>
-                <a href="#"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a>
+                <a href="https://www.facebook.com/people/Flying-Sauce/61555762993624/"><img src="media/facebook_icon.png" alt="facebook icon" width="25px" height="25px"></a>
                 <a href="https://www.instagram.com/flying.sauce/"><img src="media/instagram_icon.png" alt="instagram icon" width="25px" height="25px"></a>
-                <a href="#"><img src="media/youtube_icon.png" alt="youtube icon" width="25px" height="25px"></a>
             </div>
         </div>
     </div>
