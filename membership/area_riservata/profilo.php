@@ -125,17 +125,18 @@
       return false;
   }
 
-/*
- La gestione delle seguenti variabili di sessione è effettuata con JavaScript
-*/
-/* questa variabile di sessione memorizza quale div è selezionato per la visualizzazione */
-if(!isset($_SESSION["selected"])) {
-  $_SESSION["selected"] = "Anagrafica";
-}
-/* questa variabile di sessione memorizza l'id di quale versione delle informazioni di spedizione visualizzare. Di base è impostato su 'info', può cambiare in 'modifica' con le azione dell'utente */
-if(!isset($_SESSION["visibleSpedizione"])) {
-  $_SESSION["visibleSpedizione"] = "info-indirizzo";
-}
+
+  /*
+   La gestione delle seguenti variabili di sessione è effettuata con JavaScript
+  */
+  /* questa variabile di sessione memorizza quale div è selezionato per la visualizzazione */
+  if(!isset($_SESSION["selected"])) {
+    $_SESSION["selected"] = "Anagrafica";
+  }
+  /* questa variabile di sessione memorizza l'id di quale versione delle informazioni di spedizione visualizzare. Di base è impostato su 'info', può cambiare in 'modifica' con le azione dell'utente */
+  if(!isset($_SESSION["visibleSpedizione"])) {
+    $_SESSION["visibleSpedizione"] = "info-indirizzo";
+  }
 
 ?>
 <html>
@@ -151,7 +152,7 @@ if(!isset($_SESSION["visibleSpedizione"])) {
     <link rel="stylesheet" href="membership/area_riservata/profilo.css">
     <script src="membership/area_riservata/profilo.js" charset="utf-8"></script>
   </head>
-  <body>    
+  <body>
     <?php
     if(isset($_SESSION["loggato"]) && $_SESSION["loggato"]==True) {
 
