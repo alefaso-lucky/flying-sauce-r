@@ -98,6 +98,10 @@
         <title>Flying Sauce&reg; - Menu</title> <!--titolo della scheda-->
         <meta charset="utf-8"> <!--character encoding-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--base degli href della pagina-->
+        <meta name="author" content="Gruppo08">
+        <meta name="description" content="Una pagina dinamica che permette l'ordinazione di piatti dal sito">
+        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti, menu">
+        <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="menu/ordina_ora.css"> <!--collegamento al foglio di stile-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> <!--collegamento al font-->
     </head>
