@@ -1,6 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+        <meta charset="utf-8">
+        <title>Flying Sauce&reg; - Condizioni di iscrizione</title>
+        <meta name="author" content="Gruppo08">
+        <meta name="description" content="Visualizzazione condizioni di iscrizione al sito">
+        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
+        <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
         <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
 		<link rel="stylesheet" href="informative/informative.css"><!--collega il foglio di stile per la pagina infoPrivacy-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"><!--collega il font Montserrat-->

@@ -5,7 +5,7 @@
     <title>Flying Sauce&reg; - Chi siamo</title>
     <meta name="author" content="Gruppo08">
     <meta name="description" content="Una pagina statica che descrive i valori del sito">
-    <meta name="keywords" content="pasta droni italia cucina FlyingSauce spaghetti">
+    <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
 	  <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">

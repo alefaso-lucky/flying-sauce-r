@@ -1,6 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<title>Flying Sauce&reg; - Informativa sulla Privacy</title>
+		<meta name="author" content="Gruppo08">
+		<meta name="description" content="Visualizzazione condizioni privacy">
+		<meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
+		<link rel="icon" href="./media/favicon.ico" type="image/x-icon">
 		<base href="http://localhost/Flying_Sauce_r/">
 		<link rel="stylesheet" href="informative/informative.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
