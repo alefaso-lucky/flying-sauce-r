@@ -4,6 +4,9 @@
         <title>Flying Sauce&reg; - Piatto Selezionato</title> <!--titolo della scheda-->
         <meta character="utf-8"> <!--character encoding-->
         <base href="http://localhost/Flying_Sauce_r/"> <!--base per gli href del documento-->
+        <meta name="author" content="Gruppo08">
+        <meta name="description" content="Visualizza le informazioni dettagliate di un piatto del menu">
+        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
         <link rel="stylesheet" href="menu/piatto.css"> <!--collegamento al foglio di stile-->
     </head>
     <body>

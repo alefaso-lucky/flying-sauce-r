@@ -6,7 +6,6 @@ body {
 /* PRIMA SEZIONE  della homepage, contiene uno slideshow*/
 .slideshow-background {
   background-color: rgb(70, 102, 109); /* colore di sfondo alle immagini */
-  position: relative;
   height: 550px;
 }
 
@@ -157,7 +156,7 @@ body {
     background-color: #46666D;
     color:rgb(255, 194, 108);
     display: flex;
-    justify-content: space-evenly; /*distribuzione degli elementi allìinterno della sezione*/
+    justify-content: space-evenly; /*distribuzione degli elementi all'interno della sezione*/
     align-items: center; /*centra gli elementi*/
     padding: 20px; /*altezza della sezione*/
     width: 100%; /*ricopre tutta la larghezza*/
