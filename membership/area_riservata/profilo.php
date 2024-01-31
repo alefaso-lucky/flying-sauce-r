@@ -57,7 +57,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/
+  /*require_once "../../logindb.php";*/  require_once "../../connessionedb.php";
   //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -109,7 +109,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../logindb.php";    /*require_once "../../connessionedb.php";*/
+    /*require_once "../../logindb.php";*/     require_once "../../connessionedb.php";
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -157,7 +157,7 @@
   /*
    La gestione delle seguenti variabili di sessione è effettuata con JavaScript
   */
-  /* questa variabile di sessione memorizza quale sezoine tra Anagrafica, Password e Spedizione è selezionata per la visualizzazione */
+  /* questa variabile di sessione memorizza quale sezoine tra Anagrafica, Sicurezza e Spedizione è selezionata per la visualizzazione */
   if(!isset($_SESSION["selected"])) {
     // di base la variabile "selected" è impostata su Anagrafica
     $_SESSION["selected"] = "Anagrafica";
@@ -206,14 +206,14 @@
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            require "../../logindb.php";       /*require_once "../../connessionedb.php";*/
+            /*require "../../logindb.php";  */      require_once "../../connessionedb.php";
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
-            
+
             // query per ottenere le informazioni di anagrafica dell'utente dal sb
             $sql = "SELECT nome, cognome, genere, email, nazione, citta, via, civico, telefono FROM utenti WHERE email = '" . $_SESSION['email'] . "';";
             $ret = pg_query($db, $sql); /* viene eseguita la query */
 
-            //
+            // inserisco in delle variabili di sessione
             if($row = pg_fetch_array($ret)) {
               $_SESSION["nome"] = $row['nome'];
               $_SESSION["cognome"] = $row['cognome'];
@@ -226,28 +226,30 @@
             }
           ?>
 
+          <!-- Il seguente div mostra all'utente le informaioni di anagrafica registrate -->
           <div id="Anagrafica" class="sezione"> <!--div che contiene i dati non modificabili, dunque gli input type sono disabled-->
             <h1>Informazioni personali</h1>
             <div class="brief-description">
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
             </div>
             <div class="input-element">
-              <label>Nome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nome']; ?>" disabled></label>
+              <span>Nome:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['nome']; ?>" disabled>
             </div>
             <div class="input-element">
-              <label>Cognome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['cognome']; ?>" disabled></label>
+              <span>Cognome:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['cognome']; ?>" disabled>
             </div>
             <div class="input-element">
-              <label>Genere:<input type="text" class="disabled_input" value="<?php echo $_SESSION['genere']; ?>" disabled></label>
+              <span>Genere:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['genere']; ?>" disabled>
             </div>
             <div class="input-element">
-              <label>Email:<input type="text" class="disabled_input" value="<?php echo $_SESSION['email']; ?>" disabled></label>
+              <span>Email:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['email']; ?>" disabled>
             </div>
             <div class="input-element">
-              <label>Numero di cellulare:<input type="text" class="disabled_input" value="<?php echo $_SESSION['telefono']; ?>" disabled></label>
+              <span>Numero di cellulare:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['telefono']; ?>" disabled>
             </div>
           </div>
 
+          <!-- Il seguente div mostra all'utente un form per modificare la password del suo account -->
           <div id="Sicurezza" class="sezione">
             <h1>Mantieni sicuro il tuo account</h1>
             <div class="brief-description">
@@ -260,44 +262,54 @@
               <input class="buttons" type="submit" name="submitPass" value="Aggiorna password">
             </form>
             <?php
+              /* questa logica php visualizza la notifica dello stato della richiesta di modifica della password */
               if(isset($alertPass))
                 echo $alertPass;
             ?>
           </div>
 
+          <!-- Il seguente div mostra le informazioni sull'indirizzo di spedizione registrate, ha due modalità visualizzabili mutuamente esclusive: info e modifica -->
           <div id="Spedizione" class="sezione">
             <h1>Indirizzo di consegna</h1>
             <div class="brief-description">
               Consegne sicure, informazioni chiare. Visualizza e gestisci la tua spedizione in un attimo.
             </div>
 
+            <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
               <div class="input-element">
-                <label>Nazione:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nazione']; ?>" disabled></label>
+                <span>Nazione:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['nazione']; ?>" disabled>
               </div>
               <div class="input-element">
-                <label>Città:<input type="text" class="disabled_input" value="<?php echo $_SESSION['citta']; ?>" disabled></label>
+                <span>Città:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['citta']; ?>" disabled>
               </div>
               <div class="input-element">
-                <label>Via o piazza:<input type="text" class="disabled_input" value="<?php echo $_SESSION['via']; ?>" disabled></label>
+                <span>Via o piazza:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['via']; ?>" disabled>
               </div>
               <div class="input-element">
-                <label>Numero civico:<input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled></label>
+                <span>Numero civico:</span><input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled>
               </div>
 
+              <!-- per cambiare modalità e passare al form di aggiornamento delle informazioni di spedizione è possibile cliccare sullo span seguente,
+                con il click dello span viene chiamata la funzione JS visibileForm() che si occupa di rendere invisibili le informazioni di spedizione e di rendere visibile il form per aggiornare le informazioni -->
               <p>Vuoi cambiare il tuo indirizzo di spedizione? <span id="changeToAggiorna" onclick="visibleForm('aggiorna-indirizzo', 'info-indirizzo')">Modifica subito</span></p>
             </div>
 
+            <!-- questa modalità di visualizzazione mostra un form per aggiornare le informazioni di spedizione -->
             <div id="aggiorna-indirizzo" style="display: none">
+              <!-- questo form invia le informaioni inserite a questa stessa pagina in cui è presente la logica per aggiornare le informazioni dell'utente nel db -->
               <form action=<?php echo $_SERVER["PHP_SELF"]; ?> method="post">
+                <!-- nota: il form è sticky -->
                 <input class="input-field" name="nazione" placeholder="Nazione*" value="<?php echo $nazione ?>" required/>
                 <input class="input-field" name="citta" placeholder="Città*" value="<?php echo $citta ?>" required/>
                 <input class="input-field" name="via" placeholder="Via o piazza*" value="<?php echo $via ?>" required/>
-                <input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/>
+                <input type="number" class="input-field" name="civico" placeholder="Numero civico*" min="1" value="<?php echo $civico ?>" required/> <!-- input type number permette solo di inserire valori numerici interi -->
                 <input class="buttons" type="submit" name="submitAdd" value="Aggiorna indirizzo">
+                <!-- per cambiare modalità e passare alla visualizzazioni delle informazioni di spedizione è possibile cliccare sullo span seguente -->
                 <p>Hai cambiato idea? <span id="changeToInfo" onclick="visibleForm('info-indirizzo', 'aggiorna-indirizzo')">Torna indietro</span></p>
               </form>
               <?php
+                // questa logica php serve per visualizzare la notifica dello stato della richiesta di aggiornamento delle informazioni di spedizione
                 if(isset($alertAddr))
                   echo $alertAddr;
               ?>
@@ -306,6 +318,7 @@
         </div>
       </div>
     </div>
+    <!-- richiede il footer -->
   <?php require "../../base/footer.php"; ?>
   <div class="else-container">
     <?php
