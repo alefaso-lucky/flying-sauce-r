@@ -27,7 +27,7 @@ body{
   margin: 3% 0;   /*margine top-bottom*/
 }
 
-/*per segnare lo spazio occupato dal rightpanel*/
+/*per segnare lo spazio occupato dal rightpanel rispetto al container*/
 .rightpanel{
   flex: 7;
   -webkit-flex: 7;
@@ -39,7 +39,7 @@ body{
 .rightpanel > *{
   display: flex;
   flex-direction: column;     /*gli elementi del div (h2, form e p) disposti per colonne*/
-  align-items: center;
+  align-items: center;    /*voglio che siano allineati al centro rispetto all'asse trasversale (verticale)*/
 }
 
 .rightpanel h2 {
@@ -143,7 +143,7 @@ label input:checked+span::before {
   border: none;   /*nessun contorno*/
   outline: none;    /*non voglio che al click sia visibile la linea di contorno*/
   color: rgb(255, 194, 108);      /*applico un colore*/
-  opacity: 0.7;
+  opacity: 0.7;   /*in generale il colore è leggermente opacizzato*/
   font-size: 20px;    /*setto una dimensione al testo*/
 }
 
@@ -151,13 +151,13 @@ label input:checked+span::before {
   opacity:1;    /*con l'hover si riporta alla tonalità originale*/
 }
 
+/*per segnare lo spazio occupato dal leftpanel rispetto al container*/
 .leftpanel {
   position: relative;
   flex: 5;
   -webkit-flex: 5;
   -ms-flex: 5;
   height: 100%;   /*altezza del 100% rispetto al container*/
-  z-index: 0; /* Assicura che l'immagine sia dietro i testi */
 }
 
 .content {
@@ -166,7 +166,6 @@ label input:checked+span::before {
   top: 50%;         /*distanza dal bordo in alto rispetto a leftpanel, il suo genitore*/
   translate: 0 -50% 0;  /*l'elemento viene spostato del 50% vers l'alto in modo da centrarlo verticalmente rispetto a leftpanel*/
   max-width: 30%;     /*massima larghezza di content*/
-  z-index: 1;       /*il div che contiene tutto il test in rilievo rispetto al resto*/
 }
 
 /*descrizione dello slogan*/
@@ -182,9 +181,8 @@ label input:checked+span::before {
 }
 
 /*slogan d'effetto*/
-.leftpanel h3{
+.leftpanel h1{
   font-size: 40px;      /*grandezza del font*/
-  font-weight: bold;      /*scrittura in grassetto per attirare l'attenzione*/
   color: rgb(255, 194, 108);      /*colore del testo*/
 }
 
@@ -193,7 +191,7 @@ label input:checked+span::before {
   text-align: center;     /*allineo il testo al centro*/
   font-size: 18px;      /*grandezza del font*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
-  margin:10px 0;      /*un margine top-bottom ai messaggi di feedback agli utenti*/
+  margin: 10px 0;      /*un margine top-bottom ai messaggi di feedback agli utenti*/
 }
 
 @media(max-width: 1500px){
@@ -201,8 +199,8 @@ label input:checked+span::before {
     display: none;      /*sotto una determinata larghezza della finestra la descrizione dello slogan scompare*/
   }
 
-  /*h3 diventa più grande a livello di font ma occupa meno spazio*/
-  .leftpanel h3{
+  /*h1 diventa più grande a livello di font ma occupa meno spazio*/
+  .leftpanel h1{
     font-size: 45px;
     max-width: 10%;
   }
