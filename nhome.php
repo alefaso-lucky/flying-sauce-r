@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  /* logica per il logut */
+  /* logica per il logout */
   if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
     session_destroy();
     header("refresh:0;");
