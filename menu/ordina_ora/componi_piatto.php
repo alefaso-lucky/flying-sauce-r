@@ -7,7 +7,7 @@
         <meta charset="utf-8">
     </head>
 <?php
-    session_start();
+    session_start(); /* setup della sessione */
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
         $logged = $_SESSION['loggato'];
         $email_user = $_SESSION['email'];
@@ -36,13 +36,13 @@
         del menu */
         $is_in_menu = "SELECT nome FROM menu WHERE nome = '$name_piatto'";
         $is_in_menu_query = pg_query($db, $is_in_menu); /*viene eseguita la query*/;
-        if(!(pg_num_rows($is_in_menu_query) > 0)) {
+        if(!(pg_num_rows($is_in_menu_query) > 0)) { /* se il piatto non è presente nel menu allora viene aggiunto */
             $lista_ingredienti = $pasta.", ".$sugo.", ".$topping;
             $categoria = "Piatto personalizzato";
             $prezzo = 150;
             $add_to_menu = "INSERT INTO menu (nome, lista_ingredienti, categoria, prezzo) VALUES ('$name_piatto', '$lista_ingredienti', '$categoria', '$prezzo')";
             $add_to_menu_query = pg_query($db, $add_to_menu);
-            if(!$add_to_menu_query) {
+            if(!$add_to_menu_query) { /* sulla base del risultato delle query effettuate si assegna un boolean utile ad evitare di aggiungere al carrello un prodotto che per un problema tecnico non è presente nel menu */
                 $product_present_in_menu = false;
             }
             else {
@@ -53,8 +53,8 @@
             $product_present_in_menu = true;
         }
 
-        if($product_present_in_menu) {
-            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'"; //manca il modo per far arrivare l'email qui
+        if($product_present_in_menu) { /* se il prodotto è presente nel menu è possibile aggiungerlo al carrello con un'apposita query */
+            $check = "SELECT quantita FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'";
             $ret_select = pg_query($db, $check); /*viene eseguita la query*/
 
             /*aggiornare l'elenco del carrello*/
