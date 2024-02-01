@@ -57,7 +57,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  /*require_once "../../logindb.php";*/  require_once "../../connessionedb.php";
+  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/
   //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -109,7 +109,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    /*require_once "../../logindb.php";*/     require_once "../../connessionedb.php";
+    require_once "../../logindb.php";     /*require_once "../../connessionedb.php";*/
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -206,7 +206,7 @@
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            /*require "../../logindb.php";  */      require_once "../../connessionedb.php";
+            require "../../logindb.php";        /*require_once "../../connessionedb.php";*/
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
             // query per ottenere le informazioni di anagrafica dell'utente dal sb
@@ -232,20 +232,20 @@
             <div class="brief-description">
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
             </div>
-            <div class="input-element">
-              <span>Nome:</span><span class="disabled_input"><?php echo $_SESSION['nome']; ?></span>
+            <div class="span-element">
+              <span>Nome:</span><span class="unmodified_info"><?php echo $_SESSION['nome']; ?></span>
             </div>
             <div class="span-element">
-              <span>Cognome:</span><span class="disabled_input"><?php echo $_SESSION['cognome']; ?></span>
+              <span>Cognome:</span><span class="unmodified_info"><?php echo $_SESSION['cognome']; ?></span>
             </div>
             <div class="span-element">
-              <span>Genere:</span><span class="disabled_input"><?php echo $_SESSION['genere']; ?></span>
+              <span>Genere:</span><span class="unmodified_info"><?php echo $_SESSION['genere']; ?></span>
             </div>
             <div class="span-element">
-              <span>Email:</span><span class="disabled_input"><?php echo $_SESSION['email']; ?></span>
+              <span>Email:</span><span class="unmodified_info"><?php echo $_SESSION['email']; ?></span>
             </div>
             <div class="span-element">
-              <span>Numero di cellulare:</span><span class="disabled_input" <?php echo $_SESSION['telefono']; ?> ></span>
+              <span>Numero di cellulare:</span><span class="unmodified_info"><?php echo $_SESSION['telefono']; ?></span>
             </div>
           </div>
 
@@ -277,17 +277,17 @@
 
             <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
-              <div class="input-element">
-                <span>Nazione:</span><span class="disabled_input"><?php echo $_SESSION['nazione']; ?></span>
+              <div class="span-element">
+                <span>Nazione:</span><span class="unmodified_info"><?php echo $_SESSION['nazione']; ?></span>
               </div>
-              <div class="input-element">
-                <span>Città:</span><span class="disabled_input"><?php echo $_SESSION['citta']; ?></span>
+              <div class="span-element">
+                <span>Città:</span><span class="unmodified_info"><?php echo $_SESSION['citta']; ?></span>
               </div>
-              <div class="input-element">
-                <span>Via o piazza:</span><span class="disabled_input"><?php echo $_SESSION['via']; ?></span>
+              <div class="span-element">
+                <span>Via o piazza:</span><span class="unmodified_info"><?php echo $_SESSION['via']; ?></span>
               </div>
-              <div class="input-element">
-                <span>Numero civico:</span><span class="disabled_input"><?php echo $_SESSION['civico']; ?></span>
+              <div class="span-element">
+                <span>Numero civico:</span><span class="unmodified_info"><?php echo $_SESSION['civico']; ?></span>
               </div>
 
               <!-- per cambiare modalità e passare al form di aggiornamento delle informazioni di spedizione è possibile cliccare sullo label seguente,
