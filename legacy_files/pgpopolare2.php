@@ -1,12 +1,12 @@
 <?php
     $host="localhost";
-    $db='GruppoXX';
+    $db='gruppo08';
     $user="www";
-    $password="password";
+    $password="tw2024";
     $connection_string = "host=$host dbname=$db user=$user password=$password";
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error());
     if( $db == false )
-      echo "Ritornellotto";
+      echo "non va bene";
     else
       echo "tutto ok";
 
