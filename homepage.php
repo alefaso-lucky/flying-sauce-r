@@ -57,7 +57,7 @@
 
             <div class="fixed-content">
               <p>SCOPRI I NOSTRI PRODOTTI</p>
-              <button class="bot" id="ordina-ora-btn" onclick="window.location.href='./menu/ordina_ora.php'">ORDINA ORA</button>
+              <a class="bot" href="menu/ordina_ora.php">ORDINA ORA</a>
             </div>
           </div>
         </div>
