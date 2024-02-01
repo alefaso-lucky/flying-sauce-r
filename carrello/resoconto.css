@@ -1,6 +1,8 @@
 /*decorazione di sfondo*/
 body {
     background-image: url("../media/sfondo_accedi.jpg");
+    background-repeat: no-repeat;     /*non voglio che l'immagine di sfondo si ripeta*/
+    background-size: cover;     /*l'immagine si adatta allo sfondo*/
     margin: 0; /*per evitare che ci sia un margine intorno a tutti gli elementi*/
 }
 
@@ -44,7 +46,7 @@ inserito nel carrello in una tabella che mostra anche il totale della spesa*/
   
 #row li{
     font-size: 35px;
-    font-family: Times New Roman, serif;
+    font-family: 'Montserrat', serif;
     color: #FFC26C;
 }
 
@@ -162,7 +164,7 @@ label input:checked+h1:before{
 .bottone_primario {
     text-decoration: none;
     text-align: center;
-    font-family: serif;
+    font-family: 'Montserrat';
     display: inline-block;
     border: thin solid rgb(255, 194, 108);
     background-color: rgb(70, 102, 109);
@@ -177,7 +179,7 @@ label input:checked+h1:before{
 
 #bottone_secondario {
     text-decoration: none;
-    font-family: serif;
+    font-family: 'Montserrat';
     display: inline-block;
     border: thin solid rgb(255, 194, 108);
     border-radius: 7px; /*per i bordi arrotondati*/
