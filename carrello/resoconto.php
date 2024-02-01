@@ -106,6 +106,7 @@
                             $piatto = $row[0];
                             $quantita = $row[1];
                             /* una query sulla tabella menu permette di scoprire il prezzo del piatto */
+                            $piatto = pg_escape_literal($db, $piatto);
                             $price_menu = "SELECT prezzo FROM menu WHERE nome = '$piatto'";
                             $price_menu_query = pg_query($db, $price_menu);
                             $row_price = pg_fetch_array($price_menu_query);
