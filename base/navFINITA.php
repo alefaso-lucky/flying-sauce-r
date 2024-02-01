@@ -24,7 +24,7 @@
   </div>
   <!-- nav: elemento destinato solo ai blocchi principali di collegamenti di navigazione. -->
   <nav class="topnav" id="myNav">
-    <a href="nhome.php">Home</a>
+    <a href="homepage.php">Home</a>
     <a href="menu/ordina_ora.php">Ordina</a>
     <a href="menu/ordina_ora/componi_piatto.php">Componi</a>
     <a href="chi%20siamo/chi%20siamo.php">Chi siamo</a>
@@ -32,7 +32,7 @@
       <?php
         if (session_id() == "") {
           session_start();
-        }  
+        }
         if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
           $logged = $_SESSION['loggato'];
           $email_user = $_SESSION['email'];

@@ -199,7 +199,7 @@
           <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><img src="media/sicurezza.png" alt="sec_icon" width="20px" height="20px">Sicurezza</div>
           <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px">Spedizione</div>
           <!-- Questo form aggiorna la variabile di sessione Logout e invia le informazioni alla homepage dove è presente la logica per il logout -->
-          <form action="http://localhost/Flying_Sauce_r/nhome.php" method="post">
+          <form action="http://localhost/Flying_Sauce_r/homepage.php" method="post">
             <input id ="logout" type="submit" name="Logout" value="Logout">
           </form>
         </div>
