@@ -13,9 +13,12 @@
 	</head>
 
 	<body>
-		<?php require "../base/navFINITA.php"; ?>
+		<?php require "../base/navFINITA.php"; ?> <!-- inserimento della navbar -->
+		<!-- tutta l'informativa è contenuta in un div di classe 'cell' -->
 		<div class="cell">
+					<!-- titolo dell'informativa -->
 	        <h1>Informativa sulla privacy</h1>
+					<!-- introduzione -->
 	        <h2>Condizioni d'Uso di Flying Sauce</h2>
 		        <p>
 		            Benvenuti su Flying Sauce, il servizio esclusivo di consegna a
@@ -25,6 +28,7 @@
 		            seguenti condizioni d'uso. Vi preghiamo di leggerle attentamente
 		            prima di usufruire dei nostri servizi.
 		        </p>
+					<!-- prima sezione -->
 	        <h3>Servizi Offerti:</h3>
 		        <p>
 		            Flying Sauce offre la possibilità di godere dell'eccellenza della
@@ -35,6 +39,7 @@
 		            dalla qualità dei nostri piatti e dalla velocità e sicurezza delle
 		            nostre consegne.
 		        </p>
+					<!-- seconda sezione -->
 	        <h3>Promozione sulla Sicurezza:</h3>
 		        <p>
 		            La sicurezza dei nostri clienti è la nostra massima priorità. I droni
@@ -43,6 +48,7 @@
 		            nel rispetto delle normative di sicurezza vigenti, minimizzando il
 		            rischio di incidenti o danni.
 		        </p>
+					<!-- terza sezione -->
 	        <h3>Finalità dei Servizi di Flying Sauce:</h3>
 		        <p>
 		            I nostri servizi sono offerti con l'obiettivo di soddisfare le esigenze culinarie dei nostri
@@ -50,13 +56,16 @@
 		            impegniamo a mantenere gli standard più elevati nella preparazione dei piatti e nella gestione
 		            delle consegne.
 		        </p>
+					<!-- quarta sezione -->
 	        <h3>Impegni dell'Utente:</h3>
 		        <p>
 		            Gli utenti di Flying Sauce si impegnano a non danneggiare, manipolare o appropriarsi
 		            indebitamente dei droni utilizzati per le consegne. L'utilizzo dei nostri servizi implica
 		            un comportamento rispettoso delle leggi e delle normative locali relative all'uso di droni.
 		        </p>
+					<!-- quinta sezione -->
 	        <h3>Ulteriori Disposizioni:</h3>
+						<!-- questa sezione è costituita da una lista puntata -->
 		        <ul>
 		            <li> Normativa sull'Uso Improprio: Gli utenti sono tenuti a utilizzare i servizi di Flying
 		            Sauce in modo lecito e conforme alle leggi locali e internazionali.</li>
@@ -70,11 +79,13 @@
 		            <li> Termini di Pagamento: I pagamenti devono essere effettuati secondo le modalità
 		            indicate sul nostro sito, conformemente alle normative finanziarie vigenti.</li>
 		        </ul>
+					<!-- sesta sezione -->
 	        <h3>Normativa sulle Schede di Sistema dei Sistemi di Raccomandazione:</h3>
 		        <p>
 		            Gli utenti accettano di rispettare le condizioni e le politiche associate alle schede di sistema
 		            dei sistemi di raccomandazione, se presenti.
 		        </p>
+						<!-- conclusione -->
 		        <p>
 								<br/>
 		            Queste condizioni d'uso costituiscono l'accordo completo tra l'utente e Flying Sauce.
@@ -84,6 +95,7 @@
 		             Continuando a utilizzare i nostri servizi, l'utente accetta automaticamente le condizioni d'uso aggiornate.
 		        </p>
 		</div>
+		<!-- inserimento del footer -->
 		<?php require "../base/footer.php"; ?>
 	</body>
 </html>
