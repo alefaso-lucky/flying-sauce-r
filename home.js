@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () { // il listner serve 
         x[i].style.display = "none";
     }
     recIndex++;
-    if (myIndex > x.length) {recIndex = 1}/* normalizzo myIndex sul numero di recensioni */
+    if (recIndex > x.length) {recIndex = 1}/* normalizzo recIndex sul numero di recensioni */
     x[recIndex-1].style.display = "block"; /* rendo visibile una recensione */
     setTimeout(carousel, 4000); /*cambia recensione ogni 4 secondi*/
   }
