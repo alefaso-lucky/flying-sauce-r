@@ -16,7 +16,7 @@ body{
 
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  min-width: 480px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
+  min-width: 470px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
   height: 540px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
@@ -118,6 +118,7 @@ body{
 
 /*per i campi immodificabili, che risiedono in uno span interno a span-element*/
 .unmodified_info{
+  font-size: 19px;
   color: rgb(255, 194, 108); 
 }
 
