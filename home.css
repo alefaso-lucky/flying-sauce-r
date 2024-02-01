@@ -224,7 +224,7 @@ body {
 /*pulsanti per spostarsi in altre pagine*/
 .bot{
     text-decoration: none; /*per togliere gli effetti dei link*/
-    font-family: serif;
+    font-family: 'Montserrat', serif;
     display: inline-block;
     border: thin solid rgb(255, 194, 108);
     background-color: rgb(70, 102, 109);
