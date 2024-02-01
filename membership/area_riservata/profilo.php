@@ -233,19 +233,19 @@
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
             </div>
             <div class="input-element">
-              <label>Nome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nome']; ?>" disabled></label>
+              <span>Nome:</span><span class="disabled_input"><?php echo $_SESSION['nome']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Cognome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['cognome']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Cognome:</span><span class="disabled_input"><?php echo $_SESSION['cognome']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Genere:<input type="text" class="disabled_input" value="<?php echo $_SESSION['genere']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Genere:</span><span class="disabled_input"><?php echo $_SESSION['genere']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Email:<input type="text" class="disabled_input" value="<?php echo $_SESSION['email']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Email:</span><span class="disabled_input"><?php echo $_SESSION['email']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Numero di cellulare:<input type="text" class="disabled_input" value="<?php echo $_SESSION['telefono']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Numero di cellulare:</span><span class="disabled_input" <?php echo $_SESSION['telefono']; ?> ></span>
             </div>
           </div>
 
@@ -278,16 +278,16 @@
             <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
               <div class="input-element">
-                <label>Nazione:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nazione']; ?>" disabled><label>
+                <span>Nazione:</span><span class="disabled_input"><?php echo $_SESSION['nazione']; ?></span>
               </div>
               <div class="input-element">
-                <label>Città:<input type="text" class="disabled_input" value="<?php echo $_SESSION['citta']; ?>" disabled><label>
+                <span>Città:</span><span class="disabled_input"><?php echo $_SESSION['citta']; ?></span>
               </div>
               <div class="input-element">
-                <label>Via o piazza:<input type="text" class="disabled_input" value="<?php echo $_SESSION['via']; ?>" disabled><label>
+                <span>Via o piazza:</span><span class="disabled_input"><?php echo $_SESSION['via']; ?></span>
               </div>
               <div class="input-element">
-                <label>Numero civico:<input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled><label>
+                <span>Numero civico:</span><span class="disabled_input"><?php echo $_SESSION['civico']; ?></span>
               </div>
 
               <!-- per cambiare modalità e passare al form di aggiornamento delle informazioni di spedizione è possibile cliccare sullo label seguente,
