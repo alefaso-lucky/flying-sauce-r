@@ -16,7 +16,7 @@ body{
 
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  min-width: 530px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
+  min-width: 480px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
   height: 540px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
@@ -110,11 +110,15 @@ body{
   margin: 0;        /*nessun margin*/
 }
 
-.disabled_input{
-  height: 30px;     /*rendo i campi di input di sola lettura più alti*/
-  margin-bottom: 5px;     /*applico un margine inferiore per distanziarli gli uni dagli altri*/
-  font-size: 20px;    /*aumento dimensione del font*/
-  width: 50%;     /*rendo più larga il campo di input*/
+/*gli elementi in questo div (ossia la descrizione del campo e i valori di sessione) si wrappano se necessario*/
+.span-element{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*per i campi immodificabili, che risiedono in uno span interno a span-element*/
+.unmodified_info{
+  color: rgb(255, 194, 108); 
 }
 
 /*sono i campi di input modificabili (cambio password/indirizzo)*/

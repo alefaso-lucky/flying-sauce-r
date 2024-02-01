@@ -27,8 +27,8 @@
           <input type="radio" class="radio" name="images" id="radio-3" onclick="showSlide(3)">
           <input type="radio" class="radio" name="images" id="radio-4" onclick="showSlide(4)">
 
-          <!-- Ogni slide dello slideshow contiene un'immagine e una box di testo.
-            La prina slide dello slide show: -->
+          <!-- Ogni slide dello slideshow contiene un'immagine e una box di testo.-->
+          <!--  La prina slide dello slide show: -->
           <div class="slide" id="slide-1">
 
             <img src="media/chi_siamo1.jpg" alt="chi_siamoIMG1" width="800px" height="500px">

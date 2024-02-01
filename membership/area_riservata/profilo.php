@@ -57,7 +57,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  /*require_once "../../logindb.php";*/  require_once "../../connessionedb.php";
+  require_once "../../connessionedb.php";
   //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -109,7 +109,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    /*require_once "../../logindb.php";*/     require_once "../../connessionedb.php";
+    require_once "../../connessionedb.php";
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -194,19 +194,19 @@
         <!-- Il seguente div è utilizzato per contenere le barre di soluzione delle informazioni da visualizzare nel div di classe "account_content" -->
         <div class="columnside">
           <p><?php echo "<em>Benvenuto ".$_SESSION["email"]."!</em>"; ?></p> <!--titolo di questa sezione della pagina e collegamenti alle varie parti della sezione account-->
-          <!-- i seguenti div sono le barre di selezione, al loro clik è associata una funzione JS che cambia le informaioni visualizzate -->
-          <div class="selezione" id="selAnagrafica" onclick="switchDiv('Anagrafica')"><img src="media/info_personali.png" alt="info_icon" width="20px" height="20px">Informazioni personali</div>
-          <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><img src="media/sicurezza.png" alt="sec_icon" width="20px" height="20px">Sicurezza</div>
-          <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px">Spedizione</div>
+          <!-- i seguenti div sono le barre di selezione, al loro clik è associata una funzione JS che cambia le informaioni visualizzatem, in ogni div è inoltre presente un'icon aggiunta tramite foglio di stile esterno -->
+          <div class="selezione" id="selAnagrafica" onclick="switchDiv('Anagrafica')"><i class="fa fa-address-card-o"></i> Informazioni personali</div>
+          <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><i class="fa fa-unlock-alt"></i> Sicurezza</div>
+          <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px"> Spedizione</div>
           <!-- Questo form aggiorna la variabile di sessione Logout e invia le informazioni alla homepage dove è presente la logica per il logout -->
-          <form action="http://localhost/Flying_Sauce_r/nhome.php" method="post">
+          <form action="http://localhost/Flying_Sauce_r/homepage.php" method="post">
             <input id ="logout" type="submit" name="Logout" value="Logout">
           </form>
         </div>
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            /*require "../../logindb.php";  */      require_once "../../connessionedb.php";
+            require_once "../../connessionedb.php";
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
             // query per ottenere le informazioni di anagrafica dell'utente dal sb
@@ -232,20 +232,20 @@
             <div class="brief-description">
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
             </div>
-            <div class="input-element">
-              <label>Nome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nome']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Nome:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['nome']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Cognome:<input type="text" class="disabled_input" value="<?php echo $_SESSION['cognome']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Cognome:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['cognome']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Genere:<input type="text" class="disabled_input" value="<?php echo $_SESSION['genere']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Genere:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['genere']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Email:<input type="text" class="disabled_input" value="<?php echo $_SESSION['email']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Email:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['email']; ?></span>
             </div>
-            <div class="input-element">
-              <label>Numero di cellulare:<input type="text" class="disabled_input" value="<?php echo $_SESSION['telefono']; ?>" disabled></label>
+            <div class="span-element">
+              <span>Numero di cellulare:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['telefono']; ?></span>
             </div>
           </div>
 
@@ -277,17 +277,17 @@
 
             <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
-              <div class="input-element">
-                <label>Nazione:<input type="text" class="disabled_input" value="<?php echo $_SESSION['nazione']; ?>" disabled><label>
+              <div class="span-element">
+                <span>Nazione:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['nazione']; ?></span>
               </div>
-              <div class="input-element">
-                <label>Città:<input type="text" class="disabled_input" value="<?php echo $_SESSION['citta']; ?>" disabled><label>
+              <div class="span-element">
+                <span>Città:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['citta']; ?></span>
               </div>
-              <div class="input-element">
-                <label>Via o piazza:<input type="text" class="disabled_input" value="<?php echo $_SESSION['via']; ?>" disabled><label>
+              <div class="span-element">
+                <span>Via o piazza:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['via']; ?></span>
               </div>
-              <div class="input-element">
-                <label>Numero civico:<input type="text" class="disabled_input" value="<?php echo $_SESSION['civico']; ?>" disabled><label>
+              <div class="span-element">
+                <span>Numero civico:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['civico']; ?></span>
               </div>
 
               <!-- per cambiare modalità e passare al form di aggiornamento delle informazioni di spedizione è possibile cliccare sullo label seguente,
