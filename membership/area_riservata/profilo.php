@@ -194,10 +194,10 @@
         <!-- Il seguente div è utilizzato per contenere le barre di soluzione delle informazioni da visualizzare nel div di classe "account_content" -->
         <div class="columnside">
           <p><?php echo "<em>Benvenuto ".$_SESSION["email"]."!</em>"; ?></p> <!--titolo di questa sezione della pagina e collegamenti alle varie parti della sezione account-->
-          <!-- i seguenti div sono le barre di selezione, al loro clik è associata una funzione JS che cambia le informaioni visualizzate -->
-          <div class="selezione" id="selAnagrafica" onclick="switchDiv('Anagrafica')"><img src="media/info_personali.png" alt="info_icon" width="20px" height="20px">Informazioni personali</div>
-          <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><img src="media/sicurezza.png" alt="sec_icon" width="20px" height="20px">Sicurezza</div>
-          <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px">Spedizione</div>
+          <!-- i seguenti div sono le barre di selezione, al loro clik è associata una funzione JS che cambia le informaioni visualizzatem, in ogni div è inoltre presente un'icon aggiunta tramite foglio di stile esterno -->
+          <div class="selezione" id="selAnagrafica" onclick="switchDiv('Anagrafica')"><i class="fa fa-address-card-o"></i> Informazioni personali</div>
+          <div class="selezione" id="selSicurezza" onclick="switchDiv('Sicurezza')"><i class="fa fa-unlock-alt"></i> Sicurezza</div>
+          <div class="selezione" id="selSpedizione" onclick="switchDiv('Spedizione')"><img src="media/spedizione.png" alt="sped_icon" width="20px" height="20px"> Spedizione</div>
           <!-- Questo form aggiorna la variabile di sessione Logout e invia le informazioni alla homepage dove è presente la logica per il logout -->
           <form action="http://localhost/Flying_Sauce_r/homepage.php" method="post">
             <input id ="logout" type="submit" name="Logout" value="Logout">
@@ -233,19 +233,19 @@
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
             </div>
             <div class="span-element">
-              <span>Nome:</span><span class="unmodified_info"><?php echo $_SESSION['nome']; ?></span>
+              <span>Nome:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['nome']; ?></span>
             </div>
             <div class="span-element">
-              <span>Cognome:</span><span class="unmodified_info"><?php echo $_SESSION['cognome']; ?></span>
+              <span>Cognome:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['cognome']; ?></span>
             </div>
             <div class="span-element">
-              <span>Genere:</span><span class="unmodified_info"><?php echo $_SESSION['genere']; ?></span>
+              <span>Genere:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['genere']; ?></span>
             </div>
             <div class="span-element">
-              <span>Email:</span><span class="unmodified_info"><?php echo $_SESSION['email']; ?></span>
+              <span>Email:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['email']; ?></span>
             </div>
             <div class="span-element">
-              <span>Numero di cellulare:</span><span class="unmodified_info"><?php echo $_SESSION['telefono']; ?></span>
+              <span>Numero di cellulare:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['telefono']; ?></span>
             </div>
           </div>
 
@@ -278,16 +278,16 @@
             <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
               <div class="span-element">
-                <span>Nazione:</span><span class="unmodified_info"><?php echo $_SESSION['nazione']; ?></span>
+                <span>Nazione:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['nazione']; ?></span>
               </div>
               <div class="span-element">
-                <span>Città:</span><span class="unmodified_info"><?php echo $_SESSION['citta']; ?></span>
+                <span>Città:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['citta']; ?></span>
               </div>
               <div class="span-element">
-                <span>Via o piazza:</span><span class="unmodified_info"><?php echo $_SESSION['via']; ?></span>
+                <span>Via o piazza:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['via']; ?></span>
               </div>
               <div class="span-element">
-                <span>Numero civico:</span><span class="unmodified_info"><?php echo $_SESSION['civico']; ?></span>
+                <span>Numero civico:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['civico']; ?></span>
               </div>
 
               <!-- per cambiare modalità e passare al form di aggiornamento delle informazioni di spedizione è possibile cliccare sullo label seguente,
