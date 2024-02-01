@@ -57,7 +57,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  require_once "../../logindb.php";  /*require_once "../../connessionedb.php";*/
+  require_once "../../connessionedb.php";
   //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -109,7 +109,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../logindb.php";     /*require_once "../../connessionedb.php";*/
+    require_once "../../connessionedb.php";
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -206,7 +206,7 @@
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            require "../../logindb.php";        /*require_once "../../connessionedb.php";*/
+            require_once "../../connessionedb.php";
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
             // query per ottenere le informazioni di anagrafica dell'utente dal sb

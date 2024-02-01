@@ -292,7 +292,7 @@
 		// questa funzione ottiene l'hash della password associata all'email passata come parametro
     function get_pwd($email){
 	      //CONNESSIONE AL DB
-        require "../logindb.php";       /*require_once "../connessionedb.php";*/
+        require_once "../connessionedb.php";
 				// query per ottenere l'hash
         $sql = "SELECT password FROM utenti WHERE email=$1;";
         $prep = pg_prepare($db, "sqlPassword", $sql);
@@ -318,7 +318,7 @@
 		// questa funzione verifica se l'email passsata è già associata ad un account nel db
     function email_exist($email){
 			//CONNESSIONE AL DB
-        require "../logindb.php";       /*require_once "../connessionedb.php";*/
+        require_once "../connessionedb.php";
 
 				// query per verificare se esiste la mail nel db
         $sql = "SELECT email FROM utenti WHERE email=$1";
@@ -345,7 +345,7 @@
 
 		// questa funzione inserisce un nuovo utente nel db
     function insert_utente($nome, $cognome, $pass, $email, $genere, $nazione, $citta, $via, $civico, $numero){
-        require "../logindb.php";       /*require_once "../connessionedb.php";*/
+        require_once "../connessionedb.php";
 				// esegue l'hash della password
         $hash = password_hash($pass, PASSWORD_DEFAULT);
 				// script per inserire tutte le informazioni dell'utente 
