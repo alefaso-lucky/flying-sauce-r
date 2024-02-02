@@ -3,9 +3,13 @@
 
   /* logica per il logout */
   if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
-    session_destroy();
-    header("refresh:0;");
-    exit();
+    $_SESSION = array();
+    if(session_id() != "" || isset($_COOKIE[session_name()])) { /* anche se non usiamo cookie quello relativo al session name è settato in automatico */
+      setcookie(session_name(), '', time() - 2592000, '/');
+      session_destroy();
+      header("refresh:0;");
+      exit();
+    }
   }
   /* logica per mestrare la home ad un utente autenticato o meno */
   if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {

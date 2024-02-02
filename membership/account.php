@@ -144,7 +144,7 @@
     <!--fine parte obbligatoria-->
 	<base href="http://localhost/Flying_Sauce_r/">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="membership/validazioneInput.js"></script>
+  <script type=“text/javascript” src="membership/validazioneInput.js"></script>
 </head>
 <body>
 		<!-- richiede la navbar -->
