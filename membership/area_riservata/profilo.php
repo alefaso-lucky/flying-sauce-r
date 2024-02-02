@@ -57,7 +57,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  require_once "../../connessionedb.php";
+  require "../../connessionedb.php";
   //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -109,7 +109,7 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../connessionedb.php";
+    require "../../connessionedb.php";
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
@@ -181,14 +181,14 @@
 	  <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="membership/area_riservata/profilo.css">
-    <script src="membership/area_riservata/profilo.js" charset="utf-8"></script>
+    <script src="membership/area_riservata/profilo.js"></script>
   </head>
   <body>
     <?php
     // Questo if permette di visualizzare la pagina solo se l'utente è loggato
     if(isset($_SESSION["loggato"]) && $_SESSION["loggato"]==True) {
     // carica la navbar
-    require "../../base/navFINITA.php" ; ?>
+    include "../../base/navFINITA.php" ; ?>
     <div class="fullbody">
       <div class="container">
         <!-- Il seguente div è utilizzato per contenere le barre di soluzione delle informazioni da visualizzare nel div di classe "account_content" -->
@@ -206,7 +206,7 @@
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            require_once "../../connessionedb.php";
+            require "../../connessionedb.php";
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
             // query per ottenere le informazioni di anagrafica dell'utente dal sb
@@ -229,9 +229,9 @@
           <!-- Il seguente div mostra all'utente le informaioni di anagrafica registrate -->
           <div id="Anagrafica" class="sezione"> <!--div che contiene i dati non modificabili, dunque gli input type sono disabled-->
             <h1>Informazioni personali</h1>
-            <div class="brief-description">
+            <p class="brief-description">
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
-            </div>
+            </p>
             <div class="span-element">
               <span>Nome:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['nome']; ?></span>
             </div>
@@ -252,10 +252,10 @@
           <!-- Il seguente div mostra all'utente un form per modificare la password del suo account -->
           <div id="Sicurezza" class="sezione">
             <h1>Mantieni sicuro il tuo account</h1>
-            <div class="brief-description">
+            <p class="brief-description">
               La tua tranquillità è la nostra priorità, mantieni il controllo della tua privacy e rafforza
               la tua protezione digitale con un processo semplice e sicuro per la modifica della password.
-            </div>
+            </p>
             <form action=<?php echo $_SERVER["PHP_SELF"]; ?> method="post" onsubmit="return validaModulo_pass(this)">
               <input class="input-field" name="newpass" type="password" placeholder="Nuova password"/>
               <input class="input-field" name="repassword" type="password" placeholder="Conferma password"/>
@@ -271,9 +271,9 @@
           <!-- Il seguente div mostra le informazioni sull'indirizzo di spedizione registrate, ha due modalità visualizzabili mutuamente esclusive: info e modifica -->
           <div id="Spedizione" class="sezione">
             <h1>Indirizzo di consegna</h1>
-            <div class="brief-description">
+            <p class="brief-description">
               Consegne sicure, informazioni chiare. Visualizza e gestisci la tua spedizione in un attimo.
-            </div>
+            </p>
 
             <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
@@ -319,7 +319,7 @@
       </div>
     </div>
     <!-- richiede il footer -->
-  <?php require "../../base/footer.php"; ?>
+  <?php include "../../base/footer.php"; ?>
   <div class="else-container">
     <?php
     } else {

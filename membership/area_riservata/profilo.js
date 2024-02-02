@@ -11,7 +11,11 @@ window.onload = function () {
       visualizzaFormSpedizione();
 }
 
-  /* questa funzione viene chiamata all'onclick dei div di selezione. Cambia la visibilià dei div di informazioni rendnendo visibile il div selezionato dall'utente */
+  /**
+   * Questa funzione viene chiamata all'onclick dei div di selezione. Cambia la visibilià dei div 
+   * di informazioni rendnendo visibile il div selezionato dall'utente
+   * @param {string} visibleDiv - l'id del div da mostrare
+   */
   function switchDiv(visibleDiv) {
       var specialDiv = document.getElementById(visibleDiv);
       var allSections = document.getElementsByClassName("sezione");
@@ -46,7 +50,9 @@ window.onload = function () {
       sessionStorage.setItem("visibleSpedizione", idVisible); /* memorizzo nella variabile di sessione quale form di "Spedizione" è selezionato (info o modifica) */
   }
 
-  /* funzione di utilità per visualizzare il form di "Spedizione" */
+  /**
+   * Funzione di utilità per visualizzare il form di "Spedizione" 
+  */
   function visualizzaFormSpedizione() {
       // se è selezionato il div di "Spedizione" allora è necessario specificare se far apparire le info di spedizione o il form per modificare l'indirizzo.
       switch(sessionStorage.getItem("visibleSpedizione")) { // valore della variabile di sessione che memorizza quale form visualizzare
@@ -61,7 +67,12 @@ window.onload = function () {
           break;
       }
   }
-
+  
+  /**
+   * 
+   * @param {object} form 
+   * @returns true se la password rispetta le limitazioni, false altrimenti
+   */
   function validaModulo_pass(form){
   //non effettuo controlli se i campi sono pieni poichè ho esplicitato con html la parola required
       if (form.newpass.value != form.repassword.value) {					//controllo se password e conferma coincidono
@@ -71,11 +82,11 @@ window.onload = function () {
           return false;
       }else{			//se coincidono procedo a controllare se la password rispetta i canoni
           password = form.newpass.value;
-          // Almeno 8 caratteri, una lettera maiuscola, un numero e un simbolo speciale
+          // Almeno 8 caratteri, una lettera maiuscola, una lettera minuscola, un numero e un simbolo speciale
           const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()\-_=\+{};:,<\.>]).{8,}$/;
           if(passwordRegex.test(password) == false){
-          alert("La password deve contenere almeno 8 caratteri, una lettera maiuscola, un numero e un carattere speciale.");
-          return false;
+            alert("La password deve contenere almeno 8 caratteri, una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale.");
+            return false;
           }
           return true;
       }
