@@ -18,8 +18,6 @@
 
     <!-- div per applicare uno sfondo colorato allo slider-->
     <div class="background-container">
-      <!-- div che conterrà lo slider -->
-      <div class="container">
         <!-- lo slider che contiene: le varie slides (di cui sarò visualizzata solo una alla volta), i pulsanti per cambiare slide, una box di testo che appare sulla slide  -->
         <div class="slider">
           <!-- questi radio buttons servono per cambiare la slide visualizzata, al loro click è eseguita la funzione JS showSlide() che mostra la slide selezionata -->
@@ -79,17 +77,15 @@
               </p>
             </div>
           </div>
-        </div>
-
-        <!-- il seguente div conterrà delle label associate ai radio buttons per la seleziona della slide visibile,
+          <!-- il seguente div conterrà delle label associate ai radio buttons per la seleziona della slide visibile,
             Le label sonmo utilizzate per applicare dello stile ai radio button. -->
-        <div class="dots">
-          <label for="radio-1" id="label-1"></label>
-          <label for="radio-2" id="label-2"></label>
-          <label for="radio-3" id="label-3"></label>
-          <label for="radio-4" id="label-4"></label>
+          <div class="dots">
+            <label for="radio-1" id="label-1"></label>
+            <label for="radio-2" id="label-2"></label>
+            <label for="radio-3" id="label-3"></label>
+            <label for="radio-4" id="label-4"></label>
+          </div>
         </div>
-      </div>
     </div>
 
     <!-- La seguente sezione si trova al centro della pagina, contiene una citazioe titolata -->
