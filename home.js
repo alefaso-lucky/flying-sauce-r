@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () { // il listner serve 
     setTimeout(showSlides, 5000); // cambia slide ogni 5 secondi
   }
   
-  /*segue il js per gestire lo scorrimento delle recensioni della sezione 4-->*/
+  /**
+   * segue il js per gestire lo scorrimento delle recensioni della sezione 4
+   */
   var recIndex = 0;
   carousel();
   function carousel() {
