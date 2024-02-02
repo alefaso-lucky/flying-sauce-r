@@ -15,33 +15,24 @@ body {
 /* per applicare uno sfondo colorato allo slider */
 .background-container {
   background-color: #46666D; /* colore di sfondo alle immagini */
-  position: relative;
   height: 500px;
   width: 100%;
-}
-
-/* questa classe contiene lo slider */
-.container {
-  position: relative; /* la classe container è un riferimento per position */
-  max-width: 800px; /* imposto la dimensione dello slider che sarà dunque la dimensione delle singole slide */
-  height: 500px;
-  margin: 10px auto;
+  display: flex;
+  align-items: center; /*per allineare verticalmente al centro*/
+  justify-content: center; /*per allineare orizzontalmente al centro*/
 }
 
 /* slider conterrà le diverse slide con le immagini e il testo */
 .slider {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative; /* posizione assoluta relativamente a container */
+  height: 500px;
+  width: 90%;
+  position: relative; /* posizione relativa per posizionamento componenti assoluti */
   border: solid 1px rgba(255, 194, 108, 0.8);
-  border-radius: 10px;
   box-sizing: border-box; /* il bordo è applicato al content */
 }
 
  /* una singola slide contiene l'immagine e il testo */
 .slide {
-  position: absolute; /* posizione assoluta relativamente a container */
   width: 100%;
   height: 100%;
   display: none; /* di base sono invisibili */
