@@ -157,13 +157,21 @@ div.grid-img-container {
 div.grid-item img {
   object-fit: cover;
 }
+
+/* Poiché nel grird-template è presente un gap le immagini più larghe non coincidono con la dimensione necessaria dunque modifico la loro dimensione */
+#img3 {
+  height: 100%;
+}
+#img4 {
+  width: 100%;
+}
+
 div.grid-item:hover img {
   filter: grayscale(100%); /* quando si passa col cursore sull'immagine questa diventa grigia */
 }
 
 /* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
 .overlay {
-
   opacity: 0; /* di base è invisibile */
 }
 

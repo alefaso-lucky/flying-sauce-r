@@ -126,14 +126,14 @@
           </div>
         </div>
         <div class="grid-item" id="grid-item3">
-          <img src="media/gridImg3.jpg" id="img3" width="200px" height="408px" alt="puzzle3"></img>
+          <img src="media/gridImg3.jpg" id="img3" width="200px" height="400px" alt="puzzle3"></img>
           <div class="overlay">
             <p class="testoImg" id="testoImg3">
               La possibilità di esportare i gusti italiani in tutto il mondo
           </div>
         </div>
         <div class="grid-item" id="grid-item4">
-          <img src="media/gridImg4.jpg" id="img4" width="408px" height="200px" alt="puzzle4"></img>
+          <img src="media/gridImg4.jpg" id="img4" width="400px" height="200px" alt="puzzle4"></img>
           <div class="overlay">
             <p class="testoImg" id="testoImg4">
               L'autenticità del nostro brand
