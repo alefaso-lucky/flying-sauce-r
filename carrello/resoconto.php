@@ -75,7 +75,7 @@
     <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
     <link rel="stylesheet" href="carrello/resoconto.css">
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
-    <script type=“text/javascript” src="carrello/resoconto.js"></script>
+    <script src="carrello/resoconto.js"></script>
 </head>
 <body>
     <?php include "../base/navFINITA.php" ?> <!--inserimento navbar-->
