@@ -1,4 +1,4 @@
-* {
+body * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
@@ -137,7 +137,6 @@ body{
 
 .leftpanel img {
   width: 100%; /*per occupare tutto leftpanel*/
-  height: 100%;   /*l'immagine deve sempre occupare il 100% dell'altezza*/
   object-fit: cover; /*l'immagine non subisce alterazioni */
   border-top-left-radius: 120px;     /*arrotondo bordo sx in alto dell'img*/
   border-bottom-left-radius: 120px;    /*arrotondo bordo sx in basso dell'img*/

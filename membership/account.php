@@ -166,7 +166,7 @@
                             portando la freschezza dei nostri piatti direttamente sulla tua tavola!
                         </p>
                     </div>
-                <img src="media/accedi_img.jpg" alt="accedi_img" width="1500px">
+                <img src="media/accedi_img.jpg" alt="accedi_img" width="1500px" height="770px">
                 </div>
 								<!-- pannello di destra che contiene il form di login -->
                 <div class="rightpanel">
@@ -217,7 +217,7 @@
                                 genuini dell'Italia.
                             </p>
                     </div>
-                <img src="media/reg_img.jpg" alt="registrati_img" width="1500px">
+                <img src="media/reg_img.jpg" alt="registrati_img" width="1500px" height="770px">
                 </div>
 								<!-- pannello di destra che contiene il form di login -->
                 <div class="rightpanel">
