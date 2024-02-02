@@ -166,7 +166,7 @@
                             portando la freschezza dei nostri piatti direttamente sulla tua tavola!
                         </p>
                     </div>
-                <img src="media/accedi_img.jpg" alt="accedi_img" width="1500px">
+                <img src="media/accedi_img.jpg" alt="accedi_img" width="1500px" height="770px">
                 </div>
 								<!-- pannello di destra che contiene il form di login -->
                 <div class="rightpanel">
@@ -176,12 +176,12 @@
                     <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" onSubmit="return validatePassword(password.value);" method="post"> <!-- form sticky -->
 												<!-- div che contiene un'icona e un input field per l'email -->
 												<div class="input-field">
-                            <span><img src="media/email_icon.png" width="20px" height="20px"></span>
+                            <span><i class="fa fa-envelope"></i></span>
                             <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
                         </div>
 												<!-- div che contiene un'icona e un input fiel per la password -->
                         <div class="input-field">
-                            <span><img src="media/pass_icon.png" width="20px" height="20px"></span>
+                            <span><i class="fa fa-lock"></i></span>
                             <input type="password" id ="psw" name="password" placeholder="Password">
                         </div>
 												<!-- al submit del form viene aggiornata la varaibile login che sarà controllata da della logica per l'accesso -->
@@ -217,7 +217,7 @@
                                 genuini dell'Italia.
                             </p>
                     </div>
-                <img src="media/reg_img.jpg" alt="registrati_img" width="1500px">
+                <img src="media/reg_img.jpg" alt="registrati_img" width="1500px" height="770px">
                 </div>
 								<!-- pannello di destra che contiene il form di login -->
                 <div class="rightpanel">

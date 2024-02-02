@@ -137,61 +137,6 @@ div.grid-img-container {
 
 }
 
-/* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */
-div.grid-item {
-  position: relative;
-  display: flex;
-  transition: 0.5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
-  box-shadow: 3px 3px 4px rgba(0,0,0,0.6); /* applica una ombra opaca di 2px a detra e in basso che si "blurra" per 3px */
-}
-div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */
-  box-shadow: 6px 6px 6px rgba(0,0,0,0.6); /* viene applica un'ombra all'immagine più spessa */
-  transform: scale(1.2); /* l'immagine viene ingrandita */
-  z-index: 1; /* trasla l'immagine al di sopra di tutto */
-}
-
-/* stile applicato alle immagini contenute nmel grid-item */
-div.grid-item img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-div.grid-item:hover img {
-   filter: grayscale(100%); /* quando si passa col cursore sull'immagine questa diventa grigia */
-}
-
-/* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
-.overlay {
-  position: absolute; /* prende la dimensione rlspetto al contenitore, in questo caso grid-item */
-  height: 100%;
-  width: 100%;
-  opacity: 0; /* di base è invisibile */
-}
-
-div.grid-item:hover .overlay {
-  opacity: 1; /* quando si passa col cursore sull'immagine il testo diventa visibile */
-}
-
-/* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
-.testoImg {
-  font-family: "Goudy Old Style", sans-serif;
-  color: rgb(255, 194, 108);
-  -webkit-text-stroke: 0.5px black; /* per aggiungere del bordo ai singoli caratteri, funziona solo con i broeser che la supportano */
-  text-stroke: 2px black; /* questa istruzione è utile per browser che non supportano l'istruzione precedente */
-  font-size: 14pt;
-  font-weight: 900;
-  text-align: center;
-  user-select: none; /* non permette all'utente di selezionare il testo */
-  width: 90%; /* questa istruzione assegna una larghezza al paragrafo */
-  position: absolute; /* posozione assolita rispetto a grid-item */
-  top: 45%; /* queste istruzioni servono per centrare il testo all'interno del contenitore */
-  left: 50%;
-  transform: translate(-50%, -50%); /* queste istruzioni servono per centrare il paragrafo nell'immagine */
-  background-color: rgba(255, 255, 255, 0.4); /* Aggiunge uno sfondo sfumato bianco */
-  border-radius: 10px; /* Aggiunge bordi arrotondati */
-  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.9);
-}
-
 /* le successive istruzioni servono per assegnare gli id alle aree del grid template ai grid items */
 #grid-item1 {
   grid-area: img1;
@@ -207,4 +152,58 @@ div.grid-item:hover .overlay {
 
 #grid-item4 {
   grid-area: img4;
+}
+
+/* stile applicato alle immagini contenute nmel grid-item */
+div.grid-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+div.grid-item:hover img {
+   filter: grayscale(100%); /* quando si passa col cursore sull'immagine questa diventa grigia */
+}
+
+/* questa classe è applicata ad un div che contiene il testo che compare sull'immagine, è utile per rendere visibile o invisibile il testo */
+.overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0; /* di base è invisibile */
+}
+
+div.grid-item:hover .overlay {
+  opacity: 1; /* quando si passa col cursore sull'immagine il testo diventa visibile */
+}
+
+/* grid-item è una classe applicata a ciascun div che contiene le immagini nella griglia */
+div.grid-item {
+  display: flex;
+  transition: 0.5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.6); /* applica una ombra opaca di 2px a detra e in basso che si "blurra" per 3px */
+}
+div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */
+  box-shadow: 6px 6px 6px rgba(0,0,0,0.6); /* viene applica un'ombra all'immagine più spessa */
+  transform: scale(1.2); /* l'immagine viene ingrandita */
+  z-index: 1; /* trasla l'immagine al di sopra di tutto */
+}
+
+/* questa classe è applicata ai paragrafi di testo che compaiono sulle immagini*/
+.testoImg {
+  font-family: "Goudy Old Style", sans-serif;
+  color: rgb(255, 194, 108);
+  -webkit-text-stroke: 0.5px black; /* per aggiungere del bordo ai singoli caratteri, funziona solo con i broeser che la supportano */
+  text-stroke: 2px black; /* questa istruzione è utile per browser che non supportano l'istruzione precedente */
+  font-size: 14pt;
+  font-weight: 900;
+  user-select: none; /* non permette all'utente di selezionare il testo */
+  background-color: rgba(255, 255, 255, 0.4); /* Aggiunge uno sfondo sfumato bianco */
+  border-radius: 10px; /* Aggiunge bordi arrotondati */
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.9);
+  text-align: center;
+  width: 90%; /* questa istruzione assegna una larghezza al paragrafo */
+  
+  position: absolute; /* posozione assolita rispetto a grid-item */
+  top: 45%; /* queste istruzioni servono per centrare il testo all'interno del contenitore */
+  left: 50%;
+  transform: translate(-50%, -50%); /* queste istruzioni servono per centrare il paragrafo nell'immagine */
 }
