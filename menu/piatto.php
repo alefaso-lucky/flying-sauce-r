@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="menu/piatto.css"> <!--collegamento al foglio di stile-->
     </head>
     <body>
-        <?php require '../base/navFINITA.php'; ?> <!--Inserimento della navbar-->
+        <?php include '../base/navFINITA.php'; ?> <!--Inserimento della navbar-->
         <!--Connessione al database-->
         <?php
             require '../connessionedb.php';
@@ -70,6 +70,6 @@
             <p><?php echo $descrizione_lunga; ?></p>
         </div>
 
-        <?php require '../base/footer.php'; ?> <!--Inserimento del footer-->
+        <?php include '../base/footer.php'; ?> <!--Inserimento del footer-->
     </body>
 </html>

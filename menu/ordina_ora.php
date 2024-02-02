@@ -106,7 +106,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> <!--collegamento al font-->
     </head>
     <body>
-        <?php require "../base/navFINITA.php" ?> <!--inserimento navbar-->
+        <?php include "../base/navFINITA.php" ?> <!--inserimento navbar-->
         
         <div class="row"> <!--righa con tutto il contenuto della pagina-->
             <div class="columnside sx"> <!--colonna di sinistra della pagina-->
@@ -191,7 +191,7 @@
             </div>
         </div>
         <script type="text/javascript" src="menu/ordina_ora.js"></script> <!--collegamento script che esegue la richiesta AJAX-->
-        <?php require "../base/footer.php"; ?> <!--inserimento footer-->
+        <?php include "../base/footer.php"; ?> <!--inserimento footer-->
     </body>
 
 </html>

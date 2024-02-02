@@ -13,7 +13,7 @@
 	</head>
 
 	<body>
-		<?php require "../base/navFINITA.php"; ?> <!-- inserimento della navbar -->
+		<?php include "../base/navFINITA.php"; ?> <!-- inserimento della navbar -->
 		<!-- tutta l'informativa è contenuta in un div di classe 'cell' -->
 		<div class="cell">
 					<!-- titolo dell'informativa -->
@@ -96,6 +96,6 @@
 		        </p>
 		</div>
 		<!-- inserimento del footer -->
-		<?php require "../base/footer.php"; ?>
+		<?php include "../base/footer.php"; ?>
 	</body>
 </html>

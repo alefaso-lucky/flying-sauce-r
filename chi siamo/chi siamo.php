@@ -13,7 +13,7 @@
     <script src="chi siamo/chi siamo.js"></script>
 </head>
 <body>
-    <?php require "../base/navFINITA.php" ; ?>
+    <?php include "../base/navFINITA.php" ; ?>
 
     <!-- div per applicare uno sfondo colorato allo slider-->
     <div class="background-container">
@@ -145,6 +145,6 @@
         </div>
     </div>
 
-      <?php require "../base/footer.php"; ?> <!--inserimento footer-->
+      <?php include "../base/footer.php"; ?> <!--inserimento footer-->
 </body>
 </html>

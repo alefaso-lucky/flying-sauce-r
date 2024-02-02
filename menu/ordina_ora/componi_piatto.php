@@ -88,7 +88,7 @@
     }
 ?>
     <body>
-        <?php require '../../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
+        <?php include '../../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
         <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->
             <div> <!--contenitore del form di composizione del piatto-->
                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="form_grid" onSubmit="return isUserLogged(<?php echo $logged; ?>);"> <!--form per la composizione del piatto-->
@@ -147,7 +147,7 @@
             <canvas id="piattoComposto" width="597px" height="618px" style="border:1px solid #d3d3d3;">canvas non disponibile su questo browser</canvas> <!--Canvas sul quale mostrare le scelte effettuate-->
             <script type="text/javascript" src="menu/ordina_ora/componi_piatto.js"></script> <!--script che alimenta il canvas-->
         </div>
-        <?php require "../../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
+        <?php include "../../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
     </body>
 
 </html>

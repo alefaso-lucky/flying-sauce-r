@@ -188,7 +188,7 @@
     // Questo if permette di visualizzare la pagina solo se l'utente è loggato
     if(isset($_SESSION["loggato"]) && $_SESSION["loggato"]==True) {
     // carica la navbar
-    require "../../base/navFINITA.php" ; ?>
+    include "../../base/navFINITA.php" ; ?>
     <div class="fullbody">
       <div class="container">
         <!-- Il seguente div è utilizzato per contenere le barre di soluzione delle informazioni da visualizzare nel div di classe "account_content" -->
@@ -319,7 +319,7 @@
       </div>
     </div>
     <!-- richiede il footer -->
-  <?php require "../../base/footer.php"; ?>
+  <?php include "../../base/footer.php"; ?>
   <div class="else-container">
     <?php
     } else {
