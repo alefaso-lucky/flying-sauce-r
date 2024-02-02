@@ -57,16 +57,13 @@
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
-  require_once "../../connessionedb.php";
-  //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+  require "../../connessionedb.php";
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
   $sql = "SELECT * FROM utenti WHERE email=$1;";
   $prep = pg_prepare($db, "selectUtente", $sql);
   $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
-  if (!$utente) {
-    //echo "ERRORE QUERY: " . pg_last_error($db);
-  } else {
+  if ($utente != false) {
     $row = pg_fetch_assoc($utente);
     $pass = $row['password'];
   }
@@ -74,6 +71,7 @@
   if (!empty($newpass)) {
     if (password_verify($newpass, $pass)) { // controlla se il primo parametro (la nuova password) e il secondo (l'hash di password dal db) coinciono
       // restituisce 0 nel caso in cui la nuova password e la vecchia siano uguali
+      pg_close($db);
       return 0;
     } else {
       // query per aggiornare la password dalla tabella del database
@@ -86,17 +84,11 @@
 
       // crea il prepared statement per aggiornare la password
       $prep = pg_prepare($db, "updatePassword", $sql_update);
-      if (!$prep) {
-        // in caso di errore $alertPass viene aggiornato per notificare l'errore avvenuto
-        $alertPass = "<p class='alert'><strong>pg_last_error($db).</strong></p>";
-      } else {
+      if ($prep != false) {
           // esegue lo statment dunque aggiorna la password
           $hash = password_hash($newpass, PASSWORD_DEFAULT);
           $ret_update = pg_execute($db, "updatePassword", array($hash, $_SESSION["email"]));
-          if (!$ret_update) {
-            // se l'aggiornamento non è andato a buon fine aggiorna $alertPass di conseguenza, successivamente restituirà -1
-            $alertPass = "<p class='alert'><strong>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
-          } else {
+          if ($ret_update != false) {
             // se l'aggiornamento è andato a buon fine chiude la connessione col db e restituisce 1
             pg_close($db);
             return 1;
@@ -104,21 +96,19 @@
         }
       }
     }
+    pg_close($db);
     return -1;
   }
 
   /* questa funzione è chiamata se è stato compilato il form per aggiornare l'indirizzo di spedizione */
   function aggiorna_indirizzo($nazione, $citta, $via, $civico){
-    require_once "../../connessionedb.php";
+    require "../../connessionedb.php";
     //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
     // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
     $sql = "SELECT * FROM utenti WHERE email=$1;";
     $prep = pg_prepare($db, "selectUtente", $sql);
     $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
-    if (!$utente) {
-      echo "ERRORE QUERY: " . pg_last_error($db);
-    }
 
     /* si entra in questo if se le informazioni di spedizione somno state inserite nel form apposito */
     if (!empty($nazione) && !empty($citta) && !empty($via) && !empty($civico)) {
@@ -135,16 +125,10 @@
 
         // prepara lo statment
         $prep = pg_prepare($db, "updateAddress", $sql_update);
-        if (!$prep) {
-          // in caso di errore aggiorna $alertAddr per notificare l'errore
-          $alertAddr = "<p class='alert'><strong>pg_last_error($db).</strong></p>";
-        } else {
+        if ($prep != false) {
             // esegue lo statment preparato inserendo come valori i nuovu dati inseriti dall'utente
             $ret_update = pg_execute($db, "updateAddress", array($nazione, $citta, $via, $civico, $_SESSION["email"]));
-            if (!$ret_update) {
-              // in caso di non riuscita della modifica viene aggiornata la variabilr $alertAddr per notificare l'errore
-              $alertAddr = "<p class='alert'><strong>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
-            } else {
+            if ($ret_update != false) {
               // in caso di successo chiude la connessione col db e restituisce true
               pg_close($db);
               return true;
@@ -152,6 +136,7 @@
           }
       }
       // in caso di errore restituisce false
+      pg_close($db);
       return false;
   }
   /*
@@ -181,14 +166,14 @@
 	  <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="membership/area_riservata/profilo.css">
-    <script src="membership/area_riservata/profilo.js" charset="utf-8"></script>
+    <script src="membership/area_riservata/profilo.js"></script>
   </head>
   <body>
     <?php
     // Questo if permette di visualizzare la pagina solo se l'utente è loggato
     if(isset($_SESSION["loggato"]) && $_SESSION["loggato"]==True) {
     // carica la navbar
-    require "../../base/navFINITA.php" ; ?>
+    include "../../base/navFINITA.php" ; ?>
     <div class="fullbody">
       <div class="container">
         <!-- Il seguente div è utilizzato per contenere le barre di soluzione delle informazioni da visualizzare nel div di classe "account_content" -->
@@ -206,7 +191,7 @@
         <!-- il seguente div mostra le informaioni dell'account utente -->
         <div class="account_content">
           <?php
-            require_once "../../connessionedb.php";
+            require "../../connessionedb.php";
             //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
             // query per ottenere le informazioni di anagrafica dell'utente dal sb
@@ -229,9 +214,9 @@
           <!-- Il seguente div mostra all'utente le informaioni di anagrafica registrate -->
           <div id="Anagrafica" class="sezione"> <!--div che contiene i dati non modificabili, dunque gli input type sono disabled-->
             <h1>Informazioni personali</h1>
-            <div class="brief-description">
+            <p class="brief-description">
               Scopri la comodità di visualizzare in modo chiaro i tuoi dati fondamentali in un unico luogo.
-            </div>
+            </p>
             <div class="span-element">
               <span>Nome:&nbsp;</span><span class="unmodified_info"><?php echo $_SESSION['nome']; ?></span>
             </div>
@@ -252,13 +237,13 @@
           <!-- Il seguente div mostra all'utente un form per modificare la password del suo account -->
           <div id="Sicurezza" class="sezione">
             <h1>Mantieni sicuro il tuo account</h1>
-            <div class="brief-description">
+            <p class="brief-description">
               La tua tranquillità è la nostra priorità, mantieni il controllo della tua privacy e rafforza
               la tua protezione digitale con un processo semplice e sicuro per la modifica della password.
-            </div>
+            </p>
             <form action=<?php echo $_SERVER["PHP_SELF"]; ?> method="post" onsubmit="return validaModulo_pass(this)">
-              <input class="input-field" name="newpass" type="password" placeholder="Nuova password"/>
-              <input class="input-field" name="repassword" type="password" placeholder="Conferma password"/>
+              <input class="input-field" name="newpass" type="password" placeholder="Nuova password" required/>
+              <input class="input-field" name="repassword" type="password" placeholder="Conferma password" required/>
               <input class="buttons" type="submit" name="submitPass" value="Aggiorna password">
             </form>
             <?php
@@ -271,9 +256,9 @@
           <!-- Il seguente div mostra le informazioni sull'indirizzo di spedizione registrate, ha due modalità visualizzabili mutuamente esclusive: info e modifica -->
           <div id="Spedizione" class="sezione">
             <h1>Indirizzo di consegna</h1>
-            <div class="brief-description">
+            <p class="brief-description">
               Consegne sicure, informazioni chiare. Visualizza e gestisci la tua spedizione in un attimo.
-            </div>
+            </p>
 
             <!-- se è visualizzabile 'info' allora vengono mostrate le informazioni di spedizione, questa modalità è quella di base  -->
             <div id="info-indirizzo">
@@ -319,7 +304,7 @@
       </div>
     </div>
     <!-- richiede il footer -->
-  <?php require "../../base/footer.php"; ?>
+  <?php include "../../base/footer.php"; ?>
   <div class="else-container">
     <?php
     } else {

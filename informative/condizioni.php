@@ -13,7 +13,7 @@
 	</head>
 
 	<body>
-		<?php require "../base/navFINITA.php"; ?> <!--aggiunge la navbar in testa alla pagina-->
+		<?php include "../base/navFINITA.php"; ?> <!--aggiunge la navbar in testa alla pagina-->
 		<div class="cell"> <!--contenitore di tutti gli elementi della pagina-->
             <h1>Condizioni</h1> <!--titolo principale della pagina -->
             <h2>Condizioni di Iscrizione a Flying Sauce</h2> <!--sottotitolo-->
@@ -77,6 +77,6 @@
                 entusiasti di portare un pezzo d'Italia direttamente a casa tua!
             </p>
 	    </div>
-        <?php require "../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
+        <?php include "../base/footer.php"; ?> <!--aggiunge il footer in calce alla pagina-->
 	</body>
 </html>

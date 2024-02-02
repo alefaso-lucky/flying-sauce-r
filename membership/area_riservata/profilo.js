@@ -12,13 +12,15 @@ window.onload = function () {
     if(selectedDiv == "Spedizione") // se il div da visializzare è "Spedizione" allora è necessario capire quale form visualizzare
       visualizzaFormSpedizione();
 }
-/**
- * Questa funzione viene chiamata all'onclick dei div di selezione. Cambia la visibilià dei div di informazioni rendnendo visibile il div selezionato dall'utente
- * @param {string} visibleDiv è l'id della sezione da visualizzare 
- */
-function switchDiv(visibleDiv) {
-    var specialDiv = document.getElementById(visibleDiv);
-    var allSections = document.getElementsByClassName("sezione");
+
+  /**
+   * Questa funzione viene chiamata all'onclick dei div di selezione. Cambia la visibilià dei div 
+   * di informazioni rendnendo visibile il div selezionato dall'utente
+   * @param {string} visibleDiv - l'id del div da mostrare
+   */
+  function switchDiv(visibleDiv) {
+      var specialDiv = document.getElementById(visibleDiv);
+      var allSections = document.getElementsByClassName("sezione");
 
     for(var i=0; i< allSections.length; i++){
       allSections[i].style.display= "none";     /*rendo invisibili prima tutti i div che appartengono alla classe sezione*/

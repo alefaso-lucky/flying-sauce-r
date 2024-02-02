@@ -22,7 +22,6 @@
     <head>
         <title>Flying Sauce&reg;</title>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Gruppo08">
         <meta name="description" content="Hompage del sito">
         <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
@@ -31,10 +30,9 @@
         <script type="text/javascript" src="./home.js"></script>
     </head>
     <body>
-      <?php require "base/navFINITA.php" ?> <!--collegamento alla navbar-->
+      <?php include "base/navFINITA.php" ?> <!--collegamento alla navbar-->
       <!--  promo blocco, codice per lo slideshow -->
       <div class="slideshow-background">
-        <div class="container">
           <div class="slider">
             <div class="slide" id="slide-1">
               <img src="./media/home/mainSlideshow1.png" alt="">
@@ -60,7 +58,6 @@
               <a class="bot" href="menu/ordina_ora.php">ORDINA ORA</a>
             </div>
           </div>
-        </div>
       </div>
 
         <!--secondo blocco, tre sezioni che conducono a tre percorsi diversi del sito-->
@@ -156,6 +153,6 @@
             <a class="social" href="https://www.instagram.com/flying.sauce/"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
         </div>
 
-        <?php require "base/footer.php"; ?> <!--inserimento footer-->
+        <?php include "base/footer.php"; ?> <!--inserimento footer-->
     </body>
 </html>
