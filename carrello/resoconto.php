@@ -139,7 +139,7 @@
                             <h1>AVANZATA</h1>
                         </label>
                         <h2>COSTO: $1500</h2>
-                        <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata">
+                        <img src="./media/carrello./droneAvanzato.png" alt="drone spedizione avanzata" width="229px" height="159px">
                         <p>
                             Velocità : 111111km/h</br>
                             Tempo di arrivo medio : 1h 30min</br>
@@ -156,7 +156,7 @@
                             <h1>LAMPO</h1>
                         </label>
                         <h2>COSTO: $3000</h2>
-                        <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo">
+                        <img src="./media/carrello./droneLampo.png" alt="drone spedizione lampo" width="243px" height="163px">
                         <p>
                             Velocità : 111*10^5km/h</br>
                             Tempo di arrivo medio : 30min</br>
@@ -172,7 +172,7 @@
                             <h1>BASE</h1>
                         </label>
                         <h2>COSTO: $1000</h2>
-                        <img src="./media/carrello./droneBase.png" alt="drone spedizione base">
+                        <img src="./media/carrello./droneBase.png" alt="drone spedizione base" width="197px" height="137px">
                         <p>
                             Velocità : 11Km/h</br>
                             Tempo di arrivo medio : 3h</br>
