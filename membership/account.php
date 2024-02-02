@@ -176,12 +176,12 @@
                     <form action="<?php echo $_SERVER["PHP_SELF"] . "?accedi=" . $accedi; ?>" onSubmit="return validatePassword(password.value);" method="post"> <!-- form sticky -->
 												<!-- div che contiene un'icona e un input field per l'email -->
 												<div class="input-field">
-                            <span><img src="media/email_icon.png" width="20px" height="20px" alt="emailIcon"></span>
+                            <span><i class="fa fa-envelope"></i></span>
                             <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>"><br/>
                         </div>
 												<!-- div che contiene un'icona e un input fiel per la password -->
                         <div class="input-field">
-                            <span><img src="media/pass_icon.png" width="20px" height="20px" alt="passIcon"></span>
+                            <span><i class="fa fa-lock"></i></span>
                             <input type="password" id ="psw" name="password" placeholder="Password">
                         </div>
 												<!-- al submit del form viene aggiornata la varaibile login che sarà controllata da della logica per l'accesso -->
