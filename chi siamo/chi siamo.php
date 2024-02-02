@@ -111,7 +111,7 @@
      in questo caso oltre a visualizzare il testo l'immagine apparià più grigia e grande -->
     <div class="grid-img-container">
         <div class="grid-item" id="grid-item1">
-          <img src="media/gridImg1.jpg" id="img1" width="100px" height="100px" alt="puzzle1"></img>
+          <img src="media/gridImg1.jpg" id="img1" width="200px" height="200px" alt="puzzle1"></img>
           <div class="overlay">
             <p class="testoImg" id="testoImg1">
               Il coraggio di intraprendere nuove strade
@@ -119,21 +119,21 @@
           </div>
         </div>
         <div class="grid-item" id="grid-item2">
-          <img src="media/gridImg2.jpg" id="img2" width="100px" height="100px" alt="puzzle2"></img>
+          <img src="media/gridImg2.jpg" id="img2" width="200px" height="200px" alt="puzzle2"></img>
           <div class="overlay">
             <p class="testoImg" id="testoImg2">
               L'impegno nel perseguire i propri sogni
           </div>
         </div>
-        <div class="grid-item" id="grid-item3" width="100px" height="200px" alt="puzzle3">
-          <img src="media/gridImg3.jpg" id="img3"></img>
+        <div class="grid-item" id="grid-item3">
+          <img src="media/gridImg3.jpg" id="img3" width="200px" height="408px" alt="puzzle3"></img>
           <div class="overlay">
             <p class="testoImg" id="testoImg3">
               La possibilità di esportare i gusti italiani in tutto il mondo
           </div>
         </div>
         <div class="grid-item" id="grid-item4">
-          <img src="media/gridImg4.jpg" id="img4" width="200px" height="100px" alt="puzzle4"></img>
+          <img src="media/gridImg4.jpg" id="img4" width="408px" height="200px" alt="puzzle4"></img>
           <div class="overlay">
             <p class="testoImg" id="testoImg4">
               L'autenticità del nostro brand
