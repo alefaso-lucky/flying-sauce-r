@@ -42,7 +42,8 @@ body {
   animation-duration: 2s; /* durata dell'animazione */
   animation-iteration-count: 1; /* l'animazione è riptuta una volta */
 }
-@keyframes fade { /* animazione usata quando varia la slide dello slideshow, vedi JS */
+/* animazione usata quando varia la slide dello slideshow, vedi JS */
+@keyframes fade { 
   from {opacity: 0.4} /* modifica l'opacità da 0.4 a 1 rendendo la slide visibile */
   to {opacity: 1}
 }
@@ -162,6 +163,7 @@ div.grid-item img {
 #img3 {
   height: 100%;
 }
+
 #img4 {
   width: 100%;
 }
@@ -185,6 +187,7 @@ div.grid-item {
   transition: 0.5s ease; /* questa istruzione specifica che il div si solleva in mezzo secondo quando il cursore vi passa sopra */
   box-shadow: 3px 3px 4px rgba(0,0,0,0.6); /* applica una ombra opaca di 2px a detra e in basso che si "blurra" per 3px */
 }
+
 div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle immagini */
   box-shadow: 6px 6px 6px rgba(0,0,0,0.6); /* viene applica un'ombra all'immagine più spessa */
   transform: scale(1.2); /* l'immagine viene ingrandita */
