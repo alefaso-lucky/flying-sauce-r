@@ -58,15 +58,12 @@
   /* questa funzione è chiamata se è stato compilato il form per aggiornare la password */
   function aggiorna_password($newpass) {
   require "../../connessionedb.php";
-  //$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 
   // per ottenere dal database l'utente corrente che ha effettuato la richiesta viene utilizzata la sua email
   $sql = "SELECT * FROM utenti WHERE email=$1;";
   $prep = pg_prepare($db, "selectUtente", $sql);
   $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
-  if (!$utente) {
-    //echo "ERRORE QUERY: " . pg_last_error($db);
-  } else {
+  if ($utente != false) {
     $row = pg_fetch_assoc($utente);
     $pass = $row['password'];
   }
@@ -74,6 +71,7 @@
   if (!empty($newpass)) {
     if (password_verify($newpass, $pass)) { // controlla se il primo parametro (la nuova password) e il secondo (l'hash di password dal db) coinciono
       // restituisce 0 nel caso in cui la nuova password e la vecchia siano uguali
+      pg_close($db);
       return 0;
     } else {
       // query per aggiornare la password dalla tabella del database
@@ -86,17 +84,11 @@
 
       // crea il prepared statement per aggiornare la password
       $prep = pg_prepare($db, "updatePassword", $sql_update);
-      if (!$prep) {
-        // in caso di errore $alertPass viene aggiornato per notificare l'errore avvenuto
-        $alertPass = "<p class='alert'><strong>pg_last_error($db).</strong></p>";
-      } else {
+      if ($prep != false) {
           // esegue lo statment dunque aggiorna la password
           $hash = password_hash($newpass, PASSWORD_DEFAULT);
           $ret_update = pg_execute($db, "updatePassword", array($hash, $_SESSION["email"]));
-          if (!$ret_update) {
-            // se l'aggiornamento non è andato a buon fine aggiorna $alertPass di conseguenza, successivamente restituirà -1
-            $alertPass = "<p class='alert'><strong>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
-          } else {
+          if ($ret_update != false) {
             // se l'aggiornamento è andato a buon fine chiude la connessione col db e restituisce 1
             pg_close($db);
             return 1;
@@ -104,6 +96,7 @@
         }
       }
     }
+    pg_close($db);
     return -1;
   }
 
@@ -116,9 +109,6 @@
     $sql = "SELECT * FROM utenti WHERE email=$1;";
     $prep = pg_prepare($db, "selectUtente", $sql);
     $utente = pg_execute($db, "selectUtente", array($_SESSION["email"]));
-    if (!$utente) {
-      echo "ERRORE QUERY: " . pg_last_error($db);
-    }
 
     /* si entra in questo if se le informazioni di spedizione somno state inserite nel form apposito */
     if (!empty($nazione) && !empty($citta) && !empty($via) && !empty($civico)) {
@@ -135,16 +125,10 @@
 
         // prepara lo statment
         $prep = pg_prepare($db, "updateAddress", $sql_update);
-        if (!$prep) {
-          // in caso di errore aggiorna $alertAddr per notificare l'errore
-          $alertAddr = "<p class='alert'><strong>pg_last_error($db).</strong></p>";
-        } else {
+        if ($prep != false) {
             // esegue lo statment preparato inserendo come valori i nuovu dati inseriti dall'utente
             $ret_update = pg_execute($db, "updateAddress", array($nazione, $citta, $via, $civico, $_SESSION["email"]));
-            if (!$ret_update) {
-              // in caso di non riuscita della modifica viene aggiornata la variabilr $alertAddr per notificare l'errore
-              $alertAddr = "<p class='alert'><strong>ERRORE AGGIORNAMENTO. RICARICARE LA PAGINA E RIPROVARE - " . pg_last_error($db)."</strong></p>";
-            } else {
+            if ($ret_update != false) {
               // in caso di successo chiude la connessione col db e restituisce true
               pg_close($db);
               return true;
@@ -152,6 +136,7 @@
           }
       }
       // in caso di errore restituisce false
+      pg_close($db);
       return false;
   }
   /*
@@ -257,8 +242,8 @@
               la tua protezione digitale con un processo semplice e sicuro per la modifica della password.
             </p>
             <form action=<?php echo $_SERVER["PHP_SELF"]; ?> method="post" onsubmit="return validaModulo_pass(this)">
-              <input class="input-field" name="newpass" type="password" placeholder="Nuova password"/>
-              <input class="input-field" name="repassword" type="password" placeholder="Conferma password"/>
+              <input class="input-field" name="newpass" type="password" placeholder="Nuova password" required/>
+              <input class="input-field" name="repassword" type="password" placeholder="Conferma password" required/>
               <input class="buttons" type="submit" name="submitPass" value="Aggiorna password">
             </form>
             <?php
