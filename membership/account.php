@@ -181,7 +181,7 @@
                         </div>
 												<!-- div che contiene un'icona e un input fiel per la password -->
                         <div class="input-field">
-                            <span><img src="media/pass_icon.png" width="20px" height="20px" alt="passIcon></span>
+                            <span><img src="media/pass_icon.png" width="20px" height="20px" alt="passIcon"></span>
                             <input type="password" id ="psw" name="password" placeholder="Password">
                         </div>
 												<!-- al submit del form viene aggiornata la varaibile login che sarà controllata da della logica per l'accesso -->
