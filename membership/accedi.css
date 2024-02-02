@@ -62,7 +62,8 @@ body{
   flex: 1;      /*specifico lo spazio che lo span debba occupare rispetto al div input-field*/
   -webkit-flex: 1;
   -ms-flex: 1;
-  text-align: center;   /*allineamento al centro degli elementi in esso contenuti*/
+  color: rgb(255, 194, 108); /*colore all'icona*/
+  text-align: center;     /*per l'icona*/
 }
 
 .input-field input {
