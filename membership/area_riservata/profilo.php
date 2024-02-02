@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
   session_start(); // inizializza la sessione
   /* i seguenti controlli sono effettuati per rendere sticky i form di cambio password e cambio indirizzo di spedizione */
@@ -155,6 +154,7 @@
   }
 
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
