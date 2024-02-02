@@ -1,15 +1,9 @@
-/**
- * il listner serve per poter utilizzare le funzioni nel momento in cui la pagina
- *  è caricata completamente
- */
-document.addEventListener("DOMContentLoaded", function () { 
+document.addEventListener("DOMContentLoaded", function () { // il listner serve per poter utilizzare le funzioni nel momento in cui la pagina è caricata completamente
   // Funzioni per slideshow automatico
   let slideIndex = 0;
   showSlides();
 
-  /**
-   * Questa funzione si occupa di scorrere le slide automaticamente
-   */
+  // Questa funzione si occupa di scorrere le slide automaticamente
   function showSlides() {
 
     let slides = document.getElementsByClassName("slide"); // recupero un array contenete le slide
@@ -24,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     slides[slideIndex - 1].style.display = "block"; // la slide corrente è visibile
     
-    setTimeout(showSlides, 5000); // cambia slide ogni 10 secondi
+    setTimeout(showSlides, 5000); // cambia slide ogni 5 secondi
   }
   
+  /**
+   * segue il js per gestire lo scorrimento delle recensioni della sezione 4
+   */
   var recIndex = 0;
   carousel();
-  /**
-   * funzione per gestire lo scorrimento delle recensioni della sezione 4
-   */
   function carousel() {
     var i;
     var x = document.getElementsByClassName("recensioni");

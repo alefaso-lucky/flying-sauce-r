@@ -7,6 +7,7 @@
         <meta name="author" content="Gruppo08">
         <meta name="description" content="creazione di un piatto completamente personalizzato">
         <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
+        <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
         <meta charset="utf-8">
     </head>
 <?php

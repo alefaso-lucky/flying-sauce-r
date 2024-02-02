@@ -27,6 +27,7 @@
         <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--stylesheet per mostrare le icone delle stelle di recensioni e dei social network-->
         <link rel="stylesheet" href="./home.css">
+        <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
         <script type="text/javascript" src="./home.js"></script>
     </head>
     <body>
@@ -35,19 +36,19 @@
       <div class="slideshow-background">
           <div class="slider">
             <div class="slide" id="slide-1">
-              <img src="./media/home/mainSlideshow1.png" alt="">
+              <img src="./media/home/mainSlideshow1.png" alt="pasta">
               <div class="slide-text" id="text-slide-1">
                 «Stelle in tavola, droni in aria»
               </div>
             </div>
             <div class="slide" id="slide-2">
-              <img src="./media/home/mainSlideshow2.jpg" alt="">
+              <img src="./media/home/mainSlideshow2.jpg" alt="droni">
               <div class="slide-text" id="text-slide-2">
                 «Il meglio della tradizione italiana a portata di drone»
               </div>
             </div>
             <div class="slide" id="slide-3">
-              <img src="./media/home/mainSlideshow3.png" alt="">
+              <img src="./media/home/mainSlideshow3.png" alt="italianità">
               <div class="slide-text" id="text-slide-3">
                 «FlyingSauce, oltre alla pasta c’è di più»
               </div>
