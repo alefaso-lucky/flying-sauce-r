@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Flying Sauce&reg; - Componi il tuo piatto</title>
-        <link rel="stylesheet" href="./componi_piatto.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
-        <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
-        <meta name="author" content="Gruppo08">
-        <meta name="description" content="creazione di un piatto completamente personalizzato">
-        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
-        <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
-        <meta charset="utf-8">
-    </head>
 <?php
     session_start(); /* setup della sessione */
     if(isset($_SESSION['loggato']) && $_SESSION['loggato']) {
@@ -20,7 +8,7 @@
         $logged = false;
         $email_user = "";
     }
-
+    
     /*la pagina deve rielaborare il form perche è sticky quindi la invia a se stessa e si ricarica*/
     /*se le informazioni del form sono disponibili bisogna aggiungere il prodotto al carrello e poi portare l'utente
     al menu in modo che possa aggiungere altri prodotti ed eventualmente procedere al pagamento*/
@@ -88,6 +76,19 @@
         echo $result_feedback;
     }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flying Sauce&reg; - Componi il tuo piatto</title>
+        <link rel="stylesheet" href="./componi_piatto.css" type="text/css"> <!--collega il foglio di stile per questa pagina-->
+        <base href="http://localhost/Flying_Sauce_r/"> <!--fa partire tutte le href del documento da questa base-->
+        <meta name="author" content="Gruppo08">
+        <meta name="description" content="creazione di un piatto completamente personalizzato">
+        <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
+        <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+        <meta charset="utf-8">
+    </head>
+
     <body>
         <?php include '../../base/navFINITA.php'; ?> <!--aggiunge la navbar in testa alla pagina-->
         <div id="composizione"> <!--container di tutti gli elementi grafici di questa pagina-->

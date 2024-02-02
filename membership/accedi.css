@@ -107,6 +107,7 @@ body{
   color: rgb(255, 194, 108);      /*applico un colore*/
   opacity: 0.7;     /*in generale il colore è leggermente opacizzato*/
   font-size: 20px;    /*setto una dimensione al testo*/
+  cursor: pointer;
 }
 
 #switch_button:hover{

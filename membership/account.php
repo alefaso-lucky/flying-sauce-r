@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 	/* variabili per rendere sticky i form presenti nella pagina */
 	if(isset($_POST['nome']))
@@ -132,7 +131,7 @@
         header("refresh:0;URL=./account.php?accedi=true");
     }
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
     <!--obbligatorie per ogni pagina prodotta-->

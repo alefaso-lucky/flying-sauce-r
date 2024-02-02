@@ -174,7 +174,7 @@
                         <h2>COSTO: $1000</h2>
                         <img src="./media/carrello./droneBase.png" alt="drone spedizione base" width="197px" height="137px">
                         <p>
-                            Velocità : 11Km/h</br>
+                            Velocità : 11000Km/h</br>
                             Tempo di arrivo medio : 3h</br>
                             Modello : PQZ408B</br>
                         </p>
