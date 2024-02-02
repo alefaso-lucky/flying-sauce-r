@@ -21,7 +21,6 @@ body{
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);   /*per applicare un'ombra ai bordi*/
-  overflow: hidden;   /*voglio che in caso di overflow, esso sia nascosto*/
   display: flex;
   align-items: center;              /*allineo al centro in senso verticale (per il rightpanel)*/
   margin: 3% 0;      /*margine top-bottom*/
@@ -140,6 +139,8 @@ body{
   width: 100%; /*per occupare tutto leftpanel*/
   height: 100%;   /*l'immagine deve sempre occupare il 100% dell'altezza*/
   object-fit: cover; /*l'immagine non subisce alterazioni */
+  border-top-left-radius: 120px;     /*arrotondo bordo sx in alto dell'img*/
+  border-bottom-left-radius: 120px;    /*arrotondo bordo sx in basso dell'img*/
 }
 
 /*slogan d'effetto*/
@@ -152,7 +153,7 @@ body{
 .alert {
   text-align: center;     /*allineo il testo al centro*/
   font-size: 18px;      /*grandezza del font*/
-  margin:10px 0;      /*un margine top-bottom ai messaggi di feedback agli utenti*/
+  margin: 10px 3px;      /*un margine ai messaggi di feedback agli utenti*/
   color: rgb(255, 255, 102);    /*colore luminoso per segnalare l'errore*/
 }
 
