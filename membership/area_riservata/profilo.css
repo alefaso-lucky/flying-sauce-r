@@ -1,4 +1,4 @@
-* {
+body * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
@@ -6,9 +6,12 @@
 body{
   margin: 0;
   background: #F4DAB4;      /*colore di sfondo alla schermata*/
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container posizionato al centro*/
+/*questo div nasce con l'esigenza di non entrare in costrasto con header e footer e avere sempre container 
+posizionato al centro*/
 .fullbody {
   display: flex;
   justify-content: center;    /*posiziono al centro sull'asse orizzontale il suo contenuto*/
@@ -124,8 +127,6 @@ body{
 
 /*sono i campi di input modificabili (cambio password/indirizzo)*/
 .input-field{
-  display: block;
-  margin: 5px 0;      /*top-bottom per distanziare tra loro gli input del form*/
   height: 50px;     /*setto un'altezza*/
   margin: 8px 0;     /*margine top-bottom*/
   border: 2px solid #184149;    /*bordo al div*/
@@ -143,7 +144,6 @@ body{
 
 /*bottoni sia di aggiorna password che di indirizzo*/
 .buttons {
-    box-sizing: border-box; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
     display: inline-block; /*con questa proprietà si ha più controllo sulla dimensione dei bottoni*/
     border: thin solid rgb(255, 194, 108); /*bordo dorato*/
     background-color: #184149;
@@ -152,7 +152,6 @@ body{
     padding: 15px 25px; /*per dare volume al bottone*/
     color: rgb(255, 194, 108); /*colore del testo uguale a quello del bordo*/
     font-size: 13px; /*scelta della dimensione del testo*/
-
     cursor: pointer; /*fa uscire la "manina"*/
     transition: all .6s ease; /*rende l'animazione di hover più smooth*/
 }
