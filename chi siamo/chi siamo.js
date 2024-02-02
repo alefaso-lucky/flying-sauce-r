@@ -1,11 +1,17 @@
-/* windows.onload viene eseguito quando l'intera pagina è stata caricata, compresi elementi esterni come immagini, video e fogli di stile.
-  In questo caso dunque è necessario per visualizzare la prima slide; DOMContenLoaded non funzionerebbe dato che attende solo il caricamento della pagina HTML/PHP */
+/**
+ * windows.onload viene eseguito quando l'intera pagina è stata caricata, compresi elementi esterni come immagini,
+ * video e fogli di stile. In questo caso dunque è necessario per visualizzare la prima slid.
+ * DOMContenLoaded non funzionerebbe dato che attende solo il caricamento della pagina HTML/PHP.
+ */ 
 window.onload = function () {
   // chiamata alla funzione showSlide per visualizzare la prima slide al caricamento della pagina
   showSlide(1);
 };
 
-// Questa funzione è chiamata ogni volta che viene selezionata una slide per visualizzarla 
+/**
+ * Questa funzione è chiamata ogni volta che viene selezionata una slide per visualizzarla
+ * @param {int} slideIndex è l'indice della slide da visualizzare
+ */
 function showSlide(slideIndex) {
 
   let slides = document.getElementsByClassName("slide"); // recupero un array contenete le slide
