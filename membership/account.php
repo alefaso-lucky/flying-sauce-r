@@ -149,7 +149,7 @@
 </head>
 <body>
 		<!-- richiede la navbar -->
-    <?php require "../base/navFINITA.php"; ?>
+    <?php include "../base/navFINITA.php"; ?>
     <div class="fullbody">
 				<!-- se la variabile accedi è impostata a true allora visualizza il corpo per il login utente -->
         <?php if($accedi=='true') {?>
@@ -284,7 +284,7 @@
             </div>
         <?php }?>
     </div>
-    <?php require "../base/footer.php"; ?>
+    <?php include "../base/footer.php"; ?>
     </body>
 </html>
 

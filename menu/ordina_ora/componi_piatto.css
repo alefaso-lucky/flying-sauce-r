@@ -155,7 +155,7 @@ label input:checked+span:before {
     -webkit-border-radius: 7px; /*per i bordi arrotondati su safari*/
     padding: 15px 30px; /*per dare volume al bottone*/
     color: rgb(255, 194, 108); /*colore del testo uguale a quello del bordo*/
-    font-family: sans-serif; /*scelta del font*/
+    font-family: 'Montserrat'; /*scelta del font*/
     font-size: 13px; /*scelta della dimensione del testo*/
     text-decoration: none; /*rimuove lo stile automatico delle anchor*/
 

@@ -31,7 +31,7 @@
         <script type="text/javascript" src="./home.js"></script>
     </head>
     <body>
-      <?php require "base/navFINITA.php" ?> <!--collegamento alla navbar-->
+      <?php include "base/navFINITA.php" ?> <!--collegamento alla navbar-->
       <!--  promo blocco, codice per lo slideshow -->
       <div class="slideshow-background">
         <div class="container">
@@ -156,6 +156,6 @@
             <a class="social" href="https://www.instagram.com/flying.sauce/"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
         </div>
 
-        <?php require "base/footer.php"; ?> <!--inserimento footer-->
+        <?php include "base/footer.php"; ?> <!--inserimento footer-->
     </body>
 </html>

@@ -77,7 +77,7 @@
     <script src="carrello/resoconto.js"></script>
 </head>
 <body>
-    <?php require "../base/navFINITA.php" ?> <!--inserimento navbar-->
+    <?php include "../base/navFINITA.php" ?> <!--inserimento navbar-->
     <div id="row">
         <div id="internal-row">
             <ul><!--indica la sezione corrente della pagina: carrello, spedizione, pagamento-->
@@ -204,7 +204,7 @@
             <a id="final_button" class="bottone_primario" href="menu/ordina_ora.php">VAI AL MENU</a> <!--bottone per andare alla pagina successiva-->
         </div>
     </div>
-    <?php require "../base/footer.php"; ?> <!--inserimento footer-->
+    <?php include "../base/footer.php"; ?> <!--inserimento footer-->
 </body>
 
 </html>

@@ -16,7 +16,7 @@ body{
 
 .container {
   width: 70vw;    /*larghezza corrispondente al 70% della larghezza della finestra del browser anche in caso di ridimensionamento*/
-  min-width: 470px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
+  min-width: 435px;     /*larghezza minima per cui il ridimensionamento del container è ammesso*/
   height: 540px;   /*altezza del container*/
   background: #46666D;    /*colore di sfondo*/
   border-radius: 120px;   /*arrotondo i bordi del div*/
