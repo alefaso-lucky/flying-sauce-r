@@ -4,7 +4,7 @@
   /* logica per il logout */
   if(isset($_POST["Logout"]) && $_POST["Logout"]=="Logout"){
     $_SESSION = array();
-    if(session_id() != "" || isset($_COOKIE[session_name()])) {
+    if(session_id() != "" || isset($_COOKIE[session_name()])) { /* anche se non usiamo cookie quello relativo al session name è settato in automatico */
       setcookie(session_name(), '', time() - 2592000, '/');
       session_destroy();
       header("refresh:0;");
