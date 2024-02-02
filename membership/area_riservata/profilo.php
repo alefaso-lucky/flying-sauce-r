@@ -166,7 +166,7 @@
 	  <base href="http://localhost/Flying_Sauce_r/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="membership/area_riservata/profilo.css">
-    <script type=“text/javascript” src="membership/area_riservata/profilo.js"></script>
+    <script src="membership/area_riservata/profilo.js"></script>
   </head>
   <body>
     <?php

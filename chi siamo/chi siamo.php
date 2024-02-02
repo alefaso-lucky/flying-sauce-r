@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="chi siamo/chi siamo.css">
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
-    <script type=“text/javascript” src="chi siamo/chi siamo.js"></script>
+    <script src="chi siamo/chi siamo.js"></script>
 </head>
 <body>
     <?php include "../base/navFINITA.php" ; ?>
