@@ -74,6 +74,7 @@
     <meta name="description" content="pagina per finalizzare l'ordine">
     <meta name="keywords" content="pasta, droni, Italia, cucina italiana, FlyingSauce, spaghetti">
     <link rel="stylesheet" href="carrello/resoconto.css">
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
     <script src="carrello/resoconto.js"></script>
 </head>
 <body>
