@@ -27,8 +27,8 @@ body{
 }
 
 /*per segnare lo spazio occupato dal rightpanel rispetto al container*/
-.rightpanel{
-  flex: 3;      
+.rightpanel {
+  flex: 3;
   -webkit-flex: 3;
   -ms-flex: 3;
 }
@@ -143,7 +143,7 @@ body{
 }
 
 /*slogan d'effetto*/
-.leftpanel h1{
+.leftpanel h1 {
   font-size: 50px;      /*grandezza del font*/
   color: rgb(255, 194, 108);      /*colore del testo*/
 }
