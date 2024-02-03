@@ -14,6 +14,7 @@ body {
 
 /* per applicare uno sfondo colorato allo slider */
 .background-container {
+  margin-top: 30px;
   background-color: #46666D; /* colore di sfondo alle immagini */
   height: 500px;
   width: 100%;
@@ -25,7 +26,7 @@ body {
 /* slider conterrà le diverse slide con le immagini e il testo */
 .slider {
   height: 500px;
-  width: 90%;
+  width: 65%;
   position: relative; /* posizione relativa per posizionamento componenti assoluti */
   border: solid 1px rgba(255, 194, 108, 0.8);
   box-sizing: border-box; /* il bordo è applicato al content */
