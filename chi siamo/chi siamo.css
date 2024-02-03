@@ -2,8 +2,6 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh; /* per metterla a tutta la pagina */
-  justify-content: center;
-  align-items: center;
   background-color: #FFF0DA;
 }
 
@@ -209,7 +207,7 @@ div.grid-item:hover { /* istruzioni applicate quando si passa il cursore sulle i
   border-radius: 10px; /* Aggiunge bordi arrotondati */
   box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.9); 
   width: 90%; /* questa istruzione assegna una larghezza al paragrafo */
-  position: absolute; /* posizione assolita rispetto a grid-item */
+  position: absolute; /* posizione relativa a grid-item */
   top: 25%; /* queste istruzioni servono per centrare il testo all'interno delle immagini più piccole del grid template */
   left: 5%;
 }
