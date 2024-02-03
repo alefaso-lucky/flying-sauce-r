@@ -59,8 +59,10 @@ body {
   position: absolute; /* queste istruzioni servono per posizionare il testo */
   width: 35%;
   right: 5%;
-  top: 10%;
+  top: 5%;
   height: auto;
+  max-height: 400px;
+  overflow: auto;
   color: white;
   background-color: rgba(24, 65, 73, 0.7); /* applico un colore al background */
   border-radius: 50px;  /* rendo gli spigoli curvi */
@@ -118,8 +120,8 @@ h2{
 /* Per il grid container delle immagini */
 
 div.grid-img-container {
-  margin: 35px auto; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
-  margin-bottom: 145px; /* margine in basso per distanziare dal footer */
+  margin: 55px auto; /* aggiunge il margine per allontanare da altri elementi e dal bordo dello schermo */
+  margin-bottom: 170px; /* margine in basso per distanziare dal footer */
   height: 300px; /* la dimensione è impostata per contenere le immagini */
   width: 600px; /* la dimensione è impostata per contenere le immagini */
   display: grid; /* utilizzo un display grid per posizionare le immaigni */
