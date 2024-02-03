@@ -53,14 +53,14 @@
             <div id="policies_footer"> <!--container della sezione che mostra i link alle varie informative-->
                 <p>
                     LINK UTILI<br/>
-                    <span><a href="informative/infoPrivacy.php">Privacy Policy</a></span><br/>
-                    <span><a href="informative/condizioni.php">Membership Policy</a></span>
+                    <span><a href="informative/infoPrivacy.php" title="Info privacy">Privacy Policy</a></span><br/>
+                    <span><a href="informative/condizioni.php" title="Condizioni iscrizione">Membership Policy</a></span>
                 </p>
             </div>
             <div>
                 <p id=follow>SEGUICI SU</p>
-                <a class="social_footer" href="https://www.facebook.com/profile.php?id=61555762993624"><i class="fa fa-facebook-square"></i></a> <!--bottone per andare alla pagina facebook-->
-                <a class="social_footer" href="https://www.instagram.com/flying.sauce/"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
+                <a class="social_footer" href="https://www.facebook.com/profile.php?id=61555762993624" title="Ig account"><i class="fa fa-facebook-square"></i></a> <!--bottone per andare alla pagina facebook-->
+                <a class="social_footer" href="https://www.instagram.com/flying.sauce/" title="Fb account"><i class="fa fa-instagram"></i></a> <!--bottone per andare alla pagina instagram-->
             </div>
         </div>
     </div>
