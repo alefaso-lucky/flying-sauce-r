@@ -29,10 +29,10 @@
   <!-- nav: elemento destinato solo ai blocchi principali di collegamenti di navigazione. -->
   <nav class="topnav" id="myNav">
     <!-- le varie voci della navbar, ognuna di esse porta alla pagina indicata -->
-    <a href="homepage.php">Home</a>
-    <a href="menu/ordina_ora.php">Ordina</a>
-    <a href="menu/ordina_ora/componi_piatto.php">Componi</a>
-    <a href="chi%20siamo/chi%20siamo.php">Chi siamo</a>
+    <a href="homepage.php" title="Homepage">Home</a>
+    <a href="menu/ordina_ora.php" title="Ordina ora">Ordina</a>
+    <a href="menu/ordina_ora/componi_piatto.php" title="Componi il tuo piatto">Componi</a>
+    <a href="chi%20siamo/chi%20siamo.php" title="Chi siamo">Chi siamo</a>
     <div class="nav-right">
       <?php
         // questo if serve per iniziare una sessione se non è ancora stato fatto
@@ -56,9 +56,9 @@
         }
       ?>
       <!-- questo link visualizza la mail o 'Login' nella navbar e il link a cui porta varia rispettando il comportamento descritto in orecedenza -->
-      <a href="<?php echo $nav_name_anchor ?>"><?php echo $nav_name ?> <i class="fa fa-user-circle-o"></i></a>
+      <a href="<?php echo $nav_name_anchor ?>" title="Area riservata"><?php echo $nav_name ?> <i class="fa fa-user-circle-o"></i></a>
       <!-- questo link visualizza l'icona del carrello, al click porta al carrello sassociato all'account -->
-      <a href="carrello/resoconto.php"><i class="fa fa-shopping-cart"></i></a>
+      <a href="carrello/resoconto.php" title="Carrello"><i class="fa fa-shopping-cart"></i></a>
     </div>
   </nav>
 </header>
