@@ -18,7 +18,7 @@
 </script>
 <!-- il tag header può essere usato per contenere il logo o un insieme di collegamenti di navigazione. -->
 <header>
-  <!-- questo div contiene il logo e il menù ad amburger -->
+  <!-- questo div contiene il logo e il menù ad hamburger -->
   <div class="important-elem">
     <img src="./media/logo.png" alt="logo img" width="200px">
     <span id="hamb" onclick="showElements()">
