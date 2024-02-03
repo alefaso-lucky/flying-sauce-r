@@ -196,7 +196,7 @@
                     Arriverà il drone all’indirizzo indicato al momento della iscrizione, il pagamento sarà svolto al momento 
                     della consegna  e sarà possibile pagare in contanti o con carta direttamente al drone della consegna.
                 </p>
-                <img src="./media/carrello/bollinoVerde.png" alt="ordine stornato con successo">
+                <img src="./media/carrello/bollinoVerde.png" alt="ordine finalizzato con successo">
             </div>
             <div id=bottoni><!--bottoni per spostarsi tra le diverse sezioni sopraelencate-->
                 <p id="bottone_secondario" onclick="cambiaSezione('-')">INDIETRO</p> <!--bottone per andare alla pagina precedente-->
