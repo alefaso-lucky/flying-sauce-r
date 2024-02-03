@@ -76,7 +76,7 @@
             }
             else{
 								// se il dominio della mail inserita non è valido sarà notificato l'errore
-                $alert = "<span class='alert'>"."<strong>Dominio inesistente.</strong>"."</span>";
+                $alert = "<span class='alert'>"."<strong>Dominio email inesistente.</strong>"."</span>";
             }
         }
 
@@ -111,7 +111,7 @@
             }
             else{
 								// in caso di email errata viene notificato l'erroer
-                $alert = "<span class='alert'>"."<strong>Dominio inesistente.</strong>"."</span>";
+                $alert = "<span class='alert'>"."<strong>Dominio email inesistente.</strong>"."</span>";
             }
         }
     }
