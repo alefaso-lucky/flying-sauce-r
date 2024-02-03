@@ -39,16 +39,18 @@
             
             /* si controlla se la richiesta AJAX è per l'eliminazione di un'istanza del piatto dal carrello */
             if(isset($_POST['delete'])) {
-                if($row['quantita'] == 1) {
-                    /* se la 'quantita' del piatto è 1 allora bisogna cancellare l'entry dal database con un'apposita query */
-                    $deletionQuery = "DELETE FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'";
-                    pg_query($db, $deletionQuery);
-                }
-                else {
-                    /* se la 'quantita' del piatto è maggiore di 1 allora bisogna aggiornarla con un'apposita query */
-                    $quantita = $row['quantita'] - 1;
-                    $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = '$email_user'";
-                    pg_query($db, $updateQuery);
+                if($row != false) {
+                    if($row['quantita'] == 1) {
+                        /* se la 'quantita' del piatto è 1 allora bisogna cancellare l'entry dal database con un'apposita query */
+                        $deletionQuery = "DELETE FROM carrello WHERE piatto = '$name_piatto' AND email = '$email_user'";
+                        pg_query($db, $deletionQuery);
+                    }
+                    else {
+                        /* se la 'quantita' del piatto è maggiore di 1 allora bisogna aggiornarla con un'apposita query */
+                        $quantita = $row['quantita'] - 1;
+                        $updateQuery = "UPDATE carrello SET quantita = '$quantita' WHERE piatto = '$name_piatto' AND email = '$email_user'";
+                        pg_query($db, $updateQuery);
+                    }
                 }
             }
             else {

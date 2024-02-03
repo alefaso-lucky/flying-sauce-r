@@ -6,9 +6,9 @@
             $email_newsletter = $_POST['email_newsletter'];
             /*connessione al database*/
             $host="localhost";
-            $db='GruppoXX';
+            $db='gruppo08';
             $user="www";
-            $password="password";
+            $password="tw2024";
             $connection_string = "host=$host dbname=$db user=$user password=$password"; /* viene inizializzata una stringa di connessione */
             $db = pg_connect($connection_string) or die('Impossibile connettersi al database: '.pg_last_error()); /* inizializza la connessione */
 
