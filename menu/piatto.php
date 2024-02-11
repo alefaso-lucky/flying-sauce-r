@@ -23,8 +23,8 @@
             else
                 $nome = "Spaghetti Cacio e Pepe"; /* valore di default, l'utente comunque non dovrebbe mai poter accedere a
                                                     questa pagina se non tramite il tasto che fa da form in ordina_ora.php */
-
-            $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = '$nome'"; /* interrogazione SQL
+            $nome_piatto = pg_escape_literal($db, $nome);
+            $sql = "SELECT nome, lista_ingredienti, descrizione_lunga, prezzo, foto  FROM menu WHERE nome = ".$nome_piatto; /* interrogazione SQL
                                     sulla tabella menu delle informazioni specificate dopo SELECT del piatto che ha il nome ricevuto dal form */
             $ret = pg_query($db, $sql); /* viene eseguita la query */
             
