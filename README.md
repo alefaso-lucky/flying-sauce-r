@@ -1,14 +1,14 @@
 🍝 flying-sauce-r: Pasta Delivery Full Stack Web App
 =====================================================
 
-> 🚀 A feature-rich, full-stack **pasta delivery platform** built with PHP, JavaScript, HTML, and CSS — developed by a team of four over three months as part of a Bachelor's degree project. Includes responsive design, user authentication, cart/order management, and admin controls.
+> 🚀 A feature-rich, full-stack **pasta delivery platform** built with PHP, JavaScript, HTML, and CSS, developed by a team of four over three months as part of a Bachelor's degree project. Includes responsive design, user authentication, cart/order management, and admin controls.
 
 * * *
 
 📌 Overview
 -----------
 
-**FlyingSauce-r-** is a complete web-based **pasta delivery system**, designed with a modular approach to simulate a real-world food ordering service. Built using **vanilla PHP, JavaScript, HTML, and CSS**, it features **responsive design**, **dynamic cart functionality**, **secure user login/registration**, and an **order summary system** — all backed by a database.
+**Flying-Sauce-r** is a complete web-based **pasta delivery system**, designed with a modular approach to simulate a real-world food ordering service. Built using **vanilla PHP, JavaScript, HTML, and CSS**, it features **responsive design**, **dynamic cart functionality**, **secure user login/registration**, and an **order summary system**, all backed by a PostgreSQL database.
 
 * * *
 
@@ -141,7 +141,7 @@
     
 * 🧩 UI/UX wireframes and responsive layout design
     
-* ⚙️ Incremental backend development (PHP/MySQL)
+* ⚙️ Incremental backend development (PHP/PostgreSQL)
     
 * 💡 Frontend polish and JavaScript enhancements
     
@@ -160,7 +160,7 @@ Although written in **Italian**, the code follows clear and clean naming convent
 👥 Team Collaboration
 ---------------------
 
-Developed by a team of 4 university students — with rotating ownership of backend logic, frontend design, and integration. The project promoted:
+Developed by a team of 4 university students, with rotating ownership of backend logic, frontend design, and integration. The project promoted:
 
 * 🛠️ Version control with Git
     
@@ -205,7 +205,7 @@ git clone https://github.com/yourusername/FlyingSauce-r-.git
     
     * Use [XAMPP](https://www.apachefriends.org/) or [MAMP](https://www.mamp.info/)
         
-    * Import the MySQL database if included (SQL file)
+    * Import the Postgre database if included (SQL file)
         
     * Place files in `htdocs/` or equivalent directory
         
@@ -221,7 +221,7 @@ git clone https://github.com/yourusername/FlyingSauce-r-.git
 📄 License
 ----------
 
-Licensed under the **MIT License** — you're free to use, modify, and distribute this software with attribution.
+Licensed under the **MIT License**, you're free to use, modify, and distribute this software with attribution.
 
 > ⭐ Like what you see? Consider giving the project a star!
 
