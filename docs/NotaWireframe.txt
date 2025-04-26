@@ -1,0 +1,2 @@
+Il .pdf che contiene il WireFrame è particolarmente pesante a causa della definizione delle immagini usate.
+Per questo motivo si potrebbero riscontrare problemi di visualizzazione su alcuni applicativi/computer.
