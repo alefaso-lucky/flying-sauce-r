@@ -113,90 +113,6 @@ Developed by a team of 4 university students, with rotating ownership of backend
 * 📋 Regular team sync-ups and retrospectives
     
 * ✅ Collaborative problem-solving
-    
-
-* * *
-
-
-🧱 Detailed Project Structure
------------------------------
-
-```
-📦 FlyingSauce-r-
-│
-├── 📁 accedi                  # Login system
-│   ├── accedi.php            # Login form and PHP logic
-│   ├── accedi.css            # Styling for login
-│   ├── accediSimple.css      # Lightweight version styling
-│   └── accediSimple.php      # Simple login view
-│
-├── 📁 account                # User's reserved area
-│   ├── area_riservata.php    # Main dashboard after login
-│   ├── area_riservata.css    # Dashboard styles
-│   ├── area_riservata.js     # Interactivity in reserved area
-│   ├── info_personali.png    # UI assets for profile info
-│   ├── ordini.png            # UI assets for orders
-│   ├── sicurezza.png         # Icons for secure section
-│   └── spedizione.png        # Shipping-related visual
-│
-├── 📁 base                   # Shared components and navigation
-│   ├── nav.php               # Main navigation bar
-│   ├── nav.css               # Styling for nav
-│   ├── navFINITA.php         # Final version of nav
-│   ├── navFINITA.css         # Final nav styles
-│   ├── navSimple.php         # Lightweight nav variant
-│   ├── navSimple.css         # Styling for simplified nav
-│   ├── footer.php            # Shared footer
-│   ├── footer.css            # Footer styling
-│   ├── generic.css           # General shared styles
-│   ├── pgpopolare.php        # Popular pages/posts
-│   ├── pgpopolare2.php       # Additional popular content
-│   └── pgconnection.php      # Database connection handler
-│
-├── 📁 crea account           # Account creation
-│   ├── creaAccount.php       # Sign-up form & logic
-│   ├── creaAccount.css       # Form styling
-│   └── 📁 informative        # Legal/privacy information
-│       ├── condizioni.php    # Terms and conditions
-│       ├── condizioni.css    # Styling for terms page
-│       ├── infoPrivacy.php   # Privacy policy content
-│       ├── infoPrivacy.css   # Styling for privacy policy
-│
-├── 📁 menu                   # Menu section
-│   ├── 📁 carrello           # Cart management
-│   │   ├── resoconto.php     # Full cart summary
-│   │   ├── resoconto.css     # Cart styling
-│   │   ├── resoconto.js      # Cart interactivity
-│   │   └── resocontoSimple.php # Lightweight cart view
-│   │
-│   └── 📁 piatto_singolo     # Individual dish details
-│       ├── piatto.php        # Dish page logic
-│       ├── piatto.css        # Styling for dish page
-│       ├── ordina.php        # Handle 'order now' actions
-│       ├── ordina.css        # Order form styles
-│       ├── ordina.js         # JS for ordering interactions
-│       └── updateCart.php    # Handle AJAX cart updates
-│
-├── 📁 registrati             # Registration process
-│   ├── registrati.php        # Registration handler
-│   ├── registrati.css        # Styling for registration
-│   ├── registratiSimple.php  # Alternative registration view
-│   ├── registratiSimple.css  # Lightweight version styles
-│   ├── logindb.php           # Backend login DB operations
-│   └── mergeAccReg.php       # Merge login/registration logic
-│
-├── 📁 chi siamo              # About Us section
-│   ├── chi siamo.php         # Team/project presentation
-│   ├── chi siamo.css         # Styling
-│   └── chi siamo.js          # Section animation or logic
-│
-├── 📁 componi piatto         # Custom pasta builder
-│   ├── cPiattoDef.php        # Logic for custom pasta builder
-│   ├── cPiattoDef.css        # Styling
-│   └── cPiattoDef.js         # Interactivity and validation
-│
-└── 📁 media                  # Images, icons, assets
-```
 
 * * *
 
@@ -215,6 +131,7 @@ Here are some of the pages we realized:
 
 
 * Menu with Cart View
+
 ![menu-with-cart-view](https://github.com/user-attachments/assets/71b48dca-004c-40ed-b68a-19031ee0800e)
 
 
