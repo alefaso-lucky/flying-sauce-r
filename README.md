@@ -85,12 +85,12 @@ Despite this, the **codebase follows international best practices**, with clear 
     
 * * *
 
-🧪 Development Process
+🧠 Development Process
 ----------------------
 
 > 👨‍💻 A team project developed over 3 months, with clear division of responsibilities and a real-world collaboration approach.
 
-* 🧠 Requirements analysis and feature planning
+* ✅ Requirements analysis and feature planning
     
 * 🧩 UI/UX wireframes and responsive layout design
     
@@ -99,6 +99,18 @@ Despite this, the **codebase follows international best practices**, with clear 
 * 💡 Frontend polish and JavaScript enhancements
     
 * 🧪 Manual QA testing across different devices
+    
+
+* * *
+
+📋 Documentation
+----------------
+
+You can find documentation and technical reports inside the `docs/` folder, including:
+
+* Wireframes
+    
+* Technical Report (PDF)
     
 
 * * *
@@ -168,19 +180,6 @@ Despite this, the **codebase follows international best practices**, with clear 
 
 * * *
 
-👥 Team Collaboration
----------------------
-
-Developed by a team of 4 university students, with rotating ownership of backend logic, frontend design, and integration. The project promoted:
-
-* 🛠️ Version control with Git
-    
-* 📋 Regular team sync-ups and retrospectives
-    
-* ✅ Collaborative problem-solving
-
-* * *
-
 📸 Interface Preview
 --------------------
 
@@ -202,7 +201,20 @@ Here are some of the pages we realized:
 
 * * *
 
-📖 How to Run Locally
+👥 Team Collaboration
+---------------------
+
+Developed by a team of 4 university students, with rotating ownership of backend logic, frontend design, and integration. The project promoted:
+
+* 🛠️ Version control with Git
+    
+* 📋 Regular team sync-ups and retrospectives
+    
+* ✅ Collaborative problem-solving
+
+* * *
+
+🚀 How to Run Locally
 ---------------------
 
 1. Clone this repository:
@@ -225,18 +237,6 @@ Here are some of the pages we realized:
 
 * * *
 
-📋 Documentation
-----------------
-
-You can find documentation and technical reports inside the `docs/` folder, including:
-
-* Wireframes
-    
-* Technical Report (PDF)
-    
-
-* * *
-
 📬 Contacts
 -----------
 
@@ -248,9 +248,8 @@ You can find documentation and technical reports inside the `docs/` folder, incl
 -----------
 
 ```
-php food delivery website, custom pasta builder, italian food app, 
-food delivery github php, ecommerce php project, responsive php web app,
-pasta delivery site, student food delivery project php, online cart system php
+Pasta delivery web app, full-stack pasta ordering system, PHP pasta delivery app, food delivery platform, web app for pasta delivery, responsive pasta website, pasta customization builder, user authentication in web app, pasta order management system, dynamic cart management, PostgreSQL food delivery app, full-stack web development, JavaScript food ordering app, HTML CSS PHP pasta delivery, pasta delivery project, modular pasta builder, responsive web design for food ordering, university project pasta delivery, pasta delivery with database integration, user login and registration, pasta delivery platform with cart, real-time cart update, pasta dish customization, secure pasta ordering, full-stack web development project, food delivery UI/UX design, food delivery system with backend PHP, food delivery responsive design, Git version control pasta delivery, PHP PostgreSQL pasta app, open-source pasta delivery app.
+
 ```
 
 * * *
