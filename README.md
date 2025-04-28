@@ -106,24 +106,24 @@ Despite this, the **codebase follows international best practices**, with clear 
 🧱 Detailed Project Structure
 -----------------------------
 
-
+```
 📦 Flying-Sauce-r-
 │
 ├── 📁 base                   # Shared navigation and footer components
 │   ├── footer.php            # Footer HTML/PHP logic
 │   ├── footer.css            # Footer styling
 │   ├── navFINITA.php         # Final version of the navigation bar
-│   ├── navFINITA.css         # Styling for final navigation
+│   └── navFINITA.css         # Styling for final navigation
 │
 ├── 📁 carrello               # Cart management section
 │   ├── resoconto.php         # Cart summary page
 │   ├── resoconto.css         # Styling for cart summary
-│   ├── resoconto.js          # JS for cart interactivity
+│   └── resoconto.js          # JS for cart interactivity
 │
 ├── 📁 chi siamo              # About Us section
 │   ├── chi siamo.php         # Team or project presentation
 │   ├── chi siamo.css         # Styling for About Us
-│   ├── chi siamo.js          # Scripts and animations for About Us
+│   └── chi siamo.js          # Scripts and animations for About Us
 │
 ├── 📁 docs                   # Documentation and technical notes
 │   ├── NotaWireframe.txt     # Wireframe notes
@@ -164,6 +164,7 @@ Despite this, the **codebase follows international best practices**, with clear 
 └── connessionedb.php            # Database connection script
 
 └── 📁 media                  # Images, icons, and other assets
+```
 
 * * *
 
