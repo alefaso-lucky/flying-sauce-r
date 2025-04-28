@@ -203,9 +203,15 @@ Developed by a team of 4 university students, with rotating ownership of backend
 📸 Interface Preview
 --------------------
 
-![image](https://github.com/user-attachments/assets/bd741940-c237-4182-9f8e-83bf87983e61)
-![Cart View](https://github.com/yourusername/FlyingSauce-r-/assets/cart-preview.png)  
-![Custom Pasta Builder](https://github.com/yourusername/FlyingSauce-r-/assets/custom-builder.png)
+Here are some of the pages we realized:
+* Sign-up page
+![sign-up](https://github.com/user-attachments/assets/4a85f124-a3e2-4de7-b779-07036f5f03cc)
+
+* Custom Pasta builder
+
+
+* Cart View
+
 
 * * *
 
@@ -228,7 +234,9 @@ Developed by a team of 4 university students, with rotating ownership of backend
     
     ```
     http://localhost/flying-sauce-r/
-    ```
+    ```![sign-up](https://github.com/user-attachments/assets/47a5b5b3-cc50-4107-982f-78dacf661977)
+![sign-up](https://github.com/user-attachments/assets/9a48f938-3a1b-4887-b6fe-6a6826e7af0b)
+
     
 
 * * *
