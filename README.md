@@ -204,14 +204,18 @@ Developed by a team of 4 university students, with rotating ownership of backend
 --------------------
 
 Here are some of the pages we realized:
+
 * Sign-up page
+
 ![sign-up](https://github.com/user-attachments/assets/4a85f124-a3e2-4de7-b779-07036f5f03cc)
 
 * Custom Pasta builder
+
 ![personalized-pasta](https://github.com/user-attachments/assets/bb0efade-6fab-413c-adcb-bf97280a4693)
 
 
 * Menu with Cart View
+![menu-with-cart-view](https://github.com/user-attachments/assets/71b48dca-004c-40ed-b68a-19031ee0800e)
 
 
 * * *
