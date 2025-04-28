@@ -1,4 +1,4 @@
-🍝 flying-sauce-r: Pasta Delivery Full Stack Web App
+🍝 Flying-Sauce-r: Pasta Delivery Full Stack Web App
 =====================================================
 
 >🚀 A feature-rich, full-stack web application that serves as **pasta delivery platform** built with PHP, JavaScript, HTML, and CSS. Developed during a **3-month university project** by a team of 4, it demonstrates skills in **web development**, **database integration**, and **responsive UI/UX design**. Includes responsive design, user authentication, cart/order management, and admin controls.
