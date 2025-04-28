@@ -208,9 +208,10 @@ Here are some of the pages we realized:
 ![sign-up](https://github.com/user-attachments/assets/4a85f124-a3e2-4de7-b779-07036f5f03cc)
 
 * Custom Pasta builder
+![personalized-pasta](https://github.com/user-attachments/assets/bb0efade-6fab-413c-adcb-bf97280a4693)
 
 
-* Cart View
+* Menu with Cart View
 
 
 * * *
