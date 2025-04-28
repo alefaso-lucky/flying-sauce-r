@@ -156,10 +156,7 @@ Here are some of the pages we realized:
     
     ```
     http://localhost/flying-sauce-r/
-    ```![sign-up](https://github.com/user-attachments/assets/47a5b5b3-cc50-4107-982f-78dacf661977)
-![sign-up](https://github.com/user-attachments/assets/9a48f938-3a1b-4887-b6fe-6a6826e7af0b)
-
-    
+    ```
 
 * * *
 
