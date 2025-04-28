@@ -1,7 +1,7 @@
 🍝 flying-sauce-r: Pasta Delivery Full Stack Web App
 =====================================================
 
-> 🚀 A feature-rich, full-stack **pasta delivery platform** built with PHP, JavaScript, HTML, and CSS, developed by a team of four over three months as part of a Bachelor's degree project. Includes responsive design, user authentication, cart/order management, and admin controls.
+>🚀 A feature-rich, full-stack web application that serves as **pasta delivery platform** built with PHP, JavaScript, HTML, and CSS. Developed during a **3-month university project** by a team of 4, it demonstrates skills in **web development**, **database integration**, and **responsive UI/UX design**. Includes responsive design, user authentication, cart/order management, and admin controls.
 
 * * *
 
@@ -9,6 +9,33 @@
 -----------
 
 **Flying-Sauce-r** is a complete web-based **pasta delivery system**, designed with a modular approach to simulate a real-world food ordering service. Built using **vanilla PHP, JavaScript, HTML, and CSS**, it features **responsive design**, **dynamic cart functionality**, **secure user login/registration**, and an **order summary system**, all backed by a PostgreSQL database.
+
+### 📁 Project Highlights
+
+* 🛒 **Dynamic Cart Management**: Add, edit, and remove items with real-time updates.
+    
+* 👤 **User Authentication**: Secure login, registration, and access to a personal restricted area.
+    
+* 🍝 **Customizable Pasta Builder**: Create and customize your own pasta dish with a modular builder.
+    
+* 📦 **Order Management**: Seamless order finalization within a protected area.
+    
+* 📱 **Responsive Design**: Optimized for multiple browsers and devices.
+    
+* 🛠️ **Database Integration**: Full CRUD operations for users, orders, and products.
+
+* * *
+
+🛠️ Technologies Used
+---------------------
+
+* **Frontend**: HTML, CSS, JavaScript
+    
+* **Backend**: PHP
+    
+* **Database**: PostgreSQL (with provided `.sql` backup)
+    
+* **Version Control**: Git
 
 * * *
 
@@ -47,8 +74,49 @@
     
 * Responsive layout across devices
     
+* * *
+
+🌍 Language Note
+----------------
+
+All **code comments and internal documentation** are written in **Italian**, as the project was developed during a group exam at the **University of Salerno (Italy)**.
+
+Despite this, the **codebase follows international best practices**, with clear method names and class structures that make it easily understandable for global developers and recruiters.
 
 * * *
+
+🧪 Development Process
+----------------------
+
+> 👨‍💻 A team project developed over 3 months, with clear division of responsibilities and a real-world collaboration approach.
+
+* 🧠 Requirements analysis and feature planning
+    
+* 🧩 UI/UX wireframes and responsive layout design
+    
+* ⚙️ Incremental backend development (PHP/PostgreSQL)
+    
+* 💡 Frontend polish and JavaScript enhancements
+    
+* 🧪 Manual QA testing across different devices
+    
+
+* * *
+
+👥 Team Collaboration
+---------------------
+
+Developed by a team of 4 university students, with rotating ownership of backend logic, frontend design, and integration. The project promoted:
+
+* 🛠️ Version control with Git
+    
+* 📋 Regular team sync-ups and retrospectives
+    
+* ✅ Collaborative problem-solving
+    
+
+* * *
+
 
 🧱 Detailed Project Structure
 -----------------------------
@@ -132,51 +200,55 @@
 
 * * *
 
-🧪 Development Process
-----------------------
-
-> 👨‍💻 A team project developed over 3 months, with clear division of responsibilities and a real-world collaboration approach.
-
-* 🧠 Requirements analysis and feature planning
-    
-* 🧩 UI/UX wireframes and responsive layout design
-    
-* ⚙️ Incremental backend development (PHP/PostgreSQL)
-    
-* 💡 Frontend polish and JavaScript enhancements
-    
-* 🧪 Manual QA testing across different devices
-    
-
-* * *
-
-🌐 Language Note
-----------------
-
-Although written in **Italian**, the code follows clear and clean naming conventions. Every component is **modularized** and easy to interpret, even for English-speaking developers or recruiters.
-
-* * *
-
-👥 Team Collaboration
----------------------
-
-Developed by a team of 4 university students, with rotating ownership of backend logic, frontend design, and integration. The project promoted:
-
-* 🛠️ Version control with Git
-    
-* 📋 Regular team sync-ups and retrospectives
-    
-* ✅ Collaborative problem-solving
-    
-
-* * *
-
 📸 Interface Preview
 --------------------
 
-![Menu Preview](https://github.com/yourusername/FlyingSauce-r-/assets/menu-preview.png)  
+![image](https://github.com/user-attachments/assets/bd741940-c237-4182-9f8e-83bf87983e61)
 ![Cart View](https://github.com/yourusername/FlyingSauce-r-/assets/cart-preview.png)  
 ![Custom Pasta Builder](https://github.com/yourusername/FlyingSauce-r-/assets/custom-builder.png)
+
+* * *
+
+📖 How to Run Locally
+---------------------
+
+1. Clone this repository:
+    
+    ```bash
+    git clone https://github.com/francescopiocirillo/flying-sauce-r.git
+    ```
+    
+2. Import the `backup_database_flying_sauce_r.sql` into your local PostgreSQL server.
+    
+3. Update database credentials in `connessionedb.php`.
+    
+4. Launch the project on a local server like XAMPP, WAMP, or MAMP.
+    
+5. Access the project from your browser:
+    
+    ```
+    http://localhost/flying-sauce-r/
+    ```
+    
+
+* * *
+
+📋 Documentation
+----------------
+
+You can find documentation and technical reports inside the `docs/` folder, including:
+
+* Wireframes
+    
+* Technical Report (PDF)
+    
+
+* * *
+
+📬 Contacts
+-----------
+
+✉️ For questions or suggestions, feel free to contribute or report any corrections! Open an **Issue**!🚀
 
 * * *
 
@@ -191,37 +263,12 @@ pasta delivery site, student food delivery project php, online cart system php
 
 * * *
 
-🚀 Getting Started
-------------------
-
-1. **Clone the repository**
-    
-
-```bash
-git clone https://github.com/yourusername/FlyingSauce-r-.git
-```
-
-2. **Set up local development environment**
-    
-    * Use [XAMPP](https://www.apachefriends.org/) or [MAMP](https://www.mamp.info/)
-        
-    * Import the Postgre database if included (SQL file)
-        
-    * Place files in `htdocs/` or equivalent directory
-        
-3. **Launch the app**
-    
-    * Visit `http://localhost/FlyingSauce-r-/`
-        
-    * Start exploring!
-        
-
-* * *
-
 📄 License
 ----------
 
-Licensed under the **MIT License**, you're free to use, modify, and distribute this software with attribution.
+This project is licensed under the **MIT License**, a permissive open-source license that allows anyone to use, modify, and distribute the software freely — as long as credit is given and the original license is included.
+
+> In plain terms: **use it, build on it, just don’t blame us if something breaks**.
 
 > ⭐ Like what you see? Consider giving the project a star!
 
