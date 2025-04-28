@@ -103,6 +103,70 @@ Despite this, the **codebase follows international best practices**, with clear 
 
 * * *
 
+🧱 Detailed Project Structure
+-----------------------------
+
+
+📦 Flying-Sauce-r-
+│
+├── 📁 base                   # Shared navigation and footer components
+│   ├── footer.php            # Footer HTML/PHP logic
+│   ├── footer.css            # Footer styling
+│   ├── navFINITA.php         # Final version of the navigation bar
+│   ├── navFINITA.css         # Styling for final navigation
+│
+├── 📁 carrello               # Cart management section
+│   ├── resoconto.php         # Cart summary page
+│   ├── resoconto.css         # Styling for cart summary
+│   ├── resoconto.js          # JS for cart interactivity
+│
+├── 📁 chi siamo              # About Us section
+│   ├── chi siamo.php         # Team or project presentation
+│   ├── chi siamo.css         # Styling for About Us
+│   ├── chi siamo.js          # Scripts and animations for About Us
+│
+├── 📁 docs                   # Documentation and technical notes
+│   ├── NotaWireframe.txt     # Wireframe notes
+│   ├── Relazione tecnica Flying-Sauce-r.pdf # Technical report
+│   └── Wireframe Flying-Sauce-r.pdf         # Project wireframe PDF
+│
+├── 📁 informative            # Legal and privacy pages
+│   ├── condizioni.php        # Terms and conditions
+│   ├── infoPrivacy.php       # Privacy policy
+│   └── informative.css       # Shared styling for legal pages
+│
+├── 📁 legacy_files           # Old versions and legacy scripts
+│
+├── 📁 membership
+│   └── 📁 area_riservata     # User area for members
+│       ├── profilo.css        # Styling for user profile
+│       ├── profilo.js         # Scripts for user profile
+│       ├── profilo.php        # User profile logic
+│       ├── accedi.css         # Styling for login in user area
+│       ├── account.php        # User account management
+│       ├── registrati.css      # Styling for registration in user area
+│       └── ValidazioneInput.js # Input validation scripts
+│
+├── 📁 menu
+│   └── 📁 ordina_ora         # Section for ordering food
+│       ├── componi_piatto.css # Styling for composing a dish
+│       ├── componi_piatto.js  # Scripts for composing a dish
+│       ├── componi_piatto.php # Logic for composing a dish
+│       ├── ordina_ora.css    # General styling for ordering
+│       ├── ordina_ora.js      # General scripts for ordering
+│       ├── ordina_ora.php    # General logic for ordering
+│       ├── piatto.css        # Styling for individual dish display
+│       └── piatto.php        # Logic for individual dish display
+│
+├── LICENSE
+├── README.md
+├── backup_database_flying_sauce_r.sql # Database backup
+└── connessionedb.php            # Database connection script
+
+└── 📁 media                  # Images, icons, and other assets
+
+* * *
+
 👥 Team Collaboration
 ---------------------
 
