@@ -219,7 +219,7 @@ Developed by a team of 4 university students, with rotating ownership of backend
 1. Clone this repository:
     
     ```bash
-    git clone https://github.com/francescopiocirillo/flying-sauce-r.git
+    git clone https://github.com/alefaso-lucky/flying-sauce-r
     ```
     
 2. Import the `backup_database_flying_sauce_r.sql` into your local PostgreSQL server.
